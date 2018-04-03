@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="896adcb0-ebf9-46de-b308-2037e19c4258" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/HHT/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/HHT/test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Note/Strategy" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/General/GlobalSetting.py" afterPath="$PROJECT_DIR$/General/GlobalSetting.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -102,8 +98,8 @@
       <file leaf-file-name="Strategy" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Note/Strategy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="18" column="49" lean-forward="false" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+            <state relative-caret-position="440">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -587,7 +583,14 @@
       <option name="project" value="LOCAL" />
       <updated>1517382451460</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="增加策略备忘录文本">
+      <created>1522748492209</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1522748492209</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -602,7 +605,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13487881" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13487881" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.228125" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31336406" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -673,7 +676,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="第一次commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="第一次commit" />
+    <MESSAGE value="增加策略备忘录文本" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加策略备忘录文本" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1194,8 +1198,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Note/Strategy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="49" lean-forward="false" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+        <state relative-caret-position="440">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
