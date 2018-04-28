@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="896adcb0-ebf9-46de-b308-2037e19c4258" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/AutoTrade/DemoFromInternet.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AutoTrade/MyTest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AutoTrade/__init__.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,8 +22,8 @@
       <file leaf-file-name="DemoFromInternet.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AutoTrade/DemoFromInternet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="32" column="102" lean-forward="false" selection-start-line="32" selection-start-column="83" selection-end-line="32" selection-end-column="102" />
+            <state relative-caret-position="616">
+              <caret line="39" column="73" lean-forward="false" selection-start-line="39" selection-start-column="73" selection-end-line="39" selection-end-column="73" />
               <folding>
                 <element signature="n#!!doc" expanded="false" />
                 <element signature="e#41#69#0" expanded="true" />
@@ -85,7 +82,6 @@
                 <element signature="e#10617#15279#0" expanded="false" />
                 <element signature="e#12252#13835#0" expanded="false" />
                 <element signature="e#14465#14475#0" expanded="false" />
-                <element signature="e#15322#16059#0" expanded="false" />
                 <element signature="e#15322#15352#1" expanded="false" />
                 <element signature="e#15893#15977#0" expanded="false" />
                 <element signature="e#16089#16331#0" expanded="false" />
@@ -135,8 +131,8 @@
       <file leaf-file-name="MyTest.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AutoTrade/MyTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="107">
+              <caret line="27" column="19" lean-forward="false" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="19" />
               <folding>
                 <element signature="e#21#49#0" expanded="true" />
               </folding>
@@ -231,10 +227,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="239" />
-    <option name="y" value="189" />
-    <option name="width" value="1024" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="253" />
+    <option name="y" value="197" />
+    <option name="width" value="1213" />
     <option name="height" value="758" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -271,6 +267,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -292,7 +289,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -613,7 +609,14 @@
       <option name="project" value="LOCAL" />
       <updated>1523349919693</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="第一次增加自动交易的相关程序">
+      <created>1524056664626</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1524056664626</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -626,14 +629,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="253" y="197" width="1213" height="758" extended-state="0" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14541623" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23489362" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.228125" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31336406" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29375" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.123958334" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6784566" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14211309" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.303125" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48020834" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -702,7 +705,8 @@
     <MESSAGE value="增加策略备忘录文本" />
     <MESSAGE value="1、增加策略备忘录文本&#10;2、增加EMD测试文件" />
     <MESSAGE value="1、增加画图程序，将stk的最高点，最低点，收盘点画到一张图上" />
-    <option name="LAST_COMMIT_MESSAGE" value="1、增加画图程序，将stk的最高点，最低点，收盘点画到一张图上" />
+    <MESSAGE value="第一次增加自动交易的相关程序" />
+    <option name="LAST_COMMIT_MESSAGE" value="第一次增加自动交易的相关程序" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -726,11 +730,6 @@
           <url>file://$PROJECT_DIR$/DataProcess/IndexAnalysis/KDJ/Demo.py</url>
           <line>109</line>
           <option name="timeStamp" value="976" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/AutoTrade/DemoFromInternet.py</url>
-          <line>30</line>
-          <option name="timeStamp" value="1003" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -1085,9 +1084,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <element signature="e#20#55#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1096,9 +1092,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="17" column="34" lean-forward="false" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
-          <folding>
-            <element signature="e#15#32#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1106,27 +1099,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1914">
           <caret line="211" column="0" lean-forward="false" selection-start-line="211" selection-start-column="0" selection-end-line="213" selection-end-column="64" />
-          <folding>
-            <element signature="e#347#1507#0" expanded="false" />
-            <element signature="e#347#505#1" expanded="false" />
-            <element signature="e#874#963#0" expanded="false" />
-            <element signature="e#1262#1507#0" expanded="false" />
-            <element signature="e#1573#1938#0" expanded="false" />
-            <element signature="e#1573#1701#1" expanded="false" />
-            <element signature="e#2013#2405#0" expanded="false" />
-            <element signature="e#2013#2159#1" expanded="false" />
-            <element signature="e#2472#3714#0" expanded="false" />
-            <element signature="e#2472#2600#1" expanded="false" />
-            <element signature="e#3038#3063#0" expanded="false" />
-            <element signature="e#3777#3906#1" expanded="false" />
-            <element signature="e#4264#4382#0" expanded="false" />
-            <element signature="e#4579#4720#1" expanded="false" />
-            <element signature="e#4947#5086#0" expanded="false" />
-            <element signature="e#5233#5476#1" expanded="false" />
-            <element signature="e#13479#13748#0" expanded="false" />
-            <element signature="e#13479#13564#1" expanded="false" />
-            <element signature="e#13626#13726#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1134,9 +1106,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="e#20#55#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1158,9 +1127,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1980">
           <caret line="90" column="20" lean-forward="false" selection-start-line="90" selection-start-column="20" selection-end-line="90" selection-end-column="20" />
-          <folding>
-            <element signature="e#20#40#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1168,7 +1134,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="836">
           <caret line="46" column="23" lean-forward="false" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1183,9 +1148,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <element signature="e#17#48#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1193,7 +1155,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="241">
           <caret line="329" column="4" lean-forward="false" selection-start-line="329" selection-start-column="4" selection-end-line="329" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1201,7 +1162,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="557">
           <caret line="883" column="32" lean-forward="false" selection-start-line="883" selection-start-column="32" selection-end-line="883" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1209,14 +1169,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="358">
           <caret line="288" column="0" lean-forward="false" selection-start-line="288" selection-start-column="0" selection-end-line="288" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AutoTrade/DemoFromInternet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="32" column="102" lean-forward="false" selection-start-line="32" selection-start-column="83" selection-end-line="32" selection-end-column="102" />
+        <state relative-caret-position="616">
+          <caret line="39" column="73" lean-forward="false" selection-start-line="39" selection-start-column="73" selection-end-line="39" selection-end-column="73" />
           <folding>
             <element signature="n#!!doc" expanded="false" />
             <element signature="e#41#69#0" expanded="true" />
@@ -1275,7 +1234,6 @@
             <element signature="e#10617#15279#0" expanded="false" />
             <element signature="e#12252#13835#0" expanded="false" />
             <element signature="e#14465#14475#0" expanded="false" />
-            <element signature="e#15322#16059#0" expanded="false" />
             <element signature="e#15322#15352#1" expanded="false" />
             <element signature="e#15893#15977#0" expanded="false" />
             <element signature="e#16089#16331#0" expanded="false" />
@@ -1323,8 +1281,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AutoTrade/MyTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="107">
+          <caret line="27" column="19" lean-forward="false" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="19" />
           <folding>
             <element signature="e#21#49#0" expanded="true" />
           </folding>
