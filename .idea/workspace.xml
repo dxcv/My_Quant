@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="896adcb0-ebf9-46de-b308-2037e19c4258" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/GridTrading/temp3.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/AutoTrade/MyTest.py" afterPath="$PROJECT_DIR$/AutoTrade/MyTest.py" />
+      <change beforePath="$PROJECT_DIR$/DataProcess/LSTM-Demo/Multi-Layer.py" afterPath="$PROJECT_DIR$/DataProcess/LSTM-Demo/Multi-Layer.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,123 +22,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DemoFromInternet.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AutoTrade/DemoFromInternet.py">
+      <file leaf-file-name="temp3.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DataProcess/GridTrading/temp3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="39" column="73" lean-forward="false" selection-start-line="39" selection-start-column="73" selection-end-line="39" selection-end-column="73" />
+            <state relative-caret-position="410">
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
-                <element signature="n#!!doc" expanded="false" />
-                <element signature="e#41#69#0" expanded="true" />
-                <element signature="e#1507#1920#0" expanded="false" />
-                <element signature="e#1507#1587#1" expanded="false" />
-                <element signature="e#1775#1851#0" expanded="false" />
-                <element signature="e#1968#2392#0" expanded="false" />
-                <element signature="e#1968#2059#1" expanded="false" />
-                <element signature="e#2247#2323#0" expanded="false" />
-                <element signature="e#2436#2774#0" expanded="false" />
-                <element signature="e#2436#2511#1" expanded="false" />
-                <element signature="e#2601#2753#0" expanded="false" />
-                <element signature="e#2819#2937#0" expanded="false" />
-                <element signature="e#2819#2868#1" expanded="false" />
-                <element signature="e#2995#3297#0" expanded="false" />
-                <element signature="e#2995#3125#1" expanded="false" />
-                <element signature="e#3332#3493#0" expanded="false" />
-                <element signature="e#3332#3361#1" expanded="false" />
-                <element signature="e#3528#3650#0" expanded="false" />
-                <element signature="e#3528#3557#1" expanded="false" />
-                <element signature="e#3690#3813#0" expanded="false" />
-                <element signature="e#3690#3746#1" expanded="false" />
-                <element signature="e#3847#3942#0" expanded="false" />
-                <element signature="e#3847#3877#1" expanded="false" />
-                <element signature="e#4015#4310#0" expanded="false" />
-                <element signature="e#4015#4123#1" expanded="false" />
-                <element signature="e#4353#4519#0" expanded="false" />
-                <element signature="e#4353#4404#1" expanded="false" />
-                <element signature="e#5484#5529#1" expanded="false" />
-                <element signature="e#5650#6256#0" expanded="false" />
-                <element signature="e#5650#5832#1" expanded="false" />
-                <element signature="e#6010#6175#0" expanded="false" />
-                <element signature="e#6053#6175#0" expanded="false" />
-                <element signature="e#6307#7027#0" expanded="false" />
-                <element signature="e#6307#6412#1" expanded="false" />
-                <element signature="e#6623#6794#0" expanded="false" />
-                <element signature="e#6678#6794#0" expanded="false" />
-                <element signature="e#6721#6794#0" expanded="false" />
-                <element signature="e#6827#7027#0" expanded="false" />
-                <element signature="e#7064#7227#0" expanded="false" />
-                <element signature="e#7064#7107#1" expanded="false" />
-                <element signature="e#7265#7428#0" expanded="false" />
-                <element signature="e#7265#7308#1" expanded="false" />
-                <element signature="e#7465#7628#0" expanded="false" />
-                <element signature="e#7465#7508#1" expanded="false" />
-                <element signature="e#7654#8373#0" expanded="false" />
-                <element signature="e#7654#7697#1" expanded="false" />
-                <element signature="e#7763#8266#0" expanded="false" />
-                <element signature="e#7880#8266#0" expanded="false" />
-                <element signature="e#7949#8180#0" expanded="false" />
-                <element signature="e#8043#8180#0" expanded="false" />
-                <element signature="e#8916#10321#0" expanded="false" />
-                <element signature="e#9282#10321#0" expanded="false" />
-                <element signature="e#9510#10321#0" expanded="false" />
-                <element signature="e#10049#10263#0" expanded="false" />
-                <element signature="e#10617#15279#0" expanded="false" />
-                <element signature="e#12252#13835#0" expanded="false" />
-                <element signature="e#14465#14475#0" expanded="false" />
-                <element signature="e#15322#15352#1" expanded="false" />
-                <element signature="e#15893#15977#0" expanded="false" />
-                <element signature="e#16089#16331#0" expanded="false" />
-                <element signature="e#16089#16117#1" expanded="false" />
-                <element signature="e#16252#16331#0" expanded="false" />
-                <element signature="e#16361#17658#0" expanded="false" />
-                <element signature="e#16361#16389#1" expanded="false" />
-                <element signature="e#16465#17554#0" expanded="false" />
-                <element signature="e#16521#16606#0" expanded="false" />
-                <element signature="e#16664#17554#0" expanded="false" />
-                <element signature="e#16713#17554#0" expanded="false" />
-                <element signature="e#17310#17554#0" expanded="false" />
-                <element signature="e#17692#17890#0" expanded="false" />
-                <element signature="e#17692#17722#1" expanded="false" />
-                <element signature="e#17801#17890#0" expanded="false" />
-                <element signature="e#17930#18832#0" expanded="false" />
-                <element signature="e#17930#17968#1" expanded="false" />
-                <element signature="e#18046#18779#0" expanded="false" />
-                <element signature="e#18146#18779#0" expanded="false" />
-                <element signature="e#18182#18557#0" expanded="false" />
-                <element signature="e#18600#18779#0" expanded="false" />
-                <element signature="e#18901#19115#0" expanded="false" />
-                <element signature="e#18901#18991#1" expanded="false" />
-                <element signature="e#19146#19771#0" expanded="false" />
-                <element signature="e#19146#19174#1" expanded="false" />
-                <element signature="e#19364#19631#0" expanded="false" />
-                <element signature="e#19658#19771#0" expanded="false" />
-                <element signature="e#19802#19931#0" expanded="false" />
-                <element signature="e#19962#20083#0" expanded="false" />
-                <element signature="e#19962#20003#1" expanded="false" />
-                <element signature="e#20117#22045#0" expanded="false" />
-                <element signature="e#20117#20156#1" expanded="false" />
-                <element signature="e#20289#22045#0" expanded="false" />
-                <element signature="e#20373#22045#0" expanded="false" />
-                <element signature="e#20467#20660#0" expanded="false" />
-                <element signature="e#20712#20874#0" expanded="false" />
-                <element signature="e#20926#21269#0" expanded="false" />
-                <element signature="e#20955#21175#0" expanded="false" />
-                <element signature="e#21321#21483#0" expanded="false" />
-                <element signature="e#21535#21735#0" expanded="false" />
-                <element signature="e#21787#22045#0" expanded="false" />
+                <element signature="e#20#55#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyTest.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/AutoTrade/MyTest.py">
+      <file leaf-file-name="DailyOpt.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataProcess/DailyOpt/DailyOpt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="27" column="19" lean-forward="false" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="19" />
-              <folding>
-                <element signature="e#21#49#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="224">
+              <caret line="75" column="13" lean-forward="true" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AveAnalysisSub.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SDK/AveAnalysisSub.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-448">
+              <caret line="408" column="4" lean-forward="false" selection-start-line="408" selection-start-column="4" selection-end-line="408" selection-end-column="4" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -173,7 +87,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/DataProcess/wavelet_test.py" />
         <option value="$PROJECT_DIR$/DataProcess/CNNClassify/DataPrePare.py" />
         <option value="$PROJECT_DIR$/DataProcess/Wavelet_test/DataPrepare.py" />
         <option value="$PROJECT_DIR$/LoadHistoryData/Update_K_Data.py" />
@@ -189,7 +102,6 @@
         <option value="$PROJECT_DIR$/SDK/MACD_Sub.py" />
         <option value="$PROJECT_DIR$/SDK/BKSub.py" />
         <option value="$PROJECT_DIR$/SDK/LSTM_Class.py" />
-        <option value="$PROJECT_DIR$/DataProcess/LSTM-Demo/Multi-Layer.py" />
         <option value="$USER_HOME$/Desktop/huizong.py" />
         <option value="$USER_HOME$/Desktop/qizhi.py" />
         <option value="$PROJECT_DIR$/DataProcess/LSTM-Demo/DataPrepare.py" />
@@ -224,14 +136,14 @@
         <option value="$PROJECT_DIR$/DataProcess/GridTrading/test1.py" />
         <option value="$PROJECT_DIR$/AutoTrade/DemoFromInternet.py" />
         <option value="$PROJECT_DIR$/AutoTrade/MyTest.py" />
+        <option value="$PROJECT_DIR$/DataProcess/LSTM-Demo/Multi-Layer.py" />
+        <option value="$PROJECT_DIR$/DataProcess/GridTrading/temp3.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="253" />
-    <option name="y" value="197" />
-    <option name="width" value="1213" />
-    <option name="height" value="758" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="width" value="1022" />
+    <option name="height" value="766" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -283,7 +195,19 @@
             <path>
               <item name="My_Quant" type="b2602c69:ProjectViewProjectNode" />
               <item name="My_Quant" type="462c0819:PsiDirectoryNode" />
-              <item name="Note" type="462c0819:PsiDirectoryNode" />
+              <item name="DataProcess" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="My_Quant" type="b2602c69:ProjectViewProjectNode" />
+              <item name="My_Quant" type="462c0819:PsiDirectoryNode" />
+              <item name="DataProcess" type="462c0819:PsiDirectoryNode" />
+              <item name="DailyOpt" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="My_Quant" type="b2602c69:ProjectViewProjectNode" />
+              <item name="My_Quant" type="462c0819:PsiDirectoryNode" />
+              <item name="DataProcess" type="462c0819:PsiDirectoryNode" />
+              <item name="History" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -325,7 +249,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.MyTest">
+  <component name="RunManager" selected="Python.temp3">
     <configuration name="DemoFromInternet" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -362,6 +286,24 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="temp3" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DataProcess/GridTrading" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="DataLoad-Tushare" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DataProcess/GridTrading/temp3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -375,24 +317,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="DataLoad-Tushare" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DataProcess/HHT/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MultiTactics" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="DataLoad-Tushare" />
-      <option name="SCRIPT_NAME" value="F:\MYAI\Code\master\python_preject\My_Quant\DataProcess\GridTrading\test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -551,19 +475,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.test" />
-      <item index="1" class="java.lang.String" itemvalue="Python.test (1)" />
-      <item index="2" class="java.lang.String" itemvalue="Python.test1" />
-      <item index="3" class="java.lang.String" itemvalue="Python.DemoFromInternet" />
-      <item index="4" class="java.lang.String" itemvalue="Python.MyTest" />
+      <item index="0" class="java.lang.String" itemvalue="Python.test (1)" />
+      <item index="1" class="java.lang.String" itemvalue="Python.test1" />
+      <item index="2" class="java.lang.String" itemvalue="Python.DemoFromInternet" />
+      <item index="3" class="java.lang.String" itemvalue="Python.MyTest" />
+      <item index="4" class="java.lang.String" itemvalue="Python.temp3" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.MyTest" />
-        <item index="1" class="java.lang.String" itemvalue="Python.DemoFromInternet" />
-        <item index="2" class="java.lang.String" itemvalue="Python.test1" />
-        <item index="3" class="java.lang.String" itemvalue="Python.test (1)" />
-        <item index="4" class="java.lang.String" itemvalue="Python.test" />
+        <item index="0" class="java.lang.String" itemvalue="Python.temp3" />
+        <item index="1" class="java.lang.String" itemvalue="Python.MyTest" />
+        <item index="2" class="java.lang.String" itemvalue="Python.DemoFromInternet" />
+        <item index="3" class="java.lang.String" itemvalue="Python.test1" />
+        <item index="4" class="java.lang.String" itemvalue="Python.test (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -616,7 +540,14 @@
       <option name="project" value="LOCAL" />
       <updated>1524056664626</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="为同步而commit">
+      <created>1524904895006</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1524904895006</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -629,17 +560,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="253" y="197" width="1213" height="758" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23489362" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15806112" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.228125" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31336406" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29375" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6784566" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22395833" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.471875" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14211309" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.303125" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48020834" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36041668" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -706,7 +637,8 @@
     <MESSAGE value="1、增加策略备忘录文本&#10;2、增加EMD测试文件" />
     <MESSAGE value="1、增加画图程序，将stk的最高点，最低点，收盘点画到一张图上" />
     <MESSAGE value="第一次增加自动交易的相关程序" />
-    <option name="LAST_COMMIT_MESSAGE" value="第一次增加自动交易的相关程序" />
+    <MESSAGE value="为同步而commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="为同步而commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -715,11 +647,6 @@
           <url>file://$PROJECT_DIR$/LoadHistoryData/Update_Industry_Classified.py</url>
           <line>13</line>
           <option name="timeStamp" value="853" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/DataProcess/LSTM-Demo/Multi-Layer.py</url>
-          <line>79</line>
-          <option name="timeStamp" value="935" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/DataProcess/IndexAnalysis/MACD/DataPrepareSub.py</url>
@@ -742,7 +669,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="1008" />
+      <option name="time" value="1009" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -848,35 +775,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DataProcess/RelativeChangeStrategy/DataPro.py" />
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="1667" column="0" lean-forward="false" selection-start-line="1667" selection-start-column="0" selection-end-line="1667" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataProcess/Wavelet_test/DataPrepare.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDK/SDKHeader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="26" lean-forward="false" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDK/BKSub.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1311">
-          <caret line="70" column="40" lean-forward="false" selection-start-line="70" selection-start-column="6" selection-end-line="70" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DataProcess/Wavelet_test/wavelet_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
@@ -893,13 +791,6 @@
     </entry>
     <entry file="file://$USER_HOME$/Desktop/huizong.py" />
     <entry file="file://$USER_HOME$/Desktop/qizhi.py" />
-    <entry file="file://$PROJECT_DIR$/DataProcess/LSTM-Demo/DataPrepare.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="31" column="10" lean-forward="true" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DataProcess/Scikit-Learn/randomForest-test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -1037,14 +928,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataProcess/LSTM-Demo/Multi-Layer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="32" column="16" lean-forward="false" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DataProcess/IndexAnalysis/MACD/DEMO.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="858">
@@ -1080,25 +963,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataProcess/DailyOpt/Plot_Cow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Note/Strategy.ipynb" />
     <entry file="file://$PROJECT_DIR$/General/GlobalSetting.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="17" column="34" lean-forward="false" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDK/AveAnalysisSub.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1914">
-          <caret line="211" column="0" lean-forward="false" selection-start-line="211" selection-start-column="0" selection-end-line="213" selection-end-column="64" />
         </state>
       </provider>
     </entry>
@@ -1127,13 +996,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1980">
           <caret line="90" column="20" lean-forward="false" selection-start-line="90" selection-start-column="20" selection-end-line="90" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataProcess/DailyOpt/DailyOpt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="46" column="23" lean-forward="false" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -1172,119 +1034,101 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DataProcess/LSTM-Demo/DataPrepare.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="31" column="10" lean-forward="false" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/AutoTrade/DemoFromInternet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="39" column="73" lean-forward="false" selection-start-line="39" selection-start-column="73" selection-end-line="39" selection-end-column="73" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#41#69#0" expanded="true" />
-            <element signature="e#1507#1920#0" expanded="false" />
-            <element signature="e#1507#1587#1" expanded="false" />
-            <element signature="e#1775#1851#0" expanded="false" />
-            <element signature="e#1968#2392#0" expanded="false" />
-            <element signature="e#1968#2059#1" expanded="false" />
-            <element signature="e#2247#2323#0" expanded="false" />
-            <element signature="e#2436#2774#0" expanded="false" />
-            <element signature="e#2436#2511#1" expanded="false" />
-            <element signature="e#2601#2753#0" expanded="false" />
-            <element signature="e#2819#2937#0" expanded="false" />
-            <element signature="e#2819#2868#1" expanded="false" />
-            <element signature="e#2995#3297#0" expanded="false" />
-            <element signature="e#2995#3125#1" expanded="false" />
-            <element signature="e#3332#3493#0" expanded="false" />
-            <element signature="e#3332#3361#1" expanded="false" />
-            <element signature="e#3528#3650#0" expanded="false" />
-            <element signature="e#3528#3557#1" expanded="false" />
-            <element signature="e#3690#3813#0" expanded="false" />
-            <element signature="e#3690#3746#1" expanded="false" />
-            <element signature="e#3847#3942#0" expanded="false" />
-            <element signature="e#3847#3877#1" expanded="false" />
-            <element signature="e#4015#4310#0" expanded="false" />
-            <element signature="e#4015#4123#1" expanded="false" />
-            <element signature="e#4353#4519#0" expanded="false" />
-            <element signature="e#4353#4404#1" expanded="false" />
-            <element signature="e#5484#5529#1" expanded="false" />
-            <element signature="e#5650#6256#0" expanded="false" />
-            <element signature="e#5650#5832#1" expanded="false" />
-            <element signature="e#6010#6175#0" expanded="false" />
-            <element signature="e#6053#6175#0" expanded="false" />
-            <element signature="e#6307#7027#0" expanded="false" />
-            <element signature="e#6307#6412#1" expanded="false" />
-            <element signature="e#6623#6794#0" expanded="false" />
-            <element signature="e#6678#6794#0" expanded="false" />
-            <element signature="e#6721#6794#0" expanded="false" />
-            <element signature="e#6827#7027#0" expanded="false" />
-            <element signature="e#7064#7227#0" expanded="false" />
-            <element signature="e#7064#7107#1" expanded="false" />
-            <element signature="e#7265#7428#0" expanded="false" />
-            <element signature="e#7265#7308#1" expanded="false" />
-            <element signature="e#7465#7628#0" expanded="false" />
-            <element signature="e#7465#7508#1" expanded="false" />
-            <element signature="e#7654#8373#0" expanded="false" />
-            <element signature="e#7654#7697#1" expanded="false" />
-            <element signature="e#7763#8266#0" expanded="false" />
-            <element signature="e#7880#8266#0" expanded="false" />
-            <element signature="e#7949#8180#0" expanded="false" />
-            <element signature="e#8043#8180#0" expanded="false" />
-            <element signature="e#8916#10321#0" expanded="false" />
-            <element signature="e#9282#10321#0" expanded="false" />
-            <element signature="e#9510#10321#0" expanded="false" />
-            <element signature="e#10049#10263#0" expanded="false" />
-            <element signature="e#10617#15279#0" expanded="false" />
-            <element signature="e#12252#13835#0" expanded="false" />
-            <element signature="e#14465#14475#0" expanded="false" />
-            <element signature="e#15322#15352#1" expanded="false" />
-            <element signature="e#15893#15977#0" expanded="false" />
-            <element signature="e#16089#16331#0" expanded="false" />
-            <element signature="e#16089#16117#1" expanded="false" />
-            <element signature="e#16252#16331#0" expanded="false" />
-            <element signature="e#16361#17658#0" expanded="false" />
-            <element signature="e#16361#16389#1" expanded="false" />
-            <element signature="e#16465#17554#0" expanded="false" />
-            <element signature="e#16521#16606#0" expanded="false" />
-            <element signature="e#16664#17554#0" expanded="false" />
-            <element signature="e#16713#17554#0" expanded="false" />
-            <element signature="e#17310#17554#0" expanded="false" />
-            <element signature="e#17692#17890#0" expanded="false" />
-            <element signature="e#17692#17722#1" expanded="false" />
-            <element signature="e#17801#17890#0" expanded="false" />
-            <element signature="e#17930#18832#0" expanded="false" />
-            <element signature="e#17930#17968#1" expanded="false" />
-            <element signature="e#18046#18779#0" expanded="false" />
-            <element signature="e#18146#18779#0" expanded="false" />
-            <element signature="e#18182#18557#0" expanded="false" />
-            <element signature="e#18600#18779#0" expanded="false" />
-            <element signature="e#18901#19115#0" expanded="false" />
-            <element signature="e#18901#18991#1" expanded="false" />
-            <element signature="e#19146#19771#0" expanded="false" />
-            <element signature="e#19146#19174#1" expanded="false" />
-            <element signature="e#19364#19631#0" expanded="false" />
-            <element signature="e#19658#19771#0" expanded="false" />
-            <element signature="e#19802#19931#0" expanded="false" />
-            <element signature="e#19962#20083#0" expanded="false" />
-            <element signature="e#19962#20003#1" expanded="false" />
-            <element signature="e#20117#22045#0" expanded="false" />
-            <element signature="e#20117#20156#1" expanded="false" />
-            <element signature="e#20289#22045#0" expanded="false" />
-            <element signature="e#20373#22045#0" expanded="false" />
-            <element signature="e#20467#20660#0" expanded="false" />
-            <element signature="e#20712#20874#0" expanded="false" />
-            <element signature="e#20926#21269#0" expanded="false" />
-            <element signature="e#20955#21175#0" expanded="false" />
-            <element signature="e#21321#21483#0" expanded="false" />
-            <element signature="e#21535#21735#0" expanded="false" />
-            <element signature="e#21787#22045#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="418">
+          <caret line="196" column="26" lean-forward="true" selection-start-line="196" selection-start-column="26" selection-end-line="196" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AutoTrade/MyTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="27" column="19" lean-forward="false" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="19" />
+        <state relative-caret-position="603">
+          <caret line="32" column="15" lean-forward="false" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
           <folding>
             <element signature="e#21#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataProcess/LSTM-Demo/Multi-Layer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1408">
+          <caret line="108" column="83" lean-forward="true" selection-start-line="108" selection-start-column="83" selection-end-line="108" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/ProgramData/Anaconda3/Lib/site-packages/pandas/core/generic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="6196" column="12" lean-forward="false" selection-start-line="6196" selection-start-column="12" selection-end-line="6196" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataProcess/History/Pro_With_LSTM.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="110" column="0" lean-forward="false" selection-start-line="110" selection-start-column="0" selection-end-line="122" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataProcess/DailyOpt/Plot_Cow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="21" column="16" lean-forward="false" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataProcess/Av_Trend_Analysis/PreProcessor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataProcess/History/Plot_K.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDK/AveAnalysisSub.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-448">
+          <caret line="408" column="4" lean-forward="false" selection-start-line="408" selection-start-column="4" selection-end-line="408" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataProcess/DailyOpt/DailyOpt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="75" column="13" lean-forward="true" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataProcess/GridTrading/temp3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="e#20#55#0" expanded="true" />
           </folding>
         </state>
       </provider>

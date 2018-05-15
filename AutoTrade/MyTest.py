@@ -23,11 +23,7 @@ trade_hwnd = pywinauto.findwindows.find_windows(top_level_only=False, title=U'äº
 
 trade_window = app.window_(handle=trade_hwnd)
 
-
-
 rect = trade_window
-
-
 
 x = rect.width()  // 8
 y = rect.height() // 2
