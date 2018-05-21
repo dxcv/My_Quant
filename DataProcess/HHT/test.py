@@ -9,7 +9,7 @@ from scipy import fftpack
 
 # 准备数据
 stk_df = get_total_table_data(conn_k,'k300183')
-s = np.array(stk_df.close)[0:100]
+s = np.array(stk_df.close)[100:300]
 x_axis = range(0, len(s))
 
 # 定义信号
@@ -24,9 +24,8 @@ N = IMF.shape[0]+1
 plt.subplot(N+1,1,1)
 plt.plot(x_axis, s, 'r')
 # plt.title("原始数据")
-# plt.xlabel("日期")
 
-# 求取第一个imf的希尔伯特变换
+# 求取第一个imf的希尔伯特变换# plt.xlabel("日期")
 ht = fftpack.hilbert(IMF[0])
 
 plt.subplot(N+1,1,2)
