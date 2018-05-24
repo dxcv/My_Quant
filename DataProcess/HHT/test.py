@@ -9,7 +9,7 @@ from scipy import fftpack
 
 # 准备数据
 stk_df = get_total_table_data(conn_k,'k300183')
-s = np.array(stk_df.close)[100:300]
+s = np.array(stk_df.close)
 x_axis = range(0, len(s))
 
 # 定义信号
