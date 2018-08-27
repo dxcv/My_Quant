@@ -24,6 +24,14 @@ from reportlab.pdfbase.pdfmetrics import stringWidth
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase import pdfmetrics
 
+pdfmetrics.registerFont(TTFont('song', 'SURSONG.TTF'))
+pdfmetrics.registerFont(TTFont('hei', 'SIMHEI.TTF'))
+
+from reportlab.lib import fonts
+fonts.addMapping('song', 0, 0, 'song')
+fonts.addMapping('song', 0, 1, 'song')
+fonts.addMapping('song', 1, 0, 'hei')
+fonts.addMapping('song', 1, 1, 'hei')
 
 
 def addFront(canvas_param, theme, subtitle, pagesize=letter):
