@@ -1,17 +1,22 @@
 # encoding = utf-8
 from General.GlobalSetting import *
 
-'''
-函数功能：输入一个case，得到该case的feature数据
-case_dict的格式为
-        # {"code":***,
-        # "start":***,
-        # "end":***,
-        # "change_ratio":***,
-        # "customer_end_index":***}
-'''
-def get_feature_for_case(case_dic,time_step):
 
+def get_feature_for_case(case_dic,time_step):
+    """
+
+    :param case_dic:
+    :param time_step:
+    :return:
+
+    函数功能：输入一个case，得到该case的feature数据
+    case_dict的格式为
+            # {"code":***,
+            # "start":***,
+            # "end":***,
+            # "change_ratio":***,
+            # "customer_end_index":***}
+    """
     # 获取相应stk的k数据
     df_k = get_total_table_data(conn=conn_k,table_name="k"+case_dic["code"])
 

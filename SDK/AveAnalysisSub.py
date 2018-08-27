@@ -285,7 +285,7 @@ def plot_ave(code_param,ave_df_param,df_all,today_all,save_dir,days,ax_out,title
 
 
 
-    # ----------------------- 画MACD指标 --------------------------------------
+    # ----------------------- 画MACD指标 ----------------------
 
     ax[1, 0].cla()
     df_macd = get_MACD(df_all_head)
