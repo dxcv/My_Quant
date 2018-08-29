@@ -40,6 +40,36 @@ def date_str_std(date_str):
         return date_str_sure
 
 
+
+def convert_time_str_to_second(input_str):
+    """
+    # 将时间转为秒数
+    :param input_str:
+    :return:
+    """
+
+    result = input_str.strip().split(":")
+    if len(result) == 3:
+        h, m, s = result
+        return int(h) * 3600 + int(m) * 60 + int(float(s))
+    elif len(result) == 2:
+        h, m = result
+        return int(h) * 3600 + int(m) * 60
+
+
+def s2t(seconds):
+    """
+    将秒转为字符串形式的时间
+    :param seconds:
+    :return:
+    """
+
+    m, s = divmod(seconds, 60)
+    h, m = divmod(m, 60)
+    return "%02d:%02d:%02d" % (h, m, s)
+
+
+
 # 输入日期，输出季度
 # 输入'2015-03-04'
 # 输出 '201501'
