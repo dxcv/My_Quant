@@ -105,7 +105,7 @@ def ExtractPointFromDf_DateX(df_origin, date_col, y_col):
     #     return df_origin
 
     # 提取时间，并将时间转为秒
-    df_origin['seconds'] = df_origin.apply(lambda x: convert_time_str_to_second(str(x[date_col])[11:19]), axis=1)
+    df_origin['seconds'] = df_origin.apply(lambda x: DateStr2Sec(str(x[date_col])), axis=1)
 
     # 单独取出相应两列，准备转成point格式
     df_part = df_origin.loc[:, ['seconds', y_col]]
@@ -204,11 +204,9 @@ def addAcTemp(canvas_param, opc_df_today,pos_x, pos_y, width, height):
     drawing.add(lp)
     add_legend(draw_obj=drawing, chart=lp, pos_x=10, pos_y=-10)
 
-    try:
-        renderPDF.draw(drawing=drawing, canvas=c, x=pos_x, y=pos_y)
-    except:
-        print('')
-    return c
+    renderPDF.draw(drawing=drawing, canvas=c, x=pos_x, y=pos_y)
+
+
 
 def addMultVoltPageToPdf(canvas_param,
                          volt_list,
@@ -289,3 +287,18 @@ def addMultVoltPageToPdf(canvas_param,
 
     return canvas_param
 
+
+def RPL_Bk_Page(bk_name,days):
+    """
+    函数功能：在pdf中增加bk信息
+    :param bk_name:
+    :param days:        用于指示近期的期限，比如近30天
+    :return:
+    """
+
+    sh_index = ts.get_hist_data(bk_name)
+    sh_index['date'] = sh_index.index
+    sh_index = sh_index.reset_index(drop=True)
+
+    # 从数据中提取close及均线
+    close = ExtractPointFromDf_DateX(sh_index,'date', 'close')

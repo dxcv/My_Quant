@@ -9,8 +9,6 @@ import math
 :return         datetime string format as:'2017-09-12 12:23:41'
 '''
 
-
-
 # 转换操作
 def convert_datetime_to_str(datetime_param):
     return datetime.date.strftime(datetime_param, '%Y-%m-%d %H:%M:%S')
@@ -30,7 +28,6 @@ def convert_str_to_date(date_str):
     else:
         return datetime.datetime.strptime(date_str, '%Y-%m-%d').date()
 
-
 def date_str_std(date_str):
 
     date_str_sure = '%s' %date_str
@@ -38,8 +35,6 @@ def date_str_std(date_str):
         return convert_date_to_str(datetime.datetime.strptime(date_str_sure, '%Y%m%d').date())
     else:
         return date_str_sure
-
-
 
 def convert_time_str_to_second(input_str):
     """
@@ -56,7 +51,6 @@ def convert_time_str_to_second(input_str):
         h, m = result
         return int(h) * 3600 + int(m) * 60
 
-
 def s2t(seconds):
     """
     将秒转为字符串形式的时间
@@ -68,6 +62,32 @@ def s2t(seconds):
     h, m = divmod(m, 60)
     return "%02d:%02d:%02d" % (h, m, s)
 
+def DatetimeStr2Sec(s):
+
+    '''
+    convert a ISO format time to second
+    from:2006-04-12 16:46:40 to:23123123
+    把一个时间转化为秒
+    '''
+
+    d=datetime.datetime.strptime(s,"%Y-%m-%d %H:%M:%S")
+    return time.mktime(d.timetuple())
+
+
+def DateStr2Sec(s):
+    d=datetime.datetime.strptime(s,"%Y-%m-%d")
+    return time.mktime(d.timetuple())
+
+
+def Sec2Datetime(s):
+
+    '''
+    convert second to a ISO format time
+    from: 23123123 to: 2006-04-12 16:46:40
+    把给定的秒转化为定义的格式
+    '''
+
+    return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(float(s)))
 
 
 # 输入日期，输出季度
