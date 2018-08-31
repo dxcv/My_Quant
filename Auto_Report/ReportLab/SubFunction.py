@@ -71,6 +71,7 @@ def add_legend(draw_obj, chart, pos_x, pos_y):
     legend = Legend()
     legend.alignment = 'right'
     legend.fontName = 'song'
+    legend.columnMaximum = 2
     legend.x = pos_x
     legend.y = pos_y
     legend.colorNamePairs = Auto(obj=chart)
@@ -288,9 +289,123 @@ def addMultVoltPageToPdf(canvas_param,
     return canvas_param
 
 
-def RPL_Bk_Page(bk_name,days):
+def genLPDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25):
     """
-    函数功能：在pdf中增加bk信息
+    函数功能：生成Drawing之用
+    :return:
+    """
+
+    drawing = Drawing(width=width, height=height)
+
+    lp = LinePlot()
+    # lp.x = 50
+    # lp.y = 50
+    lp.height = height
+    lp.width = width
+    lp.data = data
+    lp.joinedLines = 1
+
+    # 定义颜色集
+    barFillColors = [
+        colors.red, colors.green, colors.blue, colors.darkgoldenrod,
+        colors.pink, colors.purple, colors.lightgreen, colors.darkblue, colors.lightyellow,
+        colors.fidred, colors.greenyellow, colors.gray, colors.white,colors.blueviolet, colors.lightgoldenrodyellow]
+
+    for i in range(0, len(data)):
+        lp.lines[i].name = data_note[i]
+        lp.lines[i].symbol = makeMarker('FilledCircle', size=1)
+        lp.lines[i].strokeWidth = 0.5
+        lp.lines[i].strokeColor = barFillColors[i]
+
+    # lp.lineLabelFormat = '%2.0f'
+    # lp.strokeColor = colors.black
+
+    x_min = data[0][0][0]
+    x_max = data[0][-1][0]
+
+    lp.xValueAxis.valueMin = x_min
+    lp.xValueAxis.valueMax = x_max
+
+    step = int(((x_max - x_min) / (60 * 60 * 24)) / 30) + 1
+
+    lp.xValueAxis.valueSteps = [n for n in range(int(x_min), int(x_max), 60 * 60 * 24 * step)]
+    lp.xValueAxis.labelTextFormat = lambda x: str(Sec2Datetime(x)[0:10])
+    lp.xValueAxis.labels.angle = 90
+    lp.xValueAxis.labels.fontSize = 6
+    lp.xValueAxis.labels.dy = -18
+    # lp.yValueAxis.valueMin = 90
+    # lp.yValueAxis.valueMax = 50
+    # lp.yValueAxis.valueSteps = [1, 2, 3, 5, 6]
+    drawing.add(lp)
+    add_legend(draw_obj=drawing, chart=lp, pos_x=10, pos_y=-20)
+
+    return drawing
+
+
+def genBarDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25):
+    """
+    函数功能：生成Drawing之用
+    :return:
+    """
+    data_value = list(map(lambda x:x[1],data))
+
+    data_finale = [tuple(data_value)]
+
+    drawing = Drawing(width=width, height=height)
+
+
+    bc = VerticalBarChart()
+
+    # bc.x = 50
+    # bc.y = 50
+    # bc.height = 125
+    bc.width = width
+    bc.data = data_finale
+    # bc.valueAxis.valueMin = 0
+    bc.barSpacing = 0
+
+    # bc.valueAxis.valueMax = 50
+    # bc.valueAxis.valueStep = 10
+    # bc.categoryAxis.style = 'stacked'
+    bc.categoryAxis.labels.boxAnchor = 'ne'
+    bc.categoryAxis.labels.dx = 8
+    bc.categoryAxis.labels.dy = -2
+    bc.categoryAxis.labels.angle = 30
+
+    barFillColors = [
+        colors.red, colors.green, colors.white, colors.blue, colors.yellow,
+        colors.pink, colors.purple, colors.lightgreen, colors.darkblue, colors.lightyellow,
+        colors.fidred, colors.greenyellow, colors.gray, colors.blueviolet, colors.lightgoldenrodyellow]
+
+    for i in range(len(data_finale)):
+        bc.bars[i].name = data_note[i]
+
+        # 最多只支持15种颜色，多出的设置为红色
+        if i < 15:
+            bc.bars[i].fillColor = barFillColors[i]
+        else:
+            bc.bars[i].fillColor = colors.red
+
+    # x_min = data[0][0]
+    # x_max = data[-1][0]
+
+    # bc.xValueAxis.valueMin = x_min
+    # lp.xValueAxis.valueMax = x_max
+
+    # step = int(((x_max - x_min) / (60 * 60 * 24)) / 15) + 1
+
+    # bc.categoryAxis.categoryNames = [str(Sec2Datetime(x))[0:10] for x in range(int(x_min), int(x_max), 60 * 60 * 24 * step)]
+
+    drawing.add(bc)
+
+    # 增加legend
+    # add_legend(drawing, bc, pos_x=10, pos_y=-10)
+
+    return drawing
+
+def RPL_Bk_Page(canvas_para,bk_name,days):
+    """
+    函数功能：在pdf中增加bk信息，篇幅为一整页，或者更多，以页为单位
     :param bk_name:
     :param days:        用于指示近期的期限，比如近30天
     :return:
@@ -302,3 +417,15 @@ def RPL_Bk_Page(bk_name,days):
 
     # 从数据中提取close及均线
     close = ExtractPointFromDf_DateX(sh_index,'date', 'close')
+    m5 = ExtractPointFromDf_DateX(sh_index, 'date', 'ma5')
+    m10 = ExtractPointFromDf_DateX(sh_index, 'date', 'ma10')
+    m20 = ExtractPointFromDf_DateX(sh_index, 'date', 'ma20')
+
+    data = [tuple(close), tuple(m5), tuple(m10), tuple(m20)]
+    data_name = ['close', 'm5', 'm10', 'm20']
+
+    # 生成折线图
+    drawing = genLPDrawing(data=data, data_note=data_name)
+
+    # 将折线图添加到pdf中
+    renderPDF.draw(drawing=drawing,canvas=canvas_para,x=100,y=letter[1]*0.75)
