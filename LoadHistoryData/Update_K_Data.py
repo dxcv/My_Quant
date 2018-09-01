@@ -75,11 +75,8 @@ def update_index_K_data():
         update_single_stk_k_data(conn_param=conn_k, k_database_name=stk_k_data_db_name, stk_code_param=b_ele)
 
 
-
-
 # ---------------------------- 测试代码 -------------------------------------------------
-# update_K_data
-# update_index_K_data()
+# update_K_data()
 
 
 

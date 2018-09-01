@@ -105,5 +105,5 @@ for i in range(1000):
 images=mnist.test.images
 labels=mnist.test.labels
 
-print ("test accuracy %g"% sess.run(accuracy, feed_dict={
+print("test accuracy %g"% sess.run(accuracy, feed_dict={
     _X: images, y: labels, keep_prob: 1.0, batch_size:mnist.test.images.shape[0]}))
