@@ -2,76 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="896adcb0-ebf9-46de-b308-2037e19c4258" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/BasicAnalysis/Gen_Label.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/DailyOpt/DailyOpt.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/DailyOpt/Plot_Cow.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/DailyOpt/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/History/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/IndexAnalysis/KDJ/Demo.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/IndexAnalysis/KDJ/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/IndexAnalysis/MACD/DEMO.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/IndexAnalysis/MACD/DataPrepareSub.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/IndexAnalysis/MACD/LSTM-MACD.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/IndexAnalysis/MACD/LSTM_Class.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/IndexAnalysis/MACD/Model/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/IndexAnalysis/MACD/Predict.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/IndexAnalysis/MACD/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/IndexAnalysis/MACD_Analysis/Macd_Plot_All.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/IndexAnalysis/MACD_Analysis/Plot_Concent.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/IndexAnalysis/MACD_Analysis/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/IndexAnalysis/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/LSTM-Demo/DataPrepare.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/LSTM-Demo/Multi-Layer.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/LSTM-Demo/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/RelativeChangeStrategy/Data/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/RelativeChangeStrategy/DataPrepare.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/RelativeChangeStrategy/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/Scikit-Learn/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/Scikit-Learn/randomForest-test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/Wavelet_test/DataPrepare.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/Wavelet_test/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DataProcess/Wavelet_test/wavelet_test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/LoadHistoryData/Update_Industry_Classified.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/MultiTactics/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/MultiTactics/test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SDK/IndustrySub.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SDK/MACD_Sub.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SDK/RelativeChangeStrategySub.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SDK/WaveLet.py" />
-      <change beforePath="$PROJECT_DIR$/.idea/DataLoad-Tushare.iml" afterPath="$PROJECT_DIR$/.idea/DataLoad-Tushare.iml" />
-      <change beforePath="$PROJECT_DIR$/DataProcess/Ave_Lstm_Process.py" afterPath="$PROJECT_DIR$/DataProcess/History/Ave_Lstm_Process.py" />
-      <change beforePath="$PROJECT_DIR$/DataProcess/Ave_bk_Analysis.py" afterPath="$PROJECT_DIR$/DataProcess/History/Ave_bk_Analysis.py" />
-      <change beforePath="$PROJECT_DIR$/DataProcess/BasicAnalysis/DataPrePare.py" afterPath="$PROJECT_DIR$/DataProcess/BasicAnalysis/DataPrePare.py" />
-      <change beforePath="$PROJECT_DIR$/DataProcess/BasicAnalysis/K_Quarter_Data.py" afterPath="$PROJECT_DIR$/DataProcess/BasicAnalysis/K_Quarter_Data.py" />
-      <change beforePath="$PROJECT_DIR$/DataProcess/CNNClassify/CNNprediction.py" afterPath="$PROJECT_DIR$/DataProcess/CNNClassify/CNNprediction.py" />
-      <change beforePath="$PROJECT_DIR$/DataProcess/CNNClassify/DataPrePare.py" afterPath="$PROJECT_DIR$/DataProcess/CNNClassify/DataPrePare.py" />
-      <change beforePath="$PROJECT_DIR$/DataProcess/DailyOpt.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/DataProcess/Find_LowPot.py" afterPath="$PROJECT_DIR$/DataProcess/History/Find_LowPot.py" />
-      <change beforePath="$PROJECT_DIR$/DataProcess/Find_Special_Case.py" afterPath="$PROJECT_DIR$/DataProcess/History/Find_Special_Case.py" />
-      <change beforePath="$PROJECT_DIR$/DataProcess/IndustryAnalysis/IndustryData.py" afterPath="$PROJECT_DIR$/DataProcess/IndustryAnalysis/IndustryData.py" />
-      <change beforePath="$PROJECT_DIR$/DataProcess/M2.py" afterPath="$PROJECT_DIR$/DataProcess/History/M2.py" />
-      <change beforePath="$PROJECT_DIR$/DataProcess/Plot_K.py" afterPath="$PROJECT_DIR$/DataProcess/History/Plot_K.py" />
-      <change beforePath="$PROJECT_DIR$/DataProcess/Plot_PPI.py" afterPath="$PROJECT_DIR$/DataProcess/History/Plot_PPI.py" />
-      <change beforePath="$PROJECT_DIR$/DataProcess/Plot_Tick.py" afterPath="$PROJECT_DIR$/DataProcess/History/Plot_Tick.py" />
-      <change beforePath="$PROJECT_DIR$/DataProcess/Prepare_Study_Data.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/DataProcess/Pro_With_LSTM.py" afterPath="$PROJECT_DIR$/DataProcess/History/Pro_With_LSTM.py" />
-      <change beforePath="$PROJECT_DIR$/DataProcess/RFFilter.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/DataProcess/Tick_Data_Pro.py" afterPath="$PROJECT_DIR$/DataProcess/History/Tick_Data_Pro.py" />
-      <change beforePath="$PROJECT_DIR$/DataProcess/plot_case.py" afterPath="$PROJECT_DIR$/DataProcess/History/plot_case.py" />
-      <change beforePath="$PROJECT_DIR$/DataProcess/process_case_with_lstm.py" afterPath="$PROJECT_DIR$/DataProcess/History/process_case_with_lstm.py" />
-      <change beforePath="$PROJECT_DIR$/General/GlobalSetting.py" afterPath="$PROJECT_DIR$/General/GlobalSetting.py" />
-      <change beforePath="$PROJECT_DIR$/LoadHistoryData/Update_K_Data.py" afterPath="$PROJECT_DIR$/LoadHistoryData/Update_K_Data.py" />
-      <change beforePath="$PROJECT_DIR$/LoadHistoryData/Update_stk_info_Data.py" afterPath="$PROJECT_DIR$/LoadHistoryData/Update_Stk_Info_Data.py" />
-      <change beforePath="$PROJECT_DIR$/SDK/AveAnalysisSub.py" afterPath="$PROJECT_DIR$/SDK/AveAnalysisSub.py" />
-      <change beforePath="$PROJECT_DIR$/SDK/BKSub.py" afterPath="$PROJECT_DIR$/SDK/BKSub.py" />
-      <change beforePath="$PROJECT_DIR$/SDK/BasicAnalysisSub.py" afterPath="$PROJECT_DIR$/SDK/BasicAnalysisSub.py" />
-      <change beforePath="$PROJECT_DIR$/SDK/CNNClass2.py" afterPath="$PROJECT_DIR$/SDK/CNNClass2.py" />
-      <change beforePath="$PROJECT_DIR$/SDK/DBOpt.py" afterPath="$PROJECT_DIR$/SDK/DBOpt.py" />
-      <change beforePath="$PROJECT_DIR$/SDK/FileOptSub.py" afterPath="$PROJECT_DIR$/SDK/FileOptSub.py" />
-      <change beforePath="$PROJECT_DIR$/SDK/MyTimeOPT.py" afterPath="$PROJECT_DIR$/SDK/MyTimeOPT.py" />
-      <change beforePath="$PROJECT_DIR$/SDK/PlotOptSub.py" afterPath="$PROJECT_DIR$/SDK/PlotOptSub.py" />
-      <change beforePath="$PROJECT_DIR$/SDK/SDKHeader.py" afterPath="$PROJECT_DIR$/SDK/SDKHeader.py" />
-      <change beforePath="$PROJECT_DIR$/SDK/lstm_class.py" afterPath="$PROJECT_DIR$/SDK/LSTM_Class.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Auto_Report/ReprotLab/SURSONG.TTF" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Auto_Report/ReprotLab/RPT_Subfunction.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Auto_Report/ReprotLab/Test/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Auto_Report/ReprotLab/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MultiTactics/test1.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MultiTactics/test.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/DataLoad-Tushare.iml" afterPath="$PROJECT_DIR$/.idea/DataLoad-Tushare.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Auto_Report/__init__.py" afterPath="$PROJECT_DIR$/Auto_Report/ReprotLab/Test/StockTest.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -83,82 +23,35 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="DataLoad-Tushare" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DailyOpt.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataProcess/DailyOpt/DailyOpt.py">
+      <file leaf-file-name="RPT_Subfunction.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Auto_Report/ReprotLab/RPT_Subfunction.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="836">
-              <caret line="46" column="23" lean-forward="false" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="M2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataProcess/History/M2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="76">
+              <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding>
-                <element signature="e#17#48#0" expanded="true" />
+                <element signature="e#20#41#1" expanded="false" />
+                <element signature="e#635#665#0" expanded="false" />
+                <element signature="e#1406#1567#1" expanded="false" />
+                <element signature="e#2096#2389#0" expanded="false" />
+                <element signature="e#2096#2196#1" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Plot_Cow.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataProcess/DailyOpt/Plot_Cow.py">
+      <file leaf-file-name="StockTest.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Auto_Report/ReprotLab/Test/StockTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state relative-caret-position="532">
+              <caret line="31" column="19" lean-forward="false" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
               <folding>
-                <element signature="e#20#55#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AveAnalysisSub.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SDK/AveAnalysisSub.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="836">
-              <caret line="145" column="7" lean-forward="false" selection-start-line="145" selection-start-column="7" selection-end-line="145" selection-end-column="7" />
-              <folding>
-                <element signature="e#347#1507#0" expanded="false" />
-                <element signature="e#347#505#1" expanded="false" />
-                <element signature="e#874#963#0" expanded="false" />
-                <element signature="e#1262#1507#0" expanded="false" />
-                <element signature="e#1573#1938#0" expanded="false" />
-                <element signature="e#1573#1701#1" expanded="false" />
-                <element signature="e#2013#2405#0" expanded="false" />
-                <element signature="e#2013#2159#1" expanded="false" />
-                <element signature="e#2472#3714#0" expanded="false" />
-                <element signature="e#2472#2600#1" expanded="false" />
-                <element signature="e#3038#3063#0" expanded="false" />
-                <element signature="e#3777#3906#1" expanded="false" />
-                <element signature="e#4264#4382#0" expanded="false" />
-                <element signature="e#4579#4720#1" expanded="false" />
-                <element signature="e#4947#5086#0" expanded="false" />
-                <element signature="e#5233#5476#1" expanded="false" />
-                <element signature="e#13479#13748#0" expanded="false" />
-                <element signature="e#13479#13564#1" expanded="false" />
-                <element signature="e#13626#13726#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/MultiTactics/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="66" column="27" lean-forward="true" selection-start-line="66" selection-start-column="27" selection-end-line="66" selection-end-column="27" />
-              <folding>
-                <element signature="e#20#40#0" expanded="true" />
+                <element signature="e#22#57#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -196,12 +89,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/DataProcess/BasicAnalysis/RD_Pro.py" />
-        <option value="$PROJECT_DIR$/DataProcess/Scikit-Learn/randomForest-test.py" />
-        <option value="$PROJECT_DIR$/LoadHistoryData/Update_Days_All_Data.py" />
-        <option value="$PROJECT_DIR$/SDK/IndustrySub.py" />
-        <option value="$PROJECT_DIR$/DataProcess/BasicAnalysis/K_Quarter_Data.py" />
-        <option value="$PROJECT_DIR$/DataProcess/BasicAnalysis/Data_merge.py" />
         <option value="$PROJECT_DIR$/DataProcess/wavelet_test.py" />
         <option value="$PROJECT_DIR$/DataProcess/CNNClassify/DataPrePare.py" />
         <option value="$PROJECT_DIR$/DataProcess/Wavelet_test/DataPrepare.py" />
@@ -247,14 +134,20 @@
         <option value="$PROJECT_DIR$/DataProcess/DailyOpt/DailyOpt.py" />
         <option value="$PROJECT_DIR$/SDK/AveAnalysisSub.py" />
         <option value="$PROJECT_DIR$/MultiTactics/test.py" />
+        <option value="$PROJECT_DIR$/MultiTactics/test1.py" />
+        <option value="$PROJECT_DIR$/Auto_Report/ReportLab/demo1.py" />
+        <option value="$PROJECT_DIR$/Auto_Report/ReportLab.py" />
+        <option value="$PROJECT_DIR$/Auto_Report/JZ_Volt_Destribute/Report/RPT_Subfunction.py" />
+        <option value="$PROJECT_DIR$/Auto_Report/ReprotLab/Test/StockTest.py" />
+        <option value="$PROJECT_DIR$/Auto_Report/ReprotLab/RPT_Subfunction.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="191" />
-    <option name="y" value="250" />
-    <option name="width" value="1022" />
-    <option name="height" value="766" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -293,62 +186,122 @@
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
-          <expand>
-            <path>
-              <item name="DataLoad-Tushare" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DataLoad-Tushare" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DataLoad-Tushare" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DataLoad-Tushare" type="462c0819:PsiDirectoryNode" />
-              <item name="DataProcess" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DataLoad-Tushare" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DataLoad-Tushare" type="462c0819:PsiDirectoryNode" />
-              <item name="General" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DataLoad-Tushare" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DataLoad-Tushare" type="462c0819:PsiDirectoryNode" />
-              <item name="LoadHistoryData" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DataLoad-Tushare" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DataLoad-Tushare" type="462c0819:PsiDirectoryNode" />
-              <item name="MultiTactics" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DataLoad-Tushare" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DataLoad-Tushare" type="462c0819:PsiDirectoryNode" />
-              <item name="SDK" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="My_Quant" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="My_Quant" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="My_Quant" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="My_Quant" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MultiTactics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="My_Quant" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="My_Quant" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="General" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="My_Quant" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="My_Quant" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Auto_Report" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="My_Quant" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="My_Quant" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Auto_Report" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ReprotLab" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="My_Quant" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="My_Quant" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Auto_Report" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ReprotLab" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
-    <property name="last_opened_file_path" value="F:/智能照明SPARK/代码部分/主枝代码/AI-python" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="SearchEverywhereHistoryKey" value="&#9;null&#9;null" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\MYAI\My_Quant\Auto_Report\ReprotLab" />
+      <recent name="F:\MYAI\My_Quant\Auto_Report\JZ_Volt_Destribute\Report" />
+      <recent name="F:\MYAI\My_Quant\Auto_Report\JZ_Volt_Destribute" />
+      <recent name="F:\MYAI\My_Quant\Auto_Report" />
+      <recent name="F:\MYAI\My_Quant\Auto_Report\ReportLab\Global" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\MYAI\Code\master\python_preject\DataLoad-Tushare\DataProcess\History" />
       <recent name="F:\MYAI\Code\master\python_preject\DataLoad-Tushare\DataProcess\DailyOpt" />
       <recent name="F:\MYAI\Code\master\python_preject\DataLoad-Tushare\DataProcess\IndexAnalysis" />
       <recent name="F:\MYAI\DataLoad-Tushare\DataProcess\RelativeChangeStrategy\Data" />
       <recent name="F:\MYAI\DataLoad-Tushare\DataProcess\Wavelet_test" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\MYAI\Code\master\python_preject\DataLoad-Tushare\DataProcess\CNNClassify\test" />
-      <recent name="F:\MYAI\Code\master\python_preject\DataLoad-Tushare" />
-      <recent name="F:\MYAI\Code\master\python_preject\DataLoad-Tushare\DataProcess\CNNClassify" />
-      <recent name="F:\MYAI\Code\master\python_preject\DataLoad-Tushare\SDK" />
-      <recent name="F:\MYAI\Code\master\python_preject\DataLoad-Tushare\General" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -363,8 +316,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test">
-    <configuration name="DailyOpt (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.demo1">
+    <configuration default="false" name="DailyOpt (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -379,46 +332,9 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DataProcess/DailyOpt/DailyOpt.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
+      <method />
     </configuration>
-    <configuration name="Demo" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DataProcess/IndexAnalysis/KDJ" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="DataLoad-Tushare" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DataProcess/IndexAnalysis/KDJ/Demo.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="M2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DataProcess/History" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="DataLoad-Tushare" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DataProcess/History/M2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="Plot_Cow" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="Plot_Cow" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -433,10 +349,9 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DataProcess/DailyOpt/Plot_Cow.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
+      <method />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -451,8 +366,41 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MultiTactics/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MultiTactics" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="DataLoad-Tushare" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MultiTactics/test1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="demo1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Auto_Report/ReportLab" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="DataLoad-Tushare" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Auto_Report/ReportLab/demo1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -589,19 +537,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.Demo" />
-      <item index="1" class="java.lang.String" itemvalue="Python.DailyOpt (1)" />
-      <item index="2" class="java.lang.String" itemvalue="Python.M2" />
-      <item index="3" class="java.lang.String" itemvalue="Python.Plot_Cow" />
-      <item index="4" class="java.lang.String" itemvalue="Python.test" />
+      <item index="0" class="java.lang.String" itemvalue="Python.DailyOpt (1)" />
+      <item index="1" class="java.lang.String" itemvalue="Python.Plot_Cow" />
+      <item index="2" class="java.lang.String" itemvalue="Python.test" />
+      <item index="3" class="java.lang.String" itemvalue="Python.test1" />
+      <item index="4" class="java.lang.String" itemvalue="Python.demo1" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.test" />
-        <item index="1" class="java.lang.String" itemvalue="Python.DailyOpt (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Plot_Cow" />
-        <item index="3" class="java.lang.String" itemvalue="Python.M2" />
-        <item index="4" class="java.lang.String" itemvalue="Python.Demo" />
+        <item index="0" class="java.lang.String" itemvalue="Python.demo1" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test1" />
+        <item index="2" class="java.lang.String" itemvalue="Python.test" />
+        <item index="3" class="java.lang.String" itemvalue="Python.DailyOpt (1)" />
+        <item index="4" class="java.lang.String" itemvalue="Python.Plot_Cow" />
       </list>
     </recent_temporary>
   </component>
@@ -639,25 +587,26 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17597471" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19345239" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.228125" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31336406" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.59583336" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20729166" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14211309" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40416667" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.375" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1904762" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31336406" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.396875" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32214764" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53945374" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -692,14 +641,6 @@
               </option>
               <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
                 <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
               </option>
             </State>
           </value>
@@ -849,87 +790,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.PyCharmCE2017.3/system/python_stubs/1412029153/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="339" column="54" lean-forward="false" selection-start-line="339" selection-start-column="41" selection-end-line="339" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LoadHistoryData/Update_Growth_Data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-150">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LoadHistoryData/Update_Basic_Data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-549">
-          <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LoadHistoryData/Update_K_Data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-38">
-          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LoadHistoryData/Update_Industry_Classified.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="96" lean-forward="true" selection-start-line="13" selection-start-column="96" selection-end-line="13" selection-end-column="96" />
-          <folding>
-            <element signature="e#19#54#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/随机森林分段问题测试/2017.8.19.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="316" column="0" lean-forward="false" selection-start-line="316" selection-start-column="0" selection-end-line="316" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/ProgramData/Anaconda3/Lib/site-packages/pymysql/connections.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="862">
-          <caret line="1034" column="0" lean-forward="true" selection-start-line="1034" selection-start-column="0" selection-end-line="1034" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataProcess/Av_Trend_Analysis/PreProcessor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="23" column="32" lean-forward="true" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataProcess/Av_Trend_Analysis/Gen_Graph.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataProcess/RelativeChangeStrategy/DataPro.py" />
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="1667" column="0" lean-forward="false" selection-start-line="1667" selection-start-column="0" selection-end-line="1667" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataProcess/Wavelet_test/DataPrepare.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SDK/SDKHeader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -1099,7 +959,7 @@
         <state relative-caret-position="2156">
           <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
           <folding>
-            <element signature="e#20#55#0" expanded="true" />
+            <element signature="e#20#55#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1161,68 +1021,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataProcess/DailyOpt/DailyOpt.py">
+    <entry file="file://$PROJECT_DIR$/SDK/AveAnalysisSub.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="46" column="23" lean-forward="false" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataProcess/History/M2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="e#17#48#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="460">
+          <caret line="145" column="7" lean-forward="false" selection-start-line="145" selection-start-column="7" selection-end-line="145" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DataProcess/DailyOpt/Plot_Cow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
+        <state relative-caret-position="247">
           <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataProcess/History/M2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataProcess/DailyOpt/DailyOpt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="46" column="23" lean-forward="false" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultiTactics/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultiTactics/test.py" />
+    <entry file="file://$PROJECT_DIR$/MultiTactics/test1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="44" lean-forward="false" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/demo1.py" />
+    <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/RPT_Subfunction.py" />
+    <entry file="file://$PROJECT_DIR$/Auto_Report/JZ_Volt_Destribute/Global/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/VoltClass.py" />
+    <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab.py" />
+    <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/Global/DownLoadMeterInfo.py" />
+    <entry file="file://$PROJECT_DIR$/Auto_Report/JZ_Volt_Destribute/Report/Test/MyOutLine.py" />
+    <entry file="file://$PROJECT_DIR$/Auto_Report/JZ_Volt_Destribute/Report/RPT_Subfunction.py" />
+    <entry file="file://$PROJECT_DIR$/Auto_Report/ReprotLab/Test/StockTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="31" column="19" lean-forward="false" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
           <folding>
-            <element signature="e#20#55#0" expanded="true" />
+            <element signature="e#22#57#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SDK/AveAnalysisSub.py">
+    <entry file="file://$PROJECT_DIR$/Auto_Report/ReprotLab/RPT_Subfunction.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="145" column="7" lean-forward="false" selection-start-line="145" selection-start-column="7" selection-end-line="145" selection-end-column="7" />
+        <state relative-caret-position="76">
+          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding>
-            <element signature="e#347#1507#0" expanded="false" />
-            <element signature="e#347#505#1" expanded="false" />
-            <element signature="e#874#963#0" expanded="false" />
-            <element signature="e#1262#1507#0" expanded="false" />
-            <element signature="e#1573#1938#0" expanded="false" />
-            <element signature="e#1573#1701#1" expanded="false" />
-            <element signature="e#2013#2405#0" expanded="false" />
-            <element signature="e#2013#2159#1" expanded="false" />
-            <element signature="e#2472#3714#0" expanded="false" />
-            <element signature="e#2472#2600#1" expanded="false" />
-            <element signature="e#3038#3063#0" expanded="false" />
-            <element signature="e#3777#3906#1" expanded="false" />
-            <element signature="e#4264#4382#0" expanded="false" />
-            <element signature="e#4579#4720#1" expanded="false" />
-            <element signature="e#4947#5086#0" expanded="false" />
-            <element signature="e#5233#5476#1" expanded="false" />
-            <element signature="e#13479#13748#0" expanded="false" />
-            <element signature="e#13479#13564#1" expanded="false" />
-            <element signature="e#13626#13726#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MultiTactics/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="66" column="27" lean-forward="true" selection-start-line="66" selection-start-column="27" selection-end-line="66" selection-end-column="27" />
-          <folding>
-            <element signature="e#20#40#0" expanded="true" />
+            <element signature="e#20#41#1" expanded="false" />
+            <element signature="e#635#665#0" expanded="false" />
+            <element signature="e#1406#1567#1" expanded="false" />
+            <element signature="e#2096#2389#0" expanded="false" />
+            <element signature="e#2096#2196#1" expanded="false" />
           </folding>
         </state>
       </provider>
