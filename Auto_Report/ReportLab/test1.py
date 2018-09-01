@@ -35,6 +35,21 @@ sh_index = sh_index.sort_values(by='date',ascending=True)
 sh_index['MACD'],sh_index['MACDsignal'],sh_index['MACDhist'] = talib.MACD(sh_index.close,
                             fastperiod=12, slowperiod=26, signalperiod=9)
 
+# 在原始数据中增加kdj信息
+sh_index['slowk'], sh_index['slowd'] = talib.STOCH(sh_index.high,
+                                                   sh_index.low,
+                                                   sh_index.close,
+                                                   fastk_period=9,
+                                                   slowk_period=3,
+                                                   slowk_matype=0,
+                                                   slowd_period=3,
+                                                   slowd_matype=0)
+
+# 添加rsi信息
+sh_index['RSI5'] = talib.RSI(sh_index.close, timeperiod=5)
+sh_index['RSI12'] = talib.RSI(sh_index.close, timeperiod=12)
+sh_index['RSI30'] = talib.RSI(sh_index.close, timeperiod=30)
+
 sh_index = sh_index.dropna(axis=0,how='any')
 
 close = ExtractPointFromDf_DateX(sh_index, 'date', 'close')
@@ -51,7 +66,22 @@ drawing_ave = genLPDrawing(data=data, data_note=data_name)
 renderPDF.draw(drawing=drawing_ave, canvas=c, x=10, y=height * 0.7)
 
 drawing_macd = genBarDrawing(data=macd, data_note=['macd'])
-renderPDF.draw(drawing=drawing_macd, canvas=c, x=10, y=height*0.55)
+renderPDF.draw(drawing=drawing_macd, canvas=c, x=10, y=height*0.5)
+
+
+
+# 整理kdj信息
+slowk = ExtractPointFromDf_DateX(sh_index, 'date', 'slowk')
+slowd = ExtractPointFromDf_DateX(sh_index, 'date', 'slowd')
+data_kdj = [tuple(slowk),tuple(slowd)]
+data_kdj_note = ['k','d']
+
+drawing_kdj = genLPDrawing(data=data_kdj, data_note=data_kdj_note,height=letter[1]*0.15)
+renderPDF.draw(drawing=drawing_kdj, canvas=c, x=10, y=height * 0.35)
+
+# 画图RSI信息
+
+
 
 
 c.showPage()
