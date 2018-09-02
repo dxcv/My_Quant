@@ -18,71 +18,136 @@ page_n = 1
 # 增加封面
 c = addFront(canvas_param=c, theme='每日报告测试', subtitle='大中华民国一百零七年八月')
 
-#
+# ========================================= 开始画大盘图 =====================================
 c.bookmarkPage("P" + str(page_n))
-c.addOutlineEntry('上证', "P" + str(page_n), closed=1)
+c.addOutlineEntry('大盘', "P" + str(page_n), closed=1,level=0)
 page_n += 1
 
-# 具体画图
-sh_index = ts.get_hist_data('cyb')
-sh_index['date'] = sh_index.index
-sh_index = sh_index.reset_index(drop=True)
+c.bookmarkPage("P" + str(page_n))
+c.addOutlineEntry('上证指数', "P" + str(page_n), closed=1,level=1)
 
-# 按时间降序排序，方便计算macd
-sh_index = sh_index.sort_values(by='date',ascending=True)
+c.setFont("song", 10)
+c.drawString(10, letter[1] - 20, '上证指数')
+c.setLineWidth(3)
+c.line(10, letter[1] - 24, letter[0] - 10, letter[1] - 24)
+c = RPL_Bk_Page(c,'sh')
+page_n += 1
 
-# 在原始df中增加macd信息
-sh_index['MACD'],sh_index['MACDsignal'],sh_index['MACDhist'] = talib.MACD(sh_index.close,
-                            fastperiod=12, slowperiod=26, signalperiod=9)
 
-# 在原始数据中增加kdj信息
-sh_index['slowk'], sh_index['slowd'] = talib.STOCH(sh_index.high,
-                                                   sh_index.low,
-                                                   sh_index.close,
-                                                   fastk_period=9,
-                                                   slowk_period=3,
-                                                   slowk_matype=0,
-                                                   slowd_period=3,
-                                                   slowd_matype=0)
+c.bookmarkPage("P" + str(page_n))
+c.addOutlineEntry('深证指数', "P" + str(page_n), closed=1,level=1)
 
-# 添加rsi信息
-sh_index['RSI5'] = talib.RSI(sh_index.close, timeperiod=5)
-sh_index['RSI12'] = talib.RSI(sh_index.close, timeperiod=12)
-sh_index['RSI30'] = talib.RSI(sh_index.close, timeperiod=30)
-
-sh_index = sh_index.dropna(axis=0,how='any')
-
-close = ExtractPointFromDf_DateX(sh_index, 'date', 'close')
-m5 = ExtractPointFromDf_DateX(sh_index, 'date', 'ma5')
-m10 = ExtractPointFromDf_DateX(sh_index, 'date', 'ma10')
-m20 = ExtractPointFromDf_DateX(sh_index, 'date', 'ma20')
-
-macd = ExtractPointFromDf_DateX(sh_index, 'date', 'MACD')
-
-data = [tuple(close),tuple(m5),tuple(m10),tuple(m20)]
-data_name = ['close','m5','m10','m20']
-
-drawing_ave = genLPDrawing(data=data, data_note=data_name)
-renderPDF.draw(drawing=drawing_ave, canvas=c, x=10, y=height * 0.7)
-
-drawing_macd = genBarDrawing(data=macd, data_note=['macd'])
-renderPDF.draw(drawing=drawing_macd, canvas=c, x=10, y=height*0.5)
+c.setFont("song", 10)
+c.drawString(10, letter[1] - 20, '深证指数')
+c.setLineWidth(3)
+c.line(10, letter[1] - 24, letter[0] - 10, letter[1] - 24)
+c = RPL_Bk_Page(c,'sz')
+page_n += 1
 
 
 
-# 整理kdj信息
-slowk = ExtractPointFromDf_DateX(sh_index, 'date', 'slowk')
-slowd = ExtractPointFromDf_DateX(sh_index, 'date', 'slowd')
-data_kdj = [tuple(slowk),tuple(slowd)]
-data_kdj_note = ['k','d']
+c.bookmarkPage("P" + str(page_n))
+c.addOutlineEntry('创业板', "P" + str(page_n), closed=1,level=1)
 
-drawing_kdj = genLPDrawing(data=data_kdj, data_note=data_kdj_note,height=letter[1]*0.15)
-renderPDF.draw(drawing=drawing_kdj, canvas=c, x=10, y=height * 0.35)
-
-# 画图RSI信息
-
+c.setFont("song", 10)
+c.drawString(10, letter[1] - 20, '创业板')
+c.setLineWidth(3)
+c.line(10, letter[1] - 24, letter[0] - 10, letter[1] - 24)
+c = RPL_Bk_Page(c,'cyb')
+page_n += 1
 
 
 
-c.showPage()
+c.bookmarkPage("P" + str(page_n))
+c.addOutlineEntry('上证50', "P" + str(page_n), closed=1,level=1)
+
+c.setFont("song", 10)
+c.drawString(10, letter[1] - 20, '上证50')
+c.setLineWidth(3)
+c.line(10, letter[1] - 24, letter[0] - 10, letter[1] - 24)
+c = RPL_Bk_Page(c,'sz50')
+page_n += 1
+
+
+
+c.bookmarkPage("P" + str(page_n))
+c.addOutlineEntry('沪深300', "P" + str(page_n), closed=1,level=1)
+
+c.setFont("song", 10)
+c.drawString(10, letter[1] - 20, '沪深300')
+c.setLineWidth(3)
+c.line(10, letter[1] - 24, letter[0] - 10, letter[1] - 24)
+c = RPL_Bk_Page(c,'hs300')
+page_n += 1
+
+
+
+c.bookmarkPage("P" + str(page_n))
+c.addOutlineEntry('中小板', "P" + str(page_n), closed=1,level=1)
+
+c.setFont("song", 10)
+c.drawString(10, letter[1] - 20, '中小板')
+c.setLineWidth(3)
+c.line(10, letter[1] - 24, letter[0] - 10, letter[1] - 24)
+c = RPL_Bk_Page(c,'zxb')
+page_n += 1
+
+
+
+# ========================================= 画行业图 =====================================
+
+# 建一级目录
+c.bookmarkPage("P" + str(page_n))
+c.addOutlineEntry('行业走势', "P" + str(page_n), closed=1,level=0)
+page_n += 1
+
+
+
+date_start = add_date_str(get_current_date_str(),-1080)
+date_end = get_current_date_str()
+
+industry_data_list = cal_industry_index(date_start,date_end)
+
+for ids in industry_data_list:
+    c_name = ids['c_name']
+
+    c_data = ids['c_data']
+    if len(c_data) > 0:
+
+        # 添加书签
+        c.bookmarkPage("P" + str(page_n))
+        c.addOutlineEntry(c_name, "P" + str(page_n), closed=1,level=1)
+        page_n += 1
+
+        c.setFont("song", 10)
+        c.drawString(10, letter[1] - 20, c_name)
+        c.setLineWidth(3)
+        c.line(10, letter[1] - 24, letter[0] - 10, letter[1] - 24)
+
+
+        # 准备画图数据
+        c_data['date'] = c_data.index
+        ids = ExtractPointFromDf_DateX(c_data, 'date', 'industry_index')
+
+        data = [tuple(ids)]
+        data_name = [c_name]
+
+        drawing_ave = genLPDrawing(data=data, data_note=data_name, height=letter[1] * 0.3)
+        renderPDF.draw(drawing=drawing_ave, canvas=c, x=10, y=letter[1] * 0.6)
+
+        c.showPage()
+
+    else:
+        print('行业'+c_name+' 没有数据，无法打印走势图！')
+
+
+# ========================================= 画宏观经济图 =====================================
+
+# 建一级目录
+c.bookmarkPage("P" + str(page_n))
+c.addOutlineEntry('宏观数据', "P" + str(page_n), closed=1,level=0)
+page_n += 1
+
+c = addMoneySupplyPage(c)
+
 c.save()

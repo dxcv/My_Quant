@@ -208,87 +208,6 @@ def addAcTemp(canvas_param, opc_df_today,pos_x, pos_y, width, height):
     renderPDF.draw(drawing=drawing, canvas=c, x=pos_x, y=pos_y)
 
 
-
-def addMultVoltPageToPdf(canvas_param,
-                         volt_list,
-                         col_name,
-                         maxAmount=8,
-                         minPercent=0.01,
-                         pos_x=10,
-                         pos_y=letter[1]*0.5,
-                         width=letter[0]*0.8,
-                         height=letter[1]*0.4):
-
-    """
-    函数功能：
-                增加多表对比显示页，用于对多只表组合的系统的一个全面展示
-
-    :param canvas_param:        画布
-    :param volt_list:           表的list
-    :param col_name:
-    :return:
-    """
-
-    # 从多表中整理数据，前提为：volt的today字段中已经添加了原始的数据
-    # （重要！today中添加的应该是该设备当天的原始数据，即完全从数据库）
-    volt_list_pro = []
-
-    # 删除没有df中没有数据的表
-    volt_list_filter = list(filter(lambda x: not x.today.empty, volt_list))
-
-    if len(volt_list_filter) == 0:
-        canvas_param.drawString(x=10, y=letter[1] - 100, text='本页所列电表皆没有数据！')
-        canvas_param.showPage()
-        return canvas_param
-
-    # 从电表列表的原始数据中整理提取每天数据
-    for v in volt_list_filter:
-
-        # 如果该dk的数据包含多个表地址，则根据表地址二次筛选
-        if 'channel' in v.today.columns:
-            if len(v.today.groupby(by='channel')) > 1:
-                df_today_f = v.today[v.df_today.channel == v.meter_address]
-            else:
-                df_today_f = v.today
-        else:
-            df_today_f = v.today
-
-        # 将‘data’列中的数据提取
-        df_today_f = ExtractJsonToColum(df_today_f, 'data')
-
-        # 删除数据中record_code 为2的行
-        if 'record_type' in df_today_f.columns:
-            df_today_f = df_today_f[True - df_today_f.record_type.isin(['2'])]
-
-        v.add_today_data(df_today_f)
-
-        # 将当天数据添加到电表对象中
-        volt_list_pro.append(v)
-
-    # 对电表进行数量约束，不重要的电表归总在虚拟电表“其他”中
-    volt_list_pro = moveVoltToOthers(volt_list_pro, maxAmount=maxAmount, minPercent=minPercent, colName=col_name)
-
-    # 提取各个电表的df
-    # volt_df_today_list = list(map(lambda x: x.today, volt_list_pro))
-
-    # 数据合并
-    (values, percent, note_list) = concatVolt(voltDfList=volt_list_pro, col_name=col_name)
-
-    # 画柱状图并添加到画布中
-    voltGroupDisplayByBar(canvas_param=canvas_param,
-                          df=values,
-                          note_list=note_list,
-                          pos_x=pos_x,
-                          pos_y=pos_y,
-                          width=width,
-                          height=height)
-
-    # 结束当前页,不宜在函数中结束当前页的编辑，因为其他函数也可能会编辑本页！
-    # canvas_param.showPage()
-
-    return canvas_param
-
-
 def genLPDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25):
     """
     函数功能：生成Drawing之用
@@ -313,8 +232,8 @@ def genLPDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25):
 
     for i in range(0, len(data)):
         lp.lines[i].name = data_note[i]
-        lp.lines[i].symbol = makeMarker('FilledCircle', size=1)
-        lp.lines[i].strokeWidth = 0.5
+        lp.lines[i].symbol = makeMarker('FilledCircle', size=0.5)
+        lp.lines[i].strokeWidth = 0.2
         lp.lines[i].strokeColor = barFillColors[i]
 
     # lp.lineLabelFormat = '%2.0f'
@@ -403,7 +322,7 @@ def genBarDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25):
 
     return drawing
 
-def RPL_Bk_Page(canvas_para,bk_name,days):
+def RPL_Bk_Page(canvas_para,bk_name):
     """
     函数功能：在pdf中增加bk信息，篇幅为一整页，或者更多，以页为单位
     :param bk_name:
@@ -415,17 +334,141 @@ def RPL_Bk_Page(canvas_para,bk_name,days):
     sh_index['date'] = sh_index.index
     sh_index = sh_index.reset_index(drop=True)
 
-    # 从数据中提取close及均线
-    close = ExtractPointFromDf_DateX(sh_index,'date', 'close')
+
+    # 按时间降序排序，方便计算macd
+    sh_index = sh_index.sort_values(by='date',ascending=True)
+
+    # 在原始df中增加macd信息
+    sh_index['MACD'],sh_index['MACDsignal'],sh_index['MACDhist'] = talib.MACD(sh_index.close,
+                                fastperiod=12, slowperiod=26, signalperiod=9)
+
+    # 在原始数据中增加kdj信息
+    sh_index['slowk'], sh_index['slowd'] = talib.STOCH(sh_index.high,
+                                                       sh_index.low,
+                                                       sh_index.close,
+                                                       fastk_period=9,
+                                                       slowk_period=3,
+                                                       slowk_matype=0,
+                                                       slowd_period=3,
+                                                       slowd_matype=0)
+
+
+    # 添加rsi信息
+    sh_index['RSI5'] = talib.RSI(sh_index.close, timeperiod=5)
+    sh_index['RSI12'] = talib.RSI(sh_index.close, timeperiod=12)
+    sh_index['RSI30'] = talib.RSI(sh_index.close, timeperiod=30)
+
+
+    # 在原始数据中加入布林线
+    sh_index['upper'], sh_index['middle'], sh_index['lower'] = talib.BBANDS(
+        sh_index.close,
+        timeperiod=20,
+        # number of non-biased standard deviations from the mean
+        nbdevup=2,
+        nbdevdn=2,
+        # Moving average type: simple moving average here
+        matype=0)
+
+
+    sh_index = sh_index.dropna(axis=0,how='any')
+
+    close = ExtractPointFromDf_DateX(sh_index, 'date', 'close')
     m5 = ExtractPointFromDf_DateX(sh_index, 'date', 'ma5')
     m10 = ExtractPointFromDf_DateX(sh_index, 'date', 'ma10')
     m20 = ExtractPointFromDf_DateX(sh_index, 'date', 'ma20')
 
-    data = [tuple(close), tuple(m5), tuple(m10), tuple(m20)]
-    data_name = ['close', 'm5', 'm10', 'm20']
+    macd = ExtractPointFromDf_DateX(sh_index, 'date', 'MACD')
 
-    # 生成折线图
-    drawing = genLPDrawing(data=data, data_note=data_name)
+    data = [tuple(close),tuple(m5),tuple(m10),tuple(m20)]
+    data_name = ['close','m5','m10','m20']
 
-    # 将折线图添加到pdf中
-    renderPDF.draw(drawing=drawing,canvas=canvas_para,x=100,y=letter[1]*0.75)
+    drawing_ave = genLPDrawing(data=data, data_note=data_name,height=letter[1]*0.15)
+    renderPDF.draw(drawing=drawing_ave, canvas=canvas_para, x=10, y=letter[1] * 0.8)
+
+    drawing_macd = genBarDrawing(data=macd, data_note=['macd'])
+    renderPDF.draw(drawing=drawing_macd, canvas=canvas_para, x=10, y=letter[1]*0.6)
+
+
+    # 整理kdj信息
+    slowk = ExtractPointFromDf_DateX(sh_index, 'date', 'slowk')
+    slowd = ExtractPointFromDf_DateX(sh_index, 'date', 'slowd')
+    data_kdj = [tuple(slowk),tuple(slowd)]
+    data_kdj_note = ['k','d']
+
+    drawing_kdj = genLPDrawing(data=data_kdj, data_note=data_kdj_note,height=letter[1]*0.1)
+    renderPDF.draw(drawing=drawing_kdj, canvas=canvas_para, x=10, y=letter[1] * 0.5)
+
+    # 画图RSI信息
+    RSI5 = ExtractPointFromDf_DateX(sh_index, 'date', 'RSI5')
+    RSI12 = ExtractPointFromDf_DateX(sh_index, 'date', 'RSI12')
+    RSI30 = ExtractPointFromDf_DateX(sh_index, 'date', 'RSI30')
+
+    data_RSI = [tuple(RSI5),tuple(RSI12),tuple(RSI30)]
+    data_RSI_note = ['RSI5','RSI12','RSI30']
+
+    drawing_RSI = genLPDrawing(data=data_RSI, data_note=data_RSI_note,height=letter[1]*0.1)
+    renderPDF.draw(drawing=drawing_RSI, canvas=canvas_para, x=10, y=letter[1] * 0.3)
+
+
+    # 画图布林线
+    upper = ExtractPointFromDf_DateX(sh_index, 'date', 'upper')
+    middle = ExtractPointFromDf_DateX(sh_index, 'date', 'middle')
+    lower = ExtractPointFromDf_DateX(sh_index, 'date', 'lower')
+
+    data_BOLL = [tuple(upper),tuple(middle),tuple(lower)]
+    data_BOLL_note = ['上线','中线','下线']
+
+    drawing_BOLL = genLPDrawing(data=data_BOLL, data_note=data_BOLL_note,height=letter[1]*0.1)
+    renderPDF.draw(drawing=drawing_BOLL, canvas=canvas_para, x=10, y=letter[1] * 0.1)
+
+    canvas_para.showPage()
+
+    return canvas_para
+
+def addMoneySupplyPage(canvas_para):
+    """
+    函数功能：在pdf中增加货币供应页
+    :param canvas_para:
+    :return:
+    """
+
+    c = canvas_para
+
+    c.setFont("song", 10)
+    c.drawString(10, letter[1] - 20, '货币供应')
+    c.setLineWidth(3)
+    c.line(10, letter[1] - 24, letter[0] - 10, letter[1] - 24)
+
+
+    # 画货币供应量
+    money_supply = ts.get_money_supply()
+    money_supply['date'] = money_supply.apply(lambda x: stdMonthDate2ISO(x['month']), axis=1)
+
+    # 画货币量曲线图
+    m0 = ExtractPointFromDf_DateX(money_supply, 'date', 'm0')
+    m1 = ExtractPointFromDf_DateX(money_supply, 'date', 'm1')
+    m2 = ExtractPointFromDf_DateX(money_supply, 'date', 'm2')
+
+    data_supply = [tuple(m0), tuple(m1), tuple(m2)]
+    data_supply_note = ['m0', 'm1', 'm2']
+
+    money_drawing = genLPDrawing(data=data_supply, data_note=data_supply_note, height=letter[1] * 0.3)
+    renderPDF.draw(drawing=money_drawing, canvas=c, x=10, y=letter[1] * 0.7)
+
+    # 画货币量增长率曲线图
+    m0_yoy = ExtractPointFromDf_DateX(money_supply, 'date', 'm0_yoy')
+    m1_yoy = ExtractPointFromDf_DateX(money_supply, 'date', 'm1_yoy')
+    m2_yoy = ExtractPointFromDf_DateX(money_supply, 'date', 'm2_yoy')
+
+    data_supply_yoy = [tuple(m0_yoy), tuple(m1_yoy), tuple(m2_yoy)]
+    data_supply_yoy_note = ['m0增长率', 'm1增长率', 'm2增长率']
+
+    money_yoy_drawing = genLPDrawing(data=data_supply_yoy, data_note=data_supply_yoy_note, height=letter[1] * 0.3)
+    renderPDF.draw(drawing=money_yoy_drawing, canvas=c, x=10, y=letter[1] * 0.4)
+
+    c.showPage()
+
+    return c
+
+
+
