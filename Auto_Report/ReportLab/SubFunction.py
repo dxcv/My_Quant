@@ -106,13 +106,19 @@ def ExtractPointFromDf_DateX(df_origin, date_col, y_col):
     #     return df_origin
 
     # 提取时间，并将时间转为秒
+
     df_origin['seconds'] = df_origin.apply(lambda x: DateStr2Sec(str(x[date_col])), axis=1)
 
     # 单独取出相应两列，准备转成point格式
     df_part = df_origin.loc[:, ['seconds', y_col]]
 
+    # 为了删除
+
+
     # 将df转为array
+
     point_array = list(map(lambda x: (x[0], float(x[1])), df_part.values))
+
 
     return point_array
 
@@ -441,7 +447,7 @@ def addMoneySupplyPage(canvas_para):
 
 
     # 画货币供应量
-    money_supply = ts.get_money_supply()
+    money_supply = ts.get_money_supply().replace('--',nan)
     money_supply['date'] = money_supply.apply(lambda x: stdMonthDate2ISO(x['month']), axis=1)
 
     # 画货币量曲线图
@@ -452,7 +458,7 @@ def addMoneySupplyPage(canvas_para):
     data_supply = [tuple(m0), tuple(m1), tuple(m2)]
     data_supply_note = ['m0', 'm1', 'm2']
 
-    money_drawing = genLPDrawing(data=data_supply, data_note=data_supply_note, height=letter[1] * 0.3)
+    money_drawing = genLPDrawing(data=data_supply, data_note=data_supply_note, height=letter[1] * 0.2)
     renderPDF.draw(drawing=money_drawing, canvas=c, x=10, y=letter[1] * 0.7)
 
     # 画货币量增长率曲线图
@@ -463,12 +469,47 @@ def addMoneySupplyPage(canvas_para):
     data_supply_yoy = [tuple(m0_yoy), tuple(m1_yoy), tuple(m2_yoy)]
     data_supply_yoy_note = ['m0增长率', 'm1增长率', 'm2增长率']
 
-    money_yoy_drawing = genLPDrawing(data=data_supply_yoy, data_note=data_supply_yoy_note, height=letter[1] * 0.3)
+    money_yoy_drawing = genLPDrawing(data=data_supply_yoy, data_note=data_supply_yoy_note, height=letter[1] * 0.2)
     renderPDF.draw(drawing=money_yoy_drawing, canvas=c, x=10, y=letter[1] * 0.4)
 
     c.showPage()
 
     return c
 
+
+def addReserveBaseRatePage(canvas_para):
+
+    """
+    函数功能：在pdf中增加准备金基率
+    :param canvas_para:
+    :return:
+    """
+
+    c = canvas_para
+
+    c.setFont("song", 10)
+    c.drawString(10, letter[1] - 20, '存款准备金基率')
+    c.setLineWidth(3)
+    c.line(10, letter[1] - 24, letter[0] - 10, letter[1] - 24)
+
+
+    # 画银行准备金基率
+    df_rbr = ts.get_rrr().replace('--',nan)
+    # df_rbr['date'] = df_rbr.apply(lambda x: stdMonthDate2ISO(x['month']), axis=1)
+
+    # 提取相关数据
+    pot_before = ExtractPointFromDf_DateX(df_rbr, 'date', 'before')
+    pot_now = ExtractPointFromDf_DateX(df_rbr, 'date', 'now')
+    pot_changed = ExtractPointFromDf_DateX(df_rbr, 'date', 'changed')
+
+    data_rbr = [tuple(pot_now)]
+    data_rbr_note = ['准备金基率']
+
+    money_drawing = genLPDrawing(data=data_rbr, data_note=data_rbr_note, height=letter[1] * 0.2)
+    renderPDF.draw(drawing=money_drawing, canvas=c, x=10, y=letter[1] * 0.7)
+
+    c.showPage()
+
+    return c
 
 

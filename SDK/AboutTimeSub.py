@@ -15,11 +15,11 @@ def stdMonthDate(month_str):
     return str_split[0]+'.'+str_split[1]
 
 
-# 将“2017.8”转成“2017-08-00”，便于将其转为秒数以实现时间轴对齐
+# 将“2017.8”转成“2017-08-01”，便于将其转为秒数以实现时间轴对齐
 def stdMonthDate2ISO(month_str):
 
     str_split = month_str.split('.')
     if int(str_split[1]) <10:
         str_split[1] = "0"+str_split[1]
 
-    return str_split[0]+'-'+str_split[1] + '-00'
+    return str_split[0]+'-'+str_split[1] + '-01'
