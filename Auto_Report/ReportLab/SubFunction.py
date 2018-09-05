@@ -78,7 +78,7 @@ def add_legend(draw_obj, chart, pos_x, pos_y):
     draw_obj.add(legend)
 
 
-def ExtractPointFromDf_DateX(df_origin, date_col, y_col):
+def ExtractPointFromDf_DateX(df_origin, date_col, y_col, quarter=False):
 
     """
     函数功能：从一个dataframe中提取两列，组成point列表格式，以供ReportLab画图之用
@@ -106,7 +106,10 @@ def ExtractPointFromDf_DateX(df_origin, date_col, y_col):
     #     return df_origin
 
     # 提取时间，并将时间转为秒
-    df_origin['seconds'] = df_origin.apply(lambda x: DateStr2Sec(str(x[date_col])), axis=1)
+    if not quarter:
+        df_origin['seconds'] = df_origin.apply(lambda x: DateStr2Sec(str(x[date_col])), axis=1)
+    else:
+        df_origin['seconds'] = df_origin.apply(lambda x: convertQuarter2Value(str(x[date_col])), axis=1)
 
     # 单独取出相应两列，准备转成point格式
     df_part = df_origin.loc[:, ['seconds', y_col]]
@@ -208,7 +211,7 @@ def addAcTemp(canvas_param, opc_df_today,pos_x, pos_y, width, height):
     renderPDF.draw(drawing=drawing, canvas=c, x=pos_x, y=pos_y)
 
 
-def genLPDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25):
+def genLPDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25,quarter=False):
     """
     函数功能：生成Drawing之用
     :return:
@@ -245,20 +248,33 @@ def genLPDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25):
     lp.xValueAxis.valueMin = x_min
     lp.xValueAxis.valueMax = x_max
 
-    step = int(((x_max - x_min) / (60 * 60 * 24)) / 30) + 1
+    if not quarter:
+        step = int(((x_max - x_min) / (60 * 60 * 24)) / 30) + 1
 
-    lp.xValueAxis.valueSteps = [n for n in range(int(x_min), int(x_max), 60 * 60 * 24 * step)]
-    lp.xValueAxis.labelTextFormat = lambda x: str(Sec2Datetime(x)[0:10])
-    lp.xValueAxis.labels.angle = 90
-    lp.xValueAxis.labels.fontSize = 6
-    lp.xValueAxis.labels.dy = -18
-    # lp.yValueAxis.valueMin = 90
-    # lp.yValueAxis.valueMax = 50
-    # lp.yValueAxis.valueSteps = [1, 2, 3, 5, 6]
+        lp.xValueAxis.valueSteps = [n for n in range(int(x_min), int(x_max), 60 * 60 * 24 * step)]
+        lp.xValueAxis.labelTextFormat = lambda x: str(Sec2Datetime(x)[0:10])
+        lp.xValueAxis.labels.angle = 90
+        lp.xValueAxis.labels.fontSize = 6
+        lp.xValueAxis.labels.dy = -18
+        # lp.yValueAxis.valueMin = 90
+        # lp.yValueAxis.valueMax = 50
+        # lp.yValueAxis.valueSteps = [1, 2, 3, 5, 6]
+    else:
+        step = int(((x_max - x_min) / 0.25) / 30) + 1
+
+        lp.xValueAxis.valueSteps = [n for n in range(int(x_min), int(x_max), int(math.ceil(0.25 * step)))]
+        lp.xValueAxis.labelTextFormat = lambda x: convertValue2Quarter(x)
+        lp.xValueAxis.labels.angle = 90
+        lp.xValueAxis.labels.fontSize = 6
+        lp.xValueAxis.labels.dy = -18
+
     drawing.add(lp)
     add_legend(draw_obj=drawing, chart=lp, pos_x=10, pos_y=-20)
 
     return drawing
+
+
+
 
 
 def genBarDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25):
