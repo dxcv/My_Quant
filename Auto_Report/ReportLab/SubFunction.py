@@ -78,7 +78,7 @@ def add_legend(draw_obj, chart, pos_x, pos_y):
     draw_obj.add(legend)
 
 
-def ExtractPointFromDf_DateX(df_origin, date_col, y_col):
+def ExtractPointFromDf_DateX(df_origin, date_col, y_col, quarter=False):
 
     """
     函数功能：从一个dataframe中提取两列，组成point列表格式，以供ReportLab画图之用
@@ -106,19 +106,16 @@ def ExtractPointFromDf_DateX(df_origin, date_col, y_col):
     #     return df_origin
 
     # 提取时间，并将时间转为秒
-
-    df_origin['seconds'] = df_origin.apply(lambda x: DateStr2Sec(str(x[date_col])), axis=1)
+    if not quarter:
+        df_origin['seconds'] = df_origin.apply(lambda x: DateStr2Sec(str(x[date_col])), axis=1)
+    else:
+        df_origin['seconds'] = df_origin.apply(lambda x: convertQuarter2Value(str(x[date_col])), axis=1)
 
     # 单独取出相应两列，准备转成point格式
     df_part = df_origin.loc[:, ['seconds', y_col]]
 
-    # 为了删除
-
-
     # 将df转为array
-
     point_array = list(map(lambda x: (x[0], float(x[1])), df_part.values))
-
 
     return point_array
 
@@ -214,7 +211,7 @@ def addAcTemp(canvas_param, opc_df_today,pos_x, pos_y, width, height):
     renderPDF.draw(drawing=drawing, canvas=c, x=pos_x, y=pos_y)
 
 
-def genLPDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25):
+def genLPDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25,quarter=False):
     """
     函数功能：生成Drawing之用
     :return:
@@ -251,20 +248,33 @@ def genLPDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25):
     lp.xValueAxis.valueMin = x_min
     lp.xValueAxis.valueMax = x_max
 
-    step = int(((x_max - x_min) / (60 * 60 * 24)) / 30) + 1
+    if not quarter:
+        step = int(((x_max - x_min) / (60 * 60 * 24)) / 30) + 1
 
-    lp.xValueAxis.valueSteps = [n for n in range(int(x_min), int(x_max), 60 * 60 * 24 * step)]
-    lp.xValueAxis.labelTextFormat = lambda x: str(Sec2Datetime(x)[0:10])
-    lp.xValueAxis.labels.angle = 90
-    lp.xValueAxis.labels.fontSize = 6
-    lp.xValueAxis.labels.dy = -18
-    # lp.yValueAxis.valueMin = 90
-    # lp.yValueAxis.valueMax = 50
-    # lp.yValueAxis.valueSteps = [1, 2, 3, 5, 6]
+        lp.xValueAxis.valueSteps = [n for n in range(int(x_min), int(x_max), 60 * 60 * 24 * step)]
+        lp.xValueAxis.labelTextFormat = lambda x: str(Sec2Datetime(x)[0:10])
+        lp.xValueAxis.labels.angle = 90
+        lp.xValueAxis.labels.fontSize = 6
+        lp.xValueAxis.labels.dy = -18
+        # lp.yValueAxis.valueMin = 90
+        # lp.yValueAxis.valueMax = 50
+        # lp.yValueAxis.valueSteps = [1, 2, 3, 5, 6]
+    else:
+        step = int(((x_max - x_min) / 0.25) / 30) + 1
+
+        lp.xValueAxis.valueSteps = [n for n in range(int(x_min), int(x_max), int(math.ceil(0.25 * step)))]
+        lp.xValueAxis.labelTextFormat = lambda x: convertValue2Quarter(x)
+        lp.xValueAxis.labels.angle = 90
+        lp.xValueAxis.labels.fontSize = 6
+        lp.xValueAxis.labels.dy = -18
+
     drawing.add(lp)
     add_legend(draw_obj=drawing, chart=lp, pos_x=10, pos_y=-20)
 
     return drawing
+
+
+
 
 
 def genBarDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25):
@@ -476,40 +486,5 @@ def addMoneySupplyPage(canvas_para):
 
     return c
 
-
-def addReserveBaseRatePage(canvas_para):
-
-    """
-    函数功能：在pdf中增加准备金基率
-    :param canvas_para:
-    :return:
-    """
-
-    c = canvas_para
-
-    c.setFont("song", 10)
-    c.drawString(10, letter[1] - 20, '存款准备金基率')
-    c.setLineWidth(3)
-    c.line(10, letter[1] - 24, letter[0] - 10, letter[1] - 24)
-
-
-    # 画银行准备金基率
-    df_rbr = ts.get_rrr().replace('--',nan)
-    # df_rbr['date'] = df_rbr.apply(lambda x: stdMonthDate2ISO(x['month']), axis=1)
-
-    # 提取相关数据
-    pot_before = ExtractPointFromDf_DateX(df_rbr, 'date', 'before')
-    pot_now = ExtractPointFromDf_DateX(df_rbr, 'date', 'now')
-    pot_changed = ExtractPointFromDf_DateX(df_rbr, 'date', 'changed')
-
-    data_rbr = [tuple(pot_now)]
-    data_rbr_note = ['准备金基率']
-
-    money_drawing = genLPDrawing(data=data_rbr, data_note=data_rbr_note, height=letter[1] * 0.2)
-    renderPDF.draw(drawing=money_drawing, canvas=c, x=10, y=letter[1] * 0.7)
-
-    c.showPage()
-
-    return c
 
 
