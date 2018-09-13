@@ -36,6 +36,7 @@ def date_str_std(date_str):
     else:
         return date_str_sure
 
+
 def convert_time_str_to_second(input_str):
     """
     # 将时间转为秒数
@@ -51,6 +52,7 @@ def convert_time_str_to_second(input_str):
         h, m = result
         return int(h) * 3600 + int(m) * 60
 
+
 def s2t(seconds):
     """
     将秒转为字符串形式的时间
@@ -62,6 +64,7 @@ def s2t(seconds):
     h, m = divmod(m, 60)
     return "%02d:%02d:%02d" % (h, m, s)
 
+
 def DatetimeStr2Sec(s):
 
     '''
@@ -69,7 +72,6 @@ def DatetimeStr2Sec(s):
     from:2006-04-12 16:46:40 to:23123123
     把一个时间转化为秒
     '''
-
     d=datetime.datetime.strptime(s,"%Y-%m-%d %H:%M:%S")
     return time.mktime(d.timetuple())
 
@@ -109,7 +111,6 @@ def cal_quarter(date):
 
     if (date_m == "10")|(date_m == "11")|(date_m == "12"):
         return date_split[0] + "04"
-
 
 
 # 获取操作
@@ -159,13 +160,12 @@ def get_quarter_date():
 '''
 字符串格式的时间日期的加减，以天为单位
 将字符串转为日期格式后，进行天数的加减，然后在转回字符串
-
 '''
 
 
 def add_date_str(origin_date_str, days):
     origin_date = convert_str_to_date(origin_date_str)
-    return convert_date_to_str(origin_date +  + datetime.timedelta(days=days))
+    return convert_date_to_str(origin_date + datetime.timedelta(days=days))
 
 
 def minus_date_str(pos_date, net_date):

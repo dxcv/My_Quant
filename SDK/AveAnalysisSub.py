@@ -191,7 +191,6 @@ def plot_ave(code_param,ave_df_param,df_all,today_all,save_dir,days,ax_out,title
     df_all_head = df_all.sort_values(by='date',ascending=False).head(days).sort_values(by='date',ascending=True).reset_index()
 
 
-
     # ------------------- 画“均值图” ------------------------
     x_axis = range(0,len(ave_df_param['date']))
     ax[0,0].cla()
