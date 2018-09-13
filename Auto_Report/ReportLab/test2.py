@@ -13,5 +13,4 @@ m10 = ExtractPointFromDf_DateX(sh_index,'date', 'm10')
 m20 = ExtractPointFromDf_DateX(sh_index,'date', 'm20')
 
 
-
 end = 0

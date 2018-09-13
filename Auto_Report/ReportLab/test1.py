@@ -148,16 +148,43 @@ c.bookmarkPage("P" + str(page_n))
 c.addOutlineEntry('宏观数据', "P" + str(page_n), closed=1,level=0)
 page_n += 1
 
+
+# 货币供应
 c.bookmarkPage("P" + str(page_n))
 c.addOutlineEntry('货币供应', "P" + str(page_n), closed=1,level=1)
 page_n += 1
 
 c = addMoneySupplyPage(c)
 
+
+# 存款准备金基率
 c.bookmarkPage("P" + str(page_n))
 c.addOutlineEntry('准备金基率', "P" + str(page_n), closed=1,level=1)
 page_n += 1
 
 c = addReserveBaseRatePage(c)
+
+
+# gdp
+c.bookmarkPage("P" + str(page_n))
+c.addOutlineEntry('季度GDP', "P" + str(page_n), closed=1,level=1)
+page_n += 1
+
+c = addQuarterGDPPage(c)
+
+
+# 三大产业对GDP的拉动
+c.bookmarkPage("P" + str(page_n))
+c.addOutlineEntry('三大产业对GDP的拉动', "P" + str(page_n), closed=1,level=1)
+page_n += 1
+
+c = addDemandsForGDPPage(c)
+
+
+# CPI
+c.bookmarkPage("P" + str(page_n))
+c.addOutlineEntry('月度CPI', "P" + str(page_n), closed=1,level=1)
+page_n += 1
+c = addCPIPage(c,30)
 
 c.save()
