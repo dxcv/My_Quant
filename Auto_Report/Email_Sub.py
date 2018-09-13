@@ -71,13 +71,13 @@ def sendmail(subject, msg, toaddrs, fromaddr, smtpaddr, password):
     # buf.seek(0)
 
     # msgImage = MIMEImage(buf.read())
-    f = open("C:/Users/paul/Desktop/test.png",'rb')
+    # f = open("C:/Users/paul/Desktop/test.png",'rb')
 
 
-    mime = MIMEImage(f.read())
-    mime.add_header('Content-ID','<0>')
-    mime.add_header('X-Attachment-Id','0')
-    mime.add_header('Content-Disposition','attachment',filename='test.png')
+    # mime = MIMEImage(f.read())
+    # mime.add_header('Content-ID','<0>')
+    # mime.add_header('X-Attachment-Id','0')
+    # mime.add_header('Content-Disposition','attachment',filename='test.png')
     # mime.set_payload(f.read())
 
     # file1 = "C:\\hello.jpg"
@@ -86,7 +86,7 @@ def sendmail(subject, msg, toaddrs, fromaddr, smtpaddr, password):
     # msg.attach(image)
 
     # encoders.encode_base64(mime)
-    mail_msg.attach(mime)
+    # mail_msg.attach(mime)
 
     try:
         s = smtplib.SMTP()
@@ -100,20 +100,20 @@ def sendmail(subject, msg, toaddrs, fromaddr, smtpaddr, password):
 
 
 if __name__ == '__main__':
-    fromaddr = "pwnevy@163.com"
-    # fromaddr = "ai_report@163.com"
+    # fromaddr = "pwnevy@163.com"
+    fromaddr = "ai_report@163.com"
     smtpaddr = "smtp.163.com"
 
     toaddrs = ["1210055099@qq.com"]
     subject = "AI自动报告-V1"
-    password = "87315287"
-    # password = "ypw1989"
+    # password = "87315287"
+    password = "ypw1989"
     # msg = ts.get_latest_news(top=5,show_content=True).loc[0,"content"]
     # msg = '<html><body><h1>Hello</h1>' +\
     #       '<p><img src = "cid:0"></p>' +\
     #     '</body></html>'
 
-    msg = '<html><body><h1>Hello</h1><p>img src = "cid:0"</p></body></html>'
+    msg = '测试一下能否发送成功！'
 
 
     sendmail(subject, msg, toaddrs, fromaddr, smtpaddr, password)
