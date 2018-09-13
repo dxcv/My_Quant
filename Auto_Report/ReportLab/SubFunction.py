@@ -78,7 +78,7 @@ def add_legend(draw_obj, chart, pos_x, pos_y):
     draw_obj.add(legend)
 
 
-def ExtractPointFromDf_DateX(df_origin, date_col, y_col, quarter=False):
+def ExtractPointFromDf_DateX(df_origin, date_col, y_col, timeAxis = 'normal'):
 
     """
     函数功能：从一个dataframe中提取两列，组成point列表格式，以供ReportLab画图之用
@@ -106,13 +106,20 @@ def ExtractPointFromDf_DateX(df_origin, date_col, y_col, quarter=False):
     #     return df_origin
 
     # 提取时间，并将时间转为秒
-    if not quarter:
-        df_origin['seconds'] = df_origin.apply(lambda x: DateStr2Sec(str(x[date_col])), axis=1)
-    else:
-        df_origin['seconds'] = df_origin.apply(lambda x: convertQuarter2Value(str(x[date_col])), axis=1)
+    if timeAxis == 'normal':
+        df_origin['time'] = df_origin.apply(lambda x: DateStr2Sec(str(x[date_col])), axis=1)
+
+    elif timeAxis == 'quarter':
+        df_origin['time'] = df_origin.apply(lambda x: convertQuarter2Value(str(x[date_col])), axis=1)
+
+    elif timeAxis == 'year':
+        df_origin['time'] = df_origin.apply(lambda x: x[date_col], axis=1)
+
+    elif timeAxis == 'month':
+        df_origin['time'] = df_origin.apply(lambda x:DateStr2Sec(stdMonthDate2ISO(str(x[date_col]))),axis=1)
 
     # 单独取出相应两列，准备转成point格式
-    df_part = df_origin.loc[:, ['seconds', y_col]]
+    df_part = df_origin.loc[:, ['time', y_col]]
 
     # 将df转为array
     point_array = list(map(lambda x: (x[0], float(x[1])), df_part.values))
@@ -211,7 +218,7 @@ def addAcTemp(canvas_param, opc_df_today,pos_x, pos_y, width, height):
     renderPDF.draw(drawing=drawing, canvas=c, x=pos_x, y=pos_y)
 
 
-def genLPDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25,quarter=False):
+def genLPDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25, timeAxis='normal'):
     """
     函数功能：生成Drawing之用
     :return:
@@ -248,7 +255,7 @@ def genLPDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25,qua
     lp.xValueAxis.valueMin = x_min
     lp.xValueAxis.valueMax = x_max
 
-    if not quarter:
+    if timeAxis== 'normal':
         step = int(((x_max - x_min) / (60 * 60 * 24)) / 30) + 1
 
         lp.xValueAxis.valueSteps = [n for n in range(int(x_min), int(x_max), 60 * 60 * 24 * step)]
@@ -259,11 +266,29 @@ def genLPDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25,qua
         # lp.yValueAxis.valueMin = 90
         # lp.yValueAxis.valueMax = 50
         # lp.yValueAxis.valueSteps = [1, 2, 3, 5, 6]
-    else:
-        step = int(((x_max - x_min) / 0.25) / 30) + 1
+
+    elif timeAxis== 'quarter':
+
+        step = int(((x_max - x_min)/0.25) / 30) + 1
 
         lp.xValueAxis.valueSteps = [n for n in range(int(x_min), int(x_max), int(math.ceil(0.25 * step)))]
         lp.xValueAxis.labelTextFormat = lambda x: convertValue2Quarter(x)
+        lp.xValueAxis.labels.angle = 90
+        lp.xValueAxis.labels.fontSize = 6
+        lp.xValueAxis.labels.dy = -18
+
+    elif timeAxis== 'year':
+
+        lp.xValueAxis.valueSteps = [n for n in range(int(x_min), int(x_max), 1)]
+        lp.xValueAxis.labelTextFormat = lambda x: str(x)
+        lp.xValueAxis.labels.angle = 90
+        lp.xValueAxis.labels.fontSize = 6
+        lp.xValueAxis.labels.dy = -18
+
+    elif timeAxis== 'month':
+
+        lp.xValueAxis.valueSteps = list(map(lambda x:x[0],data[0]))
+        lp.xValueAxis.labelTextFormat = lambda x: str(Sec2Datetime(x))[0:10]
         lp.xValueAxis.labels.angle = 90
         lp.xValueAxis.labels.fontSize = 6
         lp.xValueAxis.labels.dy = -18
@@ -272,9 +297,6 @@ def genLPDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25,qua
     add_legend(draw_obj=drawing, chart=lp, pos_x=10, pos_y=-20)
 
     return drawing
-
-
-
 
 
 def genBarDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25):
@@ -457,7 +479,7 @@ def addMoneySupplyPage(canvas_para):
 
 
     # 画货币供应量
-    money_supply = ts.get_money_supply()
+    money_supply = ts.get_money_supply().replace('--',nan)
     money_supply['date'] = money_supply.apply(lambda x: stdMonthDate2ISO(x['month']), axis=1)
 
     # 画货币量曲线图
@@ -468,7 +490,7 @@ def addMoneySupplyPage(canvas_para):
     data_supply = [tuple(m0), tuple(m1), tuple(m2)]
     data_supply_note = ['m0', 'm1', 'm2']
 
-    money_drawing = genLPDrawing(data=data_supply, data_note=data_supply_note, height=letter[1] * 0.3)
+    money_drawing = genLPDrawing(data=data_supply, data_note=data_supply_note, height=letter[1] * 0.2)
     renderPDF.draw(drawing=money_drawing, canvas=c, x=10, y=letter[1] * 0.7)
 
     # 画货币量增长率曲线图
@@ -479,7 +501,7 @@ def addMoneySupplyPage(canvas_para):
     data_supply_yoy = [tuple(m0_yoy), tuple(m1_yoy), tuple(m2_yoy)]
     data_supply_yoy_note = ['m0增长率', 'm1增长率', 'm2增长率']
 
-    money_yoy_drawing = genLPDrawing(data=data_supply_yoy, data_note=data_supply_yoy_note, height=letter[1] * 0.3)
+    money_yoy_drawing = genLPDrawing(data=data_supply_yoy, data_note=data_supply_yoy_note, height=letter[1] * 0.2)
     renderPDF.draw(drawing=money_yoy_drawing, canvas=c, x=10, y=letter[1] * 0.4)
 
     c.showPage()
@@ -487,4 +509,155 @@ def addMoneySupplyPage(canvas_para):
     return c
 
 
+def addReserveBaseRatePage(canvas_para):
+    """
+    函数功能：在pdf中增加准备金基率
+    :param canvas_para:
+    :return:
+    """
 
+    c = canvas_para
+
+    c.setFont("song", 10)
+    c.drawString(10, letter[1] - 20, '存款准备金基率')
+    c.setLineWidth(3)
+    c.line(10, letter[1] - 24, letter[0] - 10, letter[1] - 24)
+
+    # 画银行准备金基率
+    df_rbr = ts.get_rrr().replace('--', nan)
+    # df_rbr['date'] = df_rbr.apply(lambda x: stdMonthDate2ISO(x['month']), axis=1)
+
+    # 提取相关数据
+    pot_before = ExtractPointFromDf_DateX(df_rbr, 'date', 'before')
+    pot_now = ExtractPointFromDf_DateX(df_rbr, 'date', 'now')
+    pot_changed = ExtractPointFromDf_DateX(df_rbr, 'date', 'changed')
+
+    data_rbr = [tuple(pot_now)]
+    data_rbr_note = ['准备金基率']
+
+    money_drawing = genLPDrawing(data=data_rbr, data_note=data_rbr_note, height=letter[1] * 0.2)
+    renderPDF.draw(drawing=money_drawing, canvas=c, x=10, y=letter[1] * 0.7)
+
+    c.showPage()
+
+    return c
+
+
+def addQuarterGDPPage(canvas_para):
+
+    """
+    函数功能：增加季度GDP页
+    :param canvas_para:
+    :return:
+    """
+
+    c = canvas_para
+
+    gdp_quarter = ts.get_gdp_quarter()
+
+    gdp_yoy = ExtractPointFromDf_DateX(df_origin=gdp_quarter, date_col='quarter', y_col='gdp_yoy', timeAxis='quarter')
+    pi_yoy = ExtractPointFromDf_DateX(df_origin=gdp_quarter, date_col='quarter', y_col='pi_yoy', timeAxis='quarter')
+    si_yoy = ExtractPointFromDf_DateX(df_origin=gdp_quarter, date_col='quarter', y_col='si_yoy', timeAxis='quarter')
+
+    ti_yoy = ExtractPointFromDf_DateX(df_origin=gdp_quarter, date_col='quarter', y_col='ti_yoy', timeAxis='quarter')
+
+
+    gdp_pull_drawing = genLPDrawing([tuple(gdp_yoy),tuple(pi_yoy),tuple(si_yoy),tuple(ti_yoy)],
+                                    data_note=['GDP同比增长率','第一产业增长率','第二产业增长率','第三产业增长率'],
+                                    timeAxis='quarter')
+
+    renderPDF.draw(drawing=gdp_pull_drawing, canvas=c, x=10, y=letter[1] * 0.6)
+
+    c.showPage()
+
+    return c
+
+
+def addDemandsForGDPPage(canvas_para):
+
+    """
+    函数功能：三大需求对GDP的贡献
+    :param canvas_para:
+    :return:
+    """
+
+    c = canvas_para
+
+    gdp_for = ts.get_gdp_for()
+
+    end_for = ExtractPointFromDf_DateX(df_origin=gdp_for, date_col='year', y_col='end_for', timeAxis='year')
+    asset_for = ExtractPointFromDf_DateX(df_origin=gdp_for, date_col='year', y_col='asset_for', timeAxis='year')
+    goods_for = ExtractPointFromDf_DateX(df_origin=gdp_for, date_col='year', y_col='goods_for', timeAxis='year')
+
+
+    gdp_for_drawing = genLPDrawing([tuple(end_for), tuple(asset_for), tuple(goods_for)], ['最终消费支出贡献率', '资本形成总额贡献率', '货物和服务净出口贡献率'], timeAxis='year')
+
+    renderPDF.draw(drawing=gdp_for_drawing, canvas=c, x=10, y=letter[1] * 0.6)
+
+    for_rate = ExtractPointFromDf_DateX(df_origin=gdp_for, date_col='year', y_col='for_rate', timeAxis='year')
+    asset_rate = ExtractPointFromDf_DateX(df_origin=gdp_for, date_col='year', y_col='asset_rate', timeAxis='year')
+    goods_rate = ExtractPointFromDf_DateX(df_origin=gdp_for, date_col='year', y_col='goods_rate', timeAxis='year')
+
+
+    gdp_for_drawing = genLPDrawing([tuple(for_rate), tuple(asset_rate), tuple(goods_rate)], ['最终消费支出拉动(百分点)', '资本形成总额拉动(百分点)', '货物和服务净出口拉动(百分点)'], timeAxis='year')
+
+    renderPDF.draw(drawing=gdp_for_drawing, canvas=c, x=10, y=letter[1] * 0.2)
+
+    c.showPage()
+
+    return c
+
+
+def addGDPPullPage(canvas_para):
+
+    """
+    函数功能：展示三个产业对GDP的拉动情况
+    :param canvas_para:
+    :return:
+    """
+
+    c = canvas_para
+
+    gdp_pull = ts.get_gdp_pull()
+
+    gdp_yoy = ExtractPointFromDf_DateX(df_origin=gdp_pull, date_col='year', y_col='gdp_yoy', timeAxis='year')
+    pi = ExtractPointFromDf_DateX(df_origin=gdp_pull, date_col='year', y_col='pi', timeAxis='year')
+    si = ExtractPointFromDf_DateX(df_origin=gdp_pull, date_col='year', y_col='si', timeAxis='year')
+    industry = ExtractPointFromDf_DateX(df_origin=gdp_pull, date_col='year', y_col='industry', timeAxis='year')
+    ti = ExtractPointFromDf_DateX(df_origin=gdp_pull, date_col='year', y_col='ti', timeAxis='year')
+
+
+    gdp_pull_drawing = genLPDrawing([tuple(gdp_yoy),tuple(pi),tuple(si),tuple(industry),tuple(ti)],
+                                    data_note=['GDP同比增长率','第一产业拉动率','第二产业拉动率','工业拉动率','第三产业拉动率'],
+                                    timeAxis='year')
+
+    renderPDF.draw(drawing=gdp_pull_drawing, canvas=c, x=10, y=letter[1] * 0.6)
+
+    c.showPage()
+
+    return c
+
+
+def addCPIPage(canvas_para, length):
+    """
+    函数功能：增加CPI页
+    :param canvas_para:
+    :return:
+    """
+
+    c = canvas_para
+
+    cpi_df = ts.get_cpi().sort_values(by='month',ascending=False).head(length).sort_values(by='month',ascending=True)
+
+    cpi = ExtractPointFromDf_DateX(df_origin=cpi_df, date_col='month', y_col='cpi', timeAxis='month')
+
+
+    gdp_pull_drawing = genLPDrawing([tuple(cpi)],
+                                    data_note=['CPI增长率'],
+                                    timeAxis='month')
+
+    renderPDF.draw(drawing=gdp_pull_drawing, canvas=c, x=10, y=letter[1] * 0.6)
+
+    c.showPage()
+
+    return c
