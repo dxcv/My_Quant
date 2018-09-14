@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="896adcb0-ebf9-46de-b308-2037e19c4258" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Auto_Report/Auto_Email/日度用电报告2018-09-11.pdf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Auto_Report/ReportLab/SubFunction.py" afterPath="$PROJECT_DIR$/Auto_Report/ReportLab/SubFunction.py" />
+      <change beforePath="$PROJECT_DIR$/Auto_Report/ReportLab/test1.py" afterPath="$PROJECT_DIR$/Auto_Report/ReportLab/test1.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test1.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test1.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/test1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="189" column="0" lean-forward="true" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
+            <state relative-caret-position="6150">
+              <caret line="207" column="9" lean-forward="false" selection-start-line="207" selection-start-column="9" selection-end-line="207" selection-end-column="9" />
               <folding>
                 <element signature="e#107#142#0" expanded="true" />
               </folding>
@@ -32,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SubFunction.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SubFunction.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/SubFunction.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2460">
-              <caret line="261" column="35" lean-forward="false" selection-start-line="261" selection-start-column="35" selection-end-line="261" selection-end-column="35" />
+            <state relative-caret-position="193">
+              <caret line="795" column="16" lean-forward="false" selection-start-line="795" selection-start-column="16" selection-end-line="795" selection-end-column="16" />
               <folding>
                 <element signature="e#1091#1725#0" expanded="false" />
                 <element signature="e#1091#1252#1" expanded="false" />
@@ -54,41 +55,37 @@
                 <element signature="e#6200#6335#0" expanded="false" />
                 <element signature="e#6341#6371#0" expanded="false" />
                 <element signature="e#6646#6675#0" expanded="false" />
-                <element signature="e#6975#7020#1" expanded="false" />
-                <element signature="e#7097#7108#0" expanded="false" />
-                <element signature="e#7244#7523#0" expanded="false" />
-                <element signature="e#7567#7753#0" expanded="false" />
-                <element signature="e#7759#7789#0" expanded="false" />
-                <element signature="e#8345#8374#0" expanded="false" />
-                <element signature="e#8506#8851#0" expanded="false" />
-                <element signature="e#8889#9138#0" expanded="false" />
-                <element signature="e#9177#9432#0" expanded="false" />
-                <element signature="e#9624#11212#0" expanded="false" />
-                <element signature="e#9624#9669#1" expanded="false" />
-                <element signature="e#9842#9853#0" expanded="false" />
-                <element signature="e#9998#10026#0" expanded="false" />
-                <element signature="e#10273#10546#0" expanded="false" />
-                <element signature="e#10594#10786#0" expanded="false" />
-                <element signature="e#10792#10812#0" expanded="false" />
-                <element signature="e#11131#11141#0" expanded="false" />
-                <element signature="e#11257#15107#0" expanded="false" />
-                <element signature="e#11257#11381#1" expanded="false" />
-                <element signature="e#15151#16625#0" expanded="false" />
-                <element signature="e#15151#15221#1" expanded="false" />
-                <element signature="e#16673#17553#0" expanded="false" />
-                <element signature="e#16673#16743#1" expanded="false" />
-                <element signature="e#16990#17069#0" expanded="false" />
-                <element signature="e#17597#18553#0" expanded="false" />
-                <element signature="e#17597#17663#1" expanded="false" />
-                <element signature="e#18600#19909#0" expanded="false" />
-                <element signature="e#18600#18669#1" expanded="false" />
-                <element signature="e#19950#20967#0" expanded="false" />
-                <element signature="e#19950#20023#1" expanded="false" />
-                <element signature="e#21011#21693#0" expanded="false" />
-                <element signature="e#21011#21075#1" expanded="false" />
-                <element signature="e#21738#21805#1" expanded="false" />
-                <element signature="e#22705#22955#0" expanded="false" />
-                <element signature="e#23771#24019#0" expanded="false" />
+                <element signature="e#6993#7038#1" expanded="false" />
+                <element signature="e#7115#7126#0" expanded="false" />
+                <element signature="e#7262#7541#0" expanded="false" />
+                <element signature="e#7585#7771#0" expanded="false" />
+                <element signature="e#7777#7807#0" expanded="false" />
+                <element signature="e#9856#11444#0" expanded="false" />
+                <element signature="e#9856#9901#1" expanded="false" />
+                <element signature="e#10074#10085#0" expanded="false" />
+                <element signature="e#10230#10258#0" expanded="false" />
+                <element signature="e#10505#10778#0" expanded="false" />
+                <element signature="e#10826#11018#0" expanded="false" />
+                <element signature="e#11024#11044#0" expanded="false" />
+                <element signature="e#11363#11373#0" expanded="false" />
+                <element signature="e#11489#15339#0" expanded="false" />
+                <element signature="e#11489#11613#1" expanded="false" />
+                <element signature="e#15383#16857#0" expanded="false" />
+                <element signature="e#15383#15453#1" expanded="false" />
+                <element signature="e#16905#17785#0" expanded="false" />
+                <element signature="e#16905#16975#1" expanded="false" />
+                <element signature="e#17222#17301#0" expanded="false" />
+                <element signature="e#17829#18785#0" expanded="false" />
+                <element signature="e#17829#17895#1" expanded="false" />
+                <element signature="e#18832#20141#0" expanded="false" />
+                <element signature="e#18832#18901#1" expanded="false" />
+                <element signature="e#20182#21199#0" expanded="false" />
+                <element signature="e#20182#20255#1" expanded="false" />
+                <element signature="e#21243#21925#0" expanded="false" />
+                <element signature="e#21243#21307#1" expanded="false" />
+                <element signature="e#21970#22037#1" expanded="false" />
+                <element signature="e#22937#23187#0" expanded="false" />
+                <element signature="e#24003#24251#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -201,15 +198,16 @@
         <option value="$PROJECT_DIR$/Auto_Report/Auto_Email/AutoLoadEmail.py" />
         <option value="$PROJECT_DIR$/SDK/AboutTimeSub.py" />
         <option value="$PROJECT_DIR$/Auto_Report/ReportLab/test3.py" />
-        <option value="$PROJECT_DIR$/Auto_Report/ReportLab/SubFunction.py" />
         <option value="$PROJECT_DIR$/Auto_Report/ReportLab/test1.py" />
+        <option value="$PROJECT_DIR$/Auto_Report/ReportLab/SubFunction.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="107" />
-    <option name="width" value="1348" />
-    <option name="height" value="865" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="99" />
+    <option name="y" value="367" />
+    <option name="width" value="1405" />
+    <option name="height" value="713" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -245,6 +243,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -294,7 +293,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -741,7 +739,14 @@
       <option name="project" value="LOCAL" />
       <updated>1536887184526</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Merge branch 'master' of https://github.com/xiaohuilangss/My_Quant&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1536887219768</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1536887219768</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -754,24 +759,24 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="99" y="367" width="1405" height="713" extended-state="0" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13593256" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19824433" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.228125" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43164364" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31336406" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.271875" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.275" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31336406" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14211309" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46190476" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27160493" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46978557" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43164364" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53945374" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -878,54 +883,57 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="1064" />
+      <option name="time" value="1068" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
       <expression>
-        <expression-string>df_shibor_list</expression-string>
+        <expression-string>df_Lpr</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>df_shibor</expression-string>
+        <expression-string>df_Lpr_ma.apply(lambda x:x.replace('---',nan), axis=1)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>df_origin</expression-string>
+        <expression-string>df_Lpr_ma.apply(lambda x:x['1Y_5', '1Y_10', '1Y_20'], axis=1)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>shibor_this</expression-string>
+        <expression-string>df_Lpr_ma = pd.concat(df_Lpr_ma_list, axis=0).sort_values(by='date', ascending=True)\
+    .drop_duplicates(subset=['1Y_5', '1Y_10', '1Y_20'], keep='first')</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>df_part</expression-string>
+        <expression-string>pd.concat(df_Lpr_ma_list, axis=0).sort_values(by='date', ascending=True)\
+        .drop_duplicates(subset=['1Y_5', '1Y_10', '1Y_20'], keep='first')</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>cpi_df</expression-string>
+        <expression-string>pd.concat(df_Lpr_ma_list, axis=0).sort_values(by='date', ascending=True)\
+        .drop_duplicates(subset=['1Y_5', '1Y_10', '1Y_20'], keep='first').applymap(lambda x:x.replace('---',nan))</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>ts.get_cpi()</expression-string>
+        <expression-string>ExtractPointFromDf_DateX(df_origin=df_Lpr_ma, date_col='date', y_col='1Y_5', timeAxis='datetime')</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>msg</expression-string>
+        <expression-string>df_Lpr_ma</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>result</expression-string>
+        <expression-string>df_Lpr = pd.concat(df_Lpr_list, axis=0).sort_values(by='date', ascending=True).drop_duplicates(subset='1Y',keep='first')</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
@@ -1122,10 +1130,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/test1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6150">
+          <caret line="207" column="9" lean-forward="false" selection-start-line="207" selection-start-column="9" selection-end-line="207" selection-end-column="9" />
+          <folding>
+            <element signature="e#107#142#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/SubFunction.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2460">
-          <caret line="261" column="35" lean-forward="false" selection-start-line="261" selection-start-column="35" selection-end-line="261" selection-end-column="35" />
+        <state relative-caret-position="193">
+          <caret line="795" column="16" lean-forward="false" selection-start-line="795" selection-start-column="16" selection-end-line="795" selection-end-column="16" />
           <folding>
             <element signature="e#1091#1725#0" expanded="false" />
             <element signature="e#1091#1252#1" expanded="false" />
@@ -1143,51 +1161,37 @@
             <element signature="e#6200#6335#0" expanded="false" />
             <element signature="e#6341#6371#0" expanded="false" />
             <element signature="e#6646#6675#0" expanded="false" />
-            <element signature="e#6975#7020#1" expanded="false" />
-            <element signature="e#7097#7108#0" expanded="false" />
-            <element signature="e#7244#7523#0" expanded="false" />
-            <element signature="e#7567#7753#0" expanded="false" />
-            <element signature="e#7759#7789#0" expanded="false" />
-            <element signature="e#8345#8374#0" expanded="false" />
-            <element signature="e#8506#8851#0" expanded="false" />
-            <element signature="e#8889#9138#0" expanded="false" />
-            <element signature="e#9177#9432#0" expanded="false" />
-            <element signature="e#9624#11212#0" expanded="false" />
-            <element signature="e#9624#9669#1" expanded="false" />
-            <element signature="e#9842#9853#0" expanded="false" />
-            <element signature="e#9998#10026#0" expanded="false" />
-            <element signature="e#10273#10546#0" expanded="false" />
-            <element signature="e#10594#10786#0" expanded="false" />
-            <element signature="e#10792#10812#0" expanded="false" />
-            <element signature="e#11131#11141#0" expanded="false" />
-            <element signature="e#11257#15107#0" expanded="false" />
-            <element signature="e#11257#11381#1" expanded="false" />
-            <element signature="e#15151#16625#0" expanded="false" />
-            <element signature="e#15151#15221#1" expanded="false" />
-            <element signature="e#16673#17553#0" expanded="false" />
-            <element signature="e#16673#16743#1" expanded="false" />
-            <element signature="e#16990#17069#0" expanded="false" />
-            <element signature="e#17597#18553#0" expanded="false" />
-            <element signature="e#17597#17663#1" expanded="false" />
-            <element signature="e#18600#19909#0" expanded="false" />
-            <element signature="e#18600#18669#1" expanded="false" />
-            <element signature="e#19950#20967#0" expanded="false" />
-            <element signature="e#19950#20023#1" expanded="false" />
-            <element signature="e#21011#21693#0" expanded="false" />
-            <element signature="e#21011#21075#1" expanded="false" />
-            <element signature="e#21738#21805#1" expanded="false" />
-            <element signature="e#22705#22955#0" expanded="false" />
-            <element signature="e#23771#24019#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/test1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="189" column="0" lean-forward="true" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
-          <folding>
-            <element signature="e#107#142#0" expanded="true" />
+            <element signature="e#6993#7038#1" expanded="false" />
+            <element signature="e#7115#7126#0" expanded="false" />
+            <element signature="e#7262#7541#0" expanded="false" />
+            <element signature="e#7585#7771#0" expanded="false" />
+            <element signature="e#7777#7807#0" expanded="false" />
+            <element signature="e#9856#11444#0" expanded="false" />
+            <element signature="e#9856#9901#1" expanded="false" />
+            <element signature="e#10074#10085#0" expanded="false" />
+            <element signature="e#10230#10258#0" expanded="false" />
+            <element signature="e#10505#10778#0" expanded="false" />
+            <element signature="e#10826#11018#0" expanded="false" />
+            <element signature="e#11024#11044#0" expanded="false" />
+            <element signature="e#11363#11373#0" expanded="false" />
+            <element signature="e#11489#15339#0" expanded="false" />
+            <element signature="e#11489#11613#1" expanded="false" />
+            <element signature="e#15383#16857#0" expanded="false" />
+            <element signature="e#15383#15453#1" expanded="false" />
+            <element signature="e#16905#17785#0" expanded="false" />
+            <element signature="e#16905#16975#1" expanded="false" />
+            <element signature="e#17222#17301#0" expanded="false" />
+            <element signature="e#17829#18785#0" expanded="false" />
+            <element signature="e#17829#17895#1" expanded="false" />
+            <element signature="e#18832#20141#0" expanded="false" />
+            <element signature="e#18832#18901#1" expanded="false" />
+            <element signature="e#20182#21199#0" expanded="false" />
+            <element signature="e#20182#20255#1" expanded="false" />
+            <element signature="e#21243#21925#0" expanded="false" />
+            <element signature="e#21243#21307#1" expanded="false" />
+            <element signature="e#21970#22037#1" expanded="false" />
+            <element signature="e#22937#23187#0" expanded="false" />
+            <element signature="e#24003#24251#0" expanded="false" />
           </folding>
         </state>
       </provider>

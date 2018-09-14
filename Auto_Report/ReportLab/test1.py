@@ -200,4 +200,11 @@ page_n += 1
 
 c = addShiborPage(c)
 
+# 贷款利率
+c.bookmarkPage("P" + str(page_n))
+c.addOutlineEntry('银行贷款利率', "P" + str(page_n), closed=1, level=1)
+page_n += 1
+
+c = addLprPage(c)
+
 c.save()

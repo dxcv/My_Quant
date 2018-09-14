@@ -221,7 +221,7 @@ def addAcTemp(canvas_param, opc_df_today,pos_x, pos_y, width, height):
     renderPDF.draw(drawing=drawing, canvas=c, x=pos_x, y=pos_y)
 
 
-def genLPDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25, timeAxis='day'):
+def genLPDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25, timeAxis='day', y_min_zero=False):
     """
     函数功能：生成Drawing之用
     :return:
@@ -266,7 +266,9 @@ def genLPDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25, ti
         lp.xValueAxis.labels.angle = 90
         lp.xValueAxis.labels.fontSize = 6
         lp.xValueAxis.labels.dy = -18
-        # lp.yValueAxis.valueMin = 90
+        if y_min_zero:
+            lp.yValueAxis.valueMin = 0
+
         # lp.yValueAxis.valueMax = 50
         # lp.yValueAxis.valueSteps = [1, 2, 3, 5, 6]
 
@@ -280,6 +282,9 @@ def genLPDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25, ti
         lp.xValueAxis.labels.fontSize = 6
         lp.xValueAxis.labels.dy = -18
 
+        if y_min_zero:
+            lp.yValueAxis.valueMin = 0
+
     elif timeAxis=='year':
 
         lp.xValueAxis.valueSteps = [n for n in range(int(x_min), int(x_max), 1)]
@@ -288,6 +293,9 @@ def genLPDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25, ti
         lp.xValueAxis.labels.fontSize = 6
         lp.xValueAxis.labels.dy = -18
 
+        if y_min_zero:
+            lp.yValueAxis.valueMin = 0
+
     elif timeAxis=='month':
 
         lp.xValueAxis.valueSteps = list(map(lambda x:x[0],data[0]))
@@ -295,6 +303,9 @@ def genLPDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25, ti
         lp.xValueAxis.labels.angle = 90
         lp.xValueAxis.labels.fontSize = 6
         lp.xValueAxis.labels.dy = -18
+
+        if y_min_zero:
+            lp.yValueAxis.valueMin = 0
 
     drawing.add(lp)
     add_legend(draw_obj=drawing, chart=lp, pos_x=10, pos_y=-20)
@@ -750,27 +761,79 @@ def addShiborPage(canvas_para,year_start='2006',year_end=str(datetime.datetime.n
     M9 = ExtractPointFromDf_DateX(df_origin=df_shibor, date_col='date', y_col='9M',timeAxis='datetime')
     Y1 = ExtractPointFromDf_DateX(df_origin=df_shibor, date_col='date', y_col='1Y',timeAxis='datetime')
 
-    shibor_drawing = genLPDrawing([tuple(ON),
-                                    tuple(W1),
-                                     tuple(W2),
-                                     tuple(M1),
-                                     tuple(M3),
+    shibor_drawing = genLPDrawing([tuple(ON)],data_note=['隔夜拆放利率'],timeAxis='day',height=letter[1]*0.1)
+    renderPDF.draw(drawing=shibor_drawing, canvas=c, x=10, y=letter[1] * 0.85)
+
+    shibor_drawing = genLPDrawing([tuple(W1)],data_note=['1周拆放利率'],timeAxis='day',height=letter[1]*0.1)
+    renderPDF.draw(drawing=shibor_drawing, canvas=c, x=10, y=letter[1] * 0.7)
+
+    shibor_drawing = genLPDrawing([tuple(W2)],data_note=['2周拆放利率'],timeAxis='day',height=letter[1]*0.1)
+    renderPDF.draw(drawing=shibor_drawing, canvas=c, x=10, y=letter[1] * 0.55)
+
+    shibor_drawing = genLPDrawing([tuple(M1)],data_note=['1月拆放利率'],timeAxis='day',height=letter[1]*0.1)
+    renderPDF.draw(drawing=shibor_drawing, canvas=c, x=10, y=letter[1] * 0.4)
+
+    shibor_drawing = genLPDrawing([tuple(M3),
                                      tuple(M6),
                                      tuple(M9),
                                      tuple(Y1)],
 
-                                    data_note=['隔夜拆放利率',
-                                               '1周拆放利率',
-                                               '2周拆放利率',
-                                               '1月拆放利率',
-                                               '3月拆放利率',
+                                    data_note=['3月拆放利率',
                                                '6月拆放利率',
                                                '9月拆放利率',
                                                '1年拆放利率'],
 
-                                    timeAxis='month',height=letter[1]*0.35)
+                                    timeAxis='day',height=letter[1]*0.25)
 
-    renderPDF.draw(drawing=shibor_drawing, canvas=c, x=10, y=letter[1] * 0.4)
+    renderPDF.draw(drawing=shibor_drawing, canvas=c, x=10, y=letter[1] * 0.1)
+
+    c.showPage()
+    return c
+
+
+def addLprPage(canvas_para,year_start='2013',year_end=str(datetime.datetime.now().year + 1)):
+    """
+    函数功能：增加贷款利率页
+    :param canvas_para:
+    :return:
+    """
+    c = canvas_para
+
+    date_list = pd.date_range(start=year_start, end=year_end, freq='12M')
+    year_list = [str(x)[0:4] for x in date_list]
+
+    df_Lpr_list = []
+    for year in year_list:
+        lpr_this = ts.lpr_data(year)
+        df_Lpr_list.append(lpr_this)
+
+    df_Lpr = pd.concat(df_Lpr_list, axis=0).sort_values(by='date', ascending=True).drop_duplicates(subset='1Y',keep='first')
+
+    Y1 = ExtractPointFromDf_DateX(df_origin=df_Lpr, date_col='date', y_col='1Y', timeAxis='datetime')
+    lpr_drawing = genLPDrawing([tuple(Y1)], data_note=['1年贷款基础利率'], timeAxis='day', height=letter[1] * 0.3, y_min_zero=True)
+    renderPDF.draw(drawing=lpr_drawing, canvas=c, x=10, y=letter[1] * 0.6)
+
+    # 画均值贷款利率
+    # df_Lpr_ma_list = []
+    # for year in year_list:
+    #     lpr_ma_this = ts.lpr_ma_data(year)
+    #     df_Lpr_ma_list.append(lpr_ma_this)
+    #
+    # df_Lpr_ma = pd.concat(df_Lpr_ma_list, axis=0).sort_values(by='date', ascending=True)\
+    #     .drop_duplicates(subset=['1Y_5', '1Y_10', '1Y_20'], keep='first')\
+    #     .apply(lambda x:x.replace('---',nan), axis=1)
+    #
+    # Y1_5 = ExtractPointFromDf_DateX(df_origin=df_Lpr_ma, date_col='date', y_col='1Y_5', timeAxis='datetime')
+    # Y1_10 = ExtractPointFromDf_DateX(df_origin=df_Lpr_ma, date_col='date', y_col='1Y_10', timeAxis='datetime')
+    # Y1_20 = ExtractPointFromDf_DateX(df_origin=df_Lpr_ma, date_col='date', y_col='1Y_20', timeAxis='datetime')
+    #
+    # lpr_ma_drawing = genLPDrawing([tuple(Y1_5),tuple(Y1_10),tuple(Y1_20)],
+    #                               data_note=['1年贷款基础利率-M5','1年贷款基础利率-M10','1年贷款基础利率-M20'],
+    #                               timeAxis='day',
+    #                               height=letter[1] * 0.3)
+    #
+    # renderPDF.draw(drawing=lpr_ma_drawing, canvas=c, x=10, y=letter[1] * 0.2)
+
 
     c.showPage()
     return c
