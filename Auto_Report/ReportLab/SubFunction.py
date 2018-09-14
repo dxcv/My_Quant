@@ -78,7 +78,7 @@ def add_legend(draw_obj, chart, pos_x, pos_y):
     draw_obj.add(legend)
 
 
-def ExtractPointFromDf_DateX(df_origin, date_col, y_col, timeAxis = 'normal'):
+def ExtractPointFromDf_DateX(df_origin, date_col, y_col, timeAxis='day'):
 
     """
     函数功能：从一个dataframe中提取两列，组成point列表格式，以供ReportLab画图之用
@@ -106,8 +106,11 @@ def ExtractPointFromDf_DateX(df_origin, date_col, y_col, timeAxis = 'normal'):
     #     return df_origin
 
     # 提取时间，并将时间转为秒
-    if timeAxis == 'normal':
+    if timeAxis == 'day':
         df_origin['time'] = df_origin.apply(lambda x: DateStr2Sec(str(x[date_col])), axis=1)
+
+    elif timeAxis == 'datetime':
+        df_origin['time'] = df_origin.apply(lambda x: DatetimeStr2Sec(str(x[date_col])), axis=1)
 
     elif timeAxis == 'quarter':
         df_origin['time'] = df_origin.apply(lambda x: convertQuarter2Value(str(x[date_col])), axis=1)
@@ -218,7 +221,7 @@ def addAcTemp(canvas_param, opc_df_today,pos_x, pos_y, width, height):
     renderPDF.draw(drawing=drawing, canvas=c, x=pos_x, y=pos_y)
 
 
-def genLPDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25, timeAxis='normal'):
+def genLPDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25, timeAxis='day'):
     """
     函数功能：生成Drawing之用
     :return:
@@ -255,7 +258,7 @@ def genLPDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25, ti
     lp.xValueAxis.valueMin = x_min
     lp.xValueAxis.valueMax = x_max
 
-    if timeAxis== 'normal':
+    if timeAxis=='day':
         step = int(((x_max - x_min) / (60 * 60 * 24)) / 30) + 1
 
         lp.xValueAxis.valueSteps = [n for n in range(int(x_min), int(x_max), 60 * 60 * 24 * step)]
@@ -267,7 +270,7 @@ def genLPDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25, ti
         # lp.yValueAxis.valueMax = 50
         # lp.yValueAxis.valueSteps = [1, 2, 3, 5, 6]
 
-    elif timeAxis== 'quarter':
+    elif timeAxis=='quarter':
 
         step = int(((x_max - x_min)/0.25) / 30) + 1
 
@@ -277,7 +280,7 @@ def genLPDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25, ti
         lp.xValueAxis.labels.fontSize = 6
         lp.xValueAxis.labels.dy = -18
 
-    elif timeAxis== 'year':
+    elif timeAxis=='year':
 
         lp.xValueAxis.valueSteps = [n for n in range(int(x_min), int(x_max), 1)]
         lp.xValueAxis.labelTextFormat = lambda x: str(x)
@@ -285,10 +288,10 @@ def genLPDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25, ti
         lp.xValueAxis.labels.fontSize = 6
         lp.xValueAxis.labels.dy = -18
 
-    elif timeAxis== 'month':
+    elif timeAxis=='month':
 
         lp.xValueAxis.valueSteps = list(map(lambda x:x[0],data[0]))
-        lp.xValueAxis.labelTextFormat = lambda x: str(Sec2Datetime(x))[0:10]
+        lp.xValueAxis.labelTextFormat = lambda x: str(Sec2Datetime(x))[0:7]
         lp.xValueAxis.labels.angle = 90
         lp.xValueAxis.labels.fontSize = 6
         lp.xValueAxis.labels.dy = -18
@@ -359,6 +362,7 @@ def genBarDrawing(data, data_note, width=letter[0]*0.8, height=letter[1]*0.25):
     # add_legend(drawing, bc, pos_x=10, pos_y=-10)
 
     return drawing
+
 
 def RPL_Bk_Page(canvas_para,bk_name):
     """
@@ -462,6 +466,7 @@ def RPL_Bk_Page(canvas_para,bk_name):
     canvas_para.showPage()
 
     return canvas_para
+
 
 def addMoneySupplyPage(canvas_para):
     """
@@ -647,7 +652,9 @@ def addCPIPage(canvas_para, length):
 
     c = canvas_para
 
-    cpi_df = ts.get_cpi().sort_values(by='month',ascending=False).head(length).sort_values(by='month',ascending=True)
+    cpi_df = ts.get_cpi()
+    cpi_df['month'] = cpi_df.apply(lambda x:stdMonthDate(x['month']), axis=1)
+    cpi_df = cpi_df.sort_values(by='month',ascending=False).head(length).sort_values(by='month',ascending=True)
 
     cpi = ExtractPointFromDf_DateX(df_origin=cpi_df, date_col='month', y_col='cpi', timeAxis='month')
 
@@ -660,4 +667,110 @@ def addCPIPage(canvas_para, length):
 
     c.showPage()
 
+    return c
+
+
+
+def addPPIPage(canvas_para, length):
+    """
+    函数功能：工业品出厂价格指数
+    :param canvas_para:
+    :return:
+    """
+
+    c = canvas_para
+
+    ppi_df = ts.get_ppi()
+    ppi_df['month'] = ppi_df.apply(lambda x:stdMonthDate(x['month']), axis=1)
+    ppi_df = ppi_df.sort_values(by='month',ascending=False).head(length).sort_values(by='month',ascending=True)
+
+    ppiip = ExtractPointFromDf_DateX(df_origin=ppi_df, date_col='month', y_col='ppiip', timeAxis='month')
+    ppi = ExtractPointFromDf_DateX(df_origin=ppi_df, date_col='month', y_col='ppi', timeAxis='month')
+    qm = ExtractPointFromDf_DateX(df_origin=ppi_df, date_col='month', y_col='qm', timeAxis='month')
+    rmi = ExtractPointFromDf_DateX(df_origin=ppi_df, date_col='month', y_col='rmi', timeAxis='month')
+    pi = ExtractPointFromDf_DateX(df_origin=ppi_df, date_col='month', y_col='pi', timeAxis='month')
+
+
+    ppi_industry_drawing = genLPDrawing([tuple(ppiip), tuple(ppi), tuple(qm), tuple(rmi), tuple(pi)],
+                                    data_note=['工业品出厂价格指数',
+                                               '生产资料价格指数',
+                                               '采掘工业价格指数',
+                                               '原材料工业价格指数',
+                                               '加工工业价格指数'],
+                                    timeAxis='month')
+
+    renderPDF.draw(drawing=ppi_industry_drawing, canvas=c, x=10, y=letter[1] * 0.6)
+
+    cg = ExtractPointFromDf_DateX(df_origin=ppi_df, date_col='month', y_col='cg', timeAxis='month')
+    food = ExtractPointFromDf_DateX(df_origin=ppi_df, date_col='month', y_col='food', timeAxis='month')
+    clothing = ExtractPointFromDf_DateX(df_origin=ppi_df, date_col='month', y_col='clothing', timeAxis='month')
+    roeu = ExtractPointFromDf_DateX(df_origin=ppi_df, date_col='month', y_col='roeu', timeAxis='month')
+    dcg = ExtractPointFromDf_DateX(df_origin=ppi_df, date_col='month', y_col='dcg', timeAxis='month')
+
+
+    ppi_life_drawing = genLPDrawing([tuple(cg), tuple(food), tuple(clothing), tuple(roeu), tuple(dcg)],
+                                    data_note=['生活资料价格指数',
+                                               '食品类价格指数',
+                                               '衣着类价格指数',
+                                               '一般日用品价格指数',
+                                               '耐用消费品价格指数'],
+                                    timeAxis='month')
+
+    renderPDF.draw(drawing=ppi_life_drawing, canvas=c, x=10, y=letter[1] * 0.2)
+
+    c.showPage()
+
+    return c
+
+
+def addShiborPage(canvas_para,year_start='2006',year_end=str(datetime.datetime.now().year + 1)):
+    """
+    函数功能：增加银行间拆借利率页
+    :param canvas_para:
+    :return:
+    """
+    c = canvas_para
+
+    date_list = pd.date_range(start=year_start, end=year_end, freq='12M')
+    year_list = [str(x)[0:4] for x in date_list]
+
+    df_shibor_list = []
+    for year in year_list:
+        shibor_this = ts.shibor_data(year)
+        df_shibor_list.append(shibor_this)
+
+    df_shibor = pd.concat(df_shibor_list,axis=0).sort_values(by='date', ascending=True)
+
+    ON = ExtractPointFromDf_DateX(df_origin=df_shibor,date_col='date',y_col='ON',timeAxis='datetime')
+    W1 = ExtractPointFromDf_DateX(df_origin=df_shibor, date_col='date', y_col='1W',timeAxis='datetime')
+    W2 = ExtractPointFromDf_DateX(df_origin=df_shibor, date_col='date', y_col='2W',timeAxis='datetime')
+    M1 = ExtractPointFromDf_DateX(df_origin=df_shibor, date_col='date', y_col='1M',timeAxis='datetime')
+    M3 = ExtractPointFromDf_DateX(df_origin=df_shibor, date_col='date', y_col='3M',timeAxis='datetime')
+    M6 = ExtractPointFromDf_DateX(df_origin=df_shibor, date_col='date', y_col='6M',timeAxis='datetime')
+    M9 = ExtractPointFromDf_DateX(df_origin=df_shibor, date_col='date', y_col='9M',timeAxis='datetime')
+    Y1 = ExtractPointFromDf_DateX(df_origin=df_shibor, date_col='date', y_col='1Y',timeAxis='datetime')
+
+    shibor_drawing = genLPDrawing([tuple(ON),
+                                    tuple(W1),
+                                     tuple(W2),
+                                     tuple(M1),
+                                     tuple(M3),
+                                     tuple(M6),
+                                     tuple(M9),
+                                     tuple(Y1)],
+
+                                    data_note=['隔夜拆放利率',
+                                               '1周拆放利率',
+                                               '2周拆放利率',
+                                               '1月拆放利率',
+                                               '3月拆放利率',
+                                               '6月拆放利率',
+                                               '9月拆放利率',
+                                               '1年拆放利率'],
+
+                                    timeAxis='month',height=letter[1]*0.35)
+
+    renderPDF.draw(drawing=shibor_drawing, canvas=c, x=10, y=letter[1] * 0.4)
+
+    c.showPage()
     return c

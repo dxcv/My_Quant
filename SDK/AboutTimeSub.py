@@ -21,7 +21,7 @@ def stdMonthDate2ISO(month_str):
     :return:
     """
     str_split = month_str.split('.')
-    if int(str_split[1]) < 10:
+    if (int(str_split[1]) < 10) & (len(str_split[1]) == 1):     # 添加后一句判断是为了防止加0过度的情况，如果原先的格式已经是标准格式，则不需要再添加0
         str_split[1] = "0"+str_split[1]
 
     return str_split[0]+'-'+str_split[1] + '-01'
