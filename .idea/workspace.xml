@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="896adcb0-ebf9-46de-b308-2037e19c4258" name="Default" comment="Merge branch 'master' of https://github.com/xiaohuilangss/My_Quant&#10;&#10;# Conflicts:&#10;#&#9;Auto_Report/ReportLab/SubFunction.py&#10;#&#9;Auto_Report/ReportLab/test1.py&#10;#&#9;SDK/AboutTimeSub.py&#10;">
+    <list default="true" id="896adcb0-ebf9-46de-b308-2037e19c4258" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/DataLoad-Tushare.iml" afterPath="$PROJECT_DIR$/.idea/DataLoad-Tushare.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,107 +21,7 @@
     <favorites_list name="DataLoad-Tushare" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test1.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/test1.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3515">
-              <caret line="187" column="8" lean-forward="false" selection-start-line="187" selection-start-column="8" selection-end-line="187" selection-end-column="8" />
-              <folding>
-                <element signature="e#107#142#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewLineTest.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/NewLineTest.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/test2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="15" column="7" lean-forward="false" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SubFunction.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/SubFunction.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="662" column="12" lean-forward="true" selection-start-line="662" selection-start-column="12" selection-end-line="662" selection-end-column="12" />
-              <folding>
-                <element signature="e#1091#1725#0" expanded="false" />
-                <element signature="e#1091#1252#1" expanded="false" />
-                <element signature="e#1780#2102#0" expanded="false" />
-                <element signature="e#1780#1880#1" expanded="false" />
-                <element signature="e#2189#2422#1" expanded="false" />
-                <element signature="e#2428#2457#0" expanded="false" />
-                <element signature="e#2726#2751#0" expanded="false" />
-                <element signature="e#3648#6750#0" expanded="false" />
-                <element signature="e#3677#3682#0" expanded="false" />
-                <element signature="e#5338#5456#0" expanded="false" />
-                <element signature="e#5379#5456#0" expanded="false" />
-                <element signature="e#5489#5556#0" expanded="false" />
-                <element signature="e#5683#5694#0" expanded="false" />
-                <element signature="e#6077#6212#0" expanded="false" />
-                <element signature="e#6218#6248#0" expanded="false" />
-                <element signature="e#6523#6552#0" expanded="false" />
-                <element signature="e#6855#6900#1" expanded="false" />
-                <element signature="e#6977#6988#0" expanded="false" />
-                <element signature="e#7124#7403#0" expanded="false" />
-                <element signature="e#7447#7633#0" expanded="false" />
-                <element signature="e#7639#7669#0" expanded="false" />
-                <element signature="e#9512#11100#0" expanded="false" />
-                <element signature="e#9512#9557#1" expanded="false" />
-                <element signature="e#9730#9741#0" expanded="false" />
-                <element signature="e#9886#9914#0" expanded="false" />
-                <element signature="e#10161#10434#0" expanded="false" />
-                <element signature="e#10482#10680#0" expanded="false" />
-                <element signature="e#10680#10700#0" expanded="false" />
-                <element signature="e#11019#11029#0" expanded="false" />
-                <element signature="e#11144#14994#0" expanded="false" />
-                <element signature="e#11144#11268#1" expanded="false" />
-                <element signature="e#15037#16511#0" expanded="false" />
-                <element signature="e#15037#15107#1" expanded="false" />
-                <element signature="e#16559#17439#0" expanded="false" />
-                <element signature="e#17483#18439#0" expanded="false" />
-                <element signature="e#18486#19795#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="expressions.py" pinned="false" current-in-tab="false">
-        <entry file="file://D:/ProgramData/Anaconda3/envs/tensorflow/Lib/site-packages/pandas/core/computation/expressions.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3610">
-              <caret line="194" column="0" lean-forward="false" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AboutTimeSub.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SDK/AboutTimeSub.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -249,6 +151,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -335,14 +238,31 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="My_Quant" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="My_Quant" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Auto_Report" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Auto_Email" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="SearchEverywhereHistoryKey" value="&#9;null&#9;null" />
   </component>
@@ -751,7 +671,14 @@
       <option name="project" value="LOCAL" />
       <updated>1536798503257</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Merge branch 'master' of https://github.com/xiaohuilangss/My_Quant&#10;&#10;# Conflicts:&#10;#&#9;Auto_Report/ReportLab/SubFunction.py&#10;#&#9;Auto_Report/ReportLab/test1.py&#10;#&#9;SDK/AboutTimeSub.py&#10;">
+      <created>1536842426703</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1536842426703</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -764,13 +691,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16517857" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.228125" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4623656" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24423963" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46850997" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14211309" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2580645" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -841,9 +768,9 @@
     <MESSAGE value="1、增加reportlab相关文件" />
     <MESSAGE value="1、按时同步" />
     <MESSAGE value="Merge branch 'master' of https://github.com/xiaohuilangss/My_Quant&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;DataProcess/GridTrading/test.py&#10;#&#9;MultiTactics/test.py&#10;#&#9;MultiTactics/test1.py&#10;" />
-    <MESSAGE value="Merge branch 'master' of https://github.com/xiaohuilangss/My_Quant&#10;&#10;# Conflicts:&#10;#&#9;Auto_Report/ReportLab/SubFunction.py&#10;#&#9;Auto_Report/ReportLab/test1.py&#10;#&#9;SDK/AboutTimeSub.py&#10;" />
     <MESSAGE value="定时同步&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="定时同步&#10;" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/xiaohuilangss/My_Quant&#10;&#10;# Conflicts:&#10;#&#9;Auto_Report/ReportLab/SubFunction.py&#10;#&#9;Auto_Report/ReportLab/test1.py&#10;#&#9;SDK/AboutTimeSub.py&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/xiaohuilangss/My_Quant&#10;&#10;# Conflicts:&#10;#&#9;Auto_Report/ReportLab/SubFunction.py&#10;#&#9;Auto_Report/ReportLab/test1.py&#10;#&#9;SDK/AboutTimeSub.py&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -980,13 +907,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://D:/ProgramData/Anaconda3/Lib/tkinter/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DataProcess/History/M2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
@@ -1282,23 +1202,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/test2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="15" column="7" lean-forward="false" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://D:/ProgramData/Anaconda3/envs/tensorflow/Lib/site-packages/pandas/core/computation/expressions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3610">
+        <state relative-caret-position="435">
           <caret line="194" column="0" lean-forward="false" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1306,62 +1216,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/test1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3515">
-          <caret line="187" column="8" lean-forward="false" selection-start-line="187" selection-start-column="8" selection-end-line="187" selection-end-column="8" />
-          <folding>
-            <element signature="e#107#142#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/SubFunction.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="662" column="12" lean-forward="true" selection-start-line="662" selection-start-column="12" selection-end-line="662" selection-end-column="12" />
-          <folding>
-            <element signature="e#1091#1725#0" expanded="false" />
-            <element signature="e#1091#1252#1" expanded="false" />
-            <element signature="e#1780#2102#0" expanded="false" />
-            <element signature="e#1780#1880#1" expanded="false" />
-            <element signature="e#2189#2422#1" expanded="false" />
-            <element signature="e#2428#2457#0" expanded="false" />
-            <element signature="e#2726#2751#0" expanded="false" />
-            <element signature="e#3648#6750#0" expanded="false" />
-            <element signature="e#3677#3682#0" expanded="false" />
-            <element signature="e#5338#5456#0" expanded="false" />
-            <element signature="e#5379#5456#0" expanded="false" />
-            <element signature="e#5489#5556#0" expanded="false" />
-            <element signature="e#5683#5694#0" expanded="false" />
-            <element signature="e#6077#6212#0" expanded="false" />
-            <element signature="e#6218#6248#0" expanded="false" />
-            <element signature="e#6523#6552#0" expanded="false" />
-            <element signature="e#6855#6900#1" expanded="false" />
-            <element signature="e#6977#6988#0" expanded="false" />
-            <element signature="e#7124#7403#0" expanded="false" />
-            <element signature="e#7447#7633#0" expanded="false" />
-            <element signature="e#7639#7669#0" expanded="false" />
-            <element signature="e#9512#11100#0" expanded="false" />
-            <element signature="e#9512#9557#1" expanded="false" />
-            <element signature="e#9730#9741#0" expanded="false" />
-            <element signature="e#9886#9914#0" expanded="false" />
-            <element signature="e#10161#10434#0" expanded="false" />
-            <element signature="e#10482#10680#0" expanded="false" />
-            <element signature="e#10680#10700#0" expanded="false" />
-            <element signature="e#11019#11029#0" expanded="false" />
-            <element signature="e#11144#14994#0" expanded="false" />
-            <element signature="e#11144#11268#1" expanded="false" />
-            <element signature="e#15037#16511#0" expanded="false" />
-            <element signature="e#15037#15107#1" expanded="false" />
-            <element signature="e#16559#17439#0" expanded="false" />
-            <element signature="e#17483#18439#0" expanded="false" />
-            <element signature="e#18486#19795#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="646" column="0" lean-forward="true" selection-start-line="646" selection-start-column="0" selection-end-line="646" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/test2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="15" column="7" lean-forward="false" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/test3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/test1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="180" column="22" lean-forward="true" selection-start-line="180" selection-start-column="22" selection-end-line="180" selection-end-column="22" />
         </state>
       </provider>
     </entry>
