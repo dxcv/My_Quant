@@ -681,7 +681,6 @@ def addCPIPage(canvas_para, length):
     return c
 
 
-
 def addPPIPage(canvas_para, length):
     """
     函数功能：工业品出厂价格指数

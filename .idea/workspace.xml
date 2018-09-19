@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="896adcb0-ebf9-46de-b308-2037e19c4258" name="Default" comment="">
+    <list default="true" id="af78cda8-b18e-4981-bfb2-ec64ac4d39e9" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/DataLoad-Tushare.iml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/Auto_Report/ReportLab/SubFunction.py" afterPath="$PROJECT_DIR$/Auto_Report/ReportLab/SubFunction.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -11,220 +17,35 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="DataLoad-Tushare" />
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test1.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test1.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/test1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6150">
-              <caret line="207" column="9" lean-forward="false" selection-start-line="207" selection-start-column="9" selection-end-line="207" selection-end-column="9" />
-              <folding>
-                <element signature="e#107#142#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SubFunction.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/SubFunction.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="823" column="53" lean-forward="false" selection-start-line="823" selection-start-column="53" selection-end-line="823" selection-end-column="53" />
-              <folding>
-                <element signature="e#1091#1725#0" expanded="false" />
-                <element signature="e#1091#1252#1" expanded="false" />
-                <element signature="e#1780#2102#0" expanded="false" />
-                <element signature="e#1780#1880#1" expanded="false" />
-                <element signature="e#2184#2417#1" expanded="false" />
-                <element signature="e#2423#2452#0" expanded="false" />
-                <element signature="e#2721#2746#0" expanded="false" />
-                <element signature="e#3771#6873#0" expanded="false" />
-                <element signature="e#3800#3805#0" expanded="false" />
-                <element signature="e#5461#5579#0" expanded="false" />
-                <element signature="e#5502#5579#0" expanded="false" />
-                <element signature="e#5612#5679#0" expanded="false" />
-                <element signature="e#5806#5817#0" expanded="false" />
-                <element signature="e#6200#6335#0" expanded="false" />
-                <element signature="e#6341#6371#0" expanded="false" />
-                <element signature="e#6646#6675#0" expanded="false" />
-                <element signature="e#6993#7038#1" expanded="false" />
-                <element signature="e#7115#7126#0" expanded="false" />
-                <element signature="e#7262#7541#0" expanded="false" />
-                <element signature="e#7585#7771#0" expanded="false" />
-                <element signature="e#7777#7807#0" expanded="false" />
-                <element signature="e#9856#11444#0" expanded="false" />
-                <element signature="e#9856#9901#1" expanded="false" />
-                <element signature="e#10074#10085#0" expanded="false" />
-                <element signature="e#10230#10258#0" expanded="false" />
-                <element signature="e#10505#10778#0" expanded="false" />
-                <element signature="e#10826#11018#0" expanded="false" />
-                <element signature="e#11024#11044#0" expanded="false" />
-                <element signature="e#11363#11373#0" expanded="false" />
-                <element signature="e#11489#15339#0" expanded="false" />
-                <element signature="e#11489#11613#1" expanded="false" />
-                <element signature="e#15383#16857#0" expanded="false" />
-                <element signature="e#15383#15453#1" expanded="false" />
-                <element signature="e#16905#17785#0" expanded="false" />
-                <element signature="e#16905#16975#1" expanded="false" />
-                <element signature="e#17222#17301#0" expanded="false" />
-                <element signature="e#17829#18785#0" expanded="false" />
-                <element signature="e#17829#17895#1" expanded="false" />
-                <element signature="e#18832#20141#0" expanded="false" />
-                <element signature="e#18832#18901#1" expanded="false" />
-                <element signature="e#20182#21199#0" expanded="false" />
-                <element signature="e#20182#20255#1" expanded="false" />
-                <element signature="e#21243#21925#0" expanded="false" />
-                <element signature="e#21243#21307#1" expanded="false" />
-                <element signature="e#21970#22037#1" expanded="false" />
-                <element signature="e#22937#23187#0" expanded="false" />
-                <element signature="e#24003#24251#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test3.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/test3.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state relative-caret-position="488">
+              <caret line="209" column="8" lean-forward="true" selection-start-line="209" selection-start-column="8" selection-end-line="209" selection-end-column="8" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyTimeOPT.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SDK/MyTimeOPT.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2130">
-              <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-              <folding>
-                <element signature="e#1557#1663#1" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Jupyter Notebook" />
-        <option value="Python Script" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>遭遇</find>
-      <find>BATCH_START</find>
-      <find>PREDICT_STEP</find>
-      <find>genDbConn</find>
-      <find>join_axes</find>
-      <find>concat</find>
-      <find>~</find>
-      <find>talib</find>
-      <find>RSI</find>
-      <find>engine_industry</find>
-    </findStrings>
-    <replaceStrings>
-      <replace />
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/DataProcess/History/Pro_With_LSTM.py" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/DataProcess/LSTM-Demo/DataPrepare.py" />
-        <option value="$PROJECT_DIR$/DataProcess/BasicAnalysis/RandomForest_Pro.py" />
-        <option value="$PROJECT_DIR$/DataProcess/MACD/DataPrepare.py" />
-        <option value="$PROJECT_DIR$/DataProcess/MACD_Plot/Macd_Plot.py" />
-        <option value="$PROJECT_DIR$/DataProcess/DailyOpt.py" />
-        <option value="$PROJECT_DIR$/DataProcess/MACD_Analysis/Plot_Concent.py" />
-        <option value="$PROJECT_DIR$/DataProcess/MACD_Analysis/Macd_Plot_All.py" />
-        <option value="$PROJECT_DIR$/SDK/CNNClass2.py" />
-        <option value="$PROJECT_DIR$/DataProcess/MACD/LSTM_Class.py" />
-        <option value="$PROJECT_DIR$/DataProcess/MACD/Predict.py" />
-        <option value="$PROJECT_DIR$/SDK/BasicAnalysisSub.py" />
-        <option value="$PROJECT_DIR$/DataProcess/MACD/DataPrepareSub.py" />
-        <option value="$PROJECT_DIR$/DataProcess/MACD/LSTM-MACD.py" />
-        <option value="$PROJECT_DIR$/DataProcess/IndexAnalysis/MACD/LSTM-MACD.py" />
-        <option value="$PROJECT_DIR$/DataProcess/IndexAnalysis/MACD_Analysis/Plot_Concent.py" />
-        <option value="$PROJECT_DIR$/DataProcess/IndexAnalysis/MACD_Analysis/Macd_Plot_All.py" />
-        <option value="$PROJECT_DIR$/SDK/FileOptSub.py" />
-        <option value="$PROJECT_DIR$/DataProcess/IndexAnalysis/KDJ/Demo.py" />
-        <option value="$PROJECT_DIR$/DataProcess/IndexAnalysis/MACD/DEMO.py" />
-        <option value="$PROJECT_DIR$/DataProcess/History/M2.py" />
-        <option value="$PROJECT_DIR$/DataProcess/DailyOpt/Plot_Cow.py" />
-        <option value="$PROJECT_DIR$/MultiTactics/test.py" />
-        <option value="$PROJECT_DIR$/Note/Strategy.ipynb" />
-        <option value="$PROJECT_DIR$/Note/Strategy" />
-        <option value="$PROJECT_DIR$/DataProcess/GridTrading/test1.py" />
-        <option value="$PROJECT_DIR$/AutoTrade/DemoFromInternet.py" />
-        <option value="$PROJECT_DIR$/AutoTrade/MyTest.py" />
-        <option value="$PROJECT_DIR$/DataProcess/LSTM-Demo/Multi-Layer.py" />
-        <option value="$PROJECT_DIR$/General/GlobalSetting.py" />
-        <option value="$PROJECT_DIR$/Test/CubicTest.py" />
-        <option value="$PROJECT_DIR$/DataProcess/GridTrading/temp3.py" />
-        <option value="$PROJECT_DIR$/DataProcess/HHT/test.py" />
-        <option value="$PROJECT_DIR$/LoadHistoryData/Update_K_Data.py" />
-        <option value="$PROJECT_DIR$/JQData_Test/Demo.py" />
-        <option value="$PROJECT_DIR$/DataProcess/DailyOpt/DailyOpt.py" />
-        <option value="$PROJECT_DIR$/SDK/CaseOptSub.py" />
-        <option value="$PROJECT_DIR$/TimeAndSeconds.py" />
-        <option value="$PROJECT_DIR$/Auto_Report/ReportLab/test2.py" />
-        <option value="$PROJECT_DIR$/Auto_Report/ReportLab/NewLineTest.py" />
-        <option value="$PROJECT_DIR$/SDK/MyTimeOPT.py" />
-        <option value="$PROJECT_DIR$/SDK/AveAnalysisSub.py" />
-        <option value="$PROJECT_DIR$/Auto_Report/Email_Sub.py" />
-        <option value="$PROJECT_DIR$/Auto_Report/ReprotLab/Email_SendPdf.py" />
-        <option value="$PROJECT_DIR$/Auto_Report/Auto_Email/Email_SendPdf.py" />
-        <option value="$PROJECT_DIR$/Auto_Report/Auto_Email/ReadEmailTest.py" />
-        <option value="$PROJECT_DIR$/Auto_Report/Auto_Email/EmailParse.py" />
-        <option value="$PROJECT_DIR$/Auto_Report/Auto_Email/AutoLoadEmail.py" />
-        <option value="$PROJECT_DIR$/SDK/AboutTimeSub.py" />
-        <option value="$PROJECT_DIR$/Auto_Report/ReportLab/test3.py" />
-        <option value="$PROJECT_DIR$/Auto_Report/ReportLab/test1.py" />
         <option value="$PROJECT_DIR$/Auto_Report/ReportLab/SubFunction.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-420" />
+    <option name="y" value="497" />
     <option name="width" value="1405" />
     <option name="height" value="713" />
-  </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>Buildout</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -257,63 +78,19 @@
               <item name="My_Quant" type="b2602c69:ProjectViewProjectNode" />
               <item name="My_Quant" type="462c0819:PsiDirectoryNode" />
               <item name="Auto_Report" type="462c0819:PsiDirectoryNode" />
-              <item name="Auto_Email" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="My_Quant" type="b2602c69:ProjectViewProjectNode" />
-              <item name="My_Quant" type="462c0819:PsiDirectoryNode" />
-              <item name="Auto_Report" type="462c0819:PsiDirectoryNode" />
               <item name="ReportLab" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="My_Quant" type="b2602c69:ProjectViewProjectNode" />
-              <item name="My_Quant" type="462c0819:PsiDirectoryNode" />
-              <item name="AutoTrade" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="My_Quant" type="b2602c69:ProjectViewProjectNode" />
-              <item name="My_Quant" type="462c0819:PsiDirectoryNode" />
-              <item name="DataProcess" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="My_Quant" type="b2602c69:ProjectViewProjectNode" />
-              <item name="My_Quant" type="462c0819:PsiDirectoryNode" />
-              <item name="DataProcess" type="462c0819:PsiDirectoryNode" />
-              <item name="DailyOpt" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="My_Quant" type="b2602c69:ProjectViewProjectNode" />
-              <item name="My_Quant" type="462c0819:PsiDirectoryNode" />
-              <item name="SDK" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;null&#9;null" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\MYAI\Code\master\python_preject\My_Quant\Auto_Report\Auto_Email" />
-      <recent name="F:\MYAI\Code\master\python_preject\My_Quant\DataProcess\GridTrading" />
-      <recent name="F:\MYAI\Code\master\python_preject\DataLoad-Tushare\DataProcess\History" />
-      <recent name="F:\MYAI\Code\master\python_preject\DataLoad-Tushare\DataProcess\DailyOpt" />
-      <recent name="F:\MYAI\Code\master\python_preject\DataLoad-Tushare\DataProcess\IndexAnalysis" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\MYAI\Code\master\python_preject\My_Quant\Auto_Report\Auto_Email\Test" />
-      <recent name="F:\MYAI\Code\master\python_preject\My_Quant\Auto_Report\Auto_Email" />
-      <recent name="F:\MYAI\Code\master\python_preject\My_Quant\Auto_Report\ReprotLab\Test" />
-      <recent name="F:\MYAI\Code\master\python_preject\My_Quant\Auto_Report\ReportLab" />
-      <recent name="F:\MYAI\Code\master\python_preject\DataLoad-Tushare\DataProcess\CNNClassify\test" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -327,248 +104,6 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test1">
-    <configuration name="AutoLoadEmail" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Auto_Report/Auto_Email" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="DataLoad-Tushare" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Auto_Report/Auto_Email/AutoLoadEmail.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="Email_SendPdf (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Auto_Report/Auto_Email" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="DataLoad-Tushare" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Auto_Report/Auto_Email/Email_SendPdf.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="ReadEmailTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Auto_Report/Auto_Email" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="DataLoad-Tushare" />
-      <option name="SCRIPT_NAME" value="F:\MYAI\Code\master\python_preject\My_Quant\Auto_Report\Auto_Email\AutoLoadEmail.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="test1" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Auto_Report/ReportLab" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="DataLoad-Tushare" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Auto_Report/ReportLab/test1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="test3" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Auto_Report/ReportLab" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="DataLoad-Tushare" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Auto_Report/ReportLab/test3.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="DataLoad-Tushare" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="DataLoad-Tushare" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Attests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="DataLoad-Tushare" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="DataLoad-Tushare" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Nosetests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="DataLoad-Tushare" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="DataLoad-Tushare" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="py.test">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="DataLoad-Tushare" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="testToRun" value="" />
-      <option name="keywords" value="" />
-      <option name="params" value="" />
-      <option name="USE_PARAM" value="false" />
-      <option name="USE_KEYWORD" value="false" />
-      <method />
-    </configuration>
-    <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.Email_SendPdf (1)" />
-      <item index="1" class="java.lang.String" itemvalue="Python.ReadEmailTest" />
-      <item index="2" class="java.lang.String" itemvalue="Python.AutoLoadEmail" />
-      <item index="3" class="java.lang.String" itemvalue="Python.test1" />
-      <item index="4" class="java.lang.String" itemvalue="Python.test3" />
-    </list>
-    <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.test1" />
-        <item index="1" class="java.lang.String" itemvalue="Python.test3" />
-        <item index="2" class="java.lang.String" itemvalue="Python.AutoLoadEmail" />
-        <item index="3" class="java.lang.String" itemvalue="Python.ReadEmailTest" />
-        <item index="4" class="java.lang.String" itemvalue="Python.Email_SendPdf (1)" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
@@ -577,627 +112,106 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="896adcb0-ebf9-46de-b308-2037e19c4258" name="Default" comment="" />
-      <created>1506666493395</created>
+      <changelist id="af78cda8-b18e-4981-bfb2-ec64ac4d39e9" name="Default" comment="" />
+      <created>1536972580043</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1506666493395</updated>
+      <updated>1536972580043</updated>
     </task>
-    <task id="LOCAL-00001" summary="第一次commit">
-      <created>1517382451460</created>
+    <task id="LOCAL-00001" summary="Merge branch 'master' of https://github.com/xiaohuilangss/My_Quant&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1536972620026</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1517382451460</updated>
+      <updated>1536972620026</updated>
     </task>
-    <task id="LOCAL-00002" summary="增加策略备忘录文本">
-      <created>1522748492209</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1522748492209</updated>
-    </task>
-    <task id="LOCAL-00003" summary="1、增加策略备忘录文本&#10;2、增加EMD测试文件">
-      <created>1522748566298</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1522748566298</updated>
-    </task>
-    <task id="LOCAL-00004" summary="1、增加画图程序，将stk的最高点，最低点，收盘点画到一张图上">
-      <created>1523349919693</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1523349919693</updated>
-    </task>
-    <task id="LOCAL-00005" summary="第一次增加自动交易的相关程序">
-      <created>1524056664626</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1524056664626</updated>
-    </task>
-    <task id="LOCAL-00006" summary="为同步而commit">
-      <created>1524904895006</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1524904895006</updated>
-    </task>
-    <task id="LOCAL-00007" summary="网格增加temp3文件，用于测试以均线为基准的网格">
-      <created>1526368477426</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1526368477426</updated>
-    </task>
-    <task id="LOCAL-00008" summary="1、增加测试文件，用于测试预测未来一段时间趋势的可能性。">
-      <created>1526886051750</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1526886051750</updated>
-    </task>
-    <task id="LOCAL-00009" summary="1、增加jqdata的使用范例">
-      <created>1527149782928</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1527149782928</updated>
-    </task>
-    <task id="LOCAL-00010" summary="1、增加reportlab相关文件">
-      <created>1535369643600</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1535369643600</updated>
-    </task>
-    <task id="LOCAL-00011" summary="1、按时同步">
-      <created>1535373230715</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1535373230715</updated>
-    </task>
-    <task id="LOCAL-00012" summary="1、按时同步">
-      <created>1535535505121</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1535535505121</updated>
-    </task>
-    <task id="LOCAL-00013" summary="1、按时同步">
-      <created>1535622655320</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1535622655320</updated>
-    </task>
-    <task id="LOCAL-00014" summary="1、按时同步">
-      <created>1535708106181</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1535708106181</updated>
-    </task>
-    <task id="LOCAL-00015" summary="&#10;测试提交">
-      <created>1536130179782</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1536130179782</updated>
-    </task>
-    <task id="LOCAL-00016" summary="&#10;按时同步">
-      <created>1536140520891</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1536140520891</updated>
-    </task>
-    <task id="LOCAL-00017" summary="按时同步">
-      <created>1536804397716</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1536804397716</updated>
-    </task>
-    <task id="LOCAL-00018" summary="按时同步">
-      <created>1536804521971</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1536804521971</updated>
-    </task>
-    <task id="LOCAL-00019" summary="按时同步">
-      <created>1536804629337</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1536804629337</updated>
-    </task>
-    <task id="LOCAL-00020" summary="按时同步">
-      <created>1536804674645</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1536804674645</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Merge branch 'master' of https://github.com/xiaohuilangss/My_Quant&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1536829902305</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1536829902305</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Merge branch 'master' of https://github.com/xiaohuilangss/My_Quant&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1536887184526</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1536887184526</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Merge branch 'master' of https://github.com/xiaohuilangss/My_Quant&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1536887219768</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1536887219768</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Merge branch 'master' of https://github.com/xiaohuilangss/My_Quant&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1536918322862</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1536918322862</updated>
-    </task>
-    <option name="localTasksCounter" value="25" />
+    <option name="localTasksCounter" value="2" />
     <servers />
-  </component>
-  <component name="TodoView" selected-index="1">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14278187" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.228125" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14910433" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.271875" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.275" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31336406" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14211309" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46190476" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28541666" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46978557" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43164364" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53945374" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22887865" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31336406" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.359375" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19583334" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.86175114" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14211309" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3728278" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53945374" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="第一次commit" />
-    <MESSAGE value="增加策略备忘录文本" />
-    <MESSAGE value="1、增加策略备忘录文本&#10;2、增加EMD测试文件" />
-    <MESSAGE value="1、增加画图程序，将stk的最高点，最低点，收盘点画到一张图上" />
-    <MESSAGE value="第一次增加自动交易的相关程序" />
-    <MESSAGE value="为同步而commit" />
-    <MESSAGE value="网格增加temp3文件，用于测试以均线为基准的网格" />
-    <MESSAGE value="1、增加测试文件，用于测试预测未来一段时间趋势的可能性。" />
-    <MESSAGE value="1、增加jqdata的使用范例" />
-    <MESSAGE value="1、增加reportlab相关文件" />
-    <MESSAGE value="1、按时同步" />
-    <MESSAGE value="Merge branch 'master' of https://github.com/xiaohuilangss/My_Quant&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;DataProcess/GridTrading/test.py&#10;#&#9;MultiTactics/test.py&#10;#&#9;MultiTactics/test1.py&#10;" />
-    <MESSAGE value="&#10;测试提交" />
-    <MESSAGE value="&#10;按时同步" />
-    <MESSAGE value="按时同步" />
     <MESSAGE value="Merge branch 'master' of https://github.com/xiaohuilangss/My_Quant&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/xiaohuilangss/My_Quant&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/LoadHistoryData/Update_Industry_Classified.py</url>
-          <line>13</line>
-          <option name="timeStamp" value="853" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/DataProcess/IndexAnalysis/MACD/DataPrepareSub.py</url>
-          <line>126</line>
-          <option name="timeStamp" value="957" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/DataProcess/IndexAnalysis/KDJ/Demo.py</url>
-          <line>109</line>
-          <option name="timeStamp" value="976" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Test/CubicTest.py</url>
-          <line>44</line>
-          <option name="timeStamp" value="1016" />
-        </line-breakpoint>
-      </breakpoints>
-      <breakpoints-dialog>
-        <breakpoints-dialog />
-      </breakpoints-dialog>
-      <default-breakpoints>
-        <breakpoint type="python-exception">
-          <properties notifyOnTerminate="true" exception="BaseException">
-            <option name="notifyOnTerminate" value="true" />
-          </properties>
-        </breakpoint>
-      </default-breakpoints>
-      <option name="time" value="1068" />
-    </breakpoint-manager>
+    <breakpoint-manager />
     <watches-manager />
   </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="evaluateCodeFragment">
-      <expression>
-        <expression-string>df_Lpr</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>df_Lpr_ma.apply(lambda x:x.replace('---',nan), axis=1)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>df_Lpr_ma.apply(lambda x:x['1Y_5', '1Y_10', '1Y_20'], axis=1)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>df_Lpr_ma = pd.concat(df_Lpr_ma_list, axis=0).sort_values(by='date', ascending=True)\
-    .drop_duplicates(subset=['1Y_5', '1Y_10', '1Y_20'], keep='first')</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>pd.concat(df_Lpr_ma_list, axis=0).sort_values(by='date', ascending=True)\
-        .drop_duplicates(subset=['1Y_5', '1Y_10', '1Y_20'], keep='first')</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>pd.concat(df_Lpr_ma_list, axis=0).sort_values(by='date', ascending=True)\
-        .drop_duplicates(subset=['1Y_5', '1Y_10', '1Y_20'], keep='first').applymap(lambda x:x.replace('---',nan))</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>ExtractPointFromDf_DateX(df_origin=df_Lpr_ma, date_col='date', y_col='1Y_5', timeAxis='datetime')</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>df_Lpr_ma</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>df_Lpr = pd.concat(df_Lpr_list, axis=0).sort_values(by='date', ascending=True).drop_duplicates(subset='1Y',keep='first')</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-    </expressions>
-    <expressions id="evaluateExpression">
-      <expression>
-        <expression-string>sh_index</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>sh_index.dropna(axis=1,how='any')</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>sh_index.drop_na(axis=1)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>[str(Sec2Datetime(x))[0:10] for x in range(int(x_min), int(x_max), 60 * 60 * 24 * step)]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>range(int(x_min), int(x_max), 60*60*24*step)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>range(x_min, 60*60*24*step*30, 60*60*24*step)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>range(x_min, x_max, 60*60*24*step)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>math.floor(((x_max - x_min)/(60*60*24))/30)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>((x_max - x_min)/(60*60*24))/30</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DataProcess/History/Pro_With_LSTM.py" />
-    <entry file="file://$PROJECT_DIR$/DataProcess/DailyOpt/Plot_Cow.py" />
-    <entry file="file://$PROJECT_DIR$/DataProcess/Av_Trend_Analysis/PreProcessor.py" />
-    <entry file="file://$PROJECT_DIR$/DataProcess/History/Plot_K.py" />
-    <entry file="file://$PROJECT_DIR$/DataProcess/IndexAnalysis/MACD_Analysis/Macd_Plot_All.py" />
-    <entry file="file://$PROJECT_DIR$/DataProcess/IndexAnalysis/KDJ/Demo.py" />
-    <entry file="file://$PROJECT_DIR$/Test/CubicTest.py" />
-    <entry file="file://$PROJECT_DIR$/Test/test1.py" />
-    <entry file="file://$PROJECT_DIR$/DataProcess/HHT/test.py" />
-    <entry file="file://$PROJECT_DIR$/LoadHistoryData/Update_K_Data.py" />
-    <entry file="file://$PROJECT_DIR$/DataProcess/RelativeChangeStrategy/DataPrepare.py" />
-    <entry file="file://$PROJECT_DIR$/DataProcess/Scikit-Learn/randomForest-test.py" />
-    <entry file="file://$PROJECT_DIR$/DataProcess/Wavelet_test/DataPrepare.py" />
-    <entry file="file://$PROJECT_DIR$/LoadHistoryData/Update_Stk_Basics_Data.py" />
-    <entry file="file://$PROJECT_DIR$/SDK/LoadGrowthDataSub.py" />
-    <entry file="file://$PROJECT_DIR$/SDK/LSTM_Class.py" />
-    <entry file="file://$PROJECT_DIR$/SDK/RelativeChangeStrategySub.py" />
-    <entry file="file://$PROJECT_DIR$/SDK/TickAnalysisSub.py" />
-    <entry file="file://$PROJECT_DIR$/SDK/CaseOptSub.py" />
-    <entry file="file://D:/ProgramData/Anaconda3/Lib/site-packages/tushare/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/TimeAndSeconds.py" />
-    <entry file="file://$PROJECT_DIR$/SDK/MACD_Sub.py" />
-    <entry file="file://D:/ProgramData/Anaconda3/Lib/site-packages/talib/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/DataProcess/LSTM-Demo/Multi-Layer.py" />
-    <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/DataProcess/GridTrading/temp3.py" />
-    <entry file="file://$PROJECT_DIR$/SDK/BKSub.py" />
-    <entry file="file://$PROJECT_DIR$/AutoTrade/DemoFromInternet.py" />
-    <entry file="file://$PROJECT_DIR$/LoadHistoryData/Update_Industry_Classified.py" />
-    <entry file="file://$PROJECT_DIR$/SDK/IndustrySub.py" />
-    <entry file="file://$PROJECT_DIR$/LoadHistoryData/Update_Basic_Data.py" />
-    <entry file="file://$PROJECT_DIR$/LoadHistoryData/Update_Stk_Info_Data.py" />
-    <entry file="file://$PROJECT_DIR$/JQData_Test/Demo.py" />
-    <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/NewLineTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDK/PlotOptSub.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/ProgramData/Anaconda3/Lib/site-packages/matplotlib/pyplot.py">
+    <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/test1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/General/GlobalSetting.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataProcess/DailyOpt/DailyOpt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2010">
-          <caret line="75" column="13" lean-forward="false" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDK/AveAnalysisSub.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6120">
-          <caret line="204" column="8" lean-forward="false" selection-start-line="204" selection-start-column="8" selection-end-line="204" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/ProgramData/Anaconda3/Lib/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5323">
-          <caret line="279" column="9" lean-forward="true" selection-start-line="279" selection-start-column="9" selection-end-line="279" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Auto_Report/Email_Sub.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="31" column="54" lean-forward="false" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Auto_Report/Auto_Email/senderInfo.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Auto_Report/Auto_Email/Email_SendPdf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3120">
-          <caret line="104" column="37" lean-forward="false" selection-start-line="104" selection-start-column="37" selection-end-line="104" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Auto_Report/Auto_Email/EmailParse.py" />
-    <entry file="file://$PROJECT_DIR$/Auto_Report/Auto_Email/AutoLoadEmail.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="23" column="6" lean-forward="true" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/test2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDK/AboutTimeSub.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="26" column="48" lean-forward="true" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDK/MyTimeOPT.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2130">
-          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-          <folding>
-            <element signature="e#1557#1663#1" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/test3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/test1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6150">
-          <caret line="207" column="9" lean-forward="false" selection-start-line="207" selection-start-column="9" selection-end-line="207" selection-end-column="9" />
-          <folding>
-            <element signature="e#107#142#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="210">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/SubFunction.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="823" column="53" lean-forward="false" selection-start-line="823" selection-start-column="53" selection-end-line="823" selection-end-column="53" />
-          <folding>
-            <element signature="e#1091#1725#0" expanded="false" />
-            <element signature="e#1091#1252#1" expanded="false" />
-            <element signature="e#1780#2102#0" expanded="false" />
-            <element signature="e#1780#1880#1" expanded="false" />
-            <element signature="e#2184#2417#1" expanded="false" />
-            <element signature="e#2423#2452#0" expanded="false" />
-            <element signature="e#2721#2746#0" expanded="false" />
-            <element signature="e#3771#6873#0" expanded="false" />
-            <element signature="e#3800#3805#0" expanded="false" />
-            <element signature="e#5461#5579#0" expanded="false" />
-            <element signature="e#5502#5579#0" expanded="false" />
-            <element signature="e#5612#5679#0" expanded="false" />
-            <element signature="e#5806#5817#0" expanded="false" />
-            <element signature="e#6200#6335#0" expanded="false" />
-            <element signature="e#6341#6371#0" expanded="false" />
-            <element signature="e#6646#6675#0" expanded="false" />
-            <element signature="e#6993#7038#1" expanded="false" />
-            <element signature="e#7115#7126#0" expanded="false" />
-            <element signature="e#7262#7541#0" expanded="false" />
-            <element signature="e#7585#7771#0" expanded="false" />
-            <element signature="e#7777#7807#0" expanded="false" />
-            <element signature="e#9856#11444#0" expanded="false" />
-            <element signature="e#9856#9901#1" expanded="false" />
-            <element signature="e#10074#10085#0" expanded="false" />
-            <element signature="e#10230#10258#0" expanded="false" />
-            <element signature="e#10505#10778#0" expanded="false" />
-            <element signature="e#10826#11018#0" expanded="false" />
-            <element signature="e#11024#11044#0" expanded="false" />
-            <element signature="e#11363#11373#0" expanded="false" />
-            <element signature="e#11489#15339#0" expanded="false" />
-            <element signature="e#11489#11613#1" expanded="false" />
-            <element signature="e#15383#16857#0" expanded="false" />
-            <element signature="e#15383#15453#1" expanded="false" />
-            <element signature="e#16905#17785#0" expanded="false" />
-            <element signature="e#16905#16975#1" expanded="false" />
-            <element signature="e#17222#17301#0" expanded="false" />
-            <element signature="e#17829#18785#0" expanded="false" />
-            <element signature="e#17829#17895#1" expanded="false" />
-            <element signature="e#18832#20141#0" expanded="false" />
-            <element signature="e#18832#18901#1" expanded="false" />
-            <element signature="e#20182#21199#0" expanded="false" />
-            <element signature="e#20182#20255#1" expanded="false" />
-            <element signature="e#21243#21925#0" expanded="false" />
-            <element signature="e#21243#21307#1" expanded="false" />
-            <element signature="e#21970#22037#1" expanded="false" />
-            <element signature="e#22937#23187#0" expanded="false" />
-            <element signature="e#24003#24251#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="780">
+          <caret line="223" column="0" lean-forward="false" selection-start-line="223" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/test1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDK/AboutTimeSub.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="998">
+          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/SubFunction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="728">
+          <caret line="285" column="38" lean-forward="true" selection-start-line="285" selection-start-column="38" selection-end-line="285" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Auto_Report/ReportLab/test1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="209" column="8" lean-forward="true" selection-start-line="209" selection-start-column="8" selection-end-line="209" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
