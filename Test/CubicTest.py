@@ -2,36 +2,36 @@
 
 from General.GlobalSetting import *
 from SDK.SDKHeader import *
-
+import talib
 """
     三次样条拟合测试
 """
-
-# def cubic(a,b,c,d,x):
-#     return a + b*x + c*x*x + d*x*x*x
-#
-#
-# input = range(0,1000)
-#
-#
-# y = list(map(lambda x:cubic(1,2,3,4,x),input))
 
 
 import matplotlib.pyplot as plt
 import numpy as np
 
+sh_index = ts.get_hist_data('cyb')
+sh_index['date'] = sh_index.index
 
 
-x = np.arange(1,6)
-y = np.array([1, 2, 3, 3.5, 3.8])
+# 按时间降序排序，方便计算macd
+sh_index = sh_index.sort_values(by='date', ascending=True)
 
-z1 = np.polyfit(x, y, 2)                                        #用3次多项式拟合
-p1 = np.poly1d(z1)
-print(p1)                                                       #在屏幕上打印拟合多项式
+# 在原始df中增加macd信息
+sh_index['MACD'], sh_index['MACDsignal'], sh_index['MACDhist'] = talib.MACD(sh_index.close,
+                                                                            fastperiod=12, slowperiod=26,
+                                                                            signalperiod=9)
 
-yvals = p1(x)                                                   #也可以使用yvals=np.polyval(z1,x)
+sh_index = sh_index.dropna(how='any',axis=0).reset_index(drop=True)
+for idx in sh_index.loc[6:,:].index:
+    df_part = sh_index.loc[idx-5:idx,'MACD'].reset_index(drop=True)
 
-plot1 = plt.plot(x, y, '*',label='original values')
-plot2 = plt.plot(x, yvals, 'r',label='polyfit values')
+    c=np.polyfit(np.array(df_part.index),np.array(df_part),2)
 
+    a = c[0]
+    b = c[1]
+    bottom = -1*(b/(2*a))
 
+    if 4 < bottom < 6:
+        plt.plot(df_part)
