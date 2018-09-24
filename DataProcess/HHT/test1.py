@@ -40,5 +40,5 @@ for n, imf in enumerate(IMF):
 
 plt.tight_layout()
 # plt.savefig('simple_example')
-plt.show()
+# plt.show()
 end = 0
