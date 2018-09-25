@@ -25,6 +25,8 @@ from reportlab.pdfbase.pdfmetrics import stringWidth
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase import pdfmetrics
 
+
+
 pdfmetrics.registerFont(TTFont('song', 'SURSONG.TTF'))
 pdfmetrics.registerFont(TTFont('hei', 'SIMHEI.TTF'))
 
