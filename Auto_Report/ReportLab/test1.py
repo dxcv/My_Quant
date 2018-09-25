@@ -211,7 +211,7 @@ c = addPPIPage(c,50)
 
 # 建一级目录
 c.bookmarkPage("P" + str(page_n))
-c.addOutlineEntry('尾注', "P" + str(page_n), closed=1,level=0)
+c.addOutlineEntry('尾注', "P" + str(page_n), closed=1, level=0)
 page_n += 1
 
 c = addTailPage(c)

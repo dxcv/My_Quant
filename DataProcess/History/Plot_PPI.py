@@ -7,7 +7,7 @@ ppi_df = ts.get_ppi()
 
 # trick to get the axes
 fig, ax = plt.subplots()
-std_date = list(map(lambda x:stdMonthDate(x),ppi_df['month']))
+std_date = list(map(lambda x: stdMonthDate(x),ppi_df['month']))
 
 # plot data
 ax.plot(std_date, ppi_df['ppiip'], 'go--', label=U'工业品出厂')
