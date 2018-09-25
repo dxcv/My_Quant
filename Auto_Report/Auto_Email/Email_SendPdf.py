@@ -32,6 +32,13 @@ def sendMail(subject, recipient, text, *attachmentFilePaths):
     MIME邮件的基本信息、格式信息、编码方式等重要内容都记录在邮件内的各种域中，域的基本格式：{域名}：{内容}，域由域名后面跟“：”再加上域的信息内容构成，一条域在邮件中占一行或者多行，
     域的首行左侧不能有空白字符，比如空格或者制表符，占用多行的域其后续行则必须以空白字符开头。域的信息内容中还可以包含属性，属性之间以“;”分隔，属性的格式如下：{属性名称}=”{属性值}”。    
     '''
+    senderInfo = loadPickle(os.path.basename('.'), "senderInfo.txt")
+    sender = senderInfo.split("?")[0]               # 发件人邮箱
+    password = senderInfo.split("?")[1]             # 发件人邮箱密码
+    recipient = senderInfo.split("?")[2]            # 收件人邮箱
+    recipient = [recipient[2:-2]]                   # 将string格式的"['收件人邮箱']"转换成['收件人邮箱']
+
+
     msg['From'] = sender
     msg['To'] = ";".join(recipient)
     msg['Subject'] = subject
@@ -96,10 +103,11 @@ def getAttachment(attachmentFilePath):                                  # 获取
 
 
 # dumpPickle(data="ai_report@163.com?ypw1989?['1210055099@qq.com']", saveLocation=os.path.basename('.'), fileName="senderInfo.txt")
-if __name__ == "__main__":
-    senderInfo = loadPickle(os.path.basename('.'), "senderInfo.txt")
-    sender = senderInfo.split("?")[0]               # 发件人邮箱
-    password = senderInfo.split("?")[1]             # 发件人邮箱密码
-    recipient = senderInfo.split("?")[2]            # 收件人邮箱
-    recipient = [recipient[2:-2]]                   # 将string格式的"['收件人邮箱']"转换成['收件人邮箱']
-    sendMail('pdf测试邮件', recipient, '测试一下以附件的方式发送pdf的可行性', U'日度用电报告2018-09-11.pdf')
+# if __name__ == "__main__":
+#     senderInfo = loadPickle(os.path.basename('.'), "senderInfo.txt")
+#     sender = senderInfo.split("?")[0]               # 发件人邮箱
+#     password = senderInfo.split("?")[1]             # 发件人邮箱密码
+#     recipient = senderInfo.split("?")[2]            # 收件人邮箱
+#     recipient = [recipient[2:-2]]                   # 将string格式的"['收件人邮箱']"转换成['收件人邮箱']
+#     sendMail('pdf测试邮件', recipient, '测试一下以附件的方式发送pdf的可行性', U'日度用电报告2018-09-11.pdf')
+#

@@ -836,3 +836,26 @@ def addLprPage(canvas_para,year_start='2013',year_end=str(datetime.datetime.now(
 
     c.showPage()
     return c
+
+
+def addTailPage(canvas_param, pagesize=letter):
+    """
+    函数功能：为pdf文档添加功能，分“主题”、“副标题”两部分
+    :param canvas:
+    :param pagesize: 页面大小，默认A4
+    :param theme: 主题字符串
+    :param subtitle: 副标题字符串
+    :return:
+    """
+    PAGE_WIDTH = pagesize[0]
+    PAGE_HEIGHT = pagesize[1]
+
+    # 设置主标题字体并打印主标题
+    canvas_param.setFont("song", 30)
+    canvas_param.drawString(20, PAGE_HEIGHT*0.7, '加群：StockReport 825832838')
+
+    canvas_param.drawString(20, PAGE_HEIGHT * 0.65, '每日免费获取该文档！')
+
+    canvas_param.showPage()
+
+    return canvas_param
