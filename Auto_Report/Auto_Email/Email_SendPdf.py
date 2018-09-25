@@ -10,6 +10,8 @@ from email.mime.audio import MIMEAudio
 from email.mime.image import MIMEImage
 from email.encoders import encode_base64
 
+from SDK.MyTimeOPT import get_current_date_str
+
 
 def dumpPickle(data, saveLocation, fileName):
     os.chdir(saveLocation)                              # 文件存放的路径
@@ -35,8 +37,8 @@ def sendMail(subject, recipient, text, *attachmentFilePaths):
     senderInfo = loadPickle(os.path.basename('.'), "senderInfo.txt")
     sender = senderInfo.split("?")[0]               # 发件人邮箱
     password = senderInfo.split("?")[1]             # 发件人邮箱密码
-    recipient = senderInfo.split("?")[2]            # 收件人邮箱
-    recipient = [recipient[2:-2]]                   # 将string格式的"['收件人邮箱']"转换成['收件人邮箱']
+    # recipient = senderInfo.split("?")[2]            # 收件人邮箱
+    # recipient = [recipient[2:-2]]                   # 将string格式的"['收件人邮箱']"转换成['收件人邮箱']
 
 
     msg['From'] = sender
@@ -47,7 +49,7 @@ def sendMail(subject, recipient, text, *attachmentFilePaths):
     for attachmentFilePath in attachmentFilePaths:                  # 判断添加哪些附件
         msg.attach(getAttachment(attachmentFilePath))               # 如果入参给定附件文件，使用attach 发放添加msg头信息
     # try:
-    mailServer = smtplib.SMTP('smtp.163.com')                  # 连接腾讯邮件的服务器；SMTP（Simple Mail Transfer Protocol）即简单邮件传输协议，用于由源地址到目的地址传送邮件的规则，由它来控制信件的中转方式
+    mailServer = smtplib.SMTP('smtp.163.com')                       # 连接腾讯邮件的服务器；SMTP（Simple Mail Transfer Protocol）即简单邮件传输协议，用于由源地址到目的地址传送邮件的规则，由它来控制信件的中转方式
     mailServer.ehlo()                                               # 使用starttls 方法必须先 ehlo 判断是否是同一个地址。。。
     mailServer.starttls()                                           # 以下SMTP都会加密;Put the SMTP connection in TLS (Transport Layer Security) mode. All SMTP commands that follow will be encrypted.
     mailServer.ehlo()                                               # You should then call ehlo() again.
@@ -103,11 +105,33 @@ def getAttachment(attachmentFilePath):                                  # 获取
 
 
 # dumpPickle(data="ai_report@163.com?ypw1989?['1210055099@qq.com']", saveLocation=os.path.basename('.'), fileName="senderInfo.txt")
-# if __name__ == "__main__":
-#     senderInfo = loadPickle(os.path.basename('.'), "senderInfo.txt")
-#     sender = senderInfo.split("?")[0]               # 发件人邮箱
-#     password = senderInfo.split("?")[1]             # 发件人邮箱密码
-#     recipient = senderInfo.split("?")[2]            # 收件人邮箱
-#     recipient = [recipient[2:-2]]                   # 将string格式的"['收件人邮箱']"转换成['收件人邮箱']
-#     sendMail('pdf测试邮件', recipient, '测试一下以附件的方式发送pdf的可行性', U'日度用电报告2018-09-11.pdf')
-#
+if __name__ == "__main__":
+    # senderInfo = loadPickle(os.path.basename('.'), "senderInfo.txt")
+    # sender = senderInfo.split("?")[0]               # 发件人邮箱
+    # password = senderInfo.split("?")[1]             # 发件人邮箱密码
+    # recipient = senderInfo.split("?")[2]            # 收件人邮箱
+    # recipient = [recipient[2:-2]]                   # 将string格式的"['收件人邮箱']"转换成['收件人邮箱']
+    # sendMail('pdf测试邮件', recipient, '测试一下以附件的方式发送pdf的可行性', U'日度用电报告2018-09-11.pdf')
+
+    senderInfo = loadPickle(os.path.basename('.'), "senderInfo.txt")
+    sender = senderInfo.split("?")[0]  # 发件人邮箱
+    password = senderInfo.split("?")[1]  # 发件人邮箱密码
+    # recipient = senderInfo.split("?")[2]            # 收件人邮箱
+    # recipient = [recipient[2:-2]]                   # 将string格式的"['收件人邮箱']"转换成['收件人邮箱']
+
+    recipient = ['1210055099@qq.com',
+                 '3303366489@qq.com',
+                 '2314923644@qq.com',
+                 '3122140480@qq.com',
+                 '1959148913@qq.com',
+                 '2384205754@qq.com',
+                 '2959544903@qq.com',
+                 '1156668277@qq.com',
+                 '2624822992@qq.com',
+                 '1170200744@qq.com',
+                 '313201657@qq.com',
+                 '2897475285@qq.com']
+
+    sendMail("A股日报" + get_current_date_str(), recipient, '', U"A股日报" + get_current_date_str() + ".pdf")
+
+

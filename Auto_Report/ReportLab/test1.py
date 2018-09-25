@@ -3,6 +3,7 @@ from Auto_Report.Auto_Email.Email_SendPdf import loadPickle, sendMail
 from LoadHistoryData.Update_K_Data import update_K_data
 from General.GlobalSetting import conn_k
 from SDK.MyTimeOPT import get_current_date_str
+import os
 
 # 更新K数据
 
@@ -16,7 +17,6 @@ from Auto_Report.ReportLab.SubFunction import *
 
 width = letter[0]
 height = letter[1]
-
 
 c = canvas.Canvas(U"A股日报" + get_current_date_str() + ".pdf", pagesize=letter)
 c.setFont("song", 10)
@@ -54,8 +54,6 @@ c.line(10, letter[1] - 24, letter[0] - 10, letter[1] - 24)
 c = RPL_Bk_Page(c,'sz')
 page_n += 1
 
-
-
 c.bookmarkPage("P" + str(page_n))
 c.addOutlineEntry('创业板', "P" + str(page_n), closed=1,level=1)
 
@@ -65,8 +63,6 @@ c.setLineWidth(3)
 c.line(10, letter[1] - 24, letter[0] - 10, letter[1] - 24)
 c = RPL_Bk_Page(c,'cyb')
 page_n += 1
-
-
 
 c.bookmarkPage("P" + str(page_n))
 c.addOutlineEntry('上证50', "P" + str(page_n), closed=1,level=1)
@@ -78,8 +74,6 @@ c.line(10, letter[1] - 24, letter[0] - 10, letter[1] - 24)
 c = RPL_Bk_Page(c,'sz50')
 page_n += 1
 
-
-
 c.bookmarkPage("P" + str(page_n))
 c.addOutlineEntry('沪深300', "P" + str(page_n), closed=1,level=1)
 
@@ -89,8 +83,6 @@ c.setLineWidth(3)
 c.line(10, letter[1] - 24, letter[0] - 10, letter[1] - 24)
 c = RPL_Bk_Page(c,'hs300')
 page_n += 1
-
-
 
 c.bookmarkPage("P" + str(page_n))
 c.addOutlineEntry('中小板', "P" + str(page_n), closed=1,level=1)
@@ -110,8 +102,6 @@ page_n += 1
 c.bookmarkPage("P" + str(page_n))
 c.addOutlineEntry('行业走势', "P" + str(page_n), closed=1,level=0)
 page_n += 1
-
-
 
 date_start = add_date_str(get_current_date_str(),-1080)
 date_end = get_current_date_str()
@@ -231,25 +221,26 @@ c.save()
 
 # ================================ 发送邮件 =====================================
 
-senderInfo = loadPickle(os.path.basename('.'), "senderInfo.txt")
-sender = senderInfo.split("?")[0]               # 发件人邮箱
-password = senderInfo.split("?")[1]             # 发件人邮箱密码
-# recipient = senderInfo.split("?")[2]            # 收件人邮箱
-# recipient = [recipient[2:-2]]                   # 将string格式的"['收件人邮箱']"转换成['收件人邮箱']
-
-
-recipient = ['1210055099@qq.com',
-             '3303366489@qq.com',
-             '2314923644@qq.com',
-             '3122140480@qq.com',
-             '1959148913@qq.com',
-             '2384205754@qq.com',
-             '2959544903@qq.com',
-             '1156668277@qq.com',
-             '2624822992@qq.com',
-             '1170200744@qq.com',
-             '313201657@qq.com',
-             '2897475285@qq.com']
-sendMail("A股日报" + get_current_date_str(), recipient, '', U"A股日报" + get_current_date_str() + ".pdf")
+# senderInfo = loadPickle(os.path.basename('.'), "senderInfo.txt")
+# sender = senderInfo.split("?")[0]               # 发件人邮箱
+# password = senderInfo.split("?")[1]             # 发件人邮箱密码
+# # recipient = senderInfo.split("?")[2]            # 收件人邮箱
+# # recipient = [recipient[2:-2]]                   # 将string格式的"['收件人邮箱']"转换成['收件人邮箱']
+#
+#
+# recipient = ['1210055099@qq.com',
+#              '3303366489@qq.com',
+#              '2314923644@qq.com',
+#              '3122140480@qq.com',
+#              '1959148913@qq.com',
+#              '2384205754@qq.com',
+#              '2959544903@qq.com',
+#              '1156668277@qq.com',
+#              '2624822992@qq.com',
+#              '1170200744@qq.com',
+#              '313201657@qq.com',
+#              '2897475285@qq.com']
+#
+# sendMail("A股日报" + get_current_date_str(), recipient, '', U"A股日报" + get_current_date_str() + ".pdf")
 
 
