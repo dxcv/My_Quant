@@ -9,7 +9,7 @@ from Test.MACD_Timer import macd_test_daily
 
 
 def MACD_Report():
-    macd_test_daily()b
+    macd_test_daily()
 
 def update_k():
     update_K_data()
