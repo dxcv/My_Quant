@@ -21,14 +21,11 @@ def macd_test_daily():
     step = 5
     datenow = get_current_date_str()
 
-
     # 创建pdf
     c = canvas.Canvas('./MACD_PDF/'+U"MACD日度检测" + datenow + ".pdf", pagesize=letter)
 
-
     # 是否存在相应合适的
     exist_flag = False
-
 
     stk_code = list(ts.get_stock_basics().index)
 
@@ -37,6 +34,13 @@ def macd_test_daily():
 
         # 下载数据
         df_bk = ts.get_k_data(bk)
+
+        if df_bk.empty:
+            print('函数 macd_test_daily：stk ' + bk +'没有数据！')
+            continue
+
+        # 只取时间上最新的100条数据
+        df_bk = df_bk.loc[len(df_bk)-100:,:]
 
         # 为数据添加MACD指标
         df_bk['MACD'], df_bk['MACDsignal'], df_bk['MACDhist'] = talib.MACD(df_bk.close,
@@ -58,14 +62,16 @@ def macd_test_daily():
 
         print('完成stk' + bk + '的MACD检测！')
 
-
     # 如果存在macd指标符合的股票，生成pdf并发送邮件
     if exist_flag:
         c.save()
 
         # 发送邮件
         sendMail("MACD日度检测" + datenow,
-                 ['1210055099@qq.com'],
+                 ['189916591@qq.com'],
                  '',
                  './MACD_PDF/'+U"MACD日度检测" + datenow + ".pdf")
+
+# -------------------------- 测试 --------------------------------
+macd_test_daily()
 
