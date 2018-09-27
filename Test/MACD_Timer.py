@@ -40,7 +40,7 @@ def macd_test_daily():
             continue
 
         # 只取时间上最新的100条数据
-        df_bk = df_bk.loc[len(df_bk)-100:,:]
+        df_bk = df_bk.loc[len(df_bk)-150:,:]
 
         # 为数据添加MACD指标
         df_bk['MACD'], df_bk['MACDsignal'], df_bk['MACDhist'] = talib.MACD(df_bk.close,
@@ -72,6 +72,12 @@ def macd_test_daily():
                  '',
                  './MACD_PDF/'+U"MACD日度检测" + datenow + ".pdf")
 
+    else:
+        # 发送邮件
+        sendMail("MACD日度检测" + datenow,
+                 ['189916591@qq.com'],
+                 'Nothing happened today!')
+
 # -------------------------- 测试 --------------------------------
-macd_test_daily()
+# macd_test_daily()
 

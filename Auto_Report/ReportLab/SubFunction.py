@@ -2,7 +2,7 @@
 
 from SDK.SDKHeader import *
 import random
-
+from General.GlobalSetting import stk_basic
 import pandas as pd
 import numpy as np
 from reportlab.graphics.charts.barcharts import VerticalBarChart
@@ -384,6 +384,19 @@ def RPL_Bk_Page(canvas_para,bk_name):
     :param days:        用于指示近期的期限，比如近30天
     :return:
     """
+
+
+    # 插入字符串，用以表明股票代码及名称
+    canvas_para.setFont("song", 10)
+    if bk_name in ['sh','sz','cyb']:
+        stk_name = bk_name
+
+    else:
+        stk_name = stk_basic[stk_basic.index==bk_name]['name'].values[0]
+
+    canvas_para.drawString(20, letter[1] - 10, bk_name + stk_name)
+
+
 
     sh_index = ts.get_hist_data(bk_name)
     sh_index['date'] = sh_index.index

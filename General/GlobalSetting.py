@@ -183,6 +183,10 @@ g_wr_file_url = "F:/MYAI/文档资料/用于读取的文件/"
 
 
 
+# 股票基本信息
+stk_basic = ts.get_stock_basics()
+
+
 # --------------------------调试标志位--------------------------------------
 g_find_case_debug_enable = False                        # “搜寻案例”调试标志位
 g_find_case_debug_file_name = "findCase_db.txt"         # “搜寻案例”调试文件名字
