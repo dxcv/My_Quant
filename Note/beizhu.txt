@@ -1,0 +1,10 @@
+
+
+聚宽 jqdata 安装方法：
+pip install --user git+https://github.com/JoinQuant/jqdatasdk.git -i https://mirrors.aliyun.com/pypi/simple/
+
+登录方法：
+from jqdatasdk import *
+auth('账号','密码')
+
+JQData_Test中保存登录信息的文件名为auth_info.py
