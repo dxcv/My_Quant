@@ -3,6 +3,7 @@
 import time
 from apscheduler.schedulers.blocking import BlockingScheduler
 
+from Auto_Report.ReportLab.test1 import send_basic_email
 from General.GlobalSetting import conn_k
 from LoadHistoryData.Update_K_Data import update_K_data
 from Test.MACD_Timer import macd_test_daily
@@ -14,6 +15,8 @@ def MACD_Report():
 def update_k():
     update_K_data()
     conn_k.commit()
+    send_basic_email()
+
 
 
 sched = BlockingScheduler()
