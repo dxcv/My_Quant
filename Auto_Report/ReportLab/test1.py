@@ -245,3 +245,7 @@ def send_basic_email():
     sendMail("A股日报" + get_current_date_str(), recipient, '', U"A股日报" + get_current_date_str() + ".pdf")
 
 
+
+
+
+

@@ -18,6 +18,11 @@ def update_k():
     send_basic_email()
 
 
+# 下面这几行代码用于手动执行使用，使用定时器时记得将其屏蔽
+macd_test_daily()
+update_K_data()
+conn_k.commit()
+send_basic_email()
 
 sched = BlockingScheduler()
 sched.add_job(func=MACD_Report, trigger='cron', day_of_week='mon-sat', hour=5, minute=0)
