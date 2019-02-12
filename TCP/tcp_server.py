@@ -6,9 +6,9 @@ from time import ctime
 host = ''
 port = 12345
 buffsize = 2048
-ADDR = (host,port)
+ADDR = (host, port)
 
-tctime = socket(AF_INET,SOCK_STREAM)
+tctime = socket(AF_INET, SOCK_STREAM)
 tctime.bind(ADDR)
 tctime.listen(3)
 
