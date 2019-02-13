@@ -160,7 +160,7 @@ def JudgeCornerPot(stk_df, stk_code):
             "err": err
         }
 
-# 测试
+# 测试一下
 result = JudgeCornerPot(stk_df=sh_index, stk_code='cyb')
 
 for idx in sh_index.loc[step:, :].index:

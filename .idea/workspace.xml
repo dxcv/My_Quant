@@ -19,7 +19,7 @@
       <file leaf-file-name="Email_Sub.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Auto_Report/Auto_Email/Email_Sub.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="1170">
               <caret line="52" column="14" lean-forward="false" selection-start-line="52" selection-start-column="14" selection-end-line="52" selection-end-column="14" />
               <folding>
                 <element signature="e#18#32#0" expanded="true" />
@@ -31,8 +31,8 @@
       <file leaf-file-name="CubicTest.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test/CubicTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="167" column="0" lean-forward="false" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
+            <state relative-caret-position="196">
+              <caret line="163" column="56" lean-forward="false" selection-start-line="163" selection-start-column="56" selection-end-line="163" selection-end-column="56" />
               <folding>
                 <element signature="e#564#3054#0" expanded="false" />
               </folding>
@@ -40,23 +40,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GlobalSetting.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/General/GlobalSetting.py">
+      <file leaf-file-name="Tensor_Opt_test.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TF_OPT_Test/Tensor_Opt_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="17" column="35" lean-forward="false" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="35" />
-              <folding>
-                <element signature="e#15#32#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="330">
+              <caret line="17" column="52" lean-forward="true" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AutoStkConfig.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/General/AutoStkConfig.py">
+      <file leaf-file-name="GlobalSetting.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/General/GlobalSetting.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="24" />
+            <state relative-caret-position="60">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_pydev_execfile.py" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AveAnalysisSub.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SDK/AveAnalysisSub.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6750">
+              <caret line="234" column="0" lean-forward="false" selection-start-line="234" selection-start-column="0" selection-end-line="238" selection-end-column="68" />
               <folding />
             </state>
           </provider>
@@ -88,7 +106,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="SET_USER_NAME_GLOBALLY" value="false" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -120,11 +137,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="101" />
-    <option name="y" value="89" />
-    <option name="width" value="1078" />
-    <option name="height" value="587" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="444" />
+    <option name="y" value="374" />
+    <option name="width" value="1576" />
+    <option name="height" value="928" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -148,40 +165,18 @@
         <subPane>
           <expand>
             <path>
-              <item name="Git-Clone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Git-Clone" type="462c0819:PsiDirectoryNode" />
+              <item name="My_Quant" type="b2602c69:ProjectViewProjectNode" />
+              <item name="My_Quant" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Git-Clone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Git-Clone" type="462c0819:PsiDirectoryNode" />
+              <item name="My_Quant" type="b2602c69:ProjectViewProjectNode" />
+              <item name="My_Quant" type="462c0819:PsiDirectoryNode" />
               <item name="General" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Git-Clone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Git-Clone" type="462c0819:PsiDirectoryNode" />
-              <item name="ManuaFilter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Git-Clone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Git-Clone" type="462c0819:PsiDirectoryNode" />
-              <item name="ManuaFilter" type="462c0819:PsiDirectoryNode" />
-              <item name="Pic_Temp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Git-Clone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Git-Clone" type="462c0819:PsiDirectoryNode" />
-              <item name="TempPicStore" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Git-Clone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Git-Clone" type="462c0819:PsiDirectoryNode" />
-              <item name="TempPicStore" type="462c0819:PsiDirectoryNode" />
-              <item name="2019-02-06" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Git-Clone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Git-Clone" type="462c0819:PsiDirectoryNode" />
-              <item name="Test" type="462c0819:PsiDirectoryNode" />
+              <item name="My_Quant" type="b2602c69:ProjectViewProjectNode" />
+              <item name="My_Quant" type="462c0819:PsiDirectoryNode" />
+              <item name="TF_OPT_Test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -196,16 +191,17 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\MYAI\Code\master\My_Quant\TF_OPT_Test" />
+      <recent name="F:\MYAI\My_Quant\TimerTest" />
+      <recent name="F:\MYAI\My_Quant\Test" />
+      <recent name="F:\MYAI\My_Quant" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\MYAI\My_Quant\Auto_Report\Auto_Email" />
       <recent name="F:\MYAI\My_Quant\Test" />
       <recent name="F:\MYAI\Code\master\python_preject\My_Quant\Auto_Report\Auto_Email" />
       <recent name="F:\MYAI\Code\master\python_preject\My_Quant\Auto_Report\Auto_Email\Test" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\MYAI\My_Quant\TimerTest" />
-      <recent name="F:\MYAI\My_Quant\Test" />
-      <recent name="F:\MYAI\My_Quant" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -220,7 +216,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.CubicTest">
+  <component name="RunManager" selected="Python.Tensor_Opt_test">
     <configuration name="CubicTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -275,52 +271,23 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="getFeature" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Tensor_Opt_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ManuaFilter" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Git-Clone" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ManuaFilter/getFeature.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="timer" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TimerTest" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TF_OPT_Test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="My_Quant" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TimerTest/timer.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TF_OPT_Test/Tensor_Opt_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="My_Quant" />
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -339,6 +306,35 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="getFeature" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ManuaFilter" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Git-Clone" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ManuaFilter/getFeature.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="My_Quant" />
     </configuration>
     <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -422,19 +418,19 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.timer" />
-      <item index="1" class="java.lang.String" itemvalue="Python.getFeature" />
-      <item index="2" class="java.lang.String" itemvalue="Python.Email_Sub" />
-      <item index="3" class="java.lang.String" itemvalue="Python.Email_Demo" />
-      <item index="4" class="java.lang.String" itemvalue="Python.CubicTest" />
+      <item index="0" class="java.lang.String" itemvalue="Python.getFeature" />
+      <item index="1" class="java.lang.String" itemvalue="Python.Email_Sub" />
+      <item index="2" class="java.lang.String" itemvalue="Python.Email_Demo" />
+      <item index="3" class="java.lang.String" itemvalue="Python.CubicTest" />
+      <item index="4" class="java.lang.String" itemvalue="Python.Tensor_Opt_test" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.CubicTest" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Email_Sub" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Email_Demo" />
-        <item index="3" class="java.lang.String" itemvalue="Python.getFeature" />
-        <item index="4" class="java.lang.String" itemvalue="Python.timer" />
+        <item index="0" class="java.lang.String" itemvalue="Python.Tensor_Opt_test" />
+        <item index="1" class="java.lang.String" itemvalue="Python.CubicTest" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Email_Sub" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Email_Demo" />
+        <item index="4" class="java.lang.String" itemvalue="Python.getFeature" />
       </list>
     </recent_temporary>
   </component>
@@ -551,27 +547,13 @@
       <updated>1538309857268</updated>
     </task>
     <task id="LOCAL-00015" summary="定时同步">
-      <created>1549981580475</created>
+      <created>1550037407439</created>
       <option name="number" value="00015" />
       <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
-      <updated>1549981580475</updated>
+      <updated>1550037407439</updated>
     </task>
-    <task id="LOCAL-00016" summary="定时同步">
-      <created>1550057852155</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1550057852155</updated>
-    </task>
-    <task id="LOCAL-00017" summary="定时同步">
-      <created>1550058371000</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1550058371000</updated>
-    </task>
-    <option name="localTasksCounter" value="18" />
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -580,18 +562,18 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="444" y="374" width="1576" height="928" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19940476" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25617686" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47463176" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.06987578" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34477124" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16919191" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22697368" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -728,7 +710,6 @@ sendMail(&quot;A股日报&quot; + get_current_date_str(), recipient, '', U&quot;
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://D:/ProgramData/Anaconda3/envs/tensorflow/Lib/site-packages/reportlab/pdfbase/pdfdoc.py" />
     <entry file="file://$PROJECT_DIR$/JQData_Test/Demo.py" />
     <entry file="file://$PROJECT_DIR$/Note/Strategy">
       <provider selected="true" editor-type-id="text-editor">
@@ -887,25 +868,9 @@ sendMail(&quot;A股日报&quot; + get_current_date_str(), recipient, '', U&quot;
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/pandas/core/resample.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="190" column="0" lean-forward="false" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/matplotlib/axes/_axes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55647">
-          <caret line="2104" column="0" lean-forward="false" selection-start-line="2104" selection-start-column="0" selection-end-line="2104" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ManuaFilter/Pic_Temp/test1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/pandas/core/resample.py" />
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/matplotlib/axes/_axes.py" />
+    <entry file="file://$PROJECT_DIR$/ManuaFilter/Pic_Temp/test1.png" />
     <entry file="file://$PROJECT_DIR$/SDK/DBOpt.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -913,28 +878,9 @@ sendMail(&quot;A股日报&quot; + get_current_date_str(), recipient, '', U&quot;
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/ProgramData/Anaconda3/Lib/smtplib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20952">
-          <caret line="787" column="8" lean-forward="false" selection-start-line="787" selection-start-column="8" selection-end-line="787" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Auto_Report/Auto_Email/Test/Email_Demo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="783">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="34" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ManuaFilter/getFeature.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="44" column="5" lean-forward="false" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/smtplib.py" />
+    <entry file="file://$PROJECT_DIR$/Auto_Report/Auto_Email/Test/Email_Demo.py" />
+    <entry file="file://$PROJECT_DIR$/ManuaFilter/getFeature.py" />
     <entry file="file://$PROJECT_DIR$/Auto_Report/Auto_Email/Email_image.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="729">
@@ -942,16 +888,10 @@ sendMail(&quot;A股日报&quot; + get_current_date_str(), recipient, '', U&quot;
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/pymysql/err.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/pymysql/err.py" />
     <entry file="file://$PROJECT_DIR$/SDK/AveAnalysisSub.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6075">
+        <state relative-caret-position="6750">
           <caret line="234" column="0" lean-forward="false" selection-start-line="234" selection-start-column="0" selection-end-line="238" selection-end-column="68" />
           <folding />
         </state>
@@ -964,9 +904,18 @@ sendMail(&quot;A股日报&quot; + get_current_date_str(), recipient, '', U&quot;
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/pandas/core/internals.py" />
     <entry file="file://$PROJECT_DIR$/Auto_Report/Auto_Email/Email_Sub.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="1170">
           <caret line="52" column="14" lean-forward="false" selection-start-line="52" selection-start-column="14" selection-end-line="52" selection-end-column="14" />
           <folding>
             <element signature="e#18#32#0" expanded="true" />
@@ -974,52 +923,31 @@ sendMail(&quot;A股日报&quot; + get_current_date_str(), recipient, '', U&quot;
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/General/AutoStkConfig.py">
+    <entry file="file://$PROJECT_DIR$/General/GlobalSetting.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="24" />
+        <state relative-caret-position="60">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TempPicStore/2019-02-06/cyb.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/General/AutoStkConfig.py" />
+    <entry file="file://$PROJECT_DIR$/TempPicStore/2019-02-06/cyb.png" />
     <entry file="file://$PROJECT_DIR$/Test/CubicTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="167" column="0" lean-forward="false" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
+        <state relative-caret-position="196">
+          <caret line="163" column="56" lean-forward="false" selection-start-line="163" selection-start-column="56" selection-end-line="163" selection-end-column="56" />
           <folding>
             <element signature="e#564#3054#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+    <entry file="file://$PROJECT_DIR$/TF_OPT_Test/Tensor_Opt_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+        <state relative-caret-position="330">
+          <caret line="17" column="52" lean-forward="true" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/pandas/core/internals.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="118" column="52" lean-forward="false" selection-start-line="118" selection-start-column="52" selection-end-line="118" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/General/GlobalSetting.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="17" column="35" lean-forward="false" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="35" />
-          <folding>
-            <element signature="e#15#32#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
