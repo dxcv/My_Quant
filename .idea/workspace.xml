@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af78cda8-b18e-4981-bfb2-ec64ac4d39e9" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/Git-Clone.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Auto_Report/Auto_Email/Test/Email_Demo.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/General/AutoStkConfig.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ManuaFilter/Pic_Temp/test1.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ManuaFilter/getFeature.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/TempPicStore/2019-02-06/cyb.png" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,7 +19,7 @@
       <file leaf-file-name="Email_Sub.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Auto_Report/Auto_Email/Email_Sub.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1053">
+            <state relative-caret-position="0">
               <caret line="52" column="14" lean-forward="false" selection-start-line="52" selection-start-column="14" selection-end-line="52" selection-end-column="14" />
               <folding>
                 <element signature="e#18#32#0" expanded="true" />
@@ -46,42 +40,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GlobalSetting.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GlobalSetting.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/General/GlobalSetting.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="internals.py" pinned="false" current-in-tab="false">
-        <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/pandas/core/internals.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1188">
-              <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_pydev_execfile.py" pinned="false" current-in-tab="true">
-        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AveAnalysisSub.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SDK/AveAnalysisSub.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6075">
-              <caret line="234" column="0" lean-forward="false" selection-start-line="234" selection-start-column="0" selection-end-line="238" selection-end-column="68" />
-              <folding />
+            <state relative-caret-position="405">
+              <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+              <folding>
+                <element signature="e#15#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -591,7 +557,14 @@
       <option name="project" value="LOCAL" />
       <updated>1549981580475</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="定时同步">
+      <created>1550057852155</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1550057852155</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -602,7 +575,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21130952" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19940476" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47463176" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -984,29 +957,13 @@ sendMail(&quot;A股日报&quot; + get_current_date_str(), recipient, '', U&quot;
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/pandas/core/internals.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1188">
-          <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Auto_Report/Auto_Email/Email_Sub.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1053">
+        <state relative-caret-position="0">
           <caret line="52" column="14" lean-forward="false" selection-start-line="52" selection-start-column="14" selection-end-line="52" selection-end-column="14" />
           <folding>
             <element signature="e#18#32#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/General/GlobalSetting.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1035,9 +992,27 @@ sendMail(&quot;A股日报&quot; + get_current_date_str(), recipient, '', U&quot;
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="243">
+          <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/pandas/core/internals.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="118" column="52" lean-forward="false" selection-start-line="118" selection-start-column="52" selection-end-line="118" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/General/GlobalSetting.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+          <folding>
+            <element signature="e#15#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
