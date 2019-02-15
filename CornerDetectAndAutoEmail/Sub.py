@@ -10,23 +10,15 @@ import math
 from SDK.MyTimeOPT import get_current_date_str
 import os
 from pylab import *
+import pandas as pd
+
 
 # 无法显示汉字及负号
 mpl.rcParams['font.sans-serif'] = ['SimHei']
 matplotlib.rcParams['axes.unicode_minus']=False
 
-"""
-    三次样条拟合测试
-"""
 
 
-import matplotlib.pyplot as plt
-import numpy as np
-
-
-step = 6
-
-sh_index = ts.get_k_data('cyb')
 
 def genStkPic(stk_df, stk_code, root_save_dir):
     """
@@ -91,9 +83,6 @@ def genStkPic(stk_df, stk_code, root_save_dir):
     plt.savefig(save_dir+str(stk_code)+'.png', dpi=1200)
     plt.close()
 
-# 测试
-# genStkPic(stk_df=sh_index, stk_code='cyb',root_save_dir=pic_save_dir_root)
-
 
 def JudgeCornerPot(stk_df, stk_code):
 
@@ -146,13 +135,13 @@ def JudgeCornerPot(stk_df, stk_code):
     sh_index_now['MACD_Fit_Err'] = sh_index_now.apply(lambda x: x['MACD_Fit']-x['MACD_Std'], axis=1)
 
     # 计算误差
-    err = np.mean(list(map(lambda x:x**2, sh_index_now['MACD_Fit_Err'])))
+    err = np.mean(list(map(lambda x: x**2, sh_index_now['MACD_Fit_Err'])))
 
     a = c[0]
     b = c[1]
     bottom = -1 * (b / (2 * a))
 
-    if step - 1.5 < bottom < step + 1.5:
+    if step_corner_detect - 1.5 < bottom < step_corner_detect + 1.5:
         corner_flag = True
     else:
         corner_flag = False
@@ -166,46 +155,51 @@ def JudgeCornerPot(stk_df, stk_code):
         # 返回字典信息
         return {
             "corner_flag": corner_flag,
-            "err": err
+            "err": err,
+            "stk_code": stk_code
         }
     else:
         return {
             "corner_flag": corner_flag,
-            "err": err
+            "err": err,
+            "stk_code": stk_code
         }
 
 
-# 测试一下
-result = JudgeCornerPot(stk_df=sh_index, stk_code='cyb')
+def callback():
+    """
+    函数功能：计时器的回调函数，相当于实际的主函数
+    :return:
+    """
 
-for idx in sh_index.loc[step:, :].index:
-    df_part = sh_index.loc[idx-step:idx, ['MACD', 'date']].reset_index(drop=True)
+    # 遍历股票仓
+    result_list = []
+    for stk in stk_list:
 
-    # 使用2次曲线拟合判断拐点
-    c = np.polyfit(np.array(df_part.index), np.array(df_part['MACD']), 2)
-    a = c[0]
-    b = c[1]
-    bottom = -1*(b/(2*a))
+        # 下载该股票的数据
+        stk_df = ts.get_k_data(stk)
 
-    if step-1.5 < bottom < step + 1.5:
-        sh_index.loc[idx, 'corner'] = True
-    else:
-        sh_index.loc[idx, 'corner'] = False
+        # 判断拐点
+        stk_Judge_result = JudgeCornerPot(stk_code=stk, stk_df=stk_df)
+
+        # 汇集判断结果
+        result_list.append(stk_Judge_result)
+
+    # 将结果整合为df
+    result_df = pd.DataFrame(result_list)
+
+    # 判断是否有存在拐点的stk？
+    result_df_corner = result_df[result_df['corner_flag']]
+
+    if not result_df_corner.empty:
+        for idx in result_df_corner.index:
+
+            idx
+
+    end=0
 
 
-# 画图展示效果
-# trick to get the axes
-fig, ax = plt.subplots()
+# 测试
 
-df_normal = sh_index[sh_index.corner==False]
-x_normal_axis = list(map(lambda x: DateStr2Sec(x), df_normal['date']))
-ax.plot(x_normal_axis, df_normal['MACD'],  'g*')
-
-df_corner = sh_index[sh_index.corner==True]
-x_corner_axis = list(map(lambda x: DateStr2Sec(x), df_corner['date']))
-ax.plot(x_corner_axis, df_corner['MACD'],  'r*')
-
-# plot data
-plt.show()
-
-end = 0
+callback()
+end=0
