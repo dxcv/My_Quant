@@ -8,7 +8,7 @@ import numpy as np
 def get_ss_K_by_date_span(stk_code,date_start,date_end,outstanding):
 
     """
-    获取某只股票指定时间段内的close数据
+    获取某只stk指定时间段内的close数据
 
     :param industry_code_list:
     :param date:
@@ -49,7 +49,7 @@ def cal_industry_index(date_start,date_end):
     # 获取行业分类信息
     industry_info = get_total_table_data(conn=conn_industry, table_name='industry_info')
 
-    # 获取股票基本信息
+    # 获取stk基本信息
     stk_basic = get_total_table_data(conn=conn_basic,table_name=total_stk_info_table_name)\
                     .loc[:,['code','outstanding','totals']]
 
@@ -68,7 +68,7 @@ def cal_industry_index(date_start,date_end):
         # 获取行业代码列表及相应的流通股本
         code_info_df = ids[1].loc[:,['code','outstanding']].reset_index(drop=True)
 
-        # 获取该行业各只股票的流通市值，得到list列表形式
+        # 获取该行业各只stk的流通市值，得到list列表形式
         c_date_list = []
         for stk_index in code_info_df.index:
 
@@ -79,7 +79,7 @@ def cal_industry_index(date_start,date_end):
 
             c_date_list.append(data_ss)
 
-        # 按照日期合并同一行业内各只股票的数据
+        # 按照日期合并同一行业内各只stk的数据
         c_date_df = pd.concat(c_date_list,axis=1)
 
         # 对df中的空值进行处理
@@ -129,7 +129,7 @@ def nan_pro(input_df,date_start,stk_basic):
     """
 
 
-    # 获取有空值的股票代码列表（列名），分为 “任何有nan的列” 和 “全部为nan的列”
+    # 获取有空值的stk代码列表（列名），分为 “任何有nan的列” 和 “全部为nan的列”
     nan_any_df = input_df.loc[:,input_df.isnull().any()==True]
     code_any_list = list(map(lambda x:x.replace('nmc',''),nan_any_df.columns))
 
@@ -139,7 +139,7 @@ def nan_pro(input_df,date_start,stk_basic):
     df_sorted = input_df.sort_index(ascending=True)
 
 
-    # 遍历有空值的股票代码
+    # 遍历有空值的stk代码
     for code in code_any_list:
 
         # 获取第一个空值的索引号
@@ -163,7 +163,7 @@ def nan_pro(input_df,date_start,stk_basic):
                             .sort_values(by='date',ascending=False)\
                             .head(1)['close'].values[0]
 
-            # 从股票基本信息中获取流通股数量
+            # 从stk基本信息中获取流通股数量
             outstanding = stk_basic[stk_basic.code==code]['outstanding'].values[0]
 
             # 计算起始市值

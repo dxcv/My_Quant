@@ -1,7 +1,7 @@
 # encoding = utf-8
 
 """
-这个脚本用来每天定时检测相关股票的macd指标是否处于拐点区域，若处于拐点，则将其打印到pdf中，并发送邮件
+这个脚本用来每天定时检测相关stk的macd指标是否处于拐点区域，若处于拐点，则将其打印到pdf中，并发送邮件
 """
 import os
 
@@ -62,7 +62,7 @@ def macd_test_daily():
 
         print('完成stk' + bk + '的MACD检测！')
 
-    # 如果存在macd指标符合的股票，生成pdf并发送邮件
+    # 如果存在macd指标符合的stk，生成pdf并发送邮件
     if exist_flag:
         c.save()
 

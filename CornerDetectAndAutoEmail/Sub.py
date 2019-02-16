@@ -18,19 +18,63 @@ mpl.rcParams['font.sans-serif'] = ['SimHei']
 matplotlib.rcParams['axes.unicode_minus']=False
 
 
+def genHtml(code_list):
+    """
+
+    :param code_list:
+    :return:
+    """
+
+
+def genMsg(code, stk_name, date_str, msg):
+    """
+
+    本函数用来向msg实体中加入文字和图片
+    对于一支stk或者一个指数，要添加的文字和图片是一定的！
+    :param code: stk代码
+    :param stk_name: stk指数
+    :param date_str:
+    :param msg :信息实体
+    :return:
+    """
+
+    html_str = \
+        """
+        <html>
+            <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+                <title>Auto report when a corner pot is detected!</title>
+            </head>
+            <body>
+                <h1>Pic of stk for "Average" and "close：/n</h1>
+            </body>
+            <body>
+                <h1> The MACD line of this stk </h1>
+                <img src="C:/Users/paul/Desktop/软件代码/Git-Clone/ManuaFilter/Pic_Temp/test1.png"  alt="上海鲜花港 - 郁金香" />
+            <br />
+            这些是没有标题限制的文字，观察是不是正常文字！
+            </body>
+    
+            <body>
+                <h1>该标的的 周MACD线 </h1>
+                <img src="C:/Users/paul/Desktop/软件代码/Git-Clone/ManuaFilter/Pic_Temp/test1.png"  alt="上海鲜花港 - 郁金香" />
+            </body>
+        </html>
+    
+        """
 
 
 def genStkPic(stk_df, stk_code, root_save_dir):
     """
-    函数功能：给定股票的df，已经确定股票当前处于拐点状态，需要将当前股票的信息打印成图片，便于人工判断！
+    函数功能：给定stk的df，已经确定stk当前处于拐点状态，需要将当前stk的信息打印成图片，便于人工判断！
     :param stk_df           从tushare下载下来的原生df
     :param root_save_dir    配置文件中定义的存储路径
     :return:
     """
     """
     规划一下都画哪些图
-    1、该股票整体走势，包括60日均线、20日均线和收盘价
-    2、股票近几天的MACD走势
+    1、该stk整体走势，包括60日均线、20日均线和收盘价
+    2、stk近几天的MACD走势
     """
 
     """
@@ -75,12 +119,12 @@ def genStkPic(stk_df, stk_code, root_save_dir):
 
     # 保存图片
     current_date = get_current_date_str()
-    save_dir = root_save_dir+current_date+'/'
+    save_dir = root_save_dir+current_date+'/'+str(stk_code)+'/'
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
 
     plt.tight_layout()
-    plt.savefig(save_dir+str(stk_code)+'.png', dpi=1200)
+    plt.savefig(save_dir+'stk_A_C_M.png', dpi=1200)
     plt.close()
 
 
@@ -101,7 +145,7 @@ def JudgeCornerPot(stk_df, stk_code):
                 2、误差
     """
     sh_index = stk_df
-    sh_index['date'] = sh_index.index
+    # sh_index['date'] = sh_index.index
 
     # 按时间降序排序，方便计算macd
     sh_index = sh_index.sort_values(by='date', ascending=True)
@@ -150,7 +194,7 @@ def JudgeCornerPot(stk_df, stk_code):
     if corner_flag:
 
         # 生成图片
-        genStkPic(stk_df=stk_df, stk_code=stk_code,root_save_dir=pic_save_dir_root)
+        genStkPic(stk_df=stk_df, stk_code=stk_code, root_save_dir=pic_save_dir_root)
 
         # 返回字典信息
         return {
@@ -172,11 +216,11 @@ def callback():
     :return:
     """
 
-    # 遍历股票仓
+    # 遍历stk仓
     result_list = []
     for stk in stk_list:
 
-        # 下载该股票的数据
+        # 下载该stk的数据
         stk_df = ts.get_k_data(stk)
 
         # 判断拐点
@@ -201,5 +245,5 @@ def callback():
 
 # 测试
 
-callback()
-end=0
+# callback()
+# end=0

@@ -13,7 +13,7 @@ import tushare as ts
 import pywinauto
 import pywinauto.clipboard
 import pywinauto.application
-NUM_OF_STOCKS = 5  # 自定义股票数量
+NUM_OF_STOCKS = 5  # 自定义stk数量
 is_start = False
 is_monitor = True
 set_stocks_info = []
@@ -59,7 +59,7 @@ class OperationThs:
     def __sell(self, code, quantity):
         """
         卖函数
-        :param code: 股票代码， 字符串
+        :param code: stk代码， 字符串
         :param quantity: 数量， 字符串
         """
         self.__dialog_window.Edit4.SetFocus()
@@ -96,7 +96,7 @@ class OperationThs:
     def order(self, code, direction, quantity):
         """
         下单函数
-        :param code: 股票代码， 字符串
+        :param code: stk代码， 字符串
         :param direction: 买卖方向， 字符串
         :param quantity: 买卖数量， 字符串
         """
@@ -189,7 +189,7 @@ class OperationThs:
 
     def __getInfo(self, choice):
         """
-        获取股票信息
+        获取stk信息
         """
         self.__selectWindow(choice=choice)
         return self.__getCleanedData()
@@ -205,7 +205,7 @@ class OperationThs:
     def getDeal(code, pre_position, cur_position):
         """
         获取成交数量
-        :param code: 需检查的股票代码， 字符串
+        :param code: 需检查的stk代码， 字符串
         :param pre_position: 下单前的持仓
         :param cur_position: 下单后的持仓
         :return: 0-未成交， 正整数是买入的数量， 负整数是卖出的数量
@@ -224,7 +224,7 @@ class OperationThs:
     def withdraw(self, code, direction):
         """
         指定撤单
-        :param code: 股票代码
+        :param code: stk代码
         :param direction: 方向 B， S
         :return:
         """
@@ -274,8 +274,8 @@ class OperationThs:
 
 def getStockData():
     """
-    获取股票实时数据
-    :return:股票实时数据
+    获取stk实时数据
+    :return:stk实时数据
     """
     global stock_codes
     code_name_price = []
@@ -351,9 +351,9 @@ class StockGui:
         self.window.resizable(0, 0)
         frame1 = Frame(self.window)
         frame1.pack(padx=10, pady=10)
-        Label(frame1, text="股票代码", width=8, justify=CENTER).grid(
+        Label(frame1, text="stk代码", width=8, justify=CENTER).grid(
             row=1, column=1, padx=5, pady=5)
-        Label(frame1, text="股票名称", width=8, justify=CENTER).grid(
+        Label(frame1, text="stk名称", width=8, justify=CENTER).grid(
             row=1, column=2, padx=5, pady=5)
         Label(frame1, text="实时价格", width=8, justify=CENTER).grid(
             row=1, column=3, padx=5, pady=5)
@@ -492,7 +492,7 @@ class StockGui:
                         else:
                             self.variable[row][col].set(temp)
         except Exception :
-            tkinter.messagebox.showerror('错误', "没有找到配置保存文件，请先进行股票买卖配置信息保存！")
+            tkinter.messagebox.showerror('错误', "没有找到配置保存文件，请先进行stk买卖配置信息保存！")
 
     def setFlags(self):
         """
@@ -505,7 +505,7 @@ class StockGui:
 
     def updateControls(self):
         """
-        实时股票名称、价格、状态信息
+        实时stk名称、价格、状态信息
         """
         global actual_stocks_info, is_start
         if is_start:
@@ -528,9 +528,9 @@ class StockGui:
     @staticmethod
     def __pickCodeFromItems(items_info):
         """
-        提取股票代码
+        提取stk代码
         :param items_info: UI下各项输入信息
-        :return:股票代码列表
+        :return:stk代码列表
         """
         stock_codes = []
         for item in items_info:
@@ -582,7 +582,7 @@ class StockGui:
             for col in range(self.cols):
                 temp = self.variable[row][col].get().strip()
                 if col == 0:
-                    if len(temp) == 6 and temp.isdigit():  # 判断股票代码是否为6位数
+                    if len(temp) == 6 and temp.isdigit():  # 判断stk代码是否为6位数
                         set_stocks_info[row].append(temp)
                     else:
                         set_stocks_info[row].append('')

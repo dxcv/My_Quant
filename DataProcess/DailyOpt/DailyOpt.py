@@ -231,7 +231,7 @@ os.system('shutdown -s -f -t 120')
 #                       ax=ax,
 #                       title_note='ave'+code,
 #                       index_list=index_list)
-#         print("完成股票 "+code + " 的均线趋势图！")
+#         print("完成stk "+code + " 的均线趋势图！")
 
 
 # for code in g_total_stk_code[600:900]:
@@ -243,7 +243,7 @@ os.system('shutdown -s -f -t 120')
 #                       ax=ax,
 #                       title_note='ave'+code,
 #                       index_list=index_list)
-#         print("完成股票 "+code + " 的均线趋势图！")
+#         print("完成stk "+code + " 的均线趋势图！")
 #
 # gc.collect()
 
@@ -256,7 +256,7 @@ os.system('shutdown -s -f -t 120')
 #                       ax=ax,
 #                       title_note='ave'+code,
 #                       index_list=index_list)
-#         print("完成股票 "+code + " 的均线趋势图！")
+#         print("完成stk "+code + " 的均线趋势图！")
 
 # gc.collect()
 
@@ -269,7 +269,7 @@ os.system('shutdown -s -f -t 120')
 #                       ax=ax,
 #                       title_note='ave'+code,
 #                       index_list=index_list)
-#         print("完成股票 "+code + " 的均线趋势图！")
+#         print("完成stk "+code + " 的均线趋势图！")
 
 
 # plt.clf()

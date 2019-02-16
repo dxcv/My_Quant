@@ -43,7 +43,7 @@ for stk in g_total_stk_code:
             origin_basic_data = origin_basic_data.set_index(keys='index')
 
 
-        # 获取该股票K数据并增加“季度列”
+        # 获取该stkK数据并增加“季度列”
         k_df_with_Q = add_quarter_to_df(get_total_table_data(conn=conn_k, table_name='k' + stk))
 
         # （添加一）根据K数据获取该stk的季度增长率
@@ -68,13 +68,13 @@ for stk in g_total_stk_code:
         Q_start_price = get_quarter_start_price_df(k_df_with_Q)
 
 
-        # 以季度为轴，将该股票的“基本信息”与“季度增长率”合并，并删除有nan的行！
+        # 以季度为轴，将该stk的“基本信息”与“季度增长率”合并，并删除有nan的行！
         quarter_df_merged = pd.concat([Q_start_price,quarter_ratio_df, origin_basic_data, class_Q_ss], axis=1, join='inner').dropna(axis=0, how='any')
 
 
         if len(quarter_df_merged):
 
-            # A、股票季度增长率 - 所属类季度增长率
+            # A、stk季度增长率 - 所属类季度增长率
             quarter_df_merged['Q_ratio_diff'] = quarter_df_merged.apply(lambda x:x['quarter_ration'] - x['quarter_ration_class'],axis=1)
             quarter_df_merged['stk_code'] = str(stk)
 
@@ -83,7 +83,7 @@ for stk in g_total_stk_code:
             quarter_df_merged['pe']  = quarter_df_merged.apply(lambda x: x['q_start_price']/(x['eps']+0.0000000000001), axis=1)
             quarter_df_merged['pb'] = quarter_df_merged.apply(lambda x: x['q_start_price'] /(x['bps']+0.0000000000001), axis=1)
 
-            # C、增加股票证券类型
+            # C、增加stk证券类型
             quarter_df_merged['stk_class'] = quarter_df_merged.apply(lambda x: get_class_stk_belong(stk,code_belongto_info), axis=1)
 
             # D、保存为csv文件

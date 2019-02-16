@@ -386,7 +386,7 @@ def RPL_Bk_Page(canvas_para,bk_name):
     """
 
 
-    # 插入字符串，用以表明股票代码及名称
+    # 插入字符串，用以表明stk代码及名称
     canvas_para.setFont("song", 10)
     if bk_name in ['sh','sz','cyb']:
         stk_name = bk_name

@@ -82,7 +82,7 @@ for id in df_stk.index:
         # 计算本次被操作的赌注大小
         wager_opt_amount = wager_now*wager_inc_ratio
 
-        # 判断是否有足够股票可卖
+        # 判断是否有足够stk可卖
         if wager_amount > wager_opt_amount:
 
             # 更新成本

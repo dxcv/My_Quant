@@ -2,13 +2,13 @@
 from General.GlobalSetting import conn_k
 from SDK.SDKHeader import *
 '''
-思路：找到半年线为水平，60日，30日和14日线的斜率依此增大的股票。并且股票上市超过一定时间。
+思路：找到半年线为水平，60日，30日和14日线的斜率依此增大的stk。并且stk上市超过一定时间。
 '''
 # ss_code = '300183'
 #
 #
 #
-# # 获取一只股票的k数据
+# # 获取一只stk的k数据
 # ss_data_df = get_total_table_data(conn_k,'k'+ss_code)
 #
 #
@@ -58,11 +58,11 @@ def get_near_days_trend_cov(ss_df,near_days_length,specified_span):
 
 # 给定：
 
-# 股票代码
+# stk代码
 # 时间span的list
 # 均线前瞻长度
 #
-# 返回该股票相应span的均线方差
+# 返回该stk相应span的均线方差
 
 # 返回值范例：
 # {
@@ -78,7 +78,7 @@ def get_near_days_trend_cov(ss_df,near_days_length,specified_span):
 
 def get_ts_cov(stk_code,ts,near_days_length):
 
-    # 获取该股票的k数据
+    # 获取该stk的k数据
     ss_data_df = get_total_table_data(conn_k,'k'+stk_code)
 
     # 定义返回值
@@ -89,7 +89,7 @@ def get_ts_cov(stk_code,ts,near_days_length):
 
         result['cov_'+str(span)] = get_near_days_trend_cov(ss_data_df,near_days_length,span)
 
-    # 在返回值中加上股票代码
+    # 在返回值中加上stk代码
     result['code'] = stk_code
 
     return result

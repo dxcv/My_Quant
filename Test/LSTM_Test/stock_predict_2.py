@@ -24,7 +24,7 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 
 # 定义LSTM的超参数
-# 根据股票历史数据中的最低价、最高价、开盘价、收盘价、交易量、交易额、跌涨幅等因素，对下一日股票最高价进行预测。
+# 根据stk历史数据中的最低价、最高价、开盘价、收盘价、交易量、交易额、跌涨幅等因素，对下一日stk最高价进行预测。
 rnn_unit=10       # 隐含层数目
 input_size=7
 output_size=1
@@ -247,7 +247,7 @@ def prediction(time_step=20):
 
 # 导入数据
 f=open('dataset/dataset_2.csv')
-df=pd.read_csv(f)               # 读入股票数据
+df=pd.read_csv(f)               # 读入stk数据
 data=df.iloc[:,2:10].values     # 取第3-10列   data实际数据大小[6109 * 8]
 
 

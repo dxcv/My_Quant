@@ -32,16 +32,16 @@ def get_class_df():
 def get_stk_classified_data(index_list,code):
 
     """
-    根据股票所在类，获取其大盘数据
+    根据stk所在类，获取其大盘数据
 
-    :param basic_Q:                 股票四大类的季度变化率
-    :param code_belongto_info:      股票所属类的信息
-    :param code:                    股票代码
+    :param basic_Q:                 stk四大类的季度变化率
+    :param code_belongto_info:      stk所属类的信息
+    :param code:                    stk代码
     :return:
 
     """
 
-    # 获取该股票所属的类型
+    # 获取该stk所属的类型
     if str(code)[0:3] == '300':
         belongto = 'cyb'
 
@@ -85,7 +85,7 @@ def stk_k_pro(k_df):
 def cal_relative_ratio(code,index_list,date_start,date_end):
 
     """
-    给定股票代码，大盘数据，起止时间，返回包含“相对变化率差”的df
+    给定stk代码，大盘数据，起止时间，返回包含“相对变化率差”的df
     :param code:
     :param index_list:
     :param date_start:

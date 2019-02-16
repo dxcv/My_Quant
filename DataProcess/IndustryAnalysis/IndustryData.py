@@ -9,7 +9,7 @@ from SDK.SDKHeader import *
 # 获取行业分类
 industry_info = get_total_table_data(conn = conn_industry,table_name = 'industry_info')
 
-# 获取当天股票情况
+# 获取当天stk情况
 stk_total_today = ts.get_today_all()
 
 # 文件存取路径

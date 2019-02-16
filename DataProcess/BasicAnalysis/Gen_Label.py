@@ -28,7 +28,7 @@ for b_ele in ['sh','sz','cyb','zxb']:
                     'b_Q':df_b_Q})
 
 
-# （二）对股票按所在板块进行分类
+# （二）对stk按所在板块进行分类
 code_belongto_info = []
 for code in g_total_stk_code:
     if str(code)[0] == '6':
@@ -40,7 +40,7 @@ for code in g_total_stk_code:
     elif str(code)[0] == '0':
         belongto = 'sz'
     else:
-        print('遇到不知所属的股票代码，其代码为：'+str(code))
+        print('遇到不知所属的stk代码，其代码为：'+str(code))
         belongto = ''
 
     code_belongto_info.append({'code':code,
