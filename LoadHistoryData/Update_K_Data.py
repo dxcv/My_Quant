@@ -8,7 +8,7 @@ from SDK.SDKHeader import *
 
 def update_single_stk_k_data(conn_param, k_database_name, stk_code_param):
     """
-    更新单只股票的K数据
+    更新单只stk的K数据
 
     :param conn_param:
     :param k_database_name:
@@ -49,7 +49,7 @@ def update_single_stk_k_data(conn_param, k_database_name, stk_code_param):
 
 def update_K_data():
     """
-    按照股票代码列表更新所有股票的K数据
+    按照stk代码列表更新所有stk的K数据
 
     :return:
     """

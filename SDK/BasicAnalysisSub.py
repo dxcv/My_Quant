@@ -335,7 +335,7 @@ def get_quarter_growth_ratio(data_df, quarter):
 def get_stk_quarter_start_price(data_df, quarter):
 
     """
-    给定股票K数据和季度，求该季度的第一天的收盘价格
+    给定stkK数据和季度，求该季度的第一天的收盘价格
     :param data_df:
     :param quarter:
     :return:
@@ -362,7 +362,7 @@ def get_quarter_growth_ratio_df(data_df):
 
     df的列为： “quarter” 和　“quarter_ration”
 
-    :param data_df:  该股票的K数据
+    :param data_df:  该stk的K数据
     :return:
     """
 
@@ -387,7 +387,7 @@ def get_quarter_start_price_df(data_df):
 
     df的列为： “quarter” 和　“q_start_price”
 
-    :param data_df:  该股票的K数据（包含季度列）
+    :param data_df:  该stk的K数据（包含季度列）
     :return:
     """
 
@@ -557,7 +557,7 @@ def get_class_Q_ratio():
 def get_stk_belongto_info():
 
     """
-    获取每支股票所属类别（上证、深证、创业板、中小板）
+    获取每支stk所属类别（上证、深证、创业板、中小板）
     :return:
     """
 
@@ -576,7 +576,7 @@ def get_stk_belongto_info():
         elif str(code)[0] == '0':
             belongto = 'sz'
         else:
-            print('遇到不知所属的股票代码，其代码为：' + str(code))
+            print('遇到不知所属的stk代码，其代码为：' + str(code))
             belongto = ''
 
         code_belongto_info.append({'code': code,
@@ -587,16 +587,16 @@ def get_stk_belongto_info():
 def get_stk_classified_Q_ratio(class_Q,code_belongto_info,code):
 
     """
-    根据股票所在类，获取其季度增长率df
+    根据stk所在类，获取其季度增长率df
 
-    :param basic_Q:                 股票四大类的季度变化率
-    :param code_belongto_info:      股票所属类的信息
-    :param code:                    股票代码
+    :param basic_Q:                 stk四大类的季度变化率
+    :param code_belongto_info:      stk所属类的信息
+    :param code:                    stk代码
     :return:
 
     """
 
-    # 获取该股票所属的类型
+    # 获取该stk所属的类型
     stk_class_dic = code_belongto_info[code_belongto_info.code == code]
     if len(stk_class_dic):
         stk_class = stk_class_dic['belongto'].values[0]
@@ -661,7 +661,7 @@ def add_quarter(quarter_str):
 
 def get_class_stk_belong(code,belong_to_info):
     """
-    给定股票代码，获取其所属证券类型
+    给定stk代码，获取其所属证券类型
     :param code:
     :param belong_to_info:
     :return:

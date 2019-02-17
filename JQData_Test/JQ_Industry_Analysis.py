@@ -14,7 +14,7 @@ indus_dic = [{'indus_code':x,
               'indus_stk':jqdatasdk.get_industry_stocks(industry_code=x)
               } for x in indus.index]
 
-# 向字典列表中增加各行业所含股票的数据，df格式
+# 向字典列表中增加各行业所含stk的数据，df格式
 for dic in indus_dic:
     dic['stk_df_list'] = [get_indus_stk_df(dic['indus_stk'], x) for x in year_list]
     dic['net_profit_list'] = [x['net_profit'].sum() for x in dic['stk_df_list']]
@@ -38,7 +38,7 @@ df_close = df['close']
 df_close['000300.XSHG_std'] = df_close.apply(lambda x:x['000300.XSHG']*(3000/3535.2290), axis=1)
 
 
-# 每支股票起始投资1000块
+# 每支stk起始投资1000块
 for stk in ['000002.XSHE', '600048.XSHG', '000069.XSHE']:
     df_close[stk+'_std'] = df_close.apply(lambda x:x[stk]*(1000/df_close.head(1)[stk].values[0]), axis=1)
 

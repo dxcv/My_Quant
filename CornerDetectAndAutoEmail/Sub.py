@@ -1,6 +1,6 @@
 # encoding = utf-8
 import matplotlib
-matplotlib.use('Agg')
+# matplotlib.use('Agg')
 from General.AutoStkConfig import *
 # from SDK.SDKHeader import *
 import talib
@@ -18,19 +18,17 @@ mpl.rcParams['font.sans-serif'] = ['SimHei']
 matplotlib.rcParams['axes.unicode_minus']=False
 
 
-
-
-def genStkPic(stk_df, stk_code, root_save_dir):
+def genStkPic(stk_df, stk_code, current_date, root_save_dir):
     """
-    函数功能：给定股票的df，已经确定股票当前处于拐点状态，需要将当前股票的信息打印成图片，便于人工判断！
+    函数功能：给定stk的df，已经确定stk当前处于拐点状态，需要将当前stk的信息打印成图片，便于人工判断！
     :param stk_df           从tushare下载下来的原生df
     :param root_save_dir    配置文件中定义的存储路径
     :return:
     """
     """
     规划一下都画哪些图
-    1、该股票整体走势，包括60日均线、20日均线和收盘价
-    2、股票近几天的MACD走势
+    1、该stk整体走势，包括60日均线、20日均线和收盘价
+    2、stk近几天的MACD走势
     """
 
     """
@@ -74,21 +72,70 @@ def genStkPic(stk_df, stk_code, root_save_dir):
     ax[2].legend(loc='best')
 
     # 保存图片
-    current_date = get_current_date_str()
-    save_dir = root_save_dir+current_date+'/'
+    # current_date = get_current_date_str()
+    save_dir = root_save_dir+current_date+'/'+str(stk_code)+'/'
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
 
     plt.tight_layout()
-    plt.savefig(save_dir+str(stk_code)+'.png', dpi=1200)
+    plt.savefig(save_dir+'stk_A_C_M.png', dpi=1200)
     plt.close()
 
 
-def JudgeCornerPot(stk_df, stk_code):
+def IsPotInCurveMedian(y_axis, median_neighbourhood):
+    """
+    该函数用于判断当前点是否在序列拟合成的抛物线的中点
+    :param x_axis:
+    :param y_axis:
+    :param median_neighbourhood: 中点判断的邻域，百分比，在此区域内可认为是中点
+    :return:
+    """
+    # 中间点邻域大小
+    m_neigh = len(y_axis)*median_neighbourhood/2.0
+
+    # 统一格式
+    x_axis_array = np.array(range(0, len(y_axis)))
+    y_axis_array = np.array(y_axis)
+
+    # 对MACD进行归一化，以便后面计算误差
+    M_max = np.max(y_axis_array)
+    M_min = np.min(y_axis_array)
+    y_axis_array_std = np.array(list(map(lambda x: (x-M_min)/(M_max-M_min), y_axis_array)))
+
+    # 对归一化后的MACD进行二次拟合
+    c = np.polyfit(x_axis_array, y_axis_array_std, 2)
+
+    # 计算其拟合后曲线
+    y_axis_fit = np.array(list(map(lambda x:c[0]*x**2+c[1]*x+c[2], x_axis_array)))
+
+    # 计算误差
+    err = np.mean(y_axis_fit-y_axis_array_std)
+
+    a = c[0]
+    b = c[1]
+    bottom = -1 * (b / (2 * a))
+
+    # 数据长度
+    data_length = len(y_axis)
+
+    if (data_length-1)/2.0 - m_neigh < bottom < (data_length-1)/2.0 + m_neigh:
+        corner_flag = True
+    else:
+        corner_flag = False
+
+    return {
+        'corner_flag': corner_flag,
+        'err': err
+    }
+
+
+
+def JudgeCornerPot(stk_df, stk_code, current_date, debug=False):
 
     """
     函数功能：判断一支标的的拐点
     :return:
+    :param debug 为真是不打印图片
 
     确认是拐点：
         返回
@@ -100,8 +147,8 @@ def JudgeCornerPot(stk_df, stk_code):
                 1、假标志位
                 2、误差
     """
-    sh_index = stk_df
-    sh_index['date'] = sh_index.index
+    sh_index = stk_df.tail(100)
+    # sh_index['date'] = sh_index.index
 
     # 按时间降序排序，方便计算macd
     sh_index = sh_index.sort_values(by='date', ascending=True)
@@ -111,10 +158,11 @@ def JudgeCornerPot(stk_df, stk_code):
                                                                                 fastperiod=12, slowperiod=26,
                                                                                 signalperiod=9)
 
-    sh_index = sh_index.dropna(how='any', axis=0).reset_index(drop=True)
+    # sh_index_dropna = sh_index.dropna(how='any', axis=0).reset_index(drop=True)
+    sh_index_dropna = sh_index
 
     # 获取最后几个值
-    sh_index_now = sh_index.tail(cubic_test_last_step)
+    sh_index_now = sh_index_dropna.tail(cubic_test_last_step)
 
     # 对MACD进行归一化，以便后面计算误差
     M_max = np.max(sh_index_now['MACD'])
@@ -127,6 +175,7 @@ def JudgeCornerPot(stk_df, stk_code):
 
     # 对归一化后的MACD进行二次拟合
     c = np.polyfit(np.array(sh_index_now['x']), np.array(sh_index_now['MACD_Std']), 2)
+
 
     # 计算其拟合后曲线
     sh_index_now['MACD_Fit'] = sh_index_now.apply(lambda x: c[0]*x['x']**2+c[1]*x['x']+c[2], axis=1)
@@ -150,7 +199,8 @@ def JudgeCornerPot(stk_df, stk_code):
     if corner_flag:
 
         # 生成图片
-        genStkPic(stk_df=stk_df, stk_code=stk_code,root_save_dir=pic_save_dir_root)
+        if not debug:
+            genStkPic(stk_df=stk_df, stk_code=stk_code, root_save_dir=pic_save_dir_root, current_date=current_date)
 
         # 返回字典信息
         return {
@@ -172,11 +222,11 @@ def callback():
     :return:
     """
 
-    # 遍历股票仓
+    # 遍历stk仓
     result_list = []
     for stk in stk_list:
 
-        # 下载该股票的数据
+        # 下载该stk的数据
         stk_df = ts.get_k_data(stk)
 
         # 判断拐点
@@ -201,5 +251,5 @@ def callback():
 
 # 测试
 
-callback()
-end=0
+# callback()
+# end=0

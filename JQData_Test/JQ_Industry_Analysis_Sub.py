@@ -41,7 +41,7 @@ def indus300_compare(stk_list):
     df_close['000300.XSHG_std'] = df_close.apply(lambda x:x['000300.XSHG']*(len(stk_list)*1000/df_close.head(1)['000300.XSHG'].values[0]), axis=1)
 
 
-    # 每支股票起始投资1000块
+    # 每支stk起始投资1000块
     for stk in stk_list:
         df_close[stk+'_std'] = df_close.apply(lambda x:x[stk]*(1000/df_close.head(1)[stk].values[0]), axis=1)
 
@@ -76,7 +76,7 @@ def indus300_compare_ts(stk_list):
     df_close['000300.XSHG_std'] = df_close.apply(lambda x:x['000300.XSHG']*(len(stk_list)*1000/df_close.head(1)['000300.XSHG'].values[0]), axis=1)
 
 
-    # 每支股票起始投资1000块
+    # 每支stk起始投资1000块
     for stk in stk_list:
         df_close[stk+'_std'] = df_close.apply(lambda x:x[stk]*(1000/df_close.head(1)[stk].values[0]), axis=1)
 
@@ -90,7 +90,7 @@ def indus300_compare_ts(stk_list):
 
 def plot_industry(industry_df,industry_name):
     """
-    函数功能：展示一个行业的龙头股票与沪深300的对比，起始时都买进3000块
+    函数功能：展示一个行业的龙头stk与沪深300的对比，起始时都买进3000块
     :param industry_df:   函数indus300_compare(stk_list)的处理结果
     :param data_list:
     :param year_list:

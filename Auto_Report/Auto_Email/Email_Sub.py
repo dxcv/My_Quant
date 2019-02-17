@@ -15,8 +15,7 @@ import tushare as ts
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
 
-
-
+from CornerDetectAndAutoEmail.HtmlStr import html_str, addInfoToMsg
 
 '''''
 @subject:邮件主题
@@ -27,44 +26,6 @@ from matplotlib.figure import Figure
 
 @password:发信人的邮箱密码
 '''
-
-def genMsg(code, stk_name, date_str, msg):
-    """
-
-    本函数用来向msg实体中加入文字和图片
-    对于一支股票或者一个指数，要添加的文字和图片是一定的！
-    :param code: 股票代码
-    :param stk_name: 股票指数
-    :param date_str:
-    :param msg :信息实体
-    :return:
-    """
-
-    html_str = \
-    """
-    <html>
-        <head>
-            <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-            <title>提交触发拐点的标的的信息</title>
-        </head>
-        <body>
-            <h1>标的 的close 和 均线图片：/n</h1>
-        </body>
-        <body>
-            <h1>该标的的 日MACD线 </h1>
-            <img src="C:/Users/paul/Desktop/软件代码/Git-Clone/ManuaFilter/Pic_Temp/test1.png"  alt="上海鲜花港 - 郁金香" />
-        <br />
-        这些是没有标题限制的文字，观察是不是正常文字！
-        </body>
-        
-        <body>
-            <h1>该标的的 周MACD线 </h1>
-            <img src="C:/Users/paul/Desktop/软件代码/Git-Clone/ManuaFilter/Pic_Temp/test1.png"  alt="上海鲜花港 - 郁金香" />
-        </body>
-    </html>
-
-    """
-
 
 def sendmail(subject, msg, toaddrs, fromaddr, smtpaddr, password):
 
@@ -77,8 +38,11 @@ def sendmail(subject, msg, toaddrs, fromaddr, smtpaddr, password):
     mail_msg['To'] = ','.join(toaddrs)
 
     # mail_msg.attach(MIMEText('<b>Some <i>HTML</i> text</b> and an image.<br><img src="cid:image1"><br>good!', 'html', 'utf-8'))
-    mail_msg.attach(
-        MIMEText(html_str, 'html', 'utf-8'))
+    # mail_msg.attach(
+    #     MIMEText(html_str, 'html', 'utf-8'))
+
+    # 加载相应图片
+    addInfoToMsg(mail_msg, html_str, '2019-02-15', ['300183'])
 
     # mail_msg.attach(
     #     MIMEText('单纯文字行不行！', 'html', 'utf-8'))
@@ -102,12 +66,12 @@ def sendmail(subject, msg, toaddrs, fromaddr, smtpaddr, password):
     # mail_msg.attach(msgImage)
 
     # 测试添加png类型的图片
-    fp = open('C:/Users/paul/Desktop/软件代码/Git-Clone/ManuaFilter/Pic_Temp/test1.png', 'rb')
-    msgImage = MIMEImage(fp.read())
-    fp.close()
+    # fp = open('C:/Users/paul/Desktop/软件代码/Git-Clone/ManuaFilter/Pic_Temp/test1.png', 'rb')
+    # msgImage = MIMEImage(fp.read())
+    # fp.close()
 
-    msgImage.add_header('Content-ID', '<image1>')
-    mail_msg.attach(msgImage)
+    # msgImage.add_header('Content-ID', '<image1>')
+    # mail_msg.attach(msgImage)
 
     # jpg类型的附件
     # msgImage = MIMEImage(plt.figimage)

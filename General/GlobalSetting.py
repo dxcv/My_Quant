@@ -183,7 +183,7 @@ g_wr_file_url = "F:/MYAI/文档资料/用于读取的文件/"
 
 
 
-# 股票基本信息
+# stk基本信息
 stk_basic = ts.get_stock_basics()
 
 

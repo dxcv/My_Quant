@@ -9,7 +9,7 @@ import tushare as ts
 code = '300183'
 
 
-# 获取该股票的历史数据
+# 获取该stk的历史数据
 hist_stk = ts.get_hist_data(code)
 
 # 获取所属大盘的历史数据

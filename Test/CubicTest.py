@@ -30,15 +30,15 @@ sh_index = ts.get_k_data('cyb')
 
 def genStkPic(stk_df, stk_code, root_save_dir):
     """
-    函数功能：给定股票的df，已经确定股票当前处于拐点状态，需要将当前股票的信息打印成图片，便于人工判断！
+    函数功能：给定stk的df，已经确定stk当前处于拐点状态，需要将当前stk的信息打印成图片，便于人工判断！
     :param stk_df           从tushare下载下来的原生df
     :param root_save_dir    配置文件中定义的存储路径
     :return:
     """
     """
     规划一下都画哪些图
-    1、该股票整体走势，包括60日均线、20日均线和收盘价
-    2、股票近几天的MACD走势
+    1、该stk整体走势，包括60日均线、20日均线和收盘价
+    2、stk近几天的MACD走势
     """
 
     """
