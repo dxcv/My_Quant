@@ -10,7 +10,7 @@ from pylab import *
 """
 本脚本用于测试拐点判断准确性
 """
-sh_index = ts.get_k_data(code='300183', start='2018-01-01')
+sh_index = ts.get_k_data(code='300183')
 
 # 按升序排序
 stk_df = sh_index.sort_values(by='date', ascending=True)
@@ -66,14 +66,18 @@ for idx in stk_df.loc[corner_Pot_Retrospective_Half:len(stk_df)-corner_Pot_Retro
 
     stk_df.loc[idx, 'corner_flag_M21'] = r['corner_flag']
     stk_df.loc[idx, 'err_M21'] = r['err']
+    stk_df.loc[idx, 'corner_dist_ratio'] = math.fabs(r['corner_dist_ratio'])
+
 
 # 取出秒数轴用于后续的横坐标
 stk_df['second'] = stk_df.apply(lambda x: DateStr2Sec(x['date']), axis=1)
 
-# 画图展示效果
-sh_index = stk_df
+sh_index = stk_df.dropna(how='any')
 
-fig, ax = plt.subplots(nrows=3, ncols=1)
+
+
+# 画图展示效果
+fig, ax = plt.subplots(nrows=5, ncols=1)
 
 df_normal = sh_index[sh_index.corner_flag==False]
 # x_normal_axis = list(map(lambda x: DateStr2Sec(x), df_normal['date']))
@@ -99,6 +103,15 @@ ax[2].plot(sh_index['second'], sh_index['M21'],  'g*')
 M21Corner = sh_index[sh_index['corner_flag_M21']==True]
 ax[2].plot(M21Corner['second'], M21Corner['M21'],  'r*')
 
+# 打印均线拐点的“距离比率”
+corner_dist = sh_index[sh_index['corner_dist_ratio']<3][sh_index['corner_dist_ratio']>-3]
+ax[3].plot(corner_dist['second'], corner_dist['corner_dist_ratio'],  'g*--')
+ax[3].plot(corner_dist['second'], np.zeros(len(corner_dist)), 'r-')
+
+# 打印收盘价走势图
+ax[4].plot(sh_index['second'], sh_index['close'], 'g*--', label='收盘价')
+
+plt.legend(loc='best')
 
 # plot data
 plt.show()

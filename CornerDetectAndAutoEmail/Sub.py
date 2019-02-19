@@ -115,6 +115,8 @@ def IsPotInCurveMedian(y_axis, median_neighbourhood):
     b = c[1]
     bottom = -1 * (b / (2 * a))
 
+
+
     # 数据长度
     data_length = len(y_axis)
 
@@ -123,9 +125,13 @@ def IsPotInCurveMedian(y_axis, median_neighbourhood):
     else:
         corner_flag = False
 
+    # 计算当前距离拐点的距离
+    corner_dist_ratio = (bottom-(data_length/2-1))/data_length
+
     return {
         'corner_flag': corner_flag,
-        'err': err
+        'err': err,
+        'corner_dist_ratio': corner_dist_ratio
     }
 
 
