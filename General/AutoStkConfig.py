@@ -21,4 +21,5 @@ stk_list = [
     '300183'
 ]
 
-step_corner_detect = 6    # 在判断拐点的时候，取最近的数据的个数
+step_corner_detect = 6                  # 在判断拐点的时候，取最近的数据的个数
+corner_Pot_Retrospective_Half = 6       # 进行后验检测拐点时，时间窗的一半
