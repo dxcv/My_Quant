@@ -100,7 +100,7 @@ corner_dist = sh_index[sh_index['corner_dist_ratio']<3][sh_index['corner_dist_ra
 ax[3].plot(corner_dist['second'], corner_dist['corner_dist_ratio'],  'g*--')
 ax[3].plot(corner_dist['second'], np.zeros(len(corner_dist)), 'r-')
 
-# 打印收盘价走势图
+# 打印close走势图
 ax[4].plot(sh_index['second'], sh_index['close'], 'g*--', label='收盘价')
 
 plt.legend(loc='best')

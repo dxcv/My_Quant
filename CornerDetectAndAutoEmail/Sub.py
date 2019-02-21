@@ -5,6 +5,8 @@ from General.AutoStkConfig import *
 # from SDK.SDKHeader import *
 import talib
 import tushare as ts
+
+from SDK.CNN_Data_Prepare import gaussian_normalize
 from SDK.MyTimeOPT import DateStr2Sec
 import math
 from SDK.MyTimeOPT import get_current_date_str
@@ -115,8 +117,6 @@ def IsPotInCurveMedian(y_axis, median_neighbourhood):
     b = c[1]
     bottom = -1 * (b / (2 * a))
 
-
-
     # 数据长度
     data_length = len(y_axis)
 
@@ -133,7 +133,6 @@ def IsPotInCurveMedian(y_axis, median_neighbourhood):
         'err': err,
         'corner_dist_ratio': corner_dist_ratio
     }
-
 
 
 def JudgeCornerPot(stk_df, stk_code, current_date, debug=False):
@@ -298,7 +297,8 @@ def addStkIndexToDf(stk_df):
 
 def genSingleStkTrainData(stk_K_df, M_int, stk_code, stk_name):
     """
-    生成一支股票的训练数据
+    生成一支stk的训练数据
+    添加指标和均线拐点标签
     :param stk_K_df:
     :return:
     """
@@ -334,10 +334,45 @@ def genSingleStkTrainData(stk_K_df, M_int, stk_code, stk_name):
     return sh_index
 
 
+def sliceDfToTrainData(df, length, feature_cols, label_col):
+    """
+    函数功能：
 
-# 测试
+    专门为LSTM模型准备训练数据之用！
 
-stk_K = ts.get_k_data('300183')
-r = genSingleStkTrainData(stk_K, 21, '', '')
+    给定原始数据df、序列长度length以及作为标签的列的名字，
+    根据这些信息，将df切片，生成（feature，label）的list
 
-end=0
+    :param df:
+    :param length:
+    :param label_col:
+    :return:
+    """
+
+    # 重置索引
+    df = df.reset_index()
+
+    # 进行数据切片
+    r_list = []
+    for idx in df.loc[0:len(df) - length - 1, :].index:
+
+        r_list.append(
+            (
+                df.loc[idx:idx + length, feature_cols].values,
+                df.loc[idx:idx + length, label_col].values
+            )
+        )
+
+    return r_list
+
+# --------------------------- 测试 -------------------------------
+
+# stk_K = ts.get_k_data('300183')
+#
+# # 重置index
+# stk_K = stk_K.reset_index()
+#
+# r = convertDfToTrainData(df=stk_K, length=6, feature_cols=['open', 'high', 'low'], label_col=['close'])
+#
+#
+# end=0

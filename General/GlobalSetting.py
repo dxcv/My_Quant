@@ -184,7 +184,7 @@ g_wr_file_url = "F:/MYAI/文档资料/用于读取的文件/"
 
 
 # stk基本信息
-stk_basic = ts.get_stock_basics()
+# stk_basic = ts.get_stock_basics()
 
 
 # --------------------------调试标志位--------------------------------------

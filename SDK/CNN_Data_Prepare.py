@@ -1,7 +1,7 @@
 # encoding = utf-8
 import math
 
-from General.GlobalSetting import conn_k,conn_tick,stk_tick_data_db_name
+from General.GlobalSetting import conn_k, conn_tick,stk_tick_data_db_name
 from SDK.DBOpt import get_total_table_data,is_table_exist
 from SDK.AveAnalysisSub import get_average_array_span,add_inc, get_total_ave_ss
 import pandas as pd

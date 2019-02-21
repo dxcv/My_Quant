@@ -10,8 +10,8 @@ import tensorflow as tf
 from pandas import DataFrame
 
 from General.GlobalSetting import g_debug_file_url
-from Restore.DataProcessSDK import LSTMRNN
-from Restore.MyTimeOPT import get_current_date_str
+from SDK.LSTM_Class import LSTMRNN
+from SDK.MyTimeOPT import get_current_date_str
 
 TIME_STEPS = 21
 BATCH_SIZE = 5

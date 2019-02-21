@@ -1,6 +1,7 @@
 #encoding=utf-8
 
 from General.GlobalSetting import *
+from SDK.LSTM_Class import LSTMRNN
 from SDK.SDKHeader import *
 
 BATCH_START = 0
@@ -55,6 +56,7 @@ class ave_lstm(LSTMRNN):
             self.cell_outputs, self.cell_final_state = tf.nn.dynamic_rnn(
                 mlstm_cell, self.l_in_y, initial_state=self.cell_init_state, time_major=False)
 
+
 '''
 从case中获取学习数据并对数据进行规整
 '''
@@ -67,7 +69,7 @@ def get_train_data_from_ave(data_param, batch_size, time_step, train_begin, trai
     normalized_train_data=(data_train-np.mean(data_train,axis=0))/np.std(data_train,axis=0)
 
     # 训练集
-    train_x,train_y=[],[]
+    train_x,train_y=[], []
 
     # 此时normalized_train_data的shape是n*8
     for i in range(int(math.floor(len(normalized_train_data)/time_step))):       # i = 1~5785
@@ -76,18 +78,18 @@ def get_train_data_from_ave(data_param, batch_size, time_step, train_begin, trai
        if i % batch_size==0:
            batch_index.append(i)
 
-       #获取了一个样本,dataframe 对于loc的区间选择采用的是“前闭后闭”，所以我们需要在后面减1来实现前闭后开
+       # 获取了一个样本,dataframe 对于loc的区间选择采用的是“前闭后闭”，所以我们需要在后面减1来实现前闭后开
        x= normalized_train_data.loc[i*time_step_temp:(i+1)*time_step_temp-1, ['close_now', 'mean30', 'mean60', 'mean180']]
        y= normalized_train_data.loc[i*time_step_temp:(i+1)*time_step_temp-1, 'm30inc_ratio']
 
        train_x.append(np.array(x))
-       train_y.append(np.array(y)[:,np.newaxis])
+       train_y.append(np.array(y)[:, np.newaxis])
 
     batch_index.append(int(math.floor(len(normalized_train_data)/time_step)))  # batch_index 收尾
 
     # train_x :n*15*7
     # train_y :n*15*1
-    return batch_index,train_x,train_y
+    return batch_index, train_x, train_y
 
 
 
@@ -117,7 +119,7 @@ if __name__ == '__main__':
     with open(g_debug_file_url+code_str + "ave-analysis-total.csv") as f:
         origin_data = pd.read_csv(f)
 
-    origin_data = origin_data.loc[:,['close_now', 'mean30', 'mean60', 'mean180','m30inc_ratio']]
+    origin_data = origin_data.loc[:, ['close_now', 'mean30', 'mean60', 'mean180', 'm30inc_ratio']]
 
     batch_index, train_x, train_y = get_train_data_from_ave(origin_data, time_step=TIME_STEPS,
                                                              batch_size=BATCH_SIZE, train_begin=0, train_end=450)
@@ -126,7 +128,7 @@ if __name__ == '__main__':
 
             i_range = 6
 
-            if (i == 0)&(j==0):
+            if (i == 0) & (j==0):
                 feed_dict = {
                         model.xs: train_x[batch_index[i]:batch_index[i+1]],
                         model.ys: train_y[batch_index[i]:batch_index[i+1]],
@@ -148,7 +150,7 @@ if __name__ == '__main__':
                      list(map(lambda x:x[TIME_STEPS-1],train_y[batch_index[i]:batch_index[i+1]])), 'r*--',
 
                      np.linspace((i+i_range*j)*BATCH_SIZE,(i+i_range*j+1)*BATCH_SIZE-1,BATCH_SIZE),
-                     list(map(lambda x:x[TIME_STEPS-1],pred.reshape([-1,TIME_STEPS]))), 'bo--')
+                     list(map(lambda x: x[TIME_STEPS-1],pred.reshape([-1,TIME_STEPS]))), 'bo--')
 
             # plt.ylim((-1.2, 1.2))
 
