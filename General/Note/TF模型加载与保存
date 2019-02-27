@@ -1,0 +1,20 @@
+
+
+
+
+
+
+
+加载已经保存的模型
+
+with tf.Session() as sess:
+  new_saver = tf.train.import_meta_graph('./checkpoint_dir/MyModel-1000.meta')
+  new_saver.restore(sess, tf.train.latest_checkpoint('./checkpoint_dir'))
+
+
+
+---------------------
+作者：huachao1001
+来源：CSDN
+原文：https://blog.csdn.net/huachao1001/article/details/78501928
+版权声明：本文为博主原创文章，转载请附上博文链接！

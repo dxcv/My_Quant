@@ -324,7 +324,7 @@ def genSingleStkTrainData(stk_K_df, M_int, stk_code, stk_name):
 
         stk_df.loc[idx, 'corner_flag_M21'] = r['corner_flag']
         stk_df.loc[idx, 'err_M21'] = r['err']
-        stk_df.loc[idx, 'corner_dist_ratio'] = math.fabs(r['corner_dist_ratio'])
+        stk_df.loc[idx, 'corner_dist_ratio'] = math.atan(r['corner_dist_ratio'])
 
     # 取出秒数轴用于后续的横坐标
     stk_df['second'] = stk_df.apply(lambda x: DateStr2Sec(x['date']), axis=1)
