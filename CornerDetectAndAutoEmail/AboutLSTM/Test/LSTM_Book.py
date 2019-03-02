@@ -9,8 +9,18 @@ import tensorflow as tf
 import numpy as np
 import pickle
 import random
+import os
 
 def lstm_model(n_steps, n_inputs, HIDDEN_SIZE, NUM_LAYERS):
+
+    """
+
+    :param n_steps:
+    :param n_inputs:
+    :param HIDDEN_SIZE:
+    :param NUM_LAYERS:
+    :return:
+    """
 
     cell = tf.nn.rnn_cell.MultiRNNCell(
         [tf.nn.rnn_cell.BasicLSTMCell(HIDDEN_SIZE) for _ in range(NUM_LAYERS)]
@@ -36,7 +46,11 @@ def lstm_model(n_steps, n_inputs, HIDDEN_SIZE, NUM_LAYERS):
 
     """ 创建优化器并得到优化步骤 """
     train_op = tf.contrib.layers.optimize_loss(
-        loss, tf.train.get_global_step(), optimizer='Adagrad', learning_rate=0.1
+        loss,
+        tf.train.get_global_step(),
+        optimizer='Adagrad',
+        learning_rate=0.1,
+        name='optimize'
     )
 
     return predictions, loss, train_op, X, y
@@ -61,10 +75,20 @@ saver = tf.train.Saver()
 
 # 初始化
 sess = tf.Session()
-sess.run(tf.global_variables_initializer())
+if os.path.exists('F:\MYAI\Code\master\My_Quant\CornerDetectAndAutoEmail\AboutLSTM\modelDir\LstmForCornerPot.ckpt.meta'):
+
+    saver = tf.train.import_meta_graph(
+        'F:\MYAI\Code\master\My_Quant\CornerDetectAndAutoEmail\AboutLSTM\modelDir\LstmForCornerPot.ckpt.meta')
+
+    saver.restore(sess, tf.train.latest_checkpoint(
+        'F:\MYAI\Code\master\My_Quant\CornerDetectAndAutoEmail\AboutLSTM\modelDir/'))
+
+    graph = tf.get_default_graph()
+else:
+    sess.run(tf.global_variables_initializer())
 
 loss_list = []
-for i in range(100000):
+for i in range(500000):
 
     # 从总样本中随机抽取,batch_size = 7
     list_sample = random.sample(data_train, 7)
