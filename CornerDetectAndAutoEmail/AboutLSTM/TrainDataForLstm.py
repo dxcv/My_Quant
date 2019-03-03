@@ -10,7 +10,7 @@ from CornerDetectAndAutoEmail.Sub import genSingleStkTrainData, sliceDfToTrainDa
 from SDK.CNN_Data_Prepare import gaussian_normalize
 
 stk_code = 'cyb'
-df_cyb = ts.get_k_data(stk_code)
+df_cyb = ts.get_k_data(stk_code, start='2010-01-01')
 df = genSingleStkTrainData(
     stk_K_df=df_cyb,
     M_int=21,
