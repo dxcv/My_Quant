@@ -314,6 +314,9 @@ def genSingleStkTrainData(stk_K_df, M_int, stk_code, stk_name):
     # 计算收盘价均线，根据均线计算拐点
     stk_df['M'+str(M_int)] = stk_df['close'].rolling(window=M_int, center=True).mean()
 
+    # 计算收盘价均线（先验数据）
+    stk_df['M'+str(M_int)+'pre'] = stk_df['close'].rolling(window=M_int, center=False).mean()
+
     # 求解均线后验拐点
     for idx in stk_df.loc[corner_Pot_Retrospective_Half:len(stk_df) - corner_Pot_Retrospective_Half, :].index:
 

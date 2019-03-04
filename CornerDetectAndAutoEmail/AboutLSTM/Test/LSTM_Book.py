@@ -10,9 +10,9 @@ import numpy as np
 import pickle
 import random
 import os
+
+from CornerDetectAndAutoEmail.AboutLSTM.Config import N_STEPS, feature_cols, HIDDEN_SIZE, NUM_LAYERS
 from CornerDetectAndAutoEmail.AboutLSTM.Test.Sub import lstm_model
-
-
 
 """ -------------------- 测试 ---------------------- """
 stk_code = 'cyb'
@@ -23,10 +23,10 @@ with open('../DataPrepare/' + stk_code + '.pkl', 'rb') as f:
 
 # 创建模型
 predictions, loss, train_op, X, y = lstm_model(
-    n_steps=8,
-    n_inputs=9,
-    HIDDEN_SIZE=6,
-    NUM_LAYERS=2)
+    n_steps=N_STEPS,
+    n_inputs=len(feature_cols),
+    HIDDEN_SIZE=HIDDEN_SIZE,
+    NUM_LAYERS=NUM_LAYERS)
 
 # 创建保存器用于模型
 saver = tf.train.Saver()
@@ -37,6 +37,7 @@ if os.path.exists('../modelDir/LstmForCornerPot.ckpt.meta'):
 
     saver = tf.train.import_meta_graph(
         '..\modelDir\LstmForCornerPot.ckpt.meta')
+
     saver.restore(sess, tf.train.latest_checkpoint(
         '..\modelDir/'))
 
