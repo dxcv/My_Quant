@@ -1,6 +1,8 @@
 # encoding = utf-8
 import tushare as ts
 
+from CornerDetectAndAutoEmail.AboutLSTM.Config import feature_cols, label_col, N_STEPS, N_INPUTS, HIDDEN_SIZE, \
+    NUM_LAYERS, M_INT
 from CornerDetectAndAutoEmail.AboutLSTM.Test.Sub import lstm_model
 from CornerDetectAndAutoEmail.Sub import genSingleStkTrainData
 from SDK.CNN_Data_Prepare import gaussian_normalize
@@ -22,13 +24,10 @@ stk_code = 'cyb'
 df_cyb = ts.get_k_data(stk_code, start='2010-01-01', end='2015-03-03')
 df = genSingleStkTrainData(
     stk_K_df=df_cyb,
-    M_int=21,
+    M_int=M_INT,
     stk_code=stk_code,
     stk_name=stk_code
 )
-
-feature_cols = ['close', 'volume', 'MACD', 'RSI5', 'RSI12', 'RSI30', 'SAR', 'slowk', 'slowd']
-label_col = ['corner_dist_ratio']
 
 # 取出标签数据
 df = df.loc[:, feature_cols+label_col]
@@ -45,10 +44,10 @@ df = df.reset_index(drop=True)
 
 # 创建模型
 predictions, loss, train_op, X, y = lstm_model(
-    n_steps=8,
-    n_inputs=9,
-    HIDDEN_SIZE=6,
-    NUM_LAYERS=2)
+    n_steps=N_STEPS,
+    n_inputs=N_INPUTS,
+    HIDDEN_SIZE=HIDDEN_SIZE,
+    NUM_LAYERS=NUM_LAYERS)
 
 # 创建保存器用于模型
 saver = tf.train.Saver()

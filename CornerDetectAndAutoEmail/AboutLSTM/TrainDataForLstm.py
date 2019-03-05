@@ -6,6 +6,7 @@
 import tushare as ts
 import pickle
 
+from CornerDetectAndAutoEmail.AboutLSTM.Config import N_STEPS, feature_cols, label_col
 from CornerDetectAndAutoEmail.Sub import genSingleStkTrainData, sliceDfToTrainData
 from SDK.CNN_Data_Prepare import gaussian_normalize
 
@@ -18,8 +19,6 @@ df = genSingleStkTrainData(
     stk_name=stk_code
 )
 
-feature_cols = ['close', 'volume', 'MACD', 'RSI5', 'RSI12', 'RSI30', 'SAR', 'slowk', 'slowd']
-label_col = ['corner_dist_ratio']
 
 # 对相应的数据进行归一化
 for col in feature_cols:
@@ -34,7 +33,7 @@ df = df.dropna(how='any')
 # 对数据进行切片
 data_slice_list = sliceDfToTrainData(
     df=df,
-    length=7,
+    length=N_STEPS-1,
     feature_cols=feature_cols,
     label_col=label_col
 )
