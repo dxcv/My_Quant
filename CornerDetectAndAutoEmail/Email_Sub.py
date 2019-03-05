@@ -28,6 +28,38 @@ from CornerDetectAndAutoEmail.HtmlStr import addInfoToMsg
 """
 
 
+def sendmailForStk(subject, MIMEText_Input, MIMEImageList, toaddrs, fromaddr, smtpaddr, password):
+
+    mail_msg = MIMEMultipart('related')
+    if not isinstance(subject, str):
+        subject = str(subject, 'utf-8')
+
+    mail_msg['Subject'] = subject
+    mail_msg['From'] = fromaddr
+    mail_msg['To'] = ','.join(toaddrs)
+
+    # 向消息中加载text
+    mail_msg.attach(MIMEText_Input)
+
+    # 加载所需要的图片
+    for img in MIMEImageList:
+        mail_msg.attach(img)
+
+    try:
+        s = smtplib.SMTP()
+        s.connect(smtpaddr)             # 连接smtp服务器
+        s.helo(smtpaddr)
+        s.ehlo(smtpaddr)
+        s.login(fromaddr, password)     # 登录邮箱
+
+        s.sendmail(fromaddr, toaddrs, mail_msg.as_string())  # 发送邮件
+        s.quit()
+
+    except :
+        print("Error: unable to send email")
+        print(traceback.format_exc())
+
+
 def sendmailForStk(subject, html_str, toaddrs, fromaddr, smtpaddr, password, date_str, corner_pot_list):
 
     mail_msg = MIMEMultipart('related')

@@ -2,7 +2,7 @@
 
 """ 本脚本包含lstm训练所需要的各种参数 """
 
-feature_cols = ['M21pre', 'volume', 'MACD', 'RSI5', 'RSI12', 'RSI30', 'SAR', 'slowk', 'slowd']
+feature_cols = ['M21pre', 'MACD', 'RSI12', 'RSI30', 'SAR', 'slowk', 'slowd']
 label_col = ['corner_dist_ratio']
 
 stk_code = 'cyb'

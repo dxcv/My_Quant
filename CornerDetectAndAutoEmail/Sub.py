@@ -1,4 +1,6 @@
 # encoding = utf-8
+from email.mime.image import MIMEImage
+
 import matplotlib
 # matplotlib.use('Agg')
 from General.AutoStkConfig import *
@@ -20,12 +22,33 @@ mpl.rcParams['font.sans-serif'] = ['SimHei']
 matplotlib.rcParams['axes.unicode_minus']=False
 
 
-def genStkPic(stk_df, stk_code, current_date, root_save_dir):
+def genMIMEImageList(pic_dir_list):
+
+    """
+    在使用邮箱发送消息时，对在html中使用的图片，需要在msg中加载，本函数根据图片的路径依次将其添加
+    :param pic_dir_list:
+    :return:
+    """
+    msgImage_list = []
+
+    for dir in pic_dir_list:
+
+        # 测试添加png类型的图片
+        fp_ave = open(dir, 'rb')
+        msgImage_ave = MIMEImage(fp_ave.read())
+        msgImage_ave.add_header('Content-ID', '<' + dir.replace('.png', '') + '>')
+        msgImage_list.append(msgImage_ave)
+        fp_ave.close()
+
+    return msgImage_list
+
+
+def genStkPic(stk_df, stk_code, current_date, root_save_dir, pic_name='stk_A_C_M.png'):
     """
     函数功能：给定stk的df，已经确定stk当前处于拐点状态，需要将当前stk的信息打印成图片，便于人工判断！
     :param stk_df           从tushare下载下来的原生df
     :param root_save_dir    配置文件中定义的存储路径
-    :return:
+    :return:                返回生成图片的路径
     """
     """
     规划一下都画哪些图
@@ -80,8 +103,10 @@ def genStkPic(stk_df, stk_code, current_date, root_save_dir):
         os.makedirs(save_dir)
 
     plt.tight_layout()
-    plt.savefig(save_dir+'stk_A_C_M.png', dpi=1200)
+    plt.savefig(save_dir+pic_name, dpi=1200)
     plt.close()
+
+    return save_dir+pic_name
 
 
 def IsPotInCurveMedian(y_axis, median_neighbourhood):

@@ -46,7 +46,7 @@ def genH_Intro(C_Instro):
     return H_Intro
 
 
-def gen_H_Unit(stk_code, stk_name, date_str):
+def gen_H_Unit(stk_code, stk_name, pic_dir):
     """
     单位模块字符串
     :param stk_code:        股票代码
@@ -62,7 +62,7 @@ def gen_H_Unit(stk_code, stk_name, date_str):
                     <h1> 股票:""" + str(stk_code)+ ' ' + stk_name +""" </h1><br /><br />
     
                     <p> 均线及Close及MACD图: </p>
-                    <img src= "cid:""" + date_str + "/" + stk_code + "/" + "stk_A_C_M" + '"' + """  alt="ave+close"/>
+                    <img src= "cid:""" + pic_dir.replace('.png', '') + '"' + """  alt="ave+close"/>
     
                 </body>
     """
@@ -74,28 +74,21 @@ def gen_H_Unit(stk_code, stk_name, date_str):
 H_tail = "</html>"
 
 
-def addInfoToMsg(msg, html_str, date, code_list):
+
+def addInfoToMsg(msg, html_str, date, pic_dir):
 
     # 将html字符串添加到邮件msg中
     msg.attach(MIMEText(html_str, 'html', 'utf-8'))
 
-    # 加载相应的图片
-    for code in code_list:
+    # 测试添加png类型的图片
+    fp_ave = open(pic_dir, 'rb')
+    msgImage_ave = MIMEImage(fp_ave.read())
 
-        # 测试添加png类型的图片
-        fp_ave = open(pic_save_dir_root + date + '/' +code + '/stk_A_C_M.png', 'rb')
-        msgImage_ave = MIMEImage(fp_ave.read())
+    msgImage_ave.add_header('Content-ID', '<' + pic_dir.replace() + '>')
+    msg.attach(msgImage_ave)
+    fp_ave.close()
 
-        msgImage_ave.add_header('Content-ID', '<' + date+'/'+code+'/stk_A_C_M' + '>')
-        msg.attach(msgImage_ave)
-        fp_ave.close()
 
-        # fp_macd = open(pic_save_dir_root + date + '/' + code + '/stk_macd.png', 'rb')
-        # msgImage_macd = MIMEImage(fp_macd.read())
-        # msgImage_macd.add_header('Content-ID', '<' + date+'/'+code + '/stk_macd' + '>')
-        # msg.attach(msgImage_macd)
-
-        # fp_macd.close()
 
 
 """ --------------------- 测试代码 ------------------------ """
