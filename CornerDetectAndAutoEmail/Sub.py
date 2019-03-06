@@ -4,6 +4,8 @@ import matplotlib
 from General.AutoStkConfig import *
 # from SDK.SDKHeader import *
 import talib
+from talib import MA_Type
+
 import tushare as ts
 
 from SDK.CNN_Data_Prepare import gaussian_normalize
@@ -291,6 +293,12 @@ def addStkIndexToDf(stk_df):
                                                     slowk_matype=0,
                                                     slowd_period=3,
                                                     slowd_matype=0)
+
+    # 添加布林线
+    stk_df['upper'], stk_df['middle'], stk_df['lower'] = talib.BBANDS(stk_df['close'], matype=MA_Type.T3)
+
+    # 计算close动量
+    stk_df['MOM'] = talib.MOM(stk_df['close'], timeperiod=5)
 
     return stk_df
 
