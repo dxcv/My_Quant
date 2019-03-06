@@ -109,7 +109,7 @@ def genStkPic(stk_df, stk_code, current_date, root_save_dir, pic_name='stk_A_C_M
         os.makedirs(save_dir)
 
     plt.tight_layout()
-    plt.savefig(save_dir+pic_name, dpi=600)
+    plt.savefig(save_dir+pic_name, dpi=300)
     plt.close()
 
     return save_dir+pic_name
