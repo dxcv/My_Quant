@@ -38,7 +38,7 @@ def genMIMEImageList(pic_dir_list):
         # 测试添加png类型的图片
         fp_ave = open(dir, 'rb')
         msgImage_ave = MIMEImage(fp_ave.read())
-        msgImage_ave.add_header('Content-ID', '<' + dir.replace('.png', '') + '>')
+        msgImage_ave.add_header('Content-ID', '<' + dir.replace('.png', '').replace(pic_save_dir_root, '') + '>')
         msgImage_list.append(msgImage_ave)
         fp_ave.close()
 
@@ -70,7 +70,7 @@ def genStkPic(stk_df, stk_code, current_date, root_save_dir, pic_name='stk_A_C_M
                                                                                 fastperiod=12, slowperiod=26,
                                                                                 signalperiod=9)
 
-    fig, ax = plt.subplots(nrows=3, ncols=1)
+    fig, ax = plt.subplots(nrows=4, ncols=1)
 
     ax[0].plot(range(0, len(stk_df['date'])), stk_df['M20'], 'b--', label='20日均线', linewidth=1)
     ax[0].plot(range(0, len(stk_df['date'])), stk_df['M60'], 'r--', label='60日均线', linewidth=1)
@@ -88,7 +88,7 @@ def genStkPic(stk_df, stk_code, current_date, root_save_dir, pic_name='stk_A_C_M
         ax_sig.set_xticklabels(xticklabels_all, rotation=90, fontsize=5)
         ax_sig.legend(loc='best', fontsize=5)
 
-    # 画出最近几天的情况
+    # 画出最近几天的情况（均线以及MACD）
     stk_df_current = stk_df.tail(plot_current_days_amount)
     ax[2].plot(range(0, len(stk_df_current['date'])), stk_df_current['M20'], 'b--', label='20日均线', linewidth=2)
     ax[2].plot(range(0, len(stk_df_current['date'])), stk_df_current['M60'], 'r--', label='60日均线', linewidth=2)
@@ -98,14 +98,18 @@ def genStkPic(stk_df, stk_code, current_date, root_save_dir, pic_name='stk_A_C_M
     ax[2].set_xticklabels(list(stk_df_current['date']), rotation=90, fontsize=5)
     ax[2].legend(loc='best')
 
+    ax[3].bar(range(0, len(stk_df_current['date'])), stk_df_current['MACD'], label='MACD')
+    ax[3].set_xticks(list(range(0, len(stk_df_current['date']))))
+    ax[3].set_xticklabels(list(stk_df_current['date']), rotation=90, fontsize=5)
+    ax[3].legend(loc='best')
+
     # 保存图片
-    # current_date = get_current_date_str()
     save_dir = root_save_dir+current_date+'/'+str(stk_code)+'/'
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
 
     plt.tight_layout()
-    plt.savefig(save_dir+pic_name, dpi=1200)
+    plt.savefig(save_dir+pic_name, dpi=600)
     plt.close()
 
     return save_dir+pic_name

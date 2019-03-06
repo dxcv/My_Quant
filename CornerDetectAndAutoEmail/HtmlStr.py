@@ -59,9 +59,9 @@ def gen_H_Unit(stk_code, stk_name, pic_dir):
     """
                 <HR style="FILTER: progid:DXImageTransform.Microsoft.Shadow(color:#987cb9,direction:145,strength:15)" width="100%" color=#987cb9 SIZE=5>
                 <body>
-                    <h1> 股票:""" + str(stk_code)+ ' ' + stk_name +""" </h1><br /><br />
+                    <h1> """ + str(stk_code)+ ' ' + stk_name +""" </h1><br /><br />
     
-                    <p> 均线及Close及MACD图: </p>
+                    <p> AVE/Close/MACD: </p>
                     <img src= "cid:""" + pic_dir.replace('.png', '') + '"' + """  alt="ave+close"/>
     
                 </body>
