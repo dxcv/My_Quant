@@ -20,3 +20,4 @@ from SDK.BKSub import *
 from SDK.IndustrySub import *
 from SDK.RelativeChangeStrategySub import *
 from SDK.MACD_Sub import *
+from SDK.StkSub import *

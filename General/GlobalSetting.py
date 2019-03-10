@@ -1,6 +1,6 @@
 # coding=utf-8
 import matplotlib
-# matplotlib.use('Agg')
+matplotlib.use('Agg')
 from sqlalchemy import create_engine
 from SDK.DBOpt import *
 import pymysql
@@ -14,7 +14,6 @@ import numpy as np
 mpl.rcParams['font.sans-serif'] = ['SimHei']
 
 import os
-
 localDBAddr = {'host': 'localhost',
                'port': 3306,
                'user': 'root',
@@ -28,7 +27,6 @@ db_info = {'user': 'root',
            'host': 'localhost',
            'database': 'stockhistdata'
            }
-
 
 db_info_k = {'host': 'localhost',
                 'port': 3306,
