@@ -71,6 +71,6 @@ def dailyStkInfoEmail():
 
 """ ------------------ 启动定时器 --------------------- """
 sched = BlockingScheduler()
-# sched.add_job(func=dailyStkInfoEmail, trigger='cron', day_of_week='mon-sat', hour=5, minute=0)
+# sched.add_job(func=dailyStkInfoEmail, trigger='cron', day_of_week='mon-sat', hour=5, minute=0, misfire_grace_time=3600, coalesce=True)
 sched.add_job(func=dailyStkInfoEmail, trigger='interval', minutes=5)
 sched.start()

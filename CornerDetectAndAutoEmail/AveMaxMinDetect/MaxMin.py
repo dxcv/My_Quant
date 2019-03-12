@@ -125,6 +125,7 @@ def lineJudge(df_H_L_Pot_index, current_price, df_info, line_str, neighbor_len=0
 
 
 def initPotInfo(df_H_L_Pot):
+
     """ 设置默认状态，皆为false  """
     df_H_L_Pot['year_status_last'] = u'正常'
     df_H_L_Pot['half_year_status_last'] = u'正常'
@@ -138,6 +139,8 @@ def judgeAndSendMsg(df_H_L_Pot, neighbor_len=0.02):
     按频率调用，
     :return:
     """
+
+    print('进入判断及发消息函数函数！')
     for stk in df_H_L_Pot.index:
 
         # 获取该股票的实时价格
@@ -164,19 +167,43 @@ def judgeAndSendMsg(df_H_L_Pot, neighbor_len=0.02):
                 send_qq(u'影子',
                         'stk:' + getNameByStkCode(g_total_stk_info_mysql, df_H_L_Pot.loc[idx, 'stk']) + '\n' +
                         '当前价格：' + str(df_H_L_Pot.loc[idx, 'current_price']) + '\n' +
-                        '事件：' + df_H_L_Pot.loc[idx, sts] +
+                        '事件： “' + df_H_L_Pot.loc[idx, sts + '_last'] +'” --> “'+df_H_L_Pot.loc[idx, sts]+'”'+
                         '\n\n')
 
                 df_H_L_Pot.loc[idx, sts + '_last'] = df_H_L_Pot.loc[idx, sts]
 
+
     return df_H_L_Pot
 
+
+def updatePotInfo():
+    """
+
+    :param df_H_L_Pot:
+    :return:
+    """
+    global h_l_poy_info
+
+    if h_l_poy_info.empty:
+        h_l_poy_info = initPotInfo(get_h_l_pot(stk_list))
+    else:
+        new_pot_info = get_h_l_pot(stk_list)
+
+        h_l_poy_info = pd.concat([
+            h_l_poy_info.drop(['half_year_high', 'half_year_low', 'month_high', 'month_low', 'year_high', 'year_low'], 1),
+            new_pot_info.drop('stk', 1)
+        ], axis=1)
+
+        print('年线等信息更新完成！')
+
+
 # ------------------------------------- 测试 -----------------------------------
-df_H_L_Pot = get_h_l_pot(stk_list)
-
-df_H_L_Pot = initPotInfo(df_H_L_Pot)
-
-df_H_L_Pot = judgeAndSendMsg(df_H_L_Pot)
+#
+# df_H_L_Pot = get_h_l_pot(stk_list)
+#
+# df_H_L_Pot = initPotInfo(df_H_L_Pot)
+#
+# df_H_L_Pot = judgeAndSendMsg(df_H_L_Pot)
 
 """
 对不同的点，
