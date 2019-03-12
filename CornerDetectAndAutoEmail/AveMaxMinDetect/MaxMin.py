@@ -4,6 +4,8 @@
 本脚本计算最高点与最低点的信息
 
 """
+from General.GlobalSetting import g_total_stk_info_mysql
+from SDK.StkSub import getNameByStkCode
 from SendMsgByGUI.QQGUI import send_qq
 
 """
@@ -24,6 +26,8 @@ from SDK.MyTimeOPT import get_current_date_str, add_date_str
 import numpy as np
 import pandas as pd
 
+
+h_l_poy_info = pd.DataFrame()
 
 def get_h_l_pot(stk_list):
     """
@@ -81,7 +85,7 @@ def get_h_l_pot(stk_list):
     return df_high_low_pot
 
 
-def lineJudge(current_price, df_info, line_str):
+def lineJudge(df_H_L_Pot_index, current_price, df_info, line_str, neighbor_len=0.02):
 
     """
     判断年线、半年线及月线情况
@@ -93,6 +97,7 @@ def lineJudge(current_price, df_info, line_str):
     """
 
     df_H_L_Pot = df_info
+    stk = df_H_L_Pot_index
 
     line_name = {
         'year': u'年线',
@@ -118,10 +123,60 @@ def lineJudge(current_price, df_info, line_str):
 
     return df_H_L_Pot
 
+
+def initPotInfo(df_H_L_Pot):
+    """ 设置默认状态，皆为false  """
+    df_H_L_Pot['year_status_last'] = u'正常'
+    df_H_L_Pot['half_year_status_last'] = u'正常'
+    df_H_L_Pot['month_status_last'] = u'正常'
+
+    return df_H_L_Pot
+
+
+def judgeAndSendMsg(df_H_L_Pot, neighbor_len=0.02):
+    """
+    按频率调用，
+    :return:
+    """
+    for stk in df_H_L_Pot.index:
+
+        # 获取该股票的实时价格
+        current_price = float(ts.get_realtime_quotes(df_H_L_Pot.loc[stk, 'stk'])['price'].values[0])
+
+        # 将当前价格保存，用于验证计算准确性
+        df_H_L_Pot.loc[stk, 'current_price'] = current_price
+
+        """ 年线判断 """
+        df_H_L_Pot = lineJudge(df_H_L_Pot_index=stk, current_price=current_price, df_info=df_H_L_Pot, line_str='year')
+
+        """ ----------------- 半年线判断 -----------------"""
+        df_H_L_Pot = lineJudge(df_H_L_Pot_index=stk, current_price=current_price, df_info=df_H_L_Pot, line_str='half_year')
+
+        """ ----------------- 月线判断 ----------------"""
+        df_H_L_Pot = lineJudge(df_H_L_Pot_index=stk, current_price=current_price, df_info=df_H_L_Pot, line_str='month')
+
+    """ 检查并发送消息 """
+    for idx in df_H_L_Pot.index:
+
+        # 遍历年线、半年线和月线
+        for sts in ['year_status', 'half_year_status', 'month_status']:
+            if (df_H_L_Pot.loc[idx, sts] != u'正常') & (df_H_L_Pot.loc[idx, sts] != df_H_L_Pot.loc[idx, sts + '_last']):
+                send_qq(u'影子',
+                        'stk:' + getNameByStkCode(g_total_stk_info_mysql, df_H_L_Pot.loc[idx, 'stk']) + '\n' +
+                        '当前价格：' + str(df_H_L_Pot.loc[idx, 'current_price']) + '\n' +
+                        '事件：' + df_H_L_Pot.loc[idx, sts] +
+                        '\n\n')
+
+                df_H_L_Pot.loc[idx, sts + '_last'] = df_H_L_Pot.loc[idx, sts]
+
+    return df_H_L_Pot
+
 # ------------------------------------- 测试 -----------------------------------
 df_H_L_Pot = get_h_l_pot(stk_list)
-neighbor_len = 0.02
 
+df_H_L_Pot = initPotInfo(df_H_L_Pot)
+
+df_H_L_Pot = judgeAndSendMsg(df_H_L_Pot)
 
 """
 对不同的点，
@@ -138,36 +193,3 @@ half_year_high  half_year_low  month_high  month_low   year_low  year_high
 """
 
 
-""" 设置默认状态，皆为false  """
-df_H_L_Pot['year_status_last'] = u'正常'
-df_H_L_Pot['half_year_status_last'] = u'正常'
-df_H_L_Pot['month_status_last'] = u'正常'
-
-
-for stk in df_H_L_Pot.index:
-
-    # 获取该股票的实时价格
-    current_price = float(ts.get_realtime_quotes(df_H_L_Pot.loc[stk, 'stk'])['price'].values[0])
-
-    # 将当前价格保存，用于验证计算准确性
-    df_H_L_Pot.loc[stk, 'current_price'] = current_price
-
-    """ 年线判断 """
-    df_H_L_Pot = lineJudge(current_price=current_price, df_info=df_H_L_Pot, line_str='year')
-
-    """ ----------------- 半年线判断 -----------------"""
-    df_H_L_Pot = lineJudge(current_price=current_price, df_info=df_H_L_Pot, line_str='half_year')
-
-    """ ----------------- 月线判断 ----------------"""
-    df_H_L_Pot = lineJudge(current_price=current_price, df_info=df_H_L_Pot, line_str='month')
-
-for i in range(0, 2):
-
-    # 检查并发送消息
-    for idx in df_H_L_Pot.index:
-
-        # 遍历年线、半年线和月线
-        for sts in ['year_status', 'half_year_status', 'month_status']:
-            if (df_H_L_Pot.loc[idx, sts] != u'正常') & (df_H_L_Pot.loc[idx, sts] != df_H_L_Pot.loc[idx, sts+'_last']):
-                send_qq(u'影子', df_H_L_Pot.loc[idx, 'stk'] + ':'+'当前价格：'+str(df_H_L_Pot.loc[idx, 'current_price'])+' '+df_H_L_Pot.loc[idx, sts])
-                df_H_L_Pot.loc[idx, sts + '_last'] = df_H_L_Pot.loc[idx, sts]
