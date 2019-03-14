@@ -4,10 +4,13 @@
 本脚本计算最高点与最低点的信息
 
 """
+import pickle
+
+from CornerDetectAndAutoEmail.AveMaxMinDetect.Global import h_l_pot_info_url
 from General.GlobalSetting import g_total_stk_info_mysql
 from SDK.StkSub import getNameByStkCode
 from SendMsgByGUI.QQGUI import send_qq
-
+import os
 """
 存储最高点和最低点的数据
 
@@ -27,7 +30,7 @@ import numpy as np
 import pandas as pd
 
 
-h_l_poy_info = pd.DataFrame()
+# h_l_pot_info = pd.DataFrame()
 
 def get_h_l_pot(stk_list):
     """
@@ -134,13 +137,21 @@ def initPotInfo(df_H_L_Pot):
     return df_H_L_Pot
 
 
-def judgeAndSendMsg(df_H_L_Pot, neighbor_len=0.02):
+def judgeAndSendMsg():
     """
     按频率调用，
     :return:
     """
+    if os.path.exists(h_l_pot_info_url):
+        with open(h_l_pot_info_url, 'rb') as f:
+            h_l_pot_info = pickle.load(f)
+    else:
+        print('函数 judgeAndSendMsg: 加载高低信息失败！')
+        return
 
-    print('进入判断及发消息函数函数！')
+    df_H_L_Pot = h_l_pot_info
+
+
     for stk in df_H_L_Pot.index:
 
         # 获取该股票的实时价格
@@ -172,29 +183,38 @@ def judgeAndSendMsg(df_H_L_Pot, neighbor_len=0.02):
 
                 df_H_L_Pot.loc[idx, sts + '_last'] = df_H_L_Pot.loc[idx, sts]
 
+    with open(h_l_pot_info_url, 'wb') as f:
+        pickle.dump(h_l_pot_info, f)
 
-    return df_H_L_Pot
-
+    print('函数 judgeAndSendMsg: 完成本次判断！')
 
 def updatePotInfo():
     """
-
     :param df_H_L_Pot:
     :return:
     """
-    global h_l_poy_info
+    # h_l_pot_info_url = '.\InfoRestore\df_H_L_Pot.pkl'
+    if os.path.exists(h_l_pot_info_url):
+        with open(h_l_pot_info_url, 'rb') as f:
+            h_l_pot_info = pickle.load(f)
+    else:
+        h_l_pot_info = pd.DataFrame()
 
-    if h_l_poy_info.empty:
-        h_l_poy_info = initPotInfo(get_h_l_pot(stk_list))
+    if h_l_pot_info.empty:
+        h_l_pot_info = initPotInfo(get_h_l_pot(stk_list))
     else:
         new_pot_info = get_h_l_pot(stk_list)
 
-        h_l_poy_info = pd.concat([
-            h_l_poy_info.drop(['half_year_high', 'half_year_low', 'month_high', 'month_low', 'year_high', 'year_low'], 1),
+        h_l_pot_info = pd.concat([
+            h_l_pot_info.drop(['half_year_high', 'half_year_low', 'month_high', 'month_low', 'year_high', 'year_low'], 1),
             new_pot_info.drop('stk', 1)
         ], axis=1)
 
-        print('年线等信息更新完成！')
+    # 将结果序列化
+    with open(h_l_pot_info_url, 'wb') as f:
+        pickle.dump(h_l_pot_info, f)
+
+    send_qq(u'影子', '高底线信息更新成功！')
 
 
 # ------------------------------------- 测试 -----------------------------------

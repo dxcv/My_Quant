@@ -18,14 +18,9 @@ from reportlab.graphics.shapes import Drawing, PolyLine, colors, Auto
 from reportlab.graphics import renderPDF
 from reportlab.graphics.charts.lineplots import LinePlot
 from reportlab.graphics.widgets.markers import makeMarker
-
-
 from reportlab.pdfbase.pdfmetrics import stringWidth
-
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase import pdfmetrics
-
-
 
 pdfmetrics.registerFont(TTFont('song', 'SURSONG.TTF'))
 pdfmetrics.registerFont(TTFont('hei', 'SIMHEI.TTF'))
