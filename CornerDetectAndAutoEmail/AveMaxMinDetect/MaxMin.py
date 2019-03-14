@@ -196,7 +196,10 @@ def updatePotInfo():
     # h_l_pot_info_url = '.\InfoRestore\df_H_L_Pot.pkl'
     if os.path.exists(h_l_pot_info_url):
         with open(h_l_pot_info_url, 'rb') as f:
-            h_l_pot_info = pickle.load(f)
+            try:
+                h_l_pot_info = pickle.load(f)
+            except:
+                h_l_pot_info = pd.DataFrame()
     else:
         h_l_pot_info = pd.DataFrame()
 
