@@ -66,10 +66,12 @@ def sendmail(subject, MIMEText_Input, MIMEImageList, toaddrs, fromaddr, smtpaddr
         s.sendmail(fromaddr, toaddrs, mail_msg.as_string())  # 发送邮件
         s.quit()
         print('邮件发送成功！')
+        return 0
 
     except :
         print("Error: unable to send email")
         print(traceback.format_exc())
+        return -1
 
 
 def sendmailForStk(subject, html_str, toaddrs, fromaddr, smtpaddr, password, date_str, corner_pot_list):

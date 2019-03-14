@@ -8,6 +8,8 @@ import matplotlib
 
 from General.GlobalSetting import g_total_stk_info_mysql
 from SDK.StkSub import getNameByStkCode
+import time
+
 
 matplotlib.use('Agg')
 from CornerDetectAndAutoEmail.Email_Sub import sendmailForStk, sendmail
@@ -56,14 +58,21 @@ def dailyStkInfoEmail():
     msgImage_list = genMIMEImageList(pic_dir_list)
 
     """ -------------------- 邮件发送 ----------------------- """
-    sendmail(
-        subject='Darling, daily report for you!',
-        MIMEText_Input=MIMEText(H_str, 'html', 'utf-8'),
-        MIMEImageList=msgImage_list,
-        toaddrs=["pwnevy@163.com"],
-        fromaddr="ai_report@163.com",
-        smtpaddr="smtp.163.com",
-        password="sqm654321")
+
+    while(True):
+        mail_return = sendmail(
+            subject='Darling, daily report for you!',
+            MIMEText_Input=MIMEText(H_str, 'html', 'utf-8'),
+            MIMEImageList=msgImage_list,
+            toaddrs=["pwnevy@163.com"],
+            fromaddr="ai_report@163.com",
+            smtpaddr="smtp.163.com",
+            password="sqm654321")
+        if mail_return == 0:
+            break
+        else:
+            time.sleep(1800)
+
 
 # 函数测试
 # dailyStkInfoEmail()
@@ -71,6 +80,6 @@ def dailyStkInfoEmail():
 
 """ ------------------ 启动定时器 --------------------- """
 sched = BlockingScheduler()
-# sched.add_job(func=dailyStkInfoEmail, trigger='cron', day_of_week='mon-sat', hour=5, minute=0)
-sched.add_job(func=dailyStkInfoEmail, trigger='interval', minutes=5)
+sched.add_job(func=dailyStkInfoEmail, trigger='cron', day_of_week='mon-sat', hour=5, minute=0, misfire_grace_time=3600, coalesce=True)
+# sched.add_job(func=dailyStkInfoEmail, trigger='interval', minutes=5)
 sched.start()
