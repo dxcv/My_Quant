@@ -1,6 +1,6 @@
 # coding=utf-8
 import matplotlib
-matplotlib.use('Agg')
+# matplotlib.use('Agg')
 from sqlalchemy import create_engine
 from SDK.DBOpt import *
 import pymysql

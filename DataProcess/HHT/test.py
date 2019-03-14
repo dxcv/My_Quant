@@ -1,6 +1,6 @@
 # encoding = utf-8
 
-from General.GlobalSetting import *
+# from General.GlobalSetting import *
 from SDK.SDKHeader import *
 from PyEMD import EMD
 import numpy as np
@@ -21,15 +21,15 @@ IMF = EMD().emd(s)
 N = IMF.shape[0]+1
 
 # 图示结果
-plt.subplot(N+1,1,1)
+plt.subplot(N+1, 1, 1)
 plt.plot(x_axis, s, 'r')
 # plt.title("原始数据")
 
 # 求取第一个imf的希尔伯特变换# plt.xlabel("日期")
 ht = fftpack.hilbert(IMF[0])
 
-plt.subplot(N+1,1,2)
-plt.plot(x_axis,ht)
+plt.subplot(N+1, 1, 2)
+plt.plot(x_axis, ht)
 
 
 for n, imf in enumerate(IMF):
