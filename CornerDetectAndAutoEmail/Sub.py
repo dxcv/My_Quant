@@ -115,6 +115,62 @@ def genStkPic(stk_df, stk_code, current_date, root_save_dir, pic_name='stk_A_C_M
     return save_dir+pic_name
 
 
+def genStkIdxPic(stk_df, stk_code, current_date, root_save_dir, pic_name='stk_idx.png'):
+
+
+    """
+    在原数据的基础上增加均线和MACD
+    """
+    # 按升序排序
+    stk_df = stk_df.sort_values(by='date', ascending=True)
+
+    # 增加指标
+    stk_df = addStkIndexToDf(stk_df)
+
+    fig, ax = plt.subplots(nrows=4, ncols=1)
+
+    ax[0].plot(range(0, len(stk_df['date'])), stk_df['M20'], 'b--', label='20日均线', linewidth=1)
+    ax[0].plot(range(0, len(stk_df['date'])), stk_df['M60'], 'r--', label='60日均线', linewidth=1)
+    ax[0].plot(range(0, len(stk_df['date'])), stk_df['close'], 'g*--', label='收盘价', linewidth=0.5, markersize=1)
+
+    ax[1].bar(range(0, len(stk_df['date'])), stk_df['MACD'], label='MACD')
+
+    # 准备下标
+    xticks = range(0, len(stk_df['date']), int(math.ceil(len(stk_df['date']) / 40)))
+    xticklabels_all_list = list(stk_df['date'].sort_values(ascending=True))
+    xticklabels_all = [xticklabels_all_list[n] for n in xticks]
+
+    for ax_sig in ax[0:2]:
+        ax_sig.set_xticks(xticks)
+        ax_sig.set_xticklabels(xticklabels_all, rotation=90, fontsize=5)
+        ax_sig.legend(loc='best', fontsize=5)
+
+    # 画出最近几天的情况（均线以及MACD）
+    stk_df_current = stk_df.tail(plot_current_days_amount)
+    ax[2].plot(range(0, len(stk_df_current['date'])), stk_df_current['M20'], 'b--', label='20日均线', linewidth=2)
+    ax[2].plot(range(0, len(stk_df_current['date'])), stk_df_current['M60'], 'r--', label='60日均线', linewidth=2)
+    ax[2].plot(range(0, len(stk_df_current['date'])), stk_df_current['close'], 'g*-', label='收盘价', linewidth=1, markersize=5)
+
+    ax[2].set_xticks(list(range(0, len(stk_df_current['date']))))
+    ax[2].set_xticklabels(list(stk_df_current['date']), rotation=90, fontsize=5)
+    ax[2].legend(loc='best')
+
+    ax[3].bar(range(0, len(stk_df_current['date'])), stk_df_current['MACD'], label='MACD')
+    ax[3].set_xticks(list(range(0, len(stk_df_current['date']))))
+    ax[3].set_xticklabels(list(stk_df_current['date']), rotation=90, fontsize=5)
+    ax[3].legend(loc='best')
+
+    # 保存图片
+    save_dir = root_save_dir+current_date+'/'+str(stk_code)+'/'
+    if not os.path.exists(save_dir):
+        os.makedirs(save_dir)
+
+    plt.tight_layout()
+    plt.savefig(save_dir+pic_name, dpi=300)
+    plt.close()
+
+    return save_dir+pic_name
+
 def IsPotInCurveMedian(y_axis, median_neighbourhood):
     """
     该函数用于判断当前点是否在序列拟合成的抛物线的中点
