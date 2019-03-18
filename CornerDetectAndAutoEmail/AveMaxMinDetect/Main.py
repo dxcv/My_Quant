@@ -1,6 +1,8 @@
 # encoding=utf-8
 import pickle
 from apscheduler.schedulers.blocking import BlockingScheduler
+from apscheduler.triggers.combining import OrTrigger
+from apscheduler.triggers.cron import CronTrigger
 
 from CornerDetectAndAutoEmail.AveMaxMinDetect.Global import h_l_pot_info_url
 from CornerDetectAndAutoEmail.AveMaxMinDetect.MaxMin import judgeAndSendMsg, updatePotInfo
@@ -27,10 +29,16 @@ else:
 
 
 sched = BlockingScheduler()
+trigger = OrTrigger([
+    CronTrigger(hour='9', minute='31-59/5'),
+    CronTrigger(hour='10', minute='*/5'),
+    CronTrigger(hour='11', minute='1-29/5'),
+    CronTrigger(hour='13-15', minute='*/5')
+
+])
 sched.add_job(judgeAndSendMsg,
-              'cron',
+              trigger,
               day_of_week='mon-fri',
-              hour='9-12, 13-15',
               minute='*/5',
               max_instances=10)
 
