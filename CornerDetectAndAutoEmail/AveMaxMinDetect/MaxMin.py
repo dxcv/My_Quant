@@ -151,7 +151,6 @@ def judgeAndSendMsg():
 
     df_H_L_Pot = h_l_pot_info
 
-
     for stk in df_H_L_Pot.index:
 
         # 获取该股票的实时价格
