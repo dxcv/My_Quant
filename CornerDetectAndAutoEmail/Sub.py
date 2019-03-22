@@ -124,14 +124,22 @@ def genStkIdxPic(stk_df, stk_code, current_date, root_save_dir, pic_name='stk_id
     # 按升序排序
     stk_df = stk_df.sort_values(by='date', ascending=True)
 
-    # 增加指标
-    stk_df = addStkIndexToDf(stk_df)
+    """
+    增加指标
+    
+    'RSI5', 'RSI12', 'RSI30'
+    'SAR'
+    'slowk', 'slowd'
+    'upper', 'middle', 'lower' 
+    'MOM'
+    """
+    stk_df = addStkIndexToDf(stk_df).tail(100)
 
     fig, ax = plt.subplots(nrows=4, ncols=1)
 
-    ax[0].plot(range(0, len(stk_df['date'])), stk_df['M20'], 'b--', label='20日均线', linewidth=1)
-    ax[0].plot(range(0, len(stk_df['date'])), stk_df['M60'], 'r--', label='60日均线', linewidth=1)
-    ax[0].plot(range(0, len(stk_df['date'])), stk_df['close'], 'g*--', label='收盘价', linewidth=0.5, markersize=1)
+    ax[0].plot(range(0, len(stk_df['date'])), stk_df['RSI5'], 'b--', label='RSI5线', linewidth=1)
+    ax[0].plot(range(0, len(stk_df['date'])), stk_df['RSI12'], 'r--', label='RSI12线', linewidth=1)
+    ax[0].plot(range(0, len(stk_df['date'])), stk_df['RSI30'], 'g*--', label='RSI30', linewidth=0.5, markersize=1)
 
     ax[1].bar(range(0, len(stk_df['date'])), stk_df['MACD'], label='MACD')
 

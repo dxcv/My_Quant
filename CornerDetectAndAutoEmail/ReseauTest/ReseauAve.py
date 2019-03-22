@@ -16,7 +16,6 @@ sh_index = ts.get_k_data(code=stk_code)
 sh_index['M10'] = sh_index['close'].rolling(window=10, center=False).mean()
 sh_index['C-M10'] = sh_index.apply(lambda x: x['close']-x['M10'], axis=1)
 
-
 sh_index['M20'] = sh_index['close'].rolling(window=20, center=False).mean()
 sh_index['C-M20'] = sh_index.apply(lambda x: x['close']-x['M20'], axis=1)
 
@@ -30,8 +29,9 @@ data_temp = {
     'floor_last': 0,
     'money_remain': 20000,
     'amount_remain': 1500,
-    'M_last': -1,               # 用以记录上次的均线值，在反向操作中（本次操作与上次不同的情况）使用上次均值！
-    'AD_last': 'init'           # 上次是买还是卖    "buy"   "false"     "init"
+    'M_last': -1,                   # 用以记录上次的均线值，在反向操作中（本次操作与上次不同的情况）使用上次均值！
+    'BS_last': 'init',              # 上次是买还是卖    "buy"   "false"     "init"
+    'price_last': -1                # 上次价格
 }
 
 
