@@ -1,8 +1,6 @@
 # encoding=utf-8
-import numpy as np
 import tushare as ts
-from CornerDetectAndAutoEmail.ReseauTest.Sub import SingleReseauJudge
-from SDK.ExchangeFee import calExchangeFee
+from ReseauTest.Sub import SingleReseauJudge
 
 """
 本脚本是网格法改进版，鉴于上一版本中，存在高买低买而导致亏钱的情况，本次进行了改进！
