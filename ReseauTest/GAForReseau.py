@@ -13,28 +13,6 @@ import os
 
 from SDK.PickleSaveSub import dumpP, loadP
 
-""" --------------------- 定义------------------------ """
-r_bit_len = 7           # 网格二进制长度
-r_amount = 6            # 网格数量
-
-DNA_SIZE = r_bit_len*r_amount           # DNA 长度
-POP_SIZE = 100                          # 种群大小
-CROSS_RATE = 0.8                        # mating probability (DNA crossover)
-MUTATION_RATE = 0.003                   # mutation probability
-N_GENERATIONS = 200                     # 种群代数
-X_BOUND = [-3, 4]                       # 基因的上下限（此处应该设置为“相对price”的上下限）
-
-
-""" ----------------------- 准备训练数据 ------------------------------  """
-stk_code = '000001'
-sh_index = ts.get_k_data(code=stk_code)
-
-
-sh_index['M20'] = sh_index['close'].rolling(window=20, center=False).mean()
-sh_index['C-M20'] = sh_index.apply(lambda x: x['close']-x['M20'], axis=1)
-
-sh_index = sh_index.dropna(how='any')
-
 
 # 定义适应度函数
 def fitness(reseau, df):
@@ -60,14 +38,33 @@ def fitness(reseau, df):
             reseau=reseau,
             record_info=record_info,
             amount_unit=amount_unit)
-    sh_index.loc[idx, 'total_money'] = record_info['money_remain'] + record_info['amount_remain'] * sh_index.loc[
-        idx, 'close']
+        sh_index.loc[idx, 'total_money'] = record_info['money_remain'] + record_info['amount_remain'] * sh_index.loc[
+            idx, 'close']
 
     return sh_index.tail(1)['total_money'].values[0]
 
 
-# 初始化种群
+""" ----------------------- 准备训练数据 ------------------------------  """
+stk_code = '300183'
+sh_index = ts.get_k_data(code=stk_code)
 
+sh_index['M20'] = sh_index['close'].rolling(window=20, center=False).mean()
+sh_index['C-M20'] = sh_index.apply(lambda x: x['close']-x['M20'], axis=1)
+
+sh_index = sh_index.dropna(how='any')
+
+""" --------------------- 定义 ------------------------ """
+r_bit_len = 7           # 网格二进制长度
+r_amount = 6            # 网格数量
+
+DNA_SIZE = r_bit_len*r_amount                                               # DNA 长度
+POP_SIZE = 100                                                              # 种群大小
+CROSS_RATE = 0.8                                                            # mating probability (DNA crossover)
+MUTATION_RATE = 0.003                                                       # mutation probability
+N_GENERATIONS = 200                                                         # 种群代数
+X_BOUND = [np.min(sh_index['C-M20'])-2, np.max(sh_index['C-M20'])+2]        # 基因的上下限（此处应该设置为“相对price”的上下限）
+
+# 初始化种群
 if os.path.exists('./pop_store/pop'+stk_code):
     pop = loadP('./pop_store/', 'pop'+stk_code)
 else:
