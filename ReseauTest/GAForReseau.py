@@ -4,6 +4,8 @@
 
 利用遗传算法优化网格
 """
+import multiprocessing
+
 from Auto_Report.Auto_Email.Email_SendPdf import dumpPickle, loadPickle
 from GA.GA_Sub import initPop, C_M, convertPOP2Reseau, get_fitness, select
 from ReseauTest.Sub import SingleReseauJudge
@@ -73,26 +75,33 @@ last_fitness = []
 result_money = []
 pop_int = []
 
-for i in range(200):
 
-    # 基因转为网格
-    pop_int = convertPOP2Reseau(pop=pop, reseau_BIT_size=r_bit_len, reseau_amount=r_amount, reseau_bound=X_BOUND)
 
-    # 计算种群的适应度
-    pop_fitness = list(map(lambda x: fitness(x, sh_index), pop_int))
 
-    # 调整适应度
-    last_fitness = get_fitness(pop_fitness)
+def train():
+    for i in range(200):
 
-    # 根据适应度进行选择
-    pop = select(pop, last_fitness)
+        # 基因转为网格
+        pop_int = convertPOP2Reseau(pop=pop, reseau_BIT_size=r_bit_len, reseau_amount=r_amount, reseau_bound=X_BOUND)
 
-    # 交叉变异
-    pop = C_M(pop, CROSS_RATE, DNA_SIZE, POP_SIZE, MUTATION_RATE)
+        # 计算种群的适应度
+        pop_fitness = list(map(lambda x: fitness(x, sh_index), pop_int))
 
-    print('本次最高的适应度为：' + str(np.max(pop_fitness)))
+        # 调整适应度
+        last_fitness = get_fitness(pop_fitness)
 
-    result_money.append(np.max(pop_fitness))
+        # 根据适应度进行选择
+        pop = select(pop, last_fitness)
+
+        # 交叉变异
+        pop = C_M(pop, CROSS_RATE, DNA_SIZE, POP_SIZE, MUTATION_RATE)
+
+        print('本次最高的适应度为：' + str(np.max(pop_fitness)))
+
+        result_money.append(np.max(pop_fitness))
+
+# 定义多线程
+pool = multiprocessing.Pool(processes=4)
 
 
 # 训练结束，找出最好的
