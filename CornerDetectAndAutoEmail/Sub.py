@@ -20,6 +20,8 @@ import pandas as pd
 
 
 # 无法显示汉字及负号
+from SDK.PlotOptSub import addXticklabel
+
 mpl.rcParams['font.sans-serif'] = ['SimHei']
 matplotlib.rcParams['axes.unicode_minus']=False
 
@@ -135,38 +137,33 @@ def genStkIdxPic(stk_df, stk_code, current_date, root_save_dir, pic_name='stk_id
     """
     stk_df = addStkIndexToDf(stk_df).tail(100)
 
-    fig, ax = plt.subplots(nrows=4, ncols=1)
+    fig, ax = plt.subplots(nrows=5, ncols=1)
 
     ax[0].plot(range(0, len(stk_df['date'])), stk_df['RSI5'], 'b--', label='RSI5线', linewidth=1)
     ax[0].plot(range(0, len(stk_df['date'])), stk_df['RSI12'], 'r--', label='RSI12线', linewidth=1)
     ax[0].plot(range(0, len(stk_df['date'])), stk_df['RSI30'], 'g*--', label='RSI30', linewidth=0.5, markersize=1)
 
-    ax[1].bar(range(0, len(stk_df['date'])), stk_df['MACD'], label='MACD')
+    ax[1].plot(range(0, len(stk_df['date'])), stk_df['SAR'], 'g*--', label='SAR', linewidth=0.5, markersize=1)
+
+    ax[2].plot(range(0, len(stk_df['date'])), stk_df['slowk'], 'g*--', label='slowk', linewidth=0.5, markersize=1)
+    ax[2].plot(range(0, len(stk_df['date'])), stk_df['slowd'], 'r*--', label='slowd', linewidth=0.5, markersize=1)
+
+    ax[3].plot(range(0, len(stk_df['date'])), stk_df['upper'], 'r*--', label='布林上线', linewidth=0.5, markersize=1)
+    ax[3].plot(range(0, len(stk_df['date'])), stk_df['middle'], 'b*--', label='布林均线', linewidth=0.5, markersize=1)
+    ax[3].plot(range(0, len(stk_df['date'])), stk_df['lower'], 'g*--', label='布林下线', linewidth=0.5, markersize=1)
+
+    ax[4].plot(range(0, len(stk_df['date'])), stk_df['MOM'], 'g*--', label='MOM', linewidth=0.5, markersize=1)
 
     # 准备下标
-    xticks = range(0, len(stk_df['date']), int(math.ceil(len(stk_df['date']) / 40)))
-    xticklabels_all_list = list(stk_df['date'].sort_values(ascending=True))
-    xticklabels_all = [xticklabels_all_list[n] for n in xticks]
+    xlabel_series = stk_df.apply(lambda x: x['date'][2:].replace('-', ''), axis=1)
+    ax[0] = addXticklabel(ax[0], xlabel_series, 40, rotation=45)
+    ax[1] = addXticklabel(ax[1], xlabel_series, 40, rotation=45)
+    ax[2] = addXticklabel(ax[2], xlabel_series, 40, rotation=45)
+    ax[3] = addXticklabel(ax[3], xlabel_series, 40, rotation=45)
+    ax[4] = addXticklabel(ax[4], xlabel_series, 40, rotation=45)
 
-    for ax_sig in ax[0:2]:
-        ax_sig.set_xticks(xticks)
-        ax_sig.set_xticklabels(xticklabels_all, rotation=90, fontsize=5)
+    for ax_sig in ax:
         ax_sig.legend(loc='best', fontsize=5)
-
-    # 画出最近几天的情况（均线以及MACD）
-    stk_df_current = stk_df.tail(plot_current_days_amount)
-    ax[2].plot(range(0, len(stk_df_current['date'])), stk_df_current['M20'], 'b--', label='20日均线', linewidth=2)
-    ax[2].plot(range(0, len(stk_df_current['date'])), stk_df_current['M60'], 'r--', label='60日均线', linewidth=2)
-    ax[2].plot(range(0, len(stk_df_current['date'])), stk_df_current['close'], 'g*-', label='收盘价', linewidth=1, markersize=5)
-
-    ax[2].set_xticks(list(range(0, len(stk_df_current['date']))))
-    ax[2].set_xticklabels(list(stk_df_current['date']), rotation=90, fontsize=5)
-    ax[2].legend(loc='best')
-
-    ax[3].bar(range(0, len(stk_df_current['date'])), stk_df_current['MACD'], label='MACD')
-    ax[3].set_xticks(list(range(0, len(stk_df_current['date']))))
-    ax[3].set_xticklabels(list(stk_df_current['date']), rotation=90, fontsize=5)
-    ax[3].legend(loc='best')
 
     # 保存图片
     save_dir = root_save_dir+current_date+'/'+str(stk_code)+'/'
@@ -178,6 +175,7 @@ def genStkIdxPic(stk_df, stk_code, current_date, root_save_dir, pic_name='stk_id
     plt.close()
 
     return save_dir+pic_name
+
 
 def IsPotInCurveMedian(y_axis, median_neighbourhood):
     """
@@ -471,12 +469,10 @@ def sliceDfToTrainData(df, length, feature_cols, label_col):
 
 # --------------------------- 测试 -------------------------------
 
-# stk_K = ts.get_k_data('300183')
-#
-# # 重置index
-# stk_K = stk_K.reset_index()
-#
-# r = convertDfToTrainData(df=stk_K, length=6, feature_cols=['open', 'high', 'low'], label_col=['close'])
-#
-#
-# end=0
+
+if __name__ == '__main__':
+
+    stk_K = ts.get_k_data('300183')
+
+    r = genStkIdxPic(stk_K, '300183', get_current_date_str(), pic_save_dir_root, pic_name='stk_idx.png')
+    end = 0
