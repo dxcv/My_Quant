@@ -43,7 +43,7 @@ def WhichMarketStkIn(stk_code):
         return ''
 
 
-def calExchangeFee(stk_code, stk_amount, stk_price, buy=True, commissionRatio=0.00025, stampTaxRatio=0.001):
+def calExchangeFee(stk_code, stk_amount, stk_price, buy=True, commissionRatio=0.00025, stampTaxRatio=0.001,debug=False):
     """
     计算每笔交易的费用
     :param stk_code:
@@ -58,7 +58,8 @@ def calExchangeFee(stk_code, stk_amount, stk_price, buy=True, commissionRatio=0.
     site = WhichMarketStkIn(stk_code)
 
     if site == '':
-        print('函数 calExchangeFee：无法识别stk所在交易所！')
+        if debug:
+            print('函数 calExchangeFee：无法识别stk所在交易所！')
         return -1
 
     # 过户费 上交所每1000股收费1元
@@ -76,27 +77,29 @@ def calExchangeFee(stk_code, stk_amount, stk_price, buy=True, commissionRatio=0.
     # -------------------------------------------- 买入时 ----------------------------------------
     if buy:
         if site=='sh':
-            print('函数 calExchangeFee：'+'\n'+
-                  '交易股票：'+getNameByStkCode(g_total_stk_info_mysql, stk_code)+'\n'+
-                  '所在交易所：'+{'sh':'上交所','sz':'深交所'}.get(site)+'\n'+
-                  '买入卖出：'+'买入'+'\n'+
-                  '印花税：'+'无'+'\n'+
-                  '过户费：'+str(transferFee)+'\n'+
-                  '佣金：'+str(commission)+'\n'+
-                  '费用总计：'+str(transferFee+commission)+'\n')
+            if debug:
+                print('函数 calExchangeFee：'+'\n'+
+                      '交易股票：'+getNameByStkCode(g_total_stk_info_mysql, stk_code)+'\n'+
+                      '所在交易所：'+{'sh':'上交所','sz':'深交所'}.get(site)+'\n'+
+                      '买入卖出：'+'买入'+'\n'+
+                      '印花税：'+'无'+'\n'+
+                      '过户费：'+str(transferFee)+'\n'+
+                      '佣金：'+str(commission)+'\n'+
+                      '费用总计：'+str(transferFee+commission)+'\n')
 
             # 沪市买入 佣金 + 过户费
             return transferFee+commission
 
         else:
-            print('函数 calExchangeFee：'+'\n'+
-                  '交易股票：'+getNameByStkCode(g_total_stk_info_mysql, stk_code)+'\n'+
-                  '所在交易所：'+{'sh':'上交所','sz':'深交所'}.get(site)+'\n'+
-                  '买入卖出：'+'买入'+'\n'+
-                  '印花税：'+'无'+'\n'+
-                  '过户费：'+'无'+'\n'+
-                  '佣金：'+str(commission)+'\n'+
-                  '费用总计：'+str(commission)+'\n')
+            if debug:
+                print('函数 calExchangeFee：'+'\n'+
+                      '交易股票：'+getNameByStkCode(g_total_stk_info_mysql, stk_code)+'\n'+
+                      '所在交易所：'+{'sh':'上交所','sz':'深交所'}.get(site)+'\n'+
+                      '买入卖出：'+'买入'+'\n'+
+                      '印花税：'+'无'+'\n'+
+                      '过户费：'+'无'+'\n'+
+                      '佣金：'+str(commission)+'\n'+
+                      '费用总计：'+str(commission)+'\n')
 
             # 深市买入 佣金
             return commission
@@ -105,27 +108,29 @@ def calExchangeFee(stk_code, stk_amount, stk_price, buy=True, commissionRatio=0.
     else:
 
         if site == 'sh':
-            print('函数 calExchangeFee：' + '\n' +
-                  '交易股票：' + getNameByStkCode(g_total_stk_info_mysql, stk_code) + '\n' +
-                  '所在交易所：' + {'sh': '上交所', 'sz': '深交所'}.get(site) + '\n' +
-                  '买入卖出：' + '卖出' + '\n' +
-                  '印花税：' + str(stampTax) + '\n' +
-                  '过户费：' + str(transferFee) + '\n' +
-                  '佣金：' + str(commission) + '\n' +
-                  '费用总计：' + str(transferFee + commission+stampTax) + '\n')
+            if debug:
+                print('函数 calExchangeFee：' + '\n' +
+                      '交易股票：' + getNameByStkCode(g_total_stk_info_mysql, stk_code) + '\n' +
+                      '所在交易所：' + {'sh': '上交所', 'sz': '深交所'}.get(site) + '\n' +
+                      '买入卖出：' + '卖出' + '\n' +
+                      '印花税：' + str(stampTax) + '\n' +
+                      '过户费：' + str(transferFee) + '\n' +
+                      '佣金：' + str(commission) + '\n' +
+                      '费用总计：' + str(transferFee + commission+stampTax) + '\n')
 
             # 沪市卖出 佣金 + 过户费+印花税
             return transferFee + commission
 
         else:
-            print('函数 calExchangeFee：' + '\n' +
-                  '交易股票：' + getNameByStkCode(g_total_stk_info_mysql, stk_code) + '\n' +
-                  '所在交易所：' + {'sh': '上交所', 'sz': '深交所'}.get(site) + '\n' +
-                  '买入卖出：' + '卖出' + '\n' +
-                  '印花税：' + str(stampTax) + '\n' +
-                  '过户费：' + '无' + '\n' +
-                  '佣金：' + str(commission) + '\n' +
-                  '费用总计：' + str(commission+stampTax) + '\n')
+            if debug:
+                print('函数 calExchangeFee：' + '\n' +
+                      '交易股票：' + getNameByStkCode(g_total_stk_info_mysql, stk_code) + '\n' +
+                      '所在交易所：' + {'sh': '上交所', 'sz': '深交所'}.get(site) + '\n' +
+                      '买入卖出：' + '卖出' + '\n' +
+                      '印花税：' + str(stampTax) + '\n' +
+                      '过户费：' + '无' + '\n' +
+                      '佣金：' + str(commission) + '\n' +
+                      '费用总计：' + str(commission+stampTax) + '\n')
 
             # 深市卖出 佣金+印花税
             return commission+stampTax

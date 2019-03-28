@@ -37,6 +37,19 @@ def select(pop, fitness):
     return pop[idx]
 
 
+def mySelect(pop, fitness):
+    """
+    选择适应度最高的个体
+    :param pop:         种群
+    :param fitness:     适应度
+    :return:
+    """
+
+    idx = np.random.choice(np.arange(len(pop)), size=len(pop), replace=True,
+                           p=fitness/fitness.sum())
+    return pop[idx]
+
+
 def crossover(parent, pop, cross_rate, POP_SIZE, DNA_SIZE):
     """
     物种交配

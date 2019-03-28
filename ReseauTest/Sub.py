@@ -2,7 +2,7 @@
 from SDK.ExchangeFee import calExchangeFee
 import numpy as np
 
-def BS_opt(stk_code, price, amount, opt, record_info):
+def BS_opt(stk_code, price, amount, opt, record_info, debug=False):
     """
     执行买卖操作的函数
     :param price:
@@ -21,7 +21,8 @@ def BS_opt(stk_code, price, amount, opt, record_info):
             record_info['BS_last'] = 'buy'
             record_info['price_last'] = price
         else:
-            print('函数 BS_opt：已无钱加仓了！')
+            if debug:
+                print('函数 BS_opt：已无钱加仓了！')
 
     elif opt == 'sale':
 
@@ -31,14 +32,16 @@ def BS_opt(stk_code, price, amount, opt, record_info):
             record_info['BS_last'] = 'sale'
             record_info['price_last'] = price
         else:
-            print('函数 BS_opt：已无股票可卖！')
+            if debug:
+                print('函数 BS_opt：已无股票可卖！')
     else:
-        print('函数 BS_opt：error！不识别的操作！')
+        if debug:
+            print('函数 BS_opt：error！不识别的操作！')
 
     return record_info
 
 
-def SingleReseauJudge(stk_code, price_now, M_now, reseau, record_info, amount_unit):
+def SingleReseauJudge(stk_code, price_now, M_now, reseau, record_info, amount_unit, debug=False):
 
     """
     给定当前价格和均线，以及网格信息，进行动作判断
@@ -60,7 +63,8 @@ def SingleReseauJudge(stk_code, price_now, M_now, reseau, record_info, amount_un
     elif price_now < record_info['price_last']:
         record_info['BS_trend_now'] = 'buy'
     else:
-        print('函数 SingleReseauJudge：与上次价格相同！')
+        if debug:
+            print('函数 SingleReseauJudge：与上次价格相同！')
         return record_info
 
     """ 3、计算有无触发网格 """
@@ -83,7 +87,8 @@ def SingleReseauJudge(stk_code, price_now, M_now, reseau, record_info, amount_un
 
     """ 4、判断并进行买卖操作,如果有买卖动作，同时更新“上次均线” """
     if len(floors) == 0:
-        print('函数 SingleReseauJudge：本次未触发网格！')
+        if debug:
+            print('函数 SingleReseauJudge：本次未触发网格！')
         return record_info
 
     else:
