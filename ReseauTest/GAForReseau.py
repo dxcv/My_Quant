@@ -12,7 +12,7 @@ from ReseauTest.Sub import SingleReseauJudge
 import tushare as ts
 import numpy as np
 import os
-
+import time
 from SDK.PickleSaveSub import dumpP, loadP
 
 
@@ -54,10 +54,10 @@ if __name__ == '__main__':
     sh_index['M20'] = sh_index['close'].rolling(window=20, center=False).mean()
     sh_index['C-M20'] = sh_index.apply(lambda x: x['close']-x['M20'], axis=1)
 
-    sh_index = sh_index.dropna(how='any')
+    sh_index = sh_index.dropna(how='any').tail(100)
 
     """ --------------------- 定义 ------------------------ """
-    r_bit_len = 7           # 网格二进制长度
+    r_bit_len = 5           # 网格二进制长度
     r_amount = 6            # 网格数量
 
     DNA_SIZE = r_bit_len*r_amount                                               # DNA 长度
@@ -78,7 +78,9 @@ if __name__ == '__main__':
 
     pool = mp.Pool(processes=7)                    # 默认是有几个核就用几个，可以自己设置processes = ？
 
-    for i in range(200):
+    for i in range(2000):
+
+        t_s = time.time()
 
         # 基因转为网格
         pop_int = convertPOP2Reseau(pop=pop, reseau_BIT_size=r_bit_len, reseau_amount=r_amount, reseau_bound=X_BOUND)
@@ -98,7 +100,7 @@ if __name__ == '__main__':
         # 交叉变异
         pop = C_M(pop, CROSS_RATE, DNA_SIZE, POP_SIZE, MUTATION_RATE)
 
-        print('本次最高的适应度为：' + str(np.max(pop_fitness)))
+        print('本次最高的适应度为：' + str(np.max(pop_fitness)) + '   耗时：'+str(round(time.time()-t_s, 1))+'秒！')
 
         result_money.append(np.max(pop_fitness))
 

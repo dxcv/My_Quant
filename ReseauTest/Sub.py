@@ -1,6 +1,7 @@
 # encoding=utf-8
 from SDK.ExchangeFee import calExchangeFee
 import numpy as np
+import time
 
 def BS_opt(stk_code, price, amount, opt, record_info, debug=False):
     """
@@ -67,28 +68,31 @@ def SingleReseauJudge(stk_code, price_now, M_now, reseau, record_info, amount_un
             print('函数 SingleReseauJudge：与上次价格相同！')
         return record_info
 
-    """ 3、计算有无触发网格 """
+    """ 3、计算有无触发网格 t_2"""
     price_rela_last = record_info['price_last'] - record_info['M_last']
     if (record_info['BS_trend_now'] == record_info['BS_last']) | (record_info['BS_last'] == 'init'):
         price_rela_now = price_now - M_now
     else:
         price_rela_now = price_now - record_info['M_last']
 
-    # 计算包含的网格
+    # 计算包含的网格 t_3
     if record_info['BS_trend_now'] == 'buy':
         floors = list(filter(lambda x: price_rela_now <= x <= price_rela_last, reseau))
 
     elif record_info['BS_trend_now'] == 'sale':
         floors = list(filter(lambda x: price_rela_last <= x <= price_rela_now, reseau))
 
-    # 如果包含，删除上次floor
+    # 如果包含，删除上次floor t_4
     if record_info['floor_last'] in floors:
         floors.remove(record_info['floor_last'])
 
-    """ 4、判断并进行买卖操作,如果有买卖动作，同时更新“上次均线” """
+    """ 4、判断并进行买卖操作,如果有买卖动作，同时更新“上次均线” t_5 """
     if len(floors) == 0:
         if debug:
             print('函数 SingleReseauJudge：本次未触发网格！')
+
+        # 将本次的实际操作保存
+        record_info['BS_real'] = 'NO_OPT'
         return record_info
 
     else:
@@ -101,6 +105,9 @@ def SingleReseauJudge(stk_code, price_now, M_now, reseau, record_info, amount_un
 
         # 进行了买卖操作，“上次均值”应该更新！
         record_info['M_last'] = M_now
+
+        # 将本次的实际操作保存
+        record_info['BS_real'] = record_info['BS_trend_now']
 
     """ 5、更新floor、均值 """
     if record_info['BS_trend_now'] == 'buy':
