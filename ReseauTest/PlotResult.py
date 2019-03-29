@@ -45,6 +45,8 @@ if __name__ == '__main__':
 
         sh_index.loc[idx, 'total_money'] = record_info['money_remain'] + record_info['amount_remain'] * sh_index.loc[
             idx, 'close']
+        sh_index.loc[idx, 'money_remain'] = record_info['money_remain']
+        sh_index.loc[idx, 'amount_remain'] = record_info['amount_remain']
 
         sh_index.loc[idx, 'BS'] = record_info['BS_real']
 
@@ -53,7 +55,7 @@ if __name__ == '__main__':
     ratio = sh_index.head(1)['total_money'].values[0]/sh_index.head(1)['close'].values[0]
     sh_index['AllMoneyToStk'] = sh_index.apply(lambda x: x['close']*ratio, axis=1)
 
-    fig, ax = plt.subplots(nrows=2, ncols=1)
+    fig, ax = plt.subplots(nrows=3, ncols=1)
     ax[0].plot(range(len(sh_index['date'])), sh_index['close'], 'b--')
 
     # 打印BS操作
@@ -69,8 +71,13 @@ if __name__ == '__main__':
     ax[1].plot(range(len(sh_index['date'])), sh_index['AllMoneyToStk'], 'b--', label='no_use_strategy')
     ax[1].plot(range(len(sh_index['date'])), sh_index['total_money'], 'r--', label='use_strategy')
 
+    # 打印stk数量和剩余money
+    ax[2].plot(range(len(sh_index['date'])), normal01(sh_index['money_remain']), 'b--', label='剩余money')
+    ax[2].plot(range(len(sh_index['date'])), normal01(sh_index['amount_remain']), 'r--', label='剩余stk数量')
+
     ax[0] = addXticklabel(ax[0], sh_index['date'], 40, rotation=45)
     ax[1] = addXticklabel(ax[1], sh_index['date'], 40, rotation=45)
+    ax[2] = addXticklabel(ax[2], sh_index['date'], 40, rotation=45)
 
     for ax_sig in ax:
         ax_sig.legend(loc='best')
