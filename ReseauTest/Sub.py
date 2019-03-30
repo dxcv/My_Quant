@@ -68,7 +68,7 @@ def SingleReseauJudge(stk_code, price_now, M_now, reseau, record_info, amount_un
             print('函数 SingleReseauJudge：与上次价格相同！')
         return record_info
 
-    """ 3、计算有无触发网格 t_2"""
+    """ 3、计算有无触发网格  """
     price_rela_last = record_info['price_last'] - record_info['M_last']
     if (record_info['BS_trend_now'] == record_info['BS_last']) | (record_info['BS_last'] == 'init'):
         price_rela_now = price_now - M_now
