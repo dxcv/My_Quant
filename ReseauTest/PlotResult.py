@@ -46,7 +46,7 @@ if __name__ == '__main__':
             amount_unit=amount_unit,
             debug=True)
 
-        sh_index.loc[idx, 'total_money'] = record_info['money_remain'] + record_info['amount_remain'] * sh_index.loc[
+        sh_index.loc[idx, 'strategy_money'] = record_info['money_remain'] + record_info['amount_remain'] * sh_index.loc[
             idx, 'close']
         sh_index.loc[idx, 'money_remain'] = record_info['money_remain']
         sh_index.loc[idx, 'BS_trend_now'] = record_info['BS_trend_now']
@@ -59,8 +59,10 @@ if __name__ == '__main__':
 
     """ -------------------------------- 图示结果 ------------------------------------ """
     # 对p进行归一化，方便比较
-    ratio = sh_index.head(1)['total_money'].values[0]/sh_index.head(1)['close'].values[0]
-    sh_index['AllMoneyToStk'] = sh_index.apply(lambda x: x['close']*ratio, axis=1)
+    ratio = sh_index.head(1)['strategy_money'].values[0]/sh_index.head(1)['close'].values[0]
+    sh_index['origin_money'] = sh_index.apply(lambda x: x['close']*ratio, axis=1)
+
+    plotOPResult(sh_index)
 
     fig, ax = plt.subplots(nrows=4, ncols=1)
     ax[0].plot(range(len(sh_index['date'])), sh_index['close'], 'b--')
@@ -75,14 +77,14 @@ if __name__ == '__main__':
     ax[0].plot(list(map(lambda x: x[0], tuple_s)), list(map(lambda x: x[2], tuple_s)), 'g*', label='sale')
 
     # 打印对比
-    ax[3].plot(range(len(sh_index['date'])), sh_index['AllMoneyToStk'], 'b--', label='no_use_strategy')
-    ax[3].plot(range(len(sh_index['date'])), sh_index['total_money'], 'r--', label='use_strategy')
+    ax[3].plot(range(len(sh_index['date'])), sh_index['origin_money'], 'b--', label='no_use_strategy')
+    ax[3].plot(range(len(sh_index['date'])), sh_index['strategy_money'], 'r--', label='use_strategy')
 
     # 打印stk数量和剩余money
     ax[2].plot(range(len(sh_index['date'])), normal01(sh_index['money_remain']), 'b--', label='剩余money')
     # ax[2].plot(range(len(sh_index['date'])), normal01(sh_index['amount_remain']), 'r--', label='剩余stk数量')
 
-    # 打印stk数量和剩余money
+    # # 打印stk数量和剩余money
     ax[1].plot(range(len(sh_index['date'])), sh_index['C-M20'], 'g--', label='离心力')
     ax[1].plot(range(len(sh_index['date'])), np.zeros(len(sh_index['date'])), 'b--', label='零线')
 
