@@ -8,7 +8,7 @@ from SDK.StkSub import BS_opt, plotOPResult
 
 stk_code = '300580'
 
-df = ts.get_k_data(stk_code, start='2016-01-12', end='2018-05-26')
+df = ts.get_k_data(stk_code, start='2017-01-12', end='2019-05-26')
 
 
 closed = df['close'].values
@@ -51,7 +51,7 @@ for idx in df.index:
         record_info = BS_opt(
             stk_code=stk_code,
             price=df.loc[idx, 'close'],
-            amount=300,
+            amount=400,
             opt='sale',
             record_info=record_info,
             debug=True)
@@ -60,10 +60,13 @@ for idx in df.index:
         record_info = BS_opt(
             stk_code=stk_code,
             price=df.loc[idx, 'close'],
-            amount=300,
+            amount=400,
             opt='buy',
             record_info=record_info,
             debug=True)
+
+    else:
+        record_info['BS_real'] = 'NO_OPT'
 
     df.loc[idx, 'strategy_money'] = record_info['amount_remain']*df.loc[idx, 'close'] + record_info['money_remain']
     df.loc[idx, 'origin_money'] = origin_amount*df.loc[idx, 'close']
