@@ -30,7 +30,13 @@ record_info = {
     'BS_last': 'init',                              # 上次是买还是卖    "buy"   "false"     "init"
     'price_last': df.head(1)['close'].values[0],    # 上次价格
     'BS_trend_now': 'init',
-    'BS_real': 'NO_OPT'                             # 本次实际操作
+    'BS_real': 'NO_OPT',                            # 本次实际操作
+    'Price_now': 12,
+    'last_opt_date': '2018-12-15',
+    'B_continue': 2,
+    'S_continue': 1,
+    'B_Reseau': -1,
+    'S_Reseau': -1
 }
 
 origin_amount = record_info['money_remain']/df.head(1)['close'].values[0] + record_info['amount_remain']
@@ -51,7 +57,7 @@ for idx in df.index:
         record_info = BS_opt(
             stk_code=stk_code,
             price=df.loc[idx, 'close'],
-            amount=400,
+            amount=300,
             opt='sale',
             record_info=record_info,
             debug=True)

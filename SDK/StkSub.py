@@ -26,7 +26,7 @@ def getNameByStkCode(stk_info_df, stk_code):
         return stk_info_df[stk_info_df['code'] == stk_code]['name'].values[0]
 
 
-def BS_opt(stk_code, price, amount, opt, record_info, debug=False):
+def BS_opt(stk_code, price, amount, opt, record_info, date, debug=False):
     """
     record_info 格式范例如下：
 
@@ -45,6 +45,7 @@ def BS_opt(stk_code, price, amount, opt, record_info, debug=False):
     :param price:
     :param opt:
     :param record_info:
+    :param date :           用来计算前后两次操作的间隔
     :return:
     """
     if opt == 'buy':
@@ -71,6 +72,12 @@ def BS_opt(stk_code, price, amount, opt, record_info, debug=False):
             record_info['BS_last'] = 'sale'
             record_info['BS_real'] = 'sale'
             record_info['price_last'] = price
+
+            # 更新BS操作的连续次数
+            record_info['B_continue'] = 1
+            record_info['S_continue'] = record_info['S_continue'] + 1
+
+
         else:
             record_info['BS_real'] = 'NO_OPT'
             if debug:
