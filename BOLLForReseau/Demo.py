@@ -1,5 +1,11 @@
 # encoding=utf-8
 
+"""
+本脚本通过根据布林线动态调整网格大小
+
+"""
+
+
 import tushare as ts
 import talib
 from pylab import *
