@@ -79,6 +79,7 @@ def BS_opt(stk_code, price, amount, opt, record_info, date, debug=False):
             record_info['price_last'] = price
 
             # 更新BS操作的连续次数
+            record_info['last_opt_date'] = date
             record_info['B_continue'] = 1
             record_info['S_continue'] = record_info['S_continue'] + 1
 

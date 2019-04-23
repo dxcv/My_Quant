@@ -131,22 +131,22 @@ def convertPOP2Reseau(pop, reseau_BIT_size, reseau_amount, reseau_bound):
 
 
 """ ----------------------- 测试 ------------------------------- """
+if __name__ == '__main__':
 
-r_bit_len = 7           # 网格二进制长度
-r_amount = 6            # 网格数量
+    r_bit_len = 7                           # 网格二进制长度
+    r_amount = 6                            # 网格数量
 
-DNA_SIZE = r_bit_len*r_amount           # DNA 长度
-POP_SIZE = 100           # 种群大小
-CROSS_RATE = 0.8         # mating probability (DNA crossover)
-MUTATION_RATE = 0.003    # mutation probability
-N_GENERATIONS = 200      # 种群代数
-X_BOUND = [-3, 4]        # 基因的上下限（此处应该设置为“相对price”的上下限）
+    DNA_SIZE = r_bit_len*r_amount           # DNA 长度
+    POP_SIZE = 100                          # 种群大小
+    CROSS_RATE = 0.8                        # mating probability (DNA crossover)
+    MUTATION_RATE = 0.003                   # mutation probability
+    N_GENERATIONS = 200                     # 种群代数
+    X_BOUND = [-3, 4]                       # 基因的上下限（此处应该设置为“相对price”的上下限）
 
+    pop = initPop(POP_SIZE, r_bit_len*r_amount)
 
-pop = initPop(POP_SIZE, r_bit_len*r_amount)
+    pop = C_M(pop, CROSS_RATE, DNA_SIZE, POP_SIZE, MUTATION_RATE)
+    pop_int = convertPOP2Reseau(pop=pop, reseau_BIT_size=r_bit_len, reseau_amount=r_amount, reseau_bound=X_BOUND)
 
-pop = C_M(pop, CROSS_RATE, DNA_SIZE, POP_SIZE, MUTATION_RATE)
-pop_int = convertPOP2Reseau(pop=pop, reseau_BIT_size=r_bit_len, reseau_amount=r_amount, reseau_bound=X_BOUND)
-
-end=0
+    end=0
 

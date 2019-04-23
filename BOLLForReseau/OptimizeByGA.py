@@ -115,6 +115,6 @@ for idx in df.index:
     df.loc[idx, 'S_Reseau'] = record_info['S_Reseau']
 
 
-plotOPResult(df)
+# plotOPResult(df)
 
 end = 0
