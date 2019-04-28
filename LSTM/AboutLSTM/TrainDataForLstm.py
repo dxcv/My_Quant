@@ -6,8 +6,8 @@
 import tushare as ts
 import pickle
 
-from CornerDetectAndAutoEmail.AboutLSTM.Config import N_STEPS, feature_cols, label_col
 from CornerDetectAndAutoEmail.Sub import genSingleStkTrainData, sliceDfToTrainData
+from LSTM.AboutLSTM.Config import feature_cols, label_col, N_STEPS
 from SDK.CNN_Data_Prepare import gaussian_normalize
 
 stk_code = 'cyb'
@@ -38,5 +38,5 @@ data_slice_list = sliceDfToTrainData(
 )
 
 # 保存数据
-with open('./DataPrepare/' + stk_code +'.pkl', 'wb') as f:
+with open('./DataPrepare/' + stk_code + '.pkl', 'wb') as f:
     pickle.dump(data_slice_list, f)

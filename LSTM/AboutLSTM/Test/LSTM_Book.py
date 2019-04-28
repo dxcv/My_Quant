@@ -11,8 +11,8 @@ import pickle
 import random
 import os
 
-from CornerDetectAndAutoEmail.AboutLSTM.Config import N_STEPS, feature_cols, HIDDEN_SIZE, NUM_LAYERS
-from CornerDetectAndAutoEmail.AboutLSTM.Test.Sub import lstm_model
+from LSTM.AboutLSTM.Config import N_STEPS, feature_cols, HIDDEN_SIZE, NUM_LAYERS
+from LSTM.AboutLSTM.Test.Sub import lstm_model
 
 """ -------------------- 测试 ---------------------- """
 stk_code = 'cyb'
