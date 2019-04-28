@@ -64,7 +64,7 @@ def calBSReseau(reseau_origin, m_remain_ratio, time_span,  continus_amount_b, co
     reseau_b = reseau_origin \
                * math.exp(continus_amount_b*c_w) \
                * (0.2+(1/(time_span*t_w))*5) \
-               * 0.5/m_remain_ratio * m_w
+               * 0.5/(m_remain_ratio + 0.000001) * m_w
 
     reseau_s = reseau_origin \
                * math.exp(continus_amount_s*c_w) \
