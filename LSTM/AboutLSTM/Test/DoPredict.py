@@ -1,10 +1,9 @@
 # encoding = utf-8
 import tushare as ts
 
-from CornerDetectAndAutoEmail.AboutLSTM.Config import feature_cols, label_col, N_STEPS, N_INPUTS, HIDDEN_SIZE, \
-    NUM_LAYERS, M_INT
-from CornerDetectAndAutoEmail.AboutLSTM.Test.Sub import lstm_model
 from CornerDetectAndAutoEmail.Sub import genSingleStkTrainData
+from LSTM.AboutLSTM.Config import feature_cols, M_INT, N_STEPS, N_INPUTS, HIDDEN_SIZE, NUM_LAYERS, label_col
+from LSTM.AboutLSTM.Test.Sub import lstm_model
 from SDK.CNN_Data_Prepare import gaussian_normalize
 import tensorflow as tf
 import os
@@ -72,7 +71,7 @@ if os.path.exists('../modelDir/LstmForCornerPot.ckpt.meta'):
 
     """ -------------------------- 画图展示预测效果 -------------------- """
     fig, ax = plt.subplots(nrows=3)
-    ax[0].plot(df.index, df['corner_dist_ratio'], 'g*--', label='原始数据')
+    ax[0].plot(df.index, df[label_col[0]], 'g*--', label='原始数据')
     ax[0].plot(df.index, np.zeros(len(df.index)), 'b-')
 
     ax[1].plot(df.index, df['pre'].fillna(0), 'r*--', label='预测数据')
