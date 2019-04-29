@@ -46,7 +46,7 @@ else:
     sess.run(tf.global_variables_initializer())
 
 loss_list = []
-for i in range(10000):
+for i in range(1000000):
 
     # 从总样本中随机抽取,batch_size = 7
     list_sample = random.sample(data_train, 7)
