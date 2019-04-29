@@ -10,7 +10,7 @@ from talib import MA_Type
 
 import tushare as ts
 
-from SDK.CNN_Data_Prepare import gaussian_normalize
+from SDK.CNN_Data_Prepare import gaussian_normalize, normalize
 from SDK.MyTimeOPT import DateStr2Sec
 import math
 from SDK.MyTimeOPT import get_current_date_str
@@ -436,7 +436,7 @@ def genSingleStkTrainData(stk_K_df, M_int, stk_code, stk_name):
     return sh_index
 
 
-def sliceDfToTrainData(df, length, feature_cols, label_col):
+def sliceDfToTrainData(df, length, feature_cols, label_col, norm_flag=False):
     """
     函数功能：
 
@@ -458,10 +458,18 @@ def sliceDfToTrainData(df, length, feature_cols, label_col):
     r_list = []
     for idx in df.loc[0:len(df) - length - 1, :].index:
 
+        # 取出这一段的df
+        df_seg = df.loc[idx:idx + length, feature_cols + [label_col[0]]]
+
+        # 是否对输入数据进行归一化
+        if norm_flag:
+            for col in feature_cols:
+                df_seg[col] = normalize(df_seg.loc[:, col])
+
         r_list.append(
             (
-                df.loc[idx:idx + length, feature_cols].values,
-                df.loc[idx:idx + length, label_col].values
+                df_seg.loc[:, feature_cols].values,
+                df_seg.loc[:, [label_col[0]]].values
             )
         )
 
