@@ -9,7 +9,7 @@ import tensorflow as tf
 import os
 import numpy as np
 from pylab import *
-
+import pickle
 
 """ 本脚本根据训练好的lstm模型进行预测 """
 
@@ -18,8 +18,8 @@ from pylab import *
 stk_code = 'cyb'
 
 # 准备数据
-with open('../DataPrepare/' + stk_code+'train' + '.pkl', 'rb') as f:
-    data_train = pickle.load(f)
+with open('../DataPrepare/' + stk_code+'test' + '.pkl', 'rb') as f:
+    df = pickle.load(f)
 
 """ -------------------------- 加载lstm模型进行预测 --------------------------- """
 
@@ -31,7 +31,7 @@ predictions, loss, train_op, X, y = lstm_model(
     NUM_LAYERS=NUM_LAYERS)
 
 # 创建保存器用于模型
-saver = tf.train.Saver()
+saver = tf.train.Saver(tf.global_variables())
 
 # 初始化
 sess = tf.Session()
@@ -42,7 +42,7 @@ if os.path.exists('../modelDir/LstmForCornerPot.ckpt.meta'):
     saver.restore(sess, tf.train.latest_checkpoint(
         '..\modelDir/'))
 
-    graph = tf.get_default_graph()
+    # graph = tf.get_default_graph()
 
     """ ---------------------- 使用模型进行预测 ------------------------- """
     for idx in df.loc[10:, :].index:
