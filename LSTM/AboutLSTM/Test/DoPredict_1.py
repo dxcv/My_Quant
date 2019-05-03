@@ -4,7 +4,7 @@ import tushare as ts
 from CornerDetectAndAutoEmail.Sub import genSingleStkTrainData
 from LSTM.AboutLSTM.Config import feature_cols, M_INT, N_STEPS, N_INPUTS, HIDDEN_SIZE, NUM_LAYERS, label_col
 from LSTM.AboutLSTM.Test.Sub import lstm_model
-from SDK.CNN_Data_Prepare import gaussian_normalize
+from SDK.CNN_Data_Prepare import gaussian_normalize, normalize_by_line
 import tensorflow as tf
 import os
 import numpy as np
@@ -14,30 +14,12 @@ from pylab import *
 """ 本脚本根据训练好的lstm模型进行预测 """
 
 
-""" ---------------------------- 准备数据 ----------------------------- """
-
+""" -------------------- 测试 ---------------------- """
 stk_code = 'cyb'
-df_cyb = ts.get_k_data(stk_code, start='2010-01-01', end='2011-01-01')
-df = genSingleStkTrainData(
-    stk_K_df=df_cyb,
-    M_int=M_INT,
-    stk_code=stk_code,
-    stk_name=stk_code
-)
 
-# label 字符串
-label_str = label_col[0] + '_label'
-
-# 取出标签数据
-df = df.loc[:, feature_cols+[label_str]]
-
-
-# 对相应的数据进行归一化
-for col in feature_cols:
-    df[col] = gaussian_normalize(df[col])
-
-df = df.reset_index(drop=True)
-
+# 准备数据
+with open('../DataPrepare/' + stk_code+'train' + '.pkl', 'rb') as f:
+    data_train = pickle.load(f)
 
 """ -------------------------- 加载lstm模型进行预测 --------------------------- """
 

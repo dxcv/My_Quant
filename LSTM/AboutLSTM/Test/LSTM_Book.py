@@ -18,7 +18,7 @@ from LSTM.AboutLSTM.Test.Sub import lstm_model
 stk_code = 'cyb'
 
 # 准备数据
-with open('../DataPrepare/' + stk_code + '.pkl', 'rb') as f:
+with open('../DataPrepare/' + stk_code+'train' + '.pkl', 'rb') as f:
     data_train = pickle.load(f)
 
 # 创建模型
@@ -46,7 +46,7 @@ else:
     sess.run(tf.global_variables_initializer())
 
 loss_list = []
-for i in range(1000000):
+for i in range(60000):
 
     # 从总样本中随机抽取,batch_size = 7
     list_sample = random.sample(data_train, 7)
