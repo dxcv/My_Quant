@@ -3,7 +3,7 @@
 """ 本脚本包含lstm训练所需要的各种参数 """
 
 # feature_cols = ['M21pre', 'MACD', 'RSI12', 'RSI30', 'SAR', 'slowk', 'slowd', 'close', 'high', 'low', 'volume']
-feature_cols = ['close', 'high', 'low', 'volume']
+feature_cols = ['open', 'close', 'high', 'low', 'volume']
 label_col = ['high']
 
 stk_code = 'cyb'
