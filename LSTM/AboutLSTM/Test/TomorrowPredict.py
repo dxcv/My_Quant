@@ -21,13 +21,13 @@ stk_code = '300183'
 model_dir = '../modelDir/'
 
 """ ---------------------- 获取实时数据 ---------------------- """
-data_now = ts.get_k_data(stk_code)[-11:]
+data_now = ts.get_k_data(stk_code)[-12:-1]
 
 # 准备输入数据
 input_values = data_now.loc[:, feature_cols].values
 
 # 进行归一化
-input_normal = np.hstack((normalize(input_values[:, :3]), normalize(input_values[:, [3]])))
+input_normal = np.hstack((normalize(input_values[:, :-1]), normalize(input_values[:, [-1]])))
 
 """ ---------------------- 创建模型 ---------------------- """
 predictions, loss, train_op, X, y = lstm_model(

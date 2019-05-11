@@ -9,7 +9,7 @@ label_col = ['high']
 stk_code = 'cyb'
 M_INT = 21
 
-N_STEPS = 11
+N_STEPS = 20
 N_INPUTS = 9
 HIDDEN_SIZE = 6
 NUM_LAYERS = 2
