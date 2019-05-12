@@ -187,6 +187,20 @@ def judgeAndSendMsg():
 
     print('函数 judgeAndSendMsg: 完成本次判断！')
 
+
+def update_price_ratio_info():
+    """
+    :param df_H_L_Pot:
+    :return:
+    """
+
+    # 将结果序列化
+    with open(price_ratio_info_url, 'wb') as f:
+        pickle.dump(h_l_pot_info, f)
+
+    send_qq(u'影子', '高底线信息更新成功！')
+
+
 def updatePotInfo():
     """
     :param df_H_L_Pot:
