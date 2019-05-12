@@ -53,7 +53,7 @@ saver = tf.train.Saver()
 
 # 初始化
 sess = tf.Session()
-if os.path.exists('../modelDir/LstmForCornerPot.ckpt.meta'):
+if os.path.exists('../modelDir/cyb_high.ckpt.meta'):
 
     saver = tf.train.import_meta_graph(
         '..\modelDir\LstmForCornerPot.ckpt.meta')

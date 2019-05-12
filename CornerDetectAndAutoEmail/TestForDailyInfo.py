@@ -52,6 +52,8 @@ def dailyStkInfoEmail():
                                    stk_name=getNameByStkCode(g_total_stk_info_mysql, stk),
                                    pic_dir=pic_dir_stk.replace(pic_save_dir_root, ''))
 
+        print('完成'+str(stk) + '  的邮件内容！')
+
     H_str = H_str + H_tail
 
     """ ------------------- 生成需要的图片 ----------------------- """
@@ -71,15 +73,17 @@ def dailyStkInfoEmail():
         if mail_return == 0:
             break
         else:
-            time.sleep(1800)
+            print('邮件发送失败！原因：'+str(mail_return)+'\n将延时后重发！')
+            time.sleep(20)
 
 
 # 函数测试
 # dailyStkInfoEmail()
 
+if __name__ == '__main__':
 
-""" ------------------ 启动定时器 --------------------- """
-sched = BlockingScheduler()
-sched.add_job(func=dailyStkInfoEmail, trigger='cron', day_of_week='mon-fri', hour=5, minute=0, misfire_grace_time=3600, coalesce=True)
-# sched.add_job(func=dailyStkInfoEmail, trigger='interval', minutes=5)
-sched.start()
+    """ ------------------ 启动定时器 --------------------- """
+    sched = BlockingScheduler()
+    sched.add_job(func=dailyStkInfoEmail, trigger='cron', day_of_week='mon-fri', hour=5, minute=0, misfire_grace_time=3600, coalesce=True)
+    # sched.add_job(func=dailyStkInfoEmail, trigger='interval', minutes=5)
+    sched.start()
