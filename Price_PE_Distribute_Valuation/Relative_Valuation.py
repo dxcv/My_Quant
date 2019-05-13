@@ -92,7 +92,7 @@ for idx in stk.index:
     price_now = stk.loc[idx, 'close']
 
     se = stk.loc[idx-win_size:idx, 'close']
-    price_expensive = list(filter(lambda x: x < price_now, se))
+    price_expensive = list(filter(lambda x: x > price_now, se))
 
     stk.loc[idx, 'price_scale'] = len(price_expensive)/len(se)*100.0        # 越高越好
 
@@ -102,7 +102,7 @@ for idx in stk.index:
     pe_win = stk.loc[idx-win_size:idx, 'pe_ratio']
     pe_expensive = list(filter(lambda x: x < pe_now, pe_win))
 
-    stk.loc[idx, 'pe_scale'] = (1 - len(pe_expensive)/len(pe_win))*100.0        # 越高越差
+    stk.loc[idx, 'pe_scale'] = len(pe_expensive)/len(pe_win)*100.0        # 越高越差
 
 stk['p-pe'] = stk.apply(lambda x: x['price_scale'] - x['pe_scale'], axis=1)
 stk = stk.loc[win_size:, :]
