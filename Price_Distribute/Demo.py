@@ -19,7 +19,7 @@ for idx in stk.index:
     se = stk.loc[idx-win_size:idx, 'close']
     price_expensive = list(filter(lambda x: x < price_now, se))
 
-    stk.loc[idx, 'price_scale'] = len(price_expensive)/len(se)*100.0
+    stk.loc[idx, 'price_scale'] = len(price_expensive)/len(se)*100.0        # 越高越好
 
 stk.loc[win_size:, :].plot('date', ['close', 'price_scale'], subplots=True)
 

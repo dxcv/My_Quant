@@ -1,9 +1,9 @@
 # encoding=utf-8
-import jqdatasdk
+
 from JQData_Test.JQ_Industry_Analysis_Sub import *
 
 # 年份列表
-year_list = list(range(2010, 2018))
+year_list = list(range(2010,2018))
 
 
 # 获取申万一级行业分类
@@ -11,34 +11,8 @@ indus = jqdatasdk.get_industries(name='sw_l1')
 
 indus_dic = [{'indus_code': x,
               'indus_name': indus.loc[x, 'name'],
-              'indus_stk':jqdatasdk.get_industry_stocks(industry_code=x)
+              'indus_stk': jqdatasdk.get_industry_stocks(industry_code=x)
               } for x in indus.index]
-
-
-"""
-# 找出300183所在的行业
-for ids in indus_dic:
-
-    if '300183' in str(ids['indus_stk']):
-        
-        print(str(ids['indus_name']))
-        print(str(ids['indus_code']))
-
-
-
-
-申万一级行业
-通信I
-801770
-
-申万二级行业
-通信设备II
-801102
-
-"""
-
-df = get_fundamentals(query(valuation), statDate='2017-04-10')
-
 
 # 向字典列表中增加各行业所含stk的数据，df格式
 for dic in indus_dic:
@@ -49,9 +23,10 @@ for dic in indus_dic:
     plot(dic['indus_name'], dic['net_profit_list'], year_list)
 
 
+
 # 获取行业中的龙头股，以净利润为指标
 df_list = get_indus_stk_df(jqdatasdk.get_industry_stocks(industry_code='801180'),2010)
-df_list.sort_values(by='net_profit', ascending=False).head(3).loc[:,'code'].values
+df_list.sort_values(by='net_profit',ascending=False).head(3).loc[:,'code'].values
 
 
 # 获取房地产的三大龙头与沪深300指数的close数据
