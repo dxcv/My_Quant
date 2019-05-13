@@ -14,7 +14,9 @@ y_axis_info范例：
 ("mean20","m*--",U"20日均值")
 ]
 '''
-def plot_x_date(code_param,data_df_param,y_axis_info_param):
+
+
+def plot_x_date(code_param, data_df_param, y_axis_info_param):
 
     ave_df_param = data_df_param.sort_values(by='date',ascending=True)
 
