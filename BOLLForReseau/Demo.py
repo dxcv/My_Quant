@@ -14,7 +14,7 @@ from Constraint.Constraint import calBSReseau
 from SDK.MyTimeOPT import minus_date_str
 from SDK.StkSub import BS_opt, plotOPResult
 
-stk_code = '300580'
+stk_code = '300183'
 
 df = ts.get_k_data(stk_code, start='2017-01-12', end='2019-05-26')
 
@@ -29,7 +29,11 @@ df['upper'], df['middle'], df['lower'] = talib.BBANDS(closed, timeperiod=10,
 
 df = df.dropna(how='any', axis=0)
 
+"""
+画图语句
+df.plot('date', ['upper', 'lower', 'high', 'low'], style=['-^', '-^', '*', '*'])
 
+"""
 record_info = {
     'floor_last': 0,
     'money_remain': 20000,

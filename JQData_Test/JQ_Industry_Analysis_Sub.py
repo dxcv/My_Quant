@@ -2,6 +2,7 @@
 from jqdatasdk import query, valuation, income
 from General.GlobalSetting import *
 from JQData_Test.auth_info import *
+import jqdatasdk
 
 def get_indus_stk_df(stk_list, year):
 

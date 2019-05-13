@@ -63,6 +63,7 @@ def genStkPic(stk_df, stk_code, current_date, root_save_dir, pic_name='stk_A_C_M
     """
     在原数据的基础上增加均线和MACD
     """
+
     # 按升序排序
     stk_df = stk_df.sort_values(by='date', ascending=True)
 
@@ -119,9 +120,8 @@ def genStkPic(stk_df, stk_code, current_date, root_save_dir, pic_name='stk_A_C_M
 
 def genStkIdxPic(stk_df, stk_code, current_date, root_save_dir, pic_name='stk_idx.png'):
 
-
     """
-    在原数据的基础上增加均线和MACD
+    打印常用指标
     """
     # 按升序排序
     stk_df = stk_df.sort_values(by='date', ascending=True)
@@ -135,7 +135,7 @@ def genStkIdxPic(stk_df, stk_code, current_date, root_save_dir, pic_name='stk_id
     'upper', 'middle', 'lower' 
     'MOM'
     """
-    stk_df = addStkIndexToDf(stk_df).tail(100)
+    stk_df = addStkIndexToDf(stk_df).tail(60)
 
     fig, ax = plt.subplots(nrows=5, ncols=1)
 
