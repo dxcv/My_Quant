@@ -31,11 +31,6 @@ net_pct_s	                    小单净占比(%)	        小单净占比 = 小�
 """
 
 
-df_m_f = get_money_flow('300183.XSHE', start_date='2019-04-01', end_date=None, fields=None, count=None)
-
-# 获取300183所在的通信行业的估值
-df = finance.run_query(query(finance.SW1_DAILY_VALUATION).filter(finance.SW1_DAILY_VALUATION.code == '801770'))
-df = df.set_index('date').sort_index(ascending=True)
 """
 表名: valuation
 
@@ -62,7 +57,7 @@ q = query(valuation.pe_ratio,
               indicator.eps
             ).filter(valuation.code.in_(['300183.XSHE']))
 
-panel = get_fundamentals_continuously(q, end_date='2019-05-12', count=600)
+panel = get_fundamentals_continuously(q, end_date='2019-05-12', count=1200)
 df_basic = panel.minor_xs('300183.XSHE')
 df_basic['date_str'] = df_basic.index
 df_basic['date'] = df_basic.apply(lambda x: convert_str_to_date(x['date_str']), axis=1)
@@ -74,19 +69,47 @@ df_close = df_close.reset_index()
 df_close['date'] = df_close.apply(lambda x: convert_str_to_date(str(x['index'])[:10]), axis=1)
 df_close = df_close.set_index('date')
 
-df_concat = pd.concat([df, df_basic, df_close], axis=1)\
+df_concat = pd.concat([df_basic, df_close], axis=1)\
                     .dropna(axis=0)\
-                    .loc[:, ['close', 'pe', 'pb', 'eps', 'pb_ratio', 'pe_ratio']]
+                    .loc[:, ['close', 'eps', 'pb_ratio', 'pe_ratio']]
 
-df_concat['pe_rela'] = df_concat.apply(lambda x: x['pe']-x['pe_ratio'], axis=1)
-df_concat['pb_rela'] = df_concat.apply(lambda x: x['pb']-x['pb_ratio'], axis=1)
+
 df_concat['date'] = df_concat.index
 
-df_concat.plot('date', ['close', 'pe_rela', 'pb_rela'], subplots=True)
 
 """
 画图
+df_concat.plot('date', ['close', 'pe_rela', 'pb_rela'], subplots=True)
+"""
 
+""" 计算pe和价格分数 """
+win_size = 180
+stk = df_concat.reset_index()
+
+for idx in stk.index:
+
+    # 计算price 分数
+    price_now = stk.loc[idx, 'close']
+
+    se = stk.loc[idx-win_size:idx, 'close']
+    price_expensive = list(filter(lambda x: x < price_now, se))
+
+    stk.loc[idx, 'price_scale'] = len(price_expensive)/len(se)*100.0        # 越高越好
+
+    # 计算pe 分数
+    pe_now = stk.loc[idx, 'pe_ratio']
+
+    pe_win = stk.loc[idx-win_size:idx, 'pe_ratio']
+    pe_expensive = list(filter(lambda x: x < pe_now, pe_win))
+
+    stk.loc[idx, 'pe_scale'] = (1 - len(pe_expensive)/len(pe_win))*100.0        # 越高越差
+
+stk['p-pe'] = stk.apply(lambda x: x['price_scale'] - x['pe_scale'], axis=1)
+stk = stk.loc[win_size:, :]
+
+"""
+stk.plot('date', ['close', 'p-pe'], subplots=True)
+画图
 
 """
 
