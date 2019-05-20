@@ -33,11 +33,16 @@ continuous_seconds = 240        # 提醒信息持续时间
 
 money_each_opt = 5000
 
+
 def JudgeSingleStk(stk_code, stk_price_last, stk_amount_last):
 
     # 获取该股票的实时价格
     current_price = float(ts.get_realtime_quotes(stk_code)['price'].values[0])
     price_diff = current_price - stk_price_last
+
+    if current_price == 0.0:
+        print(stk_code + 'price==0.0! 返回！')
+        return
 
     buy_amount = math.floor((money_each_opt/current_price)/100)*100
 
@@ -55,6 +60,24 @@ def JudgeSingleStk(stk_code, stk_price_last, stk_amount_last):
 
     else:
         print('未知错误！')
+
+
+def callback():
+    (conn_opt, engine_opt) = genDbConn(localDBInfo, db_name)
+    df = pd.read_sql(con=conn_opt, sql='select * from now')
+    if not df.empty:
+        for idx in df.index:
+            stk_code = df.loc[idx, 'stk_code']
+            price_last = df.loc[idx, 'price']
+            amount_last = df.loc[idx, 'amount']
+
+            JudgeSingleStk(
+                stk_code=stk_code,
+                stk_price_last=price_last,
+                stk_amount_last=amount_last)
+
+    print(str(pd.read_sql(con=conn_opt, sql='select * from now')))
+    conn_opt.close()
 
 
 """ =========================== 链接数据库 ============================ """
@@ -80,7 +103,7 @@ trigger = OrTrigger([
     CronTrigger(hour='13-15', minute='*/5')
 ])
 
-sched.add_job(judgeAndSendMsg,
+sched.add_job(callback,
               trigger,
               day_of_week='mon-fri',
               minute='*/5',
@@ -88,21 +111,4 @@ sched.add_job(judgeAndSendMsg,
 
 
 if __name__ == '__main__':
-    while True:
-
-        (conn_opt, engine_opt) = genDbConn(localDBInfo, db_name)
-        df = pd.read_sql(con=conn_opt, sql='select * from now')
-        if not df.empty:
-            for idx in df.index:
-                stk_code = df.loc[idx, 'stk_code']
-                price_last = df.loc[idx, 'price']
-                amount_last = df.loc[idx, 'amount']
-
-                JudgeSingleStk(
-                    stk_code=stk_code,
-                    stk_price_last=price_last,
-                    stk_amount_last=amount_last)
-
-        print(str(pd.read_sql(con=conn_opt, sql='select * from now')))
-        conn_opt.close()
-        time.sleep(20)
+    sched.start()

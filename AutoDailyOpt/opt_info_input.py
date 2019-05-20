@@ -33,7 +33,7 @@ del 300183 buy 300 13.25
 
 表名：history      历史的操作
 
-stk_code stk_name amount price opt input_time id(主键)
+stk_code stk_name amount price opt input_time reap_flag id(主键)
 
 
 表名：now          持有的股票中最后买入的（已经对消过的）
