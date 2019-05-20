@@ -9,9 +9,9 @@ year_list = list(range(2010,2018))
 # 获取申万一级行业分类
 indus = jqdatasdk.get_industries(name='sw_l1')
 
-indus_dic = [{'indus_code':x,
-              'indus_name':indus.loc[x,'name'],
-              'indus_stk':jqdatasdk.get_industry_stocks(industry_code=x)
+indus_dic = [{'indus_code': x,
+              'indus_name': indus.loc[x, 'name'],
+              'indus_stk': jqdatasdk.get_industry_stocks(industry_code=x)
               } for x in indus.index]
 
 # 向字典列表中增加各行业所含stk的数据，df格式
@@ -20,7 +20,7 @@ for dic in indus_dic:
     dic['net_profit_list'] = [x['net_profit'].sum() for x in dic['stk_df_list']]
 
     # 将增长曲线图打印
-    plot(dic['indus_name'],dic['net_profit_list'],year_list)
+    plot(dic['indus_name'], dic['net_profit_list'], year_list)
 
 
 

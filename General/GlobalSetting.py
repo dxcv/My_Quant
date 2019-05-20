@@ -143,7 +143,7 @@ localDBInfo = {'host': 'localhost',
                'password': 'ypw1989',
                'charset': 'utf8'}
 
-(conn_profit,engine_profit)                 = genDbConn(localDBInfo,stk_profit_data_db_name)
+(conn_profit, engine_profit)                 = genDbConn(localDBInfo, stk_profit_data_db_name)
 # (conn_tick,engine_tick)                     = genDbConn(localDBInfo,stk_tick_data_db_name)
 # (conn_k,engine_k)                           = genDbConn(localDBInfo,stk_k_data_db_name)
 # (conn_basic,engine_basic)                   = genDbConn(localDBInfo,stk_basic_data_db_name)

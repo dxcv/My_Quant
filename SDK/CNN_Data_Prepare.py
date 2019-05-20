@@ -129,6 +129,19 @@ def grade(value_param):
         return 5
 
 
+def normalize(value_param):
+    """
+    使用最大最小值的方式对数据进行归一化
+    :param value_param:
+    :return:
+    """
+
+    # 转成矩阵
+    value_array = np.array(value_param)
+
+    return (value_array-np.min(value_array))/(np.max(value_array) - np.min(value_array))
+
+
 
 def gaussian_normalize(value_param):
 
@@ -138,18 +151,17 @@ def gaussian_normalize(value_param):
     :return:
     """
 
-    if isinstance(value_param,pd.Series):
+    if isinstance(value_param, pd.Series):
         value_temp = np.array(value_param)
-    elif isinstance(value_param,np.ndarray):
+    elif isinstance(value_param, np.ndarray):
         value_temp = value_param
-    elif isinstance(value_param,list):
+    elif isinstance(value_param, list):
         value_temp = np.array(value_param)
     else:
         print("函数 gaussian_normalize：不识别的入参类型！")
         return value_param
 
     return (value_temp - np.mean(value_temp))/np.cov(value_temp)
-
 
 
 def normalize_by_line(value_param):
@@ -161,13 +173,11 @@ def normalize_by_line(value_param):
     :return:
     """
 
-    if(isinstance(value_param,np.ndarray)):
-        return np.array(list(map(lambda x:gaussian_normalize(x),value_param)))
+    if isinstance(value_param, np.ndarray):
+        return np.array(list(map(lambda x: gaussian_normalize(x), value_param)))
     else:
         print("函数 normalize_by_line:遇到不识别的入参类型，将入参原路返回！")
         return value_param
-
-
 
 
 def batch_gen_cnn_data(code_list,inc_ratio_time_span,field_list,time_span_list,file_save_dir):
@@ -191,15 +201,15 @@ def batch_gen_cnn_data(code_list,inc_ratio_time_span,field_list,time_span_list,f
         csv_name = file_save_dir + str(code) + "CNN_Data.csv"
 
         # “数据库里面存在这个表”,且“目标文件不存在”的时候，才能继续操作
-        if is_table_exist(conn_tick,stk_tick_data_db_name,'tick'+code) & (not os.path.exists(csv_name)):
+        if is_table_exist(conn_tick, stk_tick_data_db_name, 'tick'+code) & (not os.path.exists(csv_name)):
 
             # 获取均值数据
             df_ave = get_total_ave_ss(code, inc_ratio_time_span)
 
             # 获取volume数据
-            df_volume = get_total_volume_ss(code,field_list,time_span_list)
+            df_volume = get_total_volume_ss(code, field_list, time_span_list)
 
-            df_total = pd.merge(df_ave,df_volume,on='date')
+            df_total = pd.merge(df_ave, df_volume, on='date')
 
             df_total.to_csv(csv_name)
 

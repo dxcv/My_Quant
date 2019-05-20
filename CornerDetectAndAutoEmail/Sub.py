@@ -10,7 +10,7 @@ from talib import MA_Type
 
 import tushare as ts
 
-from SDK.CNN_Data_Prepare import gaussian_normalize
+from SDK.CNN_Data_Prepare import gaussian_normalize, normalize
 from SDK.MyTimeOPT import DateStr2Sec
 import math
 from SDK.MyTimeOPT import get_current_date_str
@@ -20,6 +20,8 @@ import pandas as pd
 
 
 # 无法显示汉字及负号
+from SDK.PlotOptSub import addXticklabel
+
 mpl.rcParams['font.sans-serif'] = ['SimHei']
 matplotlib.rcParams['axes.unicode_minus']=False
 
@@ -61,6 +63,7 @@ def genStkPic(stk_df, stk_code, current_date, root_save_dir, pic_name='stk_A_C_M
     """
     在原数据的基础上增加均线和MACD
     """
+
     # 按升序排序
     stk_df = stk_df.sort_values(by='date', ascending=True)
 
@@ -102,6 +105,65 @@ def genStkPic(stk_df, stk_code, current_date, root_save_dir, pic_name='stk_A_C_M
     ax[3].set_xticks(list(range(0, len(stk_df_current['date']))))
     ax[3].set_xticklabels(list(stk_df_current['date']), rotation=90, fontsize=5)
     ax[3].legend(loc='best')
+
+    # 保存图片
+    save_dir = root_save_dir+current_date+'/'+str(stk_code)+'/'
+    if not os.path.exists(save_dir):
+        os.makedirs(save_dir)
+
+    plt.tight_layout()
+    plt.savefig(save_dir+pic_name, dpi=300)
+    plt.close()
+
+    return save_dir+pic_name
+
+
+def genStkIdxPic(stk_df, stk_code, current_date, root_save_dir, pic_name='stk_idx.png'):
+
+    """
+    打印常用指标
+    """
+    # 按升序排序
+    stk_df = stk_df.sort_values(by='date', ascending=True)
+
+    """
+    增加指标
+    
+    'RSI5', 'RSI12', 'RSI30'
+    'SAR'
+    'slowk', 'slowd'
+    'upper', 'middle', 'lower' 
+    'MOM'
+    """
+    stk_df = addStkIndexToDf(stk_df).tail(60)
+
+    fig, ax = plt.subplots(nrows=5, ncols=1)
+
+    ax[0].plot(range(0, len(stk_df['date'])), stk_df['RSI5'], 'b--', label='RSI5线', linewidth=1)
+    ax[0].plot(range(0, len(stk_df['date'])), stk_df['RSI12'], 'r--', label='RSI12线', linewidth=1)
+    ax[0].plot(range(0, len(stk_df['date'])), stk_df['RSI30'], 'g*--', label='RSI30', linewidth=0.5, markersize=1)
+
+    ax[1].plot(range(0, len(stk_df['date'])), stk_df['SAR'], 'g*--', label='SAR', linewidth=0.5, markersize=1)
+
+    ax[2].plot(range(0, len(stk_df['date'])), stk_df['slowk'], 'g*--', label='slowk', linewidth=0.5, markersize=1)
+    ax[2].plot(range(0, len(stk_df['date'])), stk_df['slowd'], 'r*--', label='slowd', linewidth=0.5, markersize=1)
+
+    ax[3].plot(range(0, len(stk_df['date'])), stk_df['upper'], 'r*--', label='布林上线', linewidth=0.5, markersize=1)
+    ax[3].plot(range(0, len(stk_df['date'])), stk_df['middle'], 'b*--', label='布林均线', linewidth=0.5, markersize=1)
+    ax[3].plot(range(0, len(stk_df['date'])), stk_df['lower'], 'g*--', label='布林下线', linewidth=0.5, markersize=1)
+
+    ax[4].plot(range(0, len(stk_df['date'])), stk_df['MOM'], 'g*--', label='MOM', linewidth=0.5, markersize=1)
+
+    # 准备下标
+    xlabel_series = stk_df.apply(lambda x: x['date'][2:].replace('-', ''), axis=1)
+    ax[0] = addXticklabel(ax[0], xlabel_series, 40, rotation=45)
+    ax[1] = addXticklabel(ax[1], xlabel_series, 40, rotation=45)
+    ax[2] = addXticklabel(ax[2], xlabel_series, 40, rotation=45)
+    ax[3] = addXticklabel(ax[3], xlabel_series, 40, rotation=45)
+    ax[4] = addXticklabel(ax[4], xlabel_series, 40, rotation=45)
+
+    for ax_sig in ax:
+        ax_sig.legend(loc='best', fontsize=5)
 
     # 保存图片
     save_dir = root_save_dir+current_date+'/'+str(stk_code)+'/'
@@ -374,7 +436,7 @@ def genSingleStkTrainData(stk_K_df, M_int, stk_code, stk_name):
     return sh_index
 
 
-def sliceDfToTrainData(df, length, feature_cols, label_col):
+def sliceDfToTrainData(df, length, feature_cols, label_col, norm_flag=False):
     """
     函数功能：
 
@@ -396,10 +458,18 @@ def sliceDfToTrainData(df, length, feature_cols, label_col):
     r_list = []
     for idx in df.loc[0:len(df) - length - 1, :].index:
 
+        # 取出这一段的df
+        df_seg = df.loc[idx:idx + length, feature_cols + [label_col[0]]]
+
+        # 是否对输入数据进行归一化
+        if norm_flag:
+            for col in feature_cols:
+                df_seg[col] = normalize(df_seg.loc[:, col])
+
         r_list.append(
             (
-                df.loc[idx:idx + length, feature_cols].values,
-                df.loc[idx:idx + length, label_col].values
+                df_seg.loc[:, feature_cols].values,
+                df_seg.loc[:, [label_col[0]]].values
             )
         )
 
@@ -407,12 +477,10 @@ def sliceDfToTrainData(df, length, feature_cols, label_col):
 
 # --------------------------- 测试 -------------------------------
 
-# stk_K = ts.get_k_data('300183')
-#
-# # 重置index
-# stk_K = stk_K.reset_index()
-#
-# r = convertDfToTrainData(df=stk_K, length=6, feature_cols=['open', 'high', 'low'], label_col=['close'])
-#
-#
-# end=0
+
+if __name__ == '__main__':
+
+    stk_K = ts.get_k_data('300183')
+
+    r = genStkIdxPic(stk_K, '300183', get_current_date_str(), pic_save_dir_root, pic_name='stk_idx.png')
+    end = 0
