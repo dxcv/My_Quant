@@ -8,9 +8,10 @@ class minepy.MINE（alpha = 0.6，c = 15，est =“mic_approx” ）
 
 alpha:
 
-(float (0, 1.0] or >=4) – if alpha is in (0,1] then B will be max(n^alpha, 4) where n is the number of samples.
- If alpha is >=4 then alpha defines directly the B parameter.
- If alpha is higher than the number of samples (n) it will be limited to be n, so B = min(alpha, n).
+(float (0, 1.0] or >=4) – 如果 alpha 在 (0,1] 中，那么B 将会取(n^alpha, 4) 两者之间的最大值，n是样本数量.
+ 如果 alpha 值 >=4 那么直接将alpha赋值给B。
+ .
+ 如果 alpha 值比样本数量还要多，他会被赋值为样本数量，换句话说，alpha值不会超过样本数量。
 
 c:
 

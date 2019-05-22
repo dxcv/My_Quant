@@ -22,8 +22,9 @@ print_stats(mine)
 # print
 
 np.random.seed(0)
-y +=np.random.uniform(-1, 1, x.shape[0])    # add some noise
+y += np.random.uniform(-1, 1, x.shape[0])    # add some noise
 mine.compute_score(x, y)
 
 print("With noise:")
 print_stats(mine)
+
