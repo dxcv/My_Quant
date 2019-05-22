@@ -43,8 +43,9 @@ class TestTaskbarIcon:
         win32gui.PostQuitMessage(0)  # Terminate the app.
 
 
+
 if __name__ == '__main__':
     t = TestTaskbarIcon()
-    t.showMsg("您有新的消息", "MSYH ON B ")
-    time.sleep(5)
+    t.showMsg("Windows Message", "MSYH ON B\n 你能不能看到这些信息？测试一下！\n 这一行能看到吗？ ")
+    time.sleep(3)
     win32gui.DestroyWindow(t.hwnd)
