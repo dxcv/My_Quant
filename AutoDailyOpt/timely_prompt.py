@@ -100,7 +100,7 @@ trigger = OrTrigger([
     CronTrigger(hour='9', minute='31-59/5'),
     CronTrigger(hour='10', minute='*/5'),
     CronTrigger(hour='11', minute='1-29/5'),
-    CronTrigger(hour='13-15', minute='*/5')
+    CronTrigger(hour='13-14', minute='*/5')
 ])
 
 sched.add_job(callback,
