@@ -46,6 +46,7 @@ def JudgeSingleStk(stk_code, stk_price_last, stk_amount_last):
 
     buy_amount = math.floor((money_each_opt/current_price)/100)*100
 
+
     if (price_diff * stk_amount_last > earn_threshold*remind_ratio) & (price_diff * stk_amount_last < earn_threshold):
         send_qq('影子', "Near! S! "+stk_code + ' Amount:' + str(stk_amount_last) + '\nP_now:' + str(current_price) + '\nP_last:' + str(stk_price_last))
 
@@ -59,7 +60,7 @@ def JudgeSingleStk(stk_code, stk_price_last, stk_amount_last):
         send_qq('影子', "Reach! B! " + stk_code + ' Amount:' + str(buy_amount) + '\nP_now:' + str(current_price) + '\nP_last:' + str(stk_price_last))
 
     else:
-        print('未知错误！')
+        print('未触发任何警戒线！')
 
 
 def callback():
