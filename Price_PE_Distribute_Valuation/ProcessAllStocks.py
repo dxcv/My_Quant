@@ -1,5 +1,5 @@
 # encoding=utf-8
-
+from CornerDetectAndAutoEmail.TestForDailyInfo import dailyStkInfoEmail, dailyStkInfoEmail_input
 from JQData_Test.auth_info import *
 import pandas as pd
 
@@ -10,7 +10,7 @@ from SDK.MyTimeOPT import convert_str_to_date
 
 """
 
-stocks = get_all_securities(['stock'])
+stocks = pd.DataFrame({'stk': get_index_stocks('000300.XSHG')}).set_index('stk')
 
 
 """ ======================= 查询所有股票的市值数据 ========================= """
@@ -68,5 +68,18 @@ for stk in stocks.index:
 
 stocks = stocks.dropna(axis=0)
 
+stk_head = str(list(stocks.sort_values(by='p-pe', ascending=False).head(20).index)).replace('.XSHE', '').replace('.XSHG', '')
+
+
+dailyStkInfoEmail_input(stk_head)
+
 print(str(list(stocks.sort_values(by='p-pe', ascending=False).head(20).index)).replace('.XSHE', '').replace('.XSHG', ''))
 print(str(list(stocks.sort_values(by='p-pe', ascending=False).head(20)['p-pe'])))
+
+
+
+"""
+['000408', '603858', '600487', '002450', '002352', '601390', '002456', '002044', '300251', '300072', '601618', '601857', '600566', '002024', '601766', '600998', '600023', '300136', '600271', '002415']
+[99.66666666666667, 98.33333333333333, 98.33333333333333, 97.66666666666667, 97.33333333333334, 97.0, 95.66666666666666, 93.0, 92.33333333333334, 91.00000000000001, 90.33333333333333, 87.0, 84.33333333333334, 82.33333333333334, 82.00000000000001, 77.0, 74.66666666666666, 73.33333333333333, 72.66666666666667, 72.33333333333334]
+
+"""
