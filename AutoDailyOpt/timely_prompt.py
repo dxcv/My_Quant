@@ -28,8 +28,7 @@ from SendMsgByGUI.QQGUI import send_qq
 
 """ =========================== 子函数 ============================ """
 earn_threshold = 120            # 挣100来块前就满足了
-remind_ratio = 0.9              # 操作提前提醒
-continuous_seconds = 240        # 提醒信息持续时间
+remind_ratio = 0.8              # 操作提前提醒
 
 money_each_opt = 5000
 
@@ -98,16 +97,16 @@ table_now = 'now'
 """ =========================== 定时器相关 ============================ """
 sched = BlockingScheduler()
 trigger = OrTrigger([
-    CronTrigger(hour='9', minute='31-59/5'),
-    CronTrigger(hour='10', minute='*/5'),
-    CronTrigger(hour='11', minute='1-29/5'),
-    CronTrigger(hour='13-14', minute='*/5')
+    CronTrigger(hour='9', minute='31-59/2'),
+    CronTrigger(hour='10', minute='*/2'),
+    CronTrigger(hour='11', minute='1-29/2'),
+    CronTrigger(hour='13-14', minute='*/2')
 ])
 
 sched.add_job(callback,
               trigger,
               day_of_week='mon-fri',
-              minute='*/5',
+              minute='*/2',
               max_instances=10)
 
 
