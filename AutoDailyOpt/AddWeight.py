@@ -75,6 +75,6 @@ def saveWeightFile():
 if __name__ == '__main__':
 
     saveWeightFile()
-    r = calWeight('300183')
+    # r = calWeight('300183')
 
     end = 0

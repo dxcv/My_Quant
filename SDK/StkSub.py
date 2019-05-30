@@ -23,7 +23,10 @@ def getNameByStkCode(stk_info_df, stk_code):
             'zxb': '中小板'
         }.get(stk_code)
     else:
-        return stk_info_df[stk_info_df['code'] == stk_code]['name'].values[0]
+        try:
+            return stk_info_df[stk_info_df['code'] == stk_code]['name'].values[0]
+        except:
+            return stk_code
 
 
 def BS_opt(stk_code, price, amount, opt, record_info, date, debug=False):
