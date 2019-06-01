@@ -43,6 +43,4 @@ if __name__ == '__main__':
     # 给m9打分
     df['rank'] = df.apply(lambda x: relativeRand(df['diff_m9'], x['diff_m9']), axis=1)
 
-
-
 end = 0
