@@ -78,7 +78,7 @@ def JudgeSingleStk(stk_code, stk_price_last, stk_amount_last, earn_threshold):
                 '\nP_now:' + str(current_price) +
                 '\nP_last:' + str(stk_price_last) +
                 '\nthreshold:' + str(earn_threshold) +
-                '\nM9_rank:' + str(rank9)
+                '\nM9_rank:' + str('%0.2f' % rank9)
                 )
 
     elif price_diff * stk_amount_last > earn_threshold:

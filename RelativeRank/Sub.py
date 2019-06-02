@@ -140,9 +140,9 @@ def checkDivergeLowLevel():
             history_data_dir='./M_data/')
 
         if r > 80:
-            send_qq('影子', 'Attention：\n'+stk+'趋向高分！分数为：'+str(r))
+            send_qq('影子', 'Attention：\n'+stk+'趋向高分！分数为：'+str('%0.2f') % r)
         else:
-            print(stk+'分数处于正常状态！')
+            print(stk+'分数处于正常状态！分数为：'+str('%0.2f') % r)
 
 
 def updateConcernStkMData():
