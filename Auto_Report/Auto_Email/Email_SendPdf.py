@@ -14,6 +14,14 @@ from SDK.MyTimeOPT import get_current_date_str
 
 
 def dumpPickle(data, saveLocation, fileName):
+
+    """
+    请使用dumpP
+    :param data:
+    :param saveLocation:
+    :param fileName:
+    :return:
+    """
     os.chdir(saveLocation)                              # 文件存放的路径
     with open(fileName, 'wb') as f:
         pickle.dump(data, f)                            # 导入数据data到文件f中
@@ -21,6 +29,12 @@ def dumpPickle(data, saveLocation, fileName):
 
 
 def loadPickle(loadLocation, fileName):
+    """
+    请使用loadP
+    :param loadLocation:
+    :param fileName:
+    :return:
+    """
     os.chdir(loadLocation)              # 文件读取的路径
     with open(fileName, 'rb') as f:
         return pickle.load(f)           # 读取数据
@@ -103,8 +117,9 @@ def getAttachment(attachmentFilePath):                                  # 获取
     attachment.add_header('Content-Disposition', 'attachment',   filename=os.path.basename(attachmentFilePath))  #Content-Disposition为属性名 disposition-type是以什么方式下载，如attachment为以附件方式下载 disposition-parm为默认保存时的文件名
     return attachment
 
-
 # dumpPickle(data="ai_report@163.com?ypw1989?['1210055099@qq.com']", saveLocation=os.path.basename('.'), fileName="senderInfo.txt")
+
+
 if __name__ == "__main__":
     # senderInfo = loadPickle(os.path.basename('.'), "senderInfo.txt")
     # sender = senderInfo.split("?")[0]               # 发件人邮箱
