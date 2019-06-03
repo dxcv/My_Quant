@@ -7,7 +7,6 @@ import os
 
 cubic_test_last_step = 7        # 在曲线拟合时，取最后的几个值进行二次拟合
 
-
 # 图片存在的路径，如果没有自动创建
 if os.path.exists('C:/Users/paul/Desktop/软件代码/Git-Clone/TempPicStore/'):
     pic_save_dir_root = 'C:/Users/paul/Desktop/软件代码/Git-Clone/TempPicStore/'
@@ -41,3 +40,9 @@ stk_list = [
 
 step_corner_detect = 6                  # 在判断拐点的时候，取最近的数据的个数
 corner_Pot_Retrospective_Half = 6       # 进行后验检测拐点时，时间窗的一半
+
+curPath = os.path.abspath(os.path.dirname(__file__))
+rootPath = curPath[:curPath.find("My_Quant\\")+len("My_Quant\\")]  # 获取myProject，也就是项目的根路径
+
+MDataPWD = os.path.abspath(rootPath + '/RelativeRank/')
+

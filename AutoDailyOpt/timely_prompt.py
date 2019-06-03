@@ -7,7 +7,7 @@ from AutoDailyOpt.AddWeight import calWeight, saveWeightFile
 from Auto_Report.Auto_Email.Email_SendPdf import loadPickle
 from DailyOpt.TestForDailyInfo import dailyStkInfoEmail
 from General.GlobalSetting import g_total_stk_info_mysql
-from RelativeRank.Sub import updateConcernStkMData, checkDivergeLowLevel, calRealtimeRank,  MDataPWD
+from RelativeRank.Sub import updateConcernStkMData, checkDivergeLowLevel, calRealtimeRank
 from SDK.DBOpt import genDbConn
 from SDK.MyTimeOPT import get_current_datetime_str
 from SDK.StkSub import getNameByStkCode
@@ -20,7 +20,7 @@ from apscheduler.triggers.cron import CronTrigger
 from CornerDetectAndAutoEmail.AveMaxMinDetect.Global import h_l_pot_info_url
 from CornerDetectAndAutoEmail.AveMaxMinDetect.MaxMin import judgeAndSendMsg, updatePotInfo
 import os
-from General.AutoStkConfig import stk_list
+from General.AutoStkConfig import stk_list, MDataPWD
 import tushare as ts
 import win32gui
 import win32con

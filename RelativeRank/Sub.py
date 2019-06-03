@@ -7,7 +7,7 @@ import os
 
 from Auto_Report.Auto_Email.Email_SendPdf import dumpPickle
 from SDK.MyTimeOPT import get_current_date_str, add_date_str
-from General.AutoStkConfig import stk_list
+from General.AutoStkConfig import stk_list, MDataPWD
 from SDK.PickleSaveSub import dumpP, loadP
 from SendMsgByGUI.QQGUI import send_qq
 
@@ -18,7 +18,6 @@ from SendMsgByGUI.QQGUI import send_qq
 
 """
 
-MDataPWD = os.getcwd()
 
 def relativeRand(v_total, v_now):
     """
