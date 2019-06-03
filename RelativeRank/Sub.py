@@ -17,8 +17,8 @@ from SendMsgByGUI.QQGUI import send_qq
 计算相对排名
 
 """
-def getMDataPWD():
-    return os.getcwd()
+
+MDataPWD = os.getcwd()
 
 def relativeRand(v_total, v_now):
     """
@@ -141,7 +141,7 @@ def checkDivergeLowLevel():
         r = calRealtimeRank(
             stk_code=stk,
             M_days=9,
-            history_data_dir=getMDataPWD()+'/M_data/')
+            history_data_dir=MDataPWD+'/M_data/')
 
         if r > 80:
             send_qq('影子', 'Attention：\n'+stk+'趋向高分！分数为：'+str('%0.2f') % r)

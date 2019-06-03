@@ -7,7 +7,7 @@ from AutoDailyOpt.AddWeight import calWeight, saveWeightFile
 from Auto_Report.Auto_Email.Email_SendPdf import loadPickle
 from DailyOpt.TestForDailyInfo import dailyStkInfoEmail
 from General.GlobalSetting import g_total_stk_info_mysql
-from RelativeRank.Sub import updateConcernStkMData, checkDivergeLowLevel, calRealtimeRank, getMDataPWD
+from RelativeRank.Sub import updateConcernStkMData, checkDivergeLowLevel, calRealtimeRank,  MDataPWD
 from SDK.DBOpt import genDbConn
 from SDK.MyTimeOPT import get_current_datetime_str
 from SDK.StkSub import getNameByStkCode
@@ -68,7 +68,7 @@ def JudgeSingleStk(stk_code, stk_price_last, stk_amount_last, earn_threshold):
         rank9 = calRealtimeRank(
             stk_code=stk_code,
             M_days=9,
-            history_data_dir=getMDataPWD()+'/M_data/')
+            history_data_dir=MDataPWD+'/M_data/')
     except:
         rank9 = -1
 
