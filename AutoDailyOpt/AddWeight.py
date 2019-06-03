@@ -22,7 +22,7 @@ def calWeight(code):
     :return:
     """
 
-    df = ts.get_k_data('300183', start=add_date_str(get_current_date_str(), -30))
+    df = ts.get_k_data(code, start=add_date_str(get_current_date_str(), -30))
 
     # 将昨天的收盘价下移，用来计算波动率
     df['yesterday_close'] = df['close'].shift(1)
@@ -63,7 +63,7 @@ def saveWeightFile():
         df['weight'] = df.apply(lambda x: calWeight(x['stk_code']), axis=1)
 
         dumpPickle(data=df, saveLocation='./Weight/', fileName='weight')
-        send_qq('影子', '更新股票的权值成功！\n'+str(df))
+        send_qq('影子', '更新股票的权值成功！\n'+str(df.loc[:, ['stk_name', 'weight']].values))
 
     else:
         dumpPickle(data=pd.DataFrame(), saveLocation='./Weight/', fileName='weight')
@@ -75,6 +75,6 @@ def saveWeightFile():
 if __name__ == '__main__':
 
     saveWeightFile()
-    r = calWeight('300183')
+    # r = calWeight('300183')
 
     end = 0

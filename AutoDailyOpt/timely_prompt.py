@@ -32,16 +32,18 @@ from SendMsgByGUI.QQGUI import send_qq
 
 """ =========================== 子函数 ============================ """
 basic_earn_threshold = 120      # 挣100来块前就满足了
-remind_ratio = 0.9              # 操作提前提醒
+remind_ratio = 0.8              # 操作提前提醒
 
-basic_ratio = 2.5               # 获取的每只股票的权值，除以基础ratio，即得到最终加权！
+basic_ratio = 4               # 获取的每只股票的权值，除以基础ratio，即得到最终加权！
 
 money_each_opt = 5000
 
 
 def getWeight():
 
-    df = loadPickle(loadLocation='./Weight/', fileName='weight')
+    path = 'D:\My_Quant\AutoDailyOpt\Weight/'
+
+    df = loadPickle(loadLocation=path, fileName='weight')
     if not df.empty:
         return dict(df.loc[:, ['stk_code', 'weight']].to_dict(orient='split')['data'])
     else:
@@ -113,9 +115,13 @@ def callback():
             amount_last = df.loc[idx, 'amount']
 
             try:
-                earn_threshold = np.max([weight_dict[stk_code]/basic_ratio, 1])*basic_earn_threshold
+                if not pd.isnull(weight_dict[stk_code]):
+                    earn_threshold = np.max([weight_dict[stk_code]/basic_ratio, 1])*basic_earn_threshold
+                else:
+                    print(stk_code+':权值为空！使用基础权值！')
+                    earn_threshold = basic_earn_threshold
             except:
-                print('权值获取失败！使用基础权值！')
+                print(stk_code+':权值获取失败！使用基础权值！')
                 earn_threshold = basic_earn_threshold
 
             JudgeSingleStk(
@@ -162,4 +168,5 @@ sched.add_job(func=saveWeightFile, trigger='cron', day_of_week='mon-fri', hour=6
 
 
 if __name__ == '__main__':
+    # callback()
     sched.start()
