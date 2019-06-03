@@ -63,16 +63,16 @@ def JudgeSingleStk(stk_code, stk_price_last, stk_amount_last, earn_threshold):
 
     buy_amount = math.floor((money_each_opt/current_price)/100)*100
 
-    if (price_diff * stk_amount_last > earn_threshold*remind_ratio) & (price_diff * stk_amount_last < earn_threshold):
+    # 计算其离心度分数
+    try:
+        rank9 = calRealtimeRank(
+            stk_code=stk_code,
+            M_days=9,
+            history_data_dir='./M_data/')
+    except:
+        rank9 = -1
 
-        # 计算其离心度分数
-        try:
-            rank9 = calRealtimeRank(
-                        stk_code=stk_code,
-                        M_days=9,
-                        history_data_dir='./M_data/')
-        except:
-            rank9 = '计算失败！'
+    if (price_diff * stk_amount_last > earn_threshold*remind_ratio) & (price_diff * stk_amount_last < earn_threshold):
 
         send_qq('影子',
                 "Near! S! "+stk_code +
@@ -89,7 +89,8 @@ def JudgeSingleStk(stk_code, stk_price_last, stk_amount_last, earn_threshold):
                 '\nAmount:' + str(stk_amount_last) +
                 '\nP_now:' + str(current_price) +
                 '\nP_last:' + str(stk_price_last) +
-                '\nthreshold:' + str(earn_threshold)
+                '\nthreshold:' + str(earn_threshold) +
+                '\nM9_rank:' + str('%0.2f' % rank9)
                 )
 
     elif (price_diff*buy_amount > -earn_threshold)&(price_diff*buy_amount < -earn_threshold*remind_ratio):
@@ -98,7 +99,8 @@ def JudgeSingleStk(stk_code, stk_price_last, stk_amount_last, earn_threshold):
                 '\nAmount:' + str(buy_amount) +
                 '\nP_now:' + str(current_price) +
                 '\nP_last:' + str(stk_price_last) +
-                '\nthreshold:' + str(earn_threshold)
+                '\nthreshold:' + str(earn_threshold) +
+                '\nM9_rank:' + str('%0.2f' % rank9)
                 )
 
     elif price_diff*buy_amount < -earn_threshold:
@@ -107,7 +109,8 @@ def JudgeSingleStk(stk_code, stk_price_last, stk_amount_last, earn_threshold):
                 '\nAmount:' + str(buy_amount) +
                 '\nP_now:' + str(current_price) +
                 '\nP_last:' + str(stk_price_last) +
-                '\nthreshold:' + str(earn_threshold))
+                '\nthreshold:' + str(earn_threshold) +
+                '\nM9_rank:' + str('%0.2f' % rank9))
 
     else:
         print('未触发任何警戒线！')
