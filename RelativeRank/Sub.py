@@ -141,7 +141,7 @@ def checkDivergeLowLevel():
         r = calRealtimeRank(
             stk_code=stk,
             M_days=9,
-            history_data_dir='./M_data/')
+            history_data_dir=getMDataPWD()+'/M_data/')
 
         if r > 80:
             send_qq('影子', 'Attention：\n'+stk+'趋向高分！分数为：'+str('%0.2f') % r)
