@@ -3,6 +3,7 @@
 import pandas as pd
 import tushare as ts
 import numpy as np
+import os
 
 from Auto_Report.Auto_Email.Email_SendPdf import dumpPickle
 from SDK.MyTimeOPT import get_current_date_str, add_date_str
@@ -10,11 +11,14 @@ from General.AutoStkConfig import stk_list
 from SDK.PickleSaveSub import dumpP, loadP
 from SendMsgByGUI.QQGUI import send_qq
 
+
+
 """
 计算相对排名
 
 """
-
+def getMDataPWD():
+    return os.getcwd()
 
 def relativeRand(v_total, v_now):
     """
@@ -159,6 +163,7 @@ def updateConcernStkMData():
 
 
 if __name__ == '__main__':
+    # r = getMDataPWD()
 
     updateConcernStkMData()
     checkDivergeLowLevel()
