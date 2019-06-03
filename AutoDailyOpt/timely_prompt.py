@@ -68,7 +68,7 @@ def JudgeSingleStk(stk_code, stk_price_last, stk_amount_last, earn_threshold):
         rank9 = calRealtimeRank(
             stk_code=stk_code,
             M_days=9,
-            history_data_dir='./M_data/')
+            history_data_dir=getMDataPWD()+'/M_data/')
     except:
         rank9 = -1
 
