@@ -10,7 +10,7 @@ from SDK.MyTimeOPT import convert_str_to_date
 
 """
 
-stocks = pd.DataFrame({'stk': get_index_stocks('000300.XSHG')}).set_index('stk')
+stocks = pd.DataFrame({'stk': get_index_stocks('000016.XSHG')}).set_index('stk')
 
 
 """ ======================= 查询所有股票的市值数据 ========================= """
@@ -68,15 +68,13 @@ for stk in stocks.index:
 
 stocks = stocks.dropna(axis=0)
 
-stk_head = str(list(stocks.sort_values(by='p-pe', ascending=False).head(20).index)).replace('.XSHE', '').replace('.XSHG', '')
+stk_head = str(list(stocks.sort_values(by='p-pe', ascending=False).head(5).index)).replace('.XSHE', '').replace('.XSHG', '')
 
-
-dailyStkInfoEmail_input(stk_head)
 
 print(str(list(stocks.sort_values(by='p-pe', ascending=False).head(20).index)).replace('.XSHE', '').replace('.XSHG', ''))
 print(str(list(stocks.sort_values(by='p-pe', ascending=False).head(20)['p-pe'])))
 
-
+dailyStkInfoEmail_input(stk_head)
 
 """
 ['000408', '603858', '600487', '002450', '002352', '601390', '002456', '002044', '300251', '300072', '601618', '601857', '600566', '002024', '601766', '600998', '600023', '300136', '600271', '002415']

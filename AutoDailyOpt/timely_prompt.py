@@ -7,6 +7,7 @@ from AutoDailyOpt.AddWeight import calWeight, saveWeightFile
 from Auto_Report.Auto_Email.Email_SendPdf import loadPickle
 from DailyOpt.TestForDailyInfo import dailyStkInfoEmail
 from General.GlobalSetting import g_total_stk_info_mysql
+from RelativeRank.Sub import updateConcernStkMData, checkDivergeLowLevel, calRealtimeRank
 from SDK.DBOpt import genDbConn
 from SDK.MyTimeOPT import get_current_datetime_str
 from SDK.StkSub import getNameByStkCode
@@ -63,12 +64,23 @@ def JudgeSingleStk(stk_code, stk_price_last, stk_amount_last, earn_threshold):
     buy_amount = math.floor((money_each_opt/current_price)/100)*100
 
     if (price_diff * stk_amount_last > earn_threshold*remind_ratio) & (price_diff * stk_amount_last < earn_threshold):
+
+        # 计算其离心度分数
+        try:
+            rank9 = calRealtimeRank(
+                        stk_code=stk_code,
+                        M_days=9,
+                        history_data_dir='./M_data/')
+        except:
+            rank9 = '计算失败！'
+
         send_qq('影子',
                 "Near! S! "+stk_code +
                 '\nAmount:' + str(stk_amount_last) +
                 '\nP_now:' + str(current_price) +
                 '\nP_last:' + str(stk_price_last) +
-                '\nthreshold:' + str(earn_threshold)
+                '\nthreshold:' + str(earn_threshold) +
+                '\nM9_rank:' + str('%0.2f' % rank9)
                 )
 
     elif price_diff * stk_amount_last > earn_threshold:
@@ -163,10 +175,22 @@ sched.add_job(callback,
               minute='*/2',
               max_instances=10)
 
+# 定时筛选离心度高分的stk
+sched.add_job(checkDivergeLowLevel,
+              trigger,
+              day_of_week='mon-fri',
+              minute='*/2',
+              max_instances=10)
+
 sched.add_job(func=dailyStkInfoEmail, trigger='cron', day_of_week='mon-fri', hour=5, minute=0, misfire_grace_time=3600, coalesce=True)
 sched.add_job(func=saveWeightFile, trigger='cron', day_of_week='mon-fri', hour=6, minute=0, misfire_grace_time=3600, coalesce=True)
 
 
+# 更新离心度历史数据
+sched.add_job(func=updateConcernStkMData, trigger='cron', day_of_week='mon-fri', hour=5, minute=30, misfire_grace_time=3600, coalesce=True)
+
+
 if __name__ == '__main__':
     # callback()
+
     sched.start()
