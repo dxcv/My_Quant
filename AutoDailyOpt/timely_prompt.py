@@ -7,7 +7,7 @@ from AutoDailyOpt.AddWeight import calWeight, saveWeightFile
 from Auto_Report.Auto_Email.Email_SendPdf import loadPickle
 from DailyOpt.TestForDailyInfo import dailyStkInfoEmail
 from General.GlobalSetting import g_total_stk_info_mysql
-from RelativeRank.Sub import updateConcernStkMData, checkDivergeLowLevel, calRealtimeRank
+from RelativeRank.Sub import updateConcernStkMData, checkDivergeLowLevel, calRealtimeRank, getMDataPWD
 from SDK.DBOpt import genDbConn
 from SDK.MyTimeOPT import get_current_datetime_str
 from SDK.StkSub import getNameByStkCode
@@ -194,6 +194,5 @@ sched.add_job(func=updateConcernStkMData, trigger='cron', day_of_week='mon-fri',
 
 
 if __name__ == '__main__':
-    # callback()
 
     sched.start()
