@@ -5,9 +5,10 @@ import tushare as ts
 import numpy as np
 import os
 
+from AutoDailyOpt.SeaSelect.stk_pool import stk_pool
 from Auto_Report.Auto_Email.Email_SendPdf import dumpPickle
 from SDK.MyTimeOPT import get_current_date_str, add_date_str
-from General.AutoStkConfig import stk_list, MDataPWD
+from General.AutoStkConfig import stk_list, MDataPWD, SeaSelectDataPWD
 from SDK.PickleSaveSub import dumpP, loadP
 from SendMsgByGUI.QQGUI import send_qq
 
@@ -161,10 +162,44 @@ def updateConcernStkMData():
         send_qq('影子', '更新离心度历史数据失败！')
 
 
+def checkDivergeLowLevel_Sea():
+    """
+    供定时器调用的回调函数，按频率检查关心的stk的，对高于80分的进行提示
+    :return:
+    """
+    for stk in stk_pool:
+
+        try:
+            r = calRealtimeRank(
+                stk_code=stk,
+                M_days=9,
+                history_data_dir=SeaSelectDataPWD+'/stk_pool_data/')
+
+            if r > 94:
+                send_qq('影子', 'Attention：\n'+stk+'趋向高分！分数为：'+str('%0.2f') % r)
+            else:
+                print(stk+'分数处于正常状态！分数为：'+str('%0.2f') % r)
+        except:
+            print(stk+'判断时出现异常！')
+
+
+def updateConcernStkMData_Sea():
+    """
+    定时器定时调用，更新各stk的M离心度历史数据
+    :return:
+    """
+    try:
+        for stk in stk_pool:
+            saveStkMRankHistoryData(stk_code=stk, history_days=400, m_days=9, save_dir=SeaSelectDataPWD+'/stk_pool_data/')
+            send_qq('影子', '更新' + stk + '离心度历史数据成功！')
+    except:
+        send_qq('影子', '更新离心度历史数据失败！')
+
+
 if __name__ == '__main__':
     # r = getMDataPWD()
 
-    updateConcernStkMData()
-    checkDivergeLowLevel()
+    # updateConcernStkMData_Sea()
+    checkDivergeLowLevel_Sea()
 
 end = 0

@@ -7,7 +7,8 @@ from AutoDailyOpt.AddWeight import calWeight, saveWeightFile
 from Auto_Report.Auto_Email.Email_SendPdf import loadPickle
 from DailyOpt.TestForDailyInfo import dailyStkInfoEmail
 from General.GlobalSetting import g_total_stk_info_mysql
-from RelativeRank.Sub import updateConcernStkMData, checkDivergeLowLevel, calRealtimeRank
+from RelativeRank.Sub import updateConcernStkMData, checkDivergeLowLevel, calRealtimeRank, checkDivergeLowLevel_Sea, \
+    updateConcernStkMData_Sea
 from SDK.DBOpt import genDbConn
 from SDK.MyTimeOPT import get_current_datetime_str
 from SDK.StkSub import getNameByStkCode
@@ -32,7 +33,7 @@ import numpy as np
 from SendMsgByGUI.QQGUI import send_qq
 
 """ =========================== 子函数 ============================ """
-basic_earn_threshold = 120      # 挣100来块前就满足了
+basic_earn_threshold = 120      # 100 IS ENOUGH
 remind_ratio = 0.8              # 操作提前提醒
 
 basic_ratio = 4               # 获取的每只股票的权值，除以基础ratio，即得到最终加权！
@@ -185,6 +186,13 @@ sched.add_job(checkDivergeLowLevel,
               minute='*/2',
               max_instances=10)
 
+# 定时海选离心度高分的stk
+sched.add_job(checkDivergeLowLevel_Sea,
+              trigger,
+              day_of_week='mon-fri',
+              minute='*/5',
+              max_instances=10)
+
 sched.add_job(func=dailyStkInfoEmail, trigger='cron', day_of_week='mon-fri', hour=5, minute=0, misfire_grace_time=3600, coalesce=True)
 sched.add_job(func=saveWeightFile, trigger='cron', day_of_week='mon-fri', hour=6, minute=0, misfire_grace_time=3600, coalesce=True)
 
@@ -192,6 +200,8 @@ sched.add_job(func=saveWeightFile, trigger='cron', day_of_week='mon-fri', hour=6
 # 更新离心度历史数据
 sched.add_job(func=updateConcernStkMData, trigger='cron', day_of_week='mon-fri', hour=5, minute=30, misfire_grace_time=3600, coalesce=True)
 
+# 更新海选离心度历史数据
+sched.add_job(func=updateConcernStkMData_Sea, trigger='cron', day_of_week='mon-fri', hour=6, minute=30, misfire_grace_time=3600, coalesce=True)
 
 if __name__ == '__main__':
 

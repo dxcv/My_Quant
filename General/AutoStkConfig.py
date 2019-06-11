@@ -46,3 +46,5 @@ rootPath = curPath[:curPath.find("My_Quant\\")+len("My_Quant\\")]  # 获取myPro
 
 MDataPWD = os.path.abspath(rootPath + '/RelativeRank/')
 
+SeaSelectDataPWD = os.path.abspath(rootPath+'/AutoDailyOpt/SeaSelect/')
+
